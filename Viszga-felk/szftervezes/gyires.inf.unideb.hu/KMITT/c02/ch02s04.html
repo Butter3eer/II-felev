@@ -1,0 +1,91 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:43 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>2.4. A folyamatiteráció</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch02.html" title="2. fejezet - A szoftverfejlesztés életciklus modelljei"><link rel="prev" href="ch02s03.html" title="2.3. Komponens alapú fejlesztés"><link rel="next" href="ch02s05.html" title="2.5. A V-modell"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.4. 
+            
+            A folyamatiteráció</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02s03.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">2. fejezet - A szoftverfejlesztés életciklus modelljei</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch02s05.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="2.4. A folyamatiteráció"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e416"></a>2.4. 
+            
+            <a name="__RefHeading__25_120998265"></a>A folyamatiteráció</h2></div></div></div><p>Már a legels&#337; szoftverek készítésének gyakorlati tapasztalatai alapján hamar
+            felmerült, hogy magát a szoftverfolyamatot nem célszer&#369; mindig egy egyszer&#369; lineáris
+            folyamatként értelmezni, hanem sokkal inkább a folyamattevékenységek rendszeresen
+            ismétl&#337;d&#337; folyamataként. Ez azt jelenti, hogy ciklikus ismétl&#337;dések &#8211; nevezhetjük
+            iterációknak a továbbiakban &#8211; során a rendszert mindig átdolgozzuk az igényelt
+            változások szerint. Ezen megközelítés oka, hogy a nagy rendszerek esetében
+            elkerülhetetlenek a fejlesztés során a változtatások. Változhatnak a követelmények, az
+            üzletmenet, és a küls&#337; behatások.</p><p>A folyamatiteráció támogatására több modell is kidolgozásra került. A két
+            legismertebbet említve: </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Inkrementális fejlesztés: a szoftverspecifikáció, a tervezés, az implementálás,
+                  kis inkrementációs lépésekre van felosztva.</p></li><li class="listitem"><p>Spirális fejlesztés: a fejlesztési folyamat egy belülr&#337;l kifelé tartó
+                  spirálvonalat követ.</p></li></ol></div><p>Az iteratív folyamat lényege, hogy a specifikációt a szoftverrel összekapcsolva kell
+            fejleszteni, nem pedig el&#337;re elkészíteni az egész dokumentumot. Ezáltal a fejlesztés
+            sokkal rugalmasabban és könnyebben tud reagálni a menetközben történt változások
+            követésére.</p><div class="sect2" title="2.4.1. Inkrementális fejlesztés"><div class="titlepage"><div><div><h3 class="title"><a name="d0e434"></a>2.4.1. Inkrementális fejlesztés</h3></div></div></div><p>Az inkrementális megközelítési mód egy köztes megközelítés a vízesésmodell és az
+               evolúciós fejlesztési modellek között. A vízesésmodell megköveteli az ügyfélt&#337;l, hogy
+               véglegesítse a követelményeket miel&#337;tt a tervezés elindulna, a tervez&#337;t&#337;l pedig azt,
+               hogy válasszon ki bizonyos tervezési stratégiákat az implementáció el&#337;tt. A
+               vízesésmodell el&#337;nye, hogy egyszer&#369;en menedzselhet&#337;, mert külön választja az egyes
+               fázisokat. Ezzel szemben viszont olyan robosztus rendszerek jöhetnek létre, amik
+               esetleg alkalmatlanok a változtatásokra. Az evolúciós megközelítésnél pedig
+               megengedettek a követelményekkel és tervezésekkel kapcsolatos döntések elhagyása, ami
+               pedig gyengén strukturált és nehezen megérthet&#337; rendszerekhez vezethetnek. A módszer
+               lépései a következ&#337; ábrán figyelhet&#337;k meg:</p><div class="figure"><a name="d0e439"></a><p class="title"><b>2.4. ábra -  Az inkrementális fejlesztés folyamata</b></p><div class="figure-contents"><div align="center"><img src="images/image4.png" align="middle" alt="Az inkrementális fejlesztés folyamata"></div></div></div><br class="figure-break"><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>nagy körvonalakban a rendszer által nyújtandó szolgáltatásokat,</p></li><li class="listitem"><p>mely szolgáltatások fontosabban, melyek kevésbé.</p></li></ol></div><p>A követelmények meghatározása után a követelmények inkremensekben való
+               megfogalmazása és hozzárendelése következik. A szolgáltatások inkremensekben való
+               elhelyezése függ a szolgáltatás prioritásától is. A magasabb prioritású
+               szolgáltatásokat hamarabb kell biztosítani a megrendel&#337; felé. </p><p>Miután az inkrementációs lépéseket meghatároztuk, az els&#337; inkrementációs lépés
+               által el&#337;állítandó szolgáltatások követelményeit részletesen definiálni kell. Ezután
+               pedig következik az inkremens kifejlesztése. A fejlesztés ideje alatt sor kerülhet
+               további követelmények elemzésére, de az aktuális inkrementációs lépés követelményei
+               nem változtathatók.</p><p>Amennyiben egy inkremens elkészült, a rendszer bizonyos funkcióit akár be is
+               üzemeltethetik korábban. Ez több szempontból is fontos lehet. Egyrészt
+               tapasztalatokat szerezhetnek a rendszerrel kapcsolatban, amely a kés&#337;bbi
+               inkrementációs lépésekben segítségre lehet a követelmények tisztázásában, másrészt
+               bizonyos kész vagy félkész funkciók akár a megrendel&#337;nek is leszállíthatók
+               bemutatási, tesztelési célokra. </p><p>Amikor az új inkremens elkészült, integrálni kell a már meglév&#337; inkremensekkel. A
+               rendszerfunkciók köre ezzel egyre b&#337;vül, míg végül elkészül a teljes rendszer. Az
+               inkrementációs fejlesztés el&#337;nyei röviden a következ&#337; néhány pontban lehetne
+               összefoglalni:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A megrendel&#337;nek nem kell megvárnia míg a teljes rendszer elkészül. Már az
+                     els&#337; inkremens kielégítheti a legkritikusabb követelményeket, így a szoftver
+                     már menet közben használhatóvá válik.</p></li><li class="listitem"><p>A megrendel&#337;k használhatják a korábbi inkremenseket mint prototípusokat, ami
+                     által tapasztalatokat szerezhetnek.</p></li><li class="listitem"><p>Kisebb a kockázata annak, hogy a teljes projekt kudarcba fullad.</p></li><li class="listitem"><p>A fejlesztés során a magasabb prioritású inkremenseket szállítjuk le
+                     hamarabb, ezért mindig a legfontosabb szolgáltatások lesznek többet tesztelve.
+                     Ezért kisebb a hiba esélye a rendszer legfontosabb részeiben.</p></li></ol></div><p>Mindezek ellenére az inkrementális fejlesztésnek is megvannak a maga hibái.
+               Fontos, hogy az inkremensek megfelel&#337;en kis méret&#369;k legyenek és minden inkrementációs
+               lépésnek szolgáltatni kell valami rendszerfunkciót. Sokszor azonban nehéz a
+               megrendel&#337; követelményeit megfelel&#337; méret&#369; inkrementációs lépésekre bontani.</p></div><div class="sect2" title="2.4.2. &nbsp;Spirális fejlesztési modell"><div class="titlepage"><div><div><h3 class="title"><a name="d0e473"></a>2.4.2. &nbsp;Spirális fejlesztési modell</h3></div></div></div><p>A
+               spirális fejlesztési modellt Boehm javasolta el&#337;ször már 1986-ban a &#8222;A Spiral Model
+               of Software Development and Enhancement&#8221; címmel megjelent publikációjában, amely
+               azóta széles körben elterjedt az irodalomban és a gyakorlatban is. A modell
+               alapgondolata szintén eltér az eddigiekt&#337;l, mert a szoftverfolyamatot nem
+               tevékenységek és közöttük található esetleg visszalépések sorozataként tekinti, hanem
+               inkább egy spirálként reprezentálja. A spirál minden egyes körben a szoftverfolyamat
+               egy-egy fázisát reprezentálja. A spirálnak, mint a folyamatot reprezentáló vonalnak
+               egy további sugallnivalója is van. Mégpedig az, hogy tetsz&#337;leges számú kör, mint
+               iteráció tehet&#337; meg.</p><p>A legbels&#337; kör a megvalósíthatósággal foglalkozik, a következ&#337; a rendszer
+               követelményeinek meghatározása, a következ&#337; kör pedig a rendszer tervezésével
+               foglalkozik, és így tovább.</p><p></p><p></p><div class="figure"><a name="d0e482"></a><p class="title"><b>2.5. ábra -  Boehm féle spirálmodell (forrás: [1])</b></p><div class="figure-contents"><div align="center"><img src="images/image4.png" align="middle" alt="Boehm féle spirálmodell (forrás: [1])"></div></div></div><br class="figure-break"><p>A spirál minden egyes ciklusát négy f&#337; szektorra oszthatjuk fel:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Célok kijelölése: az adott projektfázis által kit&#369;zött célok meghatározása.
+                     Azonosítani kell a folyamat megszorításait, a terméket, fel kell vázolni a
+                     kapcsolódó menedzselési tervet. Fel kell ismerni a projekt kockázati tényez&#337;it,
+                     és azoktól függ&#337;en alternatív stratégiákat kell tervezni ha lehetséges.</p></li><li class="listitem"><p>Kockázat becslése: minden egyes felismert kockázati tényez&#337; esetén részletes
+                     elemzésre kerül sor. Lépéseket kell tenni a kockázat csökkentése
+                     érdekében.</p></li><li class="listitem"><p>Fejlesztés és validálás: a kockázat kiértékelése után egy fejlesztési
+                     modellt kell választani a problémának megfelel&#337;en. Pl. evolúciós, vízesés, stb
+                     modellek.</p></li><li class="listitem"><p>Tervezés: A folyamat azon fázisa, amikor dönteni kell arról, hogy
+                     folytatódjon-e egy következ&#337; ciklussal, vagy sem. Ha a folytatás mellett
+                     döntünk, akkor fel kell vázolni a projekt következ&#337; fázisát.</p></li></ol></div><p>Egy spirálciklus mindig a célok meghatározásával kezd&#337;dik. Ekkor fel kell sorolni
+               a megvalósítás lehet&#337;ségeit, és meg kell vizsgálni azok megszorításait is. Minden
+               egyes célhoz meg kell határozni egy lehetséges alternatívát, amely azt eredményezi,
+               hogy azonosításra kerülnek a projekt kockázati forrásai is. A következ&#337; lépés ezeknek
+               a kockázatoknak a kiértékelése, majd végül pedig a tervezési fázis következik, ahol
+               eldönthetjük, hogy szükség van-e egy további ciklusra vagy sem.</p><p>Miben más a spirális fejlesztési modell az egyéb szoftverfolyamat-modellt&#337;l? Itt a
+               modell explicite számol a kockázati tényez&#337;kkel, amelyek problémákat okozhatnak a
+               projektben. Ilyen például a határid&#337;- és költségtúllépések. A modell egy tipikus
+               alkalmazási területe napjainkban a játékfejlesztés iparága, mégpedig azért, mert a
+               mai vezet&#337; számítógépes játékok nagyon komplex, sok embert igényl&#337;
+               szoftverfejlesztési folyamat, ahol gyakran kell határid&#337;csúszásokkal is
+               számolni.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02s03.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch02.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch02s05.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">2.3. 
+            
+            Komponens alapú fejlesztés&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;2.5. 
+            
+            A V-modell</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:43 GMT -->
+</html>

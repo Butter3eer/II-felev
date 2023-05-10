@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=ú, initial-scale=1.0">
+    <title>alapok-4-feladat-3</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="alapok-4-feladat-3.js"></script>
+</head>
+<body>
+    <form name="kerdoiv" method="GET">
+        <p>Harry Potter adatlap</p>
+        <div>
+            <label for="felNev">Varázsló neved:</label>
+            <input type="text" id="felNev" name="felNev" placeholder="Felhasználónév">
+        </div>
+        <div>
+            <label for="email">E-mail cím:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="phone">Telefonszám:</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+        <div>
+            <label for="age">Életkor:</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div>
+            <p>Kedvenc házad:</p>
+            <input type="radio" name="hazak" id="haz1" value="Griffendél">
+            <label for="haz1">Griffendél</label><br>
+            <input type="radio" name="hazak" id="haz2" value="Hugrabug">
+            <label for="haz2">Hugrabug</label><br>
+            <input type="radio" name="hazak" id="haz3" value="Hollóhát">
+            <label for="haz3">Hollóhát</label><br>
+            <input type="radio" name="hazak" id="haz4" value="Mardekár">
+            <label for="haz4">Mardekár</label><br>
+        </div>
+        <div>
+            <p>Kedvenc karaktered a főszereplő 3-asból:</p>
+            <input type="radio" name="szereplok" id="harry" value="Harry">
+            <label for="harry">Harry</label><br>
+            <input type="radio" name="szereplok" id="hermione" value="Hermione">
+            <label for="hermione">Hermione</label><br>
+            <input type="radio" name="szereplok" id="ron" value="Ron">
+            <label for="ron">Ron</label><br>
+        </div>
+      
+        <button type="button" id="regGomb">Regisztráció</button>
+    </form>
+</body>
+</html>

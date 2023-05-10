@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat06</title>
+</head>
+<body>
+    <!-- 6. feladat -->
+    <p>Min 30 karakter + egy szó</p>
+    <p><input type="text" id="input6"></p>
+    <p><input type="text" id="input6b"></p>
+    <p><button type="button" id="feladat6" onclick="F6();">6. Feladat</button></p>
+    <br>
+
+    <script>
+        function F6(){
+            const betuk = document.getElementById("input6").value;
+            const szo = document.getElementById("input6b").value;
+
+            if (betuk.includes(szo)){
+                window.alert("Szerepel az adott szó a keresett szövegben!")
+            }else{
+                window.alert("Nem szerepel az adott szó a keresett szövegben!")
+            }
+        }
+    </script>
+</body>
+</html>

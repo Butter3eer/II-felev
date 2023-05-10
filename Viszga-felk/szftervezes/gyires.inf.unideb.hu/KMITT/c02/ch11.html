@@ -1,0 +1,215 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch11.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:01 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>11. fejezet - Az analízis modell</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch10s04.html" title="10.4. Aktivitás diagram"><link rel="next" href="ch11s02.html" title="11.2. Az analízis modell dinamikus nézete"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">11. fejezet - Az analízis modell</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10s04.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch11s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="11. fejezet - Az analízis modell"><div class="titlepage"><div><div><h2 class="title"><a name="d0e4372"></a>11. fejezet - Az analízis modell</h2></div></div></div><p>A fejlesztés els&#337; fázisában összegy&#369;jtöttük a rendszerrel szemben támasztott
+         funkcionális és nem funkcionális követelményeket. A funkcionális követelmények
+         rendszerezésére használhatjuk a használati eset modellt. A használati eset modell a
+         rendszer felhasználói (funkcionális) nézetének is tekinthet&#337;.</p><p>Egy számítógépes rendszer elkészítése során a következ&#337; lépés a feltárt követelmények
+         elemzése alapján az analízis modell elkészítése, amely a rendszer statikus és dinamikus
+         nézetét is rögzíti. Az analízis fázisban csak a szakterületi követelményekkel foglalkozunk,
+         és a célterület fogalmaival dolgozunk. Nem foglalkozunk az egyes elemek megvalósítási
+         módjával: Ez majd a következ&#337; munkafázis, a tervezés feladata lesz.</p><p>A továbbiak könnyebb megértése kedvéért újra felidézzük a használati eset modell
+         példáját, egy kisbolti rendszer leírását. Ez az (egyszer&#369;sített) szakterületi modell segít
+         abban, hogy az analízis modell megalkotásához szükséges lépéseket szemléltessük. </p><p>A modellezend&#337; rendszer (pénztári rendszer) leírása:</p><p>&#8222;A rendszer egy pár alkalmazottat foglalkoztató, néhány pénztárral m&#369;köd&#337; kis
+         önkiszolgáló élelmiszerbolt pénztári rendszere. A vev&#337; egy kosárban összegy&#369;jti a
+         megvásárolni kívánt árukat. A pénztáros az árukat a vonalkódok beolvasásával azonosítja, és
+         így készíti el a blokkot, ami alapján a vev&#337; fizet. A megvásárolt áruk mennyiségével a
+         rendszer csökkenti a raktárkészletet. Bizonyos áruk csak betétdíjas göngyöleggel együtt
+         adhatók el, és a göngyöleg készletét is nyilván kell tartani. (Például a sör&#8230;).</p><p>A boltvezet&#337; bármikor helyettesíthet egy pénztárost, ha annak valami miatt félbe kell
+         szakítania a munkáját. A boltvezet&#337;nek joga van egy törzsvásárló esetén hitelbe is odaadni
+         az árut, ezt a pénztáros nem teheti meg.</p><p>Ha egy áru vonalkódja sérült, ezért nem olvasható be, a pénztáros az árut a megnevezése
+         alapján keresi vissza az adatbázisból.&#8221;</p><p></p><div class="sect1" title="11.1. Elemzési osztálydiagram készítése"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e4390"></a>11.1. 
+            
+            <a name="__RefHeading__119_120998265"></a>Elemzési osztálydiagram készítése</h2></div></div></div><p></p><p>A rendszer modelljének el&#337;ször elkészítend&#337; nézete a statikus (strukturális) nézet. A
+            rendszer statikus nézete a rendszert alkotó elemek és azok kapcsolatainak felderítése
+            során alakítható ki.</p><p>A statikus modell elkészítése szükséges ahhoz, hogy egy következ&#337; lépésben a rendszer
+            dinamikus néz&#337;pontú modelljét megalkossuk. A statikus modellben szerepl&#337; elemek
+            együttm&#369;ködése határozza meg a rendszer dinamikus viselkedését. A dinamikus modell
+            el&#337;állítása során a statikus nézet is változik, kiegészül.</p><p>A statikus modell elkészítésének ismertetése során er&#337;sen támaszkodunk az OMT
+            módszertan ajánlásaira. </p><p>A statikus nézet rögzítésére alkalmas UML eszközök:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>osztály diagram</p></li><li class="listitem"><p>alrendszer / csomag diagram</p></li><li class="listitem"><p>összetett struktúra diagram</p></li></ol></div><p>A modell kezdeti statikus nézetét az analízis fázisban készítjük el. Megjelenési
+            formája egy vagy több elemzési osztálydiagram. Az összetartozó osztályokat
+            alrendszerekbe, csomagokba rendezhetjük.</p><p>Az OMT módszertan az analízis fázis els&#337; lépéseként az általa &#8222;objektum modell&#8221;-nek
+            nevezett statikus modell elkészítését írja el&#337;. Kiindulásként feltételezi, hogy
+            rendelkezésre áll az elkészítend&#337; rendszer leírása. Alapja a funkcionális követelmények
+            leírásának nyelvtani szempontú elemzése.</p><p>Az OMT kidolgozása idején még nem voltak ismertek azok az eszközök, amelyeket ma a
+            szakterületi modell dokumentálására használunk, ezért a módszertan a rendszer általános,
+            szöveges leírását tekintette az analízis kiindulópontjának. A jelenleg szokásos
+            fejlesztési munkafolyamat is a követelmények összegy&#369;jtésével és a használati eset
+            modell elkészítésével kezd&#337;dik. A funkciólista és a használati esetek dokumentációi
+            alkalmasak az OMT által ajánlott, nyelvtani alapú elemzések elvégzésére.</p><div class="sect2" title="11.1.1. Osztályok azonosítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4420"></a>11.1.1. Osztályok azonosítása</h3></div></div></div><p>Az analízis modell els&#337; lépése az osztályok azonosítása. A rendszer leírásában
+               általában f&#337;nevek utalnak lehetséges osztályokra, abból a feltételezésb&#337;l kiindulva,
+               hogy a f&#337;nevek a rendszer részét képez&#337; fogalmak, tárgyak, események, szerepek,
+               személyek, helyek, egyéb strukturális elemek megnevezései. Természetesen nem minden
+               f&#337;név jelent osztályként modellezend&#337; absztrakciót, csak amely elég hangsúlyos
+               szerepet játszik, és nem egyszer&#369;en adat, hanem viselkedéssel is felruházható.</p></div><div class="sect2" title="11.1.2. Megfelel&#337; osztályok kiválasztása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4425"></a>11.1.2. Megfelel&#337; osztályok kiválasztása</h3></div></div></div><p>Az OMT ajánlásaiban minden elemi lépést az adott lépés eredményeinek az
+               ellen&#337;rzése követ. Az el&#337;z&#337; pontban leírtak végrehajtásával lehetséges osztályok
+               listáját állítottuk el&#337;. A lista minden egyes elemét újra megvizsgálva, jelentését
+               ismételten végiggondolva finomíthatjuk a listát. Az els&#337;dleges nyelvtani elemzés
+               során feltárt osztályok közül törölnünk kell a nem megfelel&#337;ket.</p><p>Törlend&#337;k:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Redundáns osztályok</p></li></ol></div><p>A természetes nyelv gyakran használ szinonímákat, így el&#337;fordulhat, hogy az
+               osztály listán ugyanaz az elem több néven is szerepel. Ezek közül a legkifejez&#337;bbet
+               kell meghagyni, a többit törölni.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Felesleges osztályok</p></li></ol></div><p>A feladat leírásában gyakran olyan fogalmak is szerepelnek, amelyek az egyes
+               funkciók leírását magyarázzák, de nem tartoznak a modellezend&#337; rendszerhez.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Pontatlan osztályok</p></li></ol></div><p>A természetes nyelv nem mindig fogalmaz pontosan. Ha például egy osztály-jelöltnek
+               nem tudunk kifejez&#337; megnevezést adni, még nem értettük meg az adott modell elem
+               pontos jelentését. Az ilyen pontatlan osztályokat elemezve azok vagy valamelyik
+               elhagyható kategóriába sorolandók át, vagy pontosítani kell a jelentésüket.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Példányok</p></li></ol></div><p>Gyakran el&#337;fordulhatnak a szövegben olyan f&#337;nevek, amelyek csak valamelyik osztály
+               példányát / példányait jelentik.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Attribútumok</p></li></ol></div><p>A rendszer adatszer&#369; elemei, amelyek nem igénylik, hogy osztályként modellezzük
+               azokat. Ha a rendszer lényegi elemeit képezik, majd valamelyik osztály részeként
+               kerülnek be a modellbe.</p><p>Lehetnek olyan adatok, amelyek kezelése, a rajtuk végzend&#337; m&#369;veletek nem
+               triviálisak, ezért gondolhatunk az osztályként való modellezésére. (Tipikusan ilyen
+               például a dátum, ami gyakori attribútum, és a dátum m&#369;veletek nem egyszer&#369;en
+               implementálhatók.) Elemzési osztályként azonban nem érdemes felvenni a listára, ha
+               csak valamilyen strukturális elem attribútumaként szerepel. Például egy számlán több
+               dátumot is meg kell adni (kiállítás, teljesítés, esedékesség dátuma). A számla lehet
+               osztály, a dátumok csak adatok. Az implementációs szint&#369; modellben az ilyen adatok
+               kezelésére szolgáló, adattípust jelent&#337; osztályok majd újra megjelenhetnek, de az
+               elemzési modellt nem érdemes bonyolítani ezekkel az osztályokkal.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>M&#369;veletek</p></li></ol></div><p>A f&#337;nevek jelenthetnek m&#369;veleteket is. A m&#369;veletek operációként, vagy objektumok
+               együttm&#369;ködéseként majd a dinamikus modellbe kerülnek be.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Szerepkörök</p></li></ol></div><p>Az osztályok kapcsolatainak jellemz&#337;jeként kerülhetnek majd be a modellbe.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Implementációs elemek</p></li></ol></div><p>Az analízis modellben csak a szakterületi követelményeket vizsgáljuk, azok
+               megvalósítási módjait nem. Az implementációs elemeket jelent&#337; osztályok csak
+               bonyolítják a modellt, de nem teszik érthet&#337;bbé, pontosabbá, ezért
+               elhagyandók.</p><p></p></div><div class="sect2" title="11.1.3. Osztályok leírása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4483"></a>11.1.3. Osztályok leírása</h3></div></div></div><p>Valójában már az el&#337;z&#337; pontban
+               leírt ellen&#337;rz&#337; tevékenységgel párhuzamosan, azt kiegészítve el kell készíteni minden
+               osztályhoz egy rövid, néhány bekezdésnyi definíciót. A rövid leírások elkészítése a
+               kés&#337;bbiekben felhasználandó információkat rögzít, egyben segíti az egyes osztályok
+               jelentésének jobb megértését is. A definíciók megfogalmazása közben is felfedezhetünk
+               még pontatlan vagy felesleges osztályokat.</p></div><div class="sect2" title="11.1.4. Példa: kezdeti osztálydiagram"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4488"></a>11.1.4. Példa: kezdeti osztálydiagram</h3></div></div></div><p>A fenti lépések végrehajtása egy nevekkel azonosított osztályhalmazt eredményez,
+               amelyeket a definíciójuk egészít ki. A fejezet elején leírt példarendszer esetén a
+               kezdeti osztálylista lehet az alábbi:</p><p>rendszer, alkalmazott, pénztár, pénztáros, élelmiszerbolt, vev&#337;, kosár, áru,
+               vonalkód, blokk, raktárkészlet, göngyöleg, sör, boltvezet&#337;, hitel, megnevezés (árué),
+               adatbázis</p><p>A fentiek közül a rendszer, alkalmazott, pénztár, élelmiszerbolt, vev&#337;, kosár
+               f&#337;nevek a rendszeren kívüli, csak a leírás érthet&#337;ségét szolgáló fogalmak.</p><p>A vonalkód, raktárkészlet, megnevezés f&#337;nevek csak attribútumok.</p><p>A sör csak az áru egy lehetséges példánya.</p><p>A hitel egy m&#369;velet, így az sem osztály.</p><p>Az adatbázis implementációs elem.</p><p>A pénztáros, áru, blokk, göngyöleg, boltvezet&#337; f&#337;nevek a rendszer részét képez&#337;,
+               fontos absztrakcióknak t&#369;nnek, tehát potenciális osztályok.</p><p>Bár a leírásban nem szerepel, de a használati eset modell elkészítése során
+               felfedeztük, hogy a rendszernek része még egy &#8222;Adómemória&#8221; is. Ez is szerepl&#337;je a
+               rendszernek, és osztályként modellezhet&#337;.</p><p>Érdekes még külön elgondolkodni a használati eset modellben aktorként, tehát a
+               rendszeren kívüli szerepl&#337;kként megjelölt pénztáros, boltvezet&#337;, adómemória elemeken,
+               hiszen a statikus modellben csak a rendszer részeit képez&#337; elemeket kell számba
+               venni. Az aktorok csak akkor jelennek meg a modellben, ha attribútumaik és m&#369;veleteik
+               annak részét képezik. A példa rendszer leírása alapján a pénztáros valóban csak
+               felhasználóként szerepel, mert nincs a rendszerben nyilvántartásba veend&#337; adata, így
+               kimarad a kezdeti osztálydiagramból. A boltvezet&#337; és az adómemória azonban konkrét
+               operációkkal szerepel a rendszerben (hitel adás, illetve bevétel és ÁFA gy&#369;jtése),
+               ezért elemzési osztályként célszer&#369; a modellezésük.</p><p>A fentiek alapján a kezdeti osztálydiagram:</p><p></p><div class="figure"><a name="d0e4514"></a><p class="title"><b>11.1. ábra -  Kezdeti osztálydiagram</b></p><div class="figure-contents"><div align="center"><img src="images/image77.jpg" align="middle" alt="Kezdeti osztálydiagram"></div></div></div><br class="figure-break"></div><div class="sect2" title="11.1.5. Asszociációk azonosítása."><div class="titlepage"><div><div><h3 class="title"><a name="d0e4518"></a>11.1.5. Asszociációk azonosítása.</h3></div></div></div><p>A következ&#337;
+               feladat az eddig feltárt osztályok közötti kapcsolatok azonosítása. A feladat
+               leírásában igék vagy igei kifejezések utalhatnak rá. Például:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>fizikai elhelyezkedés (része, alkotja ...)</p></li><li class="listitem"><p>tárgyas igékkel kapcsolatos cselekvések (átveszi, alkalmazza, kezeli
+                     ...)</p></li><li class="listitem"><p>kommunikáció (üzeni, továbbadja, közli ...)</p></li><li class="listitem"><p>birtoklás (van neki, hozzá tartozik ...)</p></li><li class="listitem"><p>el&#337;írt feltételeknek való megfelelés (tag, alkalmazásban áll ...)</p></li></ol></div><p>Ebben a fázisban elegend&#337; egyszer&#369; vonallal összekötni a kapcsolatban álló
+               osztályokat.</p><p>A kisboltos példa leírásában az alábbi kapcsolatokat fedezhetjük fel:</p><p></p><div class="figure"><a name="d0e4544"></a><p class="title"><b>11.2. ábra -  Osztályok kapcsolatokkal</b></p><div class="figure-contents"><div align="center"><img src="images/image78.jpg" align="middle" alt="Osztályok kapcsolatokkal"></div></div></div><br class="figure-break"><p></p><p></p></div><div class="sect2" title="11.1.6. Megfelel&#337; asszociációk kiválasztása."><div class="titlepage"><div><div><h3 class="title"><a name="d0e4550"></a>11.1.6. Megfelel&#337; asszociációk kiválasztása.</h3></div></div></div><p>Következ&#337; lépésként a kapcsolatok ellen&#337;rzése következik. Az ellen&#337;rzés során az
+               alábbiakra célszer&#369; figyelni:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Lényegtelen asszociációk</p></li></ol></div><p>Bár létez&#337;, de a rendszer m&#369;ködése szempontjából irreleváns kapcsolatok</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Implementációs asszociációk</p></li></ol></div><p>A modell egyszer&#369;sítése érdekében elhagyandók.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Származtatott asszociációk</p></li></ol></div><p>Ha az A osztály kapcsolatban van B-vel, az pedig C-vel, akkor értelemszer&#369;en A és
+               C is kapcsoltban vannak. Ha A és C más ok miatt nincsenek kapcsolatban egymással, az
+               ilyen származtatott asszociációk feltüntetése csak bonyolultabbá és zavarosabbá teszi
+               a modellt, tehát a kapcsolatuk törlend&#337;.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Hiányzó asszociációk</p></li></ol></div><p>A kapcsolatok ismételt áttekintése során még hiányzó asszociációkra derülhet
+               fény.</p><p>A kisboltos példa esetén egy hiányzó kapcsolatot tudunk felfedezni az ellen&#337;rzés
+               során. Mivel a bolt napi zárásakor szükséges elszámolásnak része a napi bevétel
+               ellen&#337;rzése, ami az adómemória kiolvasását jelenti, és ez a boltvezet&#337; feladata, a
+               boltvezet&#337; az adómemóriával is kapcsolatban kell álljon.</p></div><div class="sect2" title="11.1.7. Ternáris (illetve többszörös) asszociációk átalakítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4581"></a>11.1.7. Ternáris (illetve többszörös) asszociációk átalakítása</h3></div></div></div><p>A többszörös asszociációk arra utalnak, hogy nem pontosan tisztázott az adott
+               osztályok közötti kapcsolat. A bináris asszociációkká alakítás új osztály
+               bevezetésével lehetséges. A kisboltos példában nincs többszörös asszociáció.</p></div><div class="sect2" title="11.1.8. Asszociációk szemantikájának ellen&#337;rzése"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4586"></a>11.1.8. Asszociációk szemantikájának ellen&#337;rzése</h3></div></div></div><p>Ebben a munkafázisban az egyes kapcsolatokhoz hozzá kell rendelni minden olyan
+               tulajdonságot, amely a feladat leírásából kiolvasható.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Megfelel&#337; elnevezés</p></li></ol></div><p>Minden kapcsolatot el kell látni elnevezéssel. Ha nem tudunk kifejez&#337; megnevezést
+               találni az adott kapcsolathoz, az az asszociáció szerepének átgondolását
+               igényli.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Szerepkör nevek megadása</p></li><li class="listitem"><p>Számosság meghatározása</p></li><li class="listitem"><p>Asszociációk min&#337;sít&#337;jének kiválasztása</p></li></ol></div><p>A kapcsolatok többes oldalán ki kell választani azt a szempontot, ami alapján a
+               számosság csökkenthet&#337;</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Tartalmazás kapcsolatok feltárása</p></li><li class="listitem"><p>Hiányzó asszociációk feltárása</p></li></ol></div><p>Ebben a munkafázisban is felfedezhetünk hiányzó asszociációkat.</p><p>Ha a kapcsolatokat nem tudjuk egyértelm&#369;en azonosítani, az jelentheti azt, hogy az
+               osztályok nem elég pontosak. Ezért a kapcsolatok elemzése és pontosítása az
+               osztályokat módosíthatja, illetve új osztályok bevezetését is eredményezheti.</p><p>A példa rendszer esetén a blokk és az áru kapcsolata t&#369;nik problémásnak. Mivel a
+               blokkon szerepelnek az eladott áru (bizonyos) adatai, tartalmazás jelleg&#369; kapcsolatra
+               gondolhatunk. Az áru azonban nem sz&#369;nik meg létezni attól, hogy a blokkal a vásárló
+               kimegy a boltból, hiszen marad még (általában) bel&#337;le a polcon / raktárban. A
+               problémát az okozza, hogy érezhet&#337;en az &#8222;Áru&#8221; osztály több fogalmat mos össze: van
+               eladott áru, és eladható áru. Ráadásul a fenti gondolatmenetben felt&#369;nt egy újabb
+               elem: a raktár.</p><p>A problémát úgy oldhatjuk meg, hogy felvesszük az &#8222;Árukészlet&#8221; osztályt, az &#8222;Áru&#8221;
+               osztály fogalmát pedig pontosítjuk. Vezessük be az &#8222;Árucikk&#8221; fogalmát. A raktárban
+               található áruk összessége az &#8222;Árukészlet&#8221;, amely &#8222;Árucikk&#8221;-ekb&#337;l áll (ez tartalmazás,
+               s&#337;t kompozíciós kapcsolat), a blokkon megjelen&#337; tételek pedig az adott vev&#337;nek éppen
+               eladott áruk, amiket nevezzünk &#8222;Tétel&#8221;-nek. Az &#8222;Árucikk&#8221; és a &#8222;Tétel&#8221; között
+               természetesen kapcsolat van. Egy &#8222;Tétel&#8221; eladása például csökkenti az &#8222;Árucikk&#8221;
+               készletét.</p><p>A fenti meggondolásokkal is kiegészített osztály diagram tehát az alábbi:</p><p></p><div class="figure"><a name="d0e4627"></a><p class="title"><b>11.3. ábra -  Osztálydiagram pontosított kapcsolatokkal</b></p><div class="figure-contents"><div align="center"><img src="images/image79.jpg" align="middle" alt="Osztálydiagram pontosított kapcsolatokkal"></div></div></div><br class="figure-break"></div><div class="sect2" title="11.1.9. Attribútumok azonosítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4631"></a>11.1.9. Attribútumok azonosítása</h3></div></div></div><p>A következ&#337; feladat a már eddig feltárt osztályok attribútumainak azonosítása.
+               Attribútumokra utalhatnak a leírás elemzése során a melléknevek, birtokos
+               szerkezetek. Attribútumok az osztály objektumainak állapotát meghatározó adatok. Az
+               attribútumok nevének egy osztályon belül egyedinek kell lennie.</p><p>Az elemzési osztálydiagramban az attribútumok az osztály lényeges adatait
+               reprezentálják. Általában a típusát is meg tudjuk mondani, de ez akár hiányozhat
+               is.</p><p></p></div><div class="sect2" title="11.1.10. Megfelel&#337; attribútumok kiválasztása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4639"></a>11.1.10. Megfelel&#337; attribútumok kiválasztása</h3></div></div></div><p>Az attribútumok körének meghatározása után azok ellen&#337;rzése következik.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Származtatott attribútum elhagyása vagy megjelölése</p></li></ol></div><p>Az attribútumuk egymástól független adatok. A más attribútumok értékéb&#337;l
+               kiszámítható értékeket általában elhagyjuk, de ha az osztály megértése szempontjából
+               fontos, megtarthatjuk, de ilyenkor a neve el&#337;tt a / (per) jellel megjelöljük. A
+               tervezési szint&#369; modellben a származtatott adatokat azok kiszámítására alkalmas
+               operációkkal helyettesítjük.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Ha egy adat önálló létezéssel rendelkezik, az objektum</p></li></ol></div><p>Az ilyen attribútumot kiemeljük az osztályból, és külön osztályként modellezzük
+               (amely természetesen kapcsolatban lesz az eredeti osztállyal). </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Az objektum azonosító implementációs elem</p></li></ol></div><p>Minden objektum önmagában egyedi, tehát egy olyan attribútum, ami csak azért kell,
+               hogy a többit&#337;l megkülönböztesse, felesleges. Nem tévesztend&#337; ez az eset össze azzal,
+               amikor valamely adat a külvilág számára teszi azonosíthatóvá az objektumot (például
+               az autó rendszáma). Az ilyen attribútum szerepelhet min&#337;sít&#337;ként is, lásd a következ&#337;
+               pontot</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A min&#337;sít&#337;, ha az értéke azonosítás jelleg&#369;, elhagyható és asszociációhoz
+                     rendelhet&#337;</p></li></ol></div><p>Ha az attribútum szerepe az, hogy az asszociáció többes oldalán a számosságot
+               csökkentse, akkor azt modellezhetjük a kapcsolat min&#337;sít&#337;jeként. (például a bolti
+               példában a vonalkód lehet ilyen adat.)</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Az attribútum osztályhoz vagy asszociációhoz kapcsolódik?</p></li></ol></div><p>Találhatunk olyan attribútumokat, amelyek egy kapcsolat két végén szerepl&#337;
+               osztályok bármelyikéhez kapcsolhatók, de egyikhez sem illenek igazán. Ilyenkor
+               célszer&#369; megvizsgálni, hogy nem magához a kapcsolathoz tartoznak-e. Ha igen, akkor a
+               kapcsolathoz csatolt új osztályt kell létrehozni, és a kérdéses attribútumot ebbe az
+               asszociációs osztályba telepíteni. Erre látunk példát az osztály diagram ismertetése
+               során a Cég &#8211; Személy osztályok kapcsolatánál.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Implementációs részleteket jelent&#337; attribútum (bels&#337; érték)
+                     elhagyandó</p></li><li class="listitem"><p>Az attribútumok kohéziójának vizsgálata </p></li></ol></div><p>Mivel egy osztály valamennyi attribútuma az osztály által modellezett fogalom
+               tulajdonsága, közöttük valamilyen logikai kapcsolatnak kell lennie. Ha azt
+               tapasztaljuk, hogy egy vagy több attribútum a többihez csak lazán kapcsolódik, az
+               annak a jele lehet, hogy az adott osztály több fogalmat próbál egyszerre modellezni.
+               Ilyenkor célszer&#369; az osztályt több osztályra bontani, ezzel is pontosítva a
+               modellt.</p><p></p><p>Az attribútumok vizsgálata, az egyes adatok megfelel&#337; osztályhoz rendelése tehát a
+               fentiek szerint b&#337;víti az osztályok és kapcsolataik specifikációját, de az elemzés
+               során az osztálydiagram is változhat, új osztályokkal és új kapcsolatokkal b&#337;vülhet,
+               esetleg pontatlannak bizonyult osztályok elt&#369;nnek.</p><p>A kisboltos példa osztálydiagramja kiegészítve az attribútumokkal (ez is csak
+               példa, nem teljes, egy valódi fejlesztés során még további attribútumokkal kellene
+               pontosítani):</p><p></p><div class="figure"><a name="d0e4689"></a><p class="title"><b>11.4. ábra -  Osztálydiagram attribútumokkal</b></p><div class="figure-contents"><div align="center"><img src="images/image80.jpg" align="middle" alt="Osztálydiagram attribútumokkal"></div></div></div><br class="figure-break"><p>A fenti ábra elkészítése az alábbi meggondolásokat tükrözi:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Az Árucikk adatai közül a vonalkód az Árukészlet osztállyal való
+                     kapcsolatában min&#337;sít&#337;ként szerepel, mert ez alapján lehet egy ilyen típusú
+                     objektumot kiválasztani.</p></li><li class="listitem"><p>Az adómemóriába naponta le kell menteni a napi bevételt és annak az ÁFA
+                     tartalmát (a valós szabályok ett&#337;l valamivel bonyolultabbak, de most a példa
+                     kedvéért egyszer&#369;sítünk). Ezek az adatok összetett szerkezet&#369;ek, és m&#369;veletek
+                     is értelmezhet&#337;k rajtuk, ezért célszer&#369;en egy új osztályként jelennek meg a
+                     diagramon.</p></li><li class="listitem"><p>A boltvezet&#337; osztálynak nincs feltüntetve attribútuma. Ez szándékos: a
+                     boltvezet&#337; egy egyedi objektum a rendszerben, és semmilyen adata nem szükséges
+                     a rendszer m&#369;ködéséhez. Külön azonosítóra sincs szüksége, mert az objektum
+                     egyedisége automatikusan azonosítja.</p></li><li class="listitem"><p>Gondolhatunk rá, hogy a Blokknak természetesen van végösszege, de ez
+                     származtatott (számított) adat, tehát nem kell feltüntetni
+                     attribútumként.</p></li></ol></div><p>További változást figyelhetünk meg a Göngyöleg osztály diagramon belüli
+               helyzetében. Ez egy példa arra, hogy a modell pontosítása során korábbi döntéseinket
+               is felül kell bírálni adott esetben. Az osztálydiagram módosítására a következ&#337;
+               gondolatmenet vezethetett:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A Göngyöleg osztály szerepét eddig nem jól értelmeztük, amit az
+                     attribútumainak elemzése során fedezhetünk fel: ennek is van készlete, amit egy
+                     göngyöleges árucikk eladása csökkent, az üvegvisszavétel pedig növel.</p></li><li class="listitem"><p>Eszerint a Göngyöleg az Árukészletnek ugyanolyan része, mint az Árucikk, és
+                     ezt a kapcsolatot is fel kell tüntetni.</p></li><li class="listitem"><p>Az osztály pontosabb jelentésének átgondolása során még arra is rá kell
+                     jönnünk, hogy az így &#8222;önállósított&#8221; Göngyöleg fogalom és az árucikk
+                     kapcsolatának multiplicitása sem volt helyes, mert több árucikkhez tartozhat
+                     ugyanaz a göngyöleg típus (gondoljunk az ugyanolyan üvegbe palackozott
+                     különböz&#337; sörmárkákra &#8230;).</p></li><li class="listitem"><p>Az elemzés során egy új funkció is felmerült: az üvegvisszaváltás. Ennek
+                     következtében a funkcionális modellt is b&#337;víteni kell. Ez a kis példa tehát
+                     arra is rámutat, hogy egy adott fejlesztési fázis során megalkotott modellt
+                     gyakran a kés&#337;bbi fázisokban megszerzett új ismeretek felhasználásával
+                     módosítanunk kell.</p></li></ol></div><p>A diagram kiegészítése mellett természetesen az osztályok leírását b&#337;vítjük az
+               attribútumok definíciójával, és az osztályok leírását is módosítjuk szükség szerint
+               (lásd Göngyöleg), tehát az osztályok dokumentációja is pontosabbá válik.</p></div><div class="sect2" title="11.1.11. Általánosítás"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4725"></a>11.1.11. Általánosítás</h3></div></div></div><p>Az általánosítás kapcsolat megjelenhet a szövegben például azonos tárgyakhoz
+               tartozó jelz&#337;s kapcsolatok formájában.</p><p>Az attribútumok vizsgálata során felt&#369;nhet, ha több osztályban fordulnak el&#337;
+               azonos attribútumok. Ezeknek az adatoknak a kiemelése egy bázisosztályba, és a
+               különbségek leszármazott osztályokba telepítése egyszer&#369;sítheti a modellt.</p><p>A bázisosztály keresése során ügyelni kell arra, hogy az azonos elnevezés még nem
+               feltétlenül jelent azonos adatokat. Az azonosság megállapításához az attribútum
+               pontos jelentését kell elemezni.</p><p>A kisbolti rendszerben az Árucikk és a Göngyöleg osztályok esetén fedezhetünk fel
+               azonos attribútumokat (megnevezés, ár, készlet). Ha ezeket egy közös &#8222;Cikk&#8221; osztályba
+               delegáljuk, ezzel az &#8222;Árukészlet&#8221; osztályt is egyszer&#369;síthetjük. Ezekkel a
+               változtatásokkal az osztálydiagram:</p><p></p><div class="figure"><a name="d0e4737"></a><p class="title"><b>11.5. ábra -  Osztálydiagram általánosítással</b></p><div class="figure-contents"><div align="center"><img src="images/image81.jpg" align="middle" alt="Osztálydiagram általánosítással"></div></div></div><br class="figure-break"><p></p></div><div class="sect2" title="11.1.12. Elérési utak tesztelése"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4742"></a>11.1.12. Elérési utak tesztelése</h3></div></div></div><p>Az attribútumokkal kiegészített osztálydiagram ellen&#337;rzéséhez az alábbi
+               szempontokat célszer&#369; figyelembe venni:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>a m&#369;ködéshez szükséges asszociációk rendelkezésre állnak-e,</p></li><li class="listitem"><p>a m&#369;ködéshez szükséges attribútumok rendelkezésre állnak-e,</p></li><li class="listitem"><p>többszörös multiplicitás esetén a kiválasztáshoz van-e min&#337;sít&#337; vagy
+                     név.</p></li></ol></div><p>Az ellen&#337;rzés eredményeként megállapíthatjuk, hogy a fenti a fenti diagramot az
+               alábbiakkal kellene kiegészíteni:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A BetétdíjasGöngyöleg és a Raktár osztály közötti többes kapcsolathoz nincs
+                     min&#337;sít&#337;, tehát be kell vezetni erre a célra egy kódot a gyöngyölegek
+                     azonosítására. Ugyanezt a min&#337;sít&#337;t kellene használni a Cikk-el való
+                     kapcsolatában is.</p></li><li class="listitem"><p>A Cikk és a Tétel közötti kapcsolat többes végére bevezethetnénk egy
+                     &#8222;tételsorszám&#8221; min&#337;sít&#337;t, de a jelenlegi ismereteink szerint ennek nincs
+                     funkciója, tehát elhagyhatjuk.</p></li><li class="listitem"><p>Az ábrán szerepel, hogy az adómemóriába gy&#369;jteni kell az eladások ÁFÁ-ját.
+                     Nincs viszont olyan adat, amib&#337;l ezt kiszámolhatnánk. Ezért tisztázni kell,
+                     hogy a Cikk osztályban szerepl&#337; eladási ár a bruttó ár, és az Áru &nbsp;osztályt ki
+                     kell egészíteni az &#8222;ÁFA kategória&#8221; attribútummal.</p></li></ol></div><p>A fenti változtatások diagramon történ&#337; átvezetését gyakorlásképpen az olvasóra
+               bízzuk.</p></div><div class="sect2" title="11.1.13. Modulok meghatározása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4771"></a>11.1.13. Modulok meghatározása</h3></div></div></div><p>A követelmények elemzése során már elkészíthettük a használati eset leltárt, amely
+               a rendszer funkcionális tagolását adja meg.</p><p>Az elemzési osztálydiagram elkészülte ismét lehet&#337;séget ad arra, hogy
+               alrendszerekre bontsuk a feladatot, megvizsgálva az architekturális részek
+               kapcsolatait. Azokat az osztályokat sorolhatjuk egy modulba, amelyek között szoros
+               kapcsolatok vannak. A modulok kialakítása során arra kell törekedni, hogy a
+               minimalizáljuk a közöttük lev&#337;, a modul határokon átnyúló kapcsolatokat.</p><p>A modulok ábrázolására a használati eset leltárnál már említett csomag diagramot
+               használhatjuk.</p><p></p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10s04.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch11s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">10.4. 
+            
+            Aktivitás diagram&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;11.2. 
+            
+            Az analízis modell dinamikus nézete</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch11.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:01 GMT -->
+</html>

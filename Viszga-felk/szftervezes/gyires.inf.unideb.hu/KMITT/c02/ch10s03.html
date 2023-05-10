@@ -1,0 +1,81 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch10s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:58 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>10.3. Állapotgép diagram</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch10.html" title="10. fejezet - Viselkedés diagramok"><link rel="prev" href="ch10s02.html" title="10.2. Kommunikációs diagram"><link rel="next" href="ch10s04.html" title="10.4. Aktivitás diagram"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">10.3. 
+            
+            Állapotgép diagram</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10s02.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">10. fejezet - Viselkedés diagramok</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch10s04.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="10.3. Állapotgép diagram"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e4104"></a>10.3. 
+            
+            <a name="__RefHeading__113_120998265"></a>Állapotgép diagram</h2></div></div></div><p>Ez a diagramfajta nem az UML találmánya, eredetileg David Harell dolgozta ki, amelyet
+            az UML beillesztett a saját rendszerébe, az ehhez szükséges módosításokkal és
+            kiegészítésekkel.</p><p>Az állapotgép diagram egy osztály objektumainak az életciklusuk alatt felvehet&#337;
+            lehetséges állapotait és az állapotok közötti lehetséges átmeneteket ábrázolja.</p><div class="sect2" title="10.3.1. Az állapot fogalma"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4113"></a>10.3.1. Az állapot fogalma</h3></div></div></div><p>Az objektum orientált szemlélet szerint egy objektum állapotát az attribútumainak
+               a pillanatnyi értékhalmaza határozza meg (konkrét állapot). A modellezés során egy
+               bizonyos szempontból a konkrét állapotok meghatározott halmazai egyenérték&#369;nek
+               tekinthet&#337;k, egy állapot jelleget határoznak meg. Ezt absztrakt állapotnak nevezzük.
+               Például egy hallgatónak abból a szempontból, hogy teljesítette-e a Szoftver
+               technológia tárgyat, két absztrakt állapota lehet:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>teljesítette: aláírása és legalább elégséges vizsgajegye van (ez négy
+                     lehetséges konkrét állapotot fog össze),</p></li><li class="listitem"><p>nem teljesítette: nincs aláírása, vagy van aláírása, de nincs vizsgajegye,
+                     vagy elégtelen vizsgajegye van (ami három lehetséges konkrét állapot).</p></li></ol></div><p>Ez a két absztrakt állapot elegend&#337; ahhoz, hogy eldönthessük, egy ráépül&#337; tárgyat
+               felvehet-e. (Bár természetesen más szempontból nem lényegtelen, hogy a vizsgajegye
+               elégséges vagy jeles.)</p><p>Az állapotgép diagram esetén általában absztrakt állapotokkal foglalkozunk.</p></div><div class="sect2" title="10.3.2. Az állapot átmenet és jelölése"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4129"></a>10.3.2. Az állapot átmenet és jelölése</h3></div></div></div><p>Az állapotok közötti átmenetet valamilyen esemény bekövetkezése okozza. Az
+               átmenetek atomi egységek, nem szakíthatók félbe, azaz id&#337;ponthoz kötöttek. Az
+               átmenetet nyitott hegy&#369; nyíllal jelezzük. Az állapotok adatai lehetnek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>kiváltó ok (trigger) az esemény megnevezése</p></li><li class="listitem"><p>feltétel (guard) szögletes zárójelpárral határolt, az átmenet
+                     bekövetkezésének feltételét adja meg,</p></li><li class="listitem"><p>hatás (effekt) az októl / jellel elválasztva adható meg, és az átmenet miatt
+                     végrehajtandó tevékenységet specifikálhatja.</p></li></ol></div><p>A fentiek mindegyike opcionális. Ha nincs megadva kiváltó ok, akkor a kiváltó
+               esemény az el&#337;z&#337; állapot befejez&#337;dése.</p></div><div class="sect2" title="10.3.3. Az állapot jelölése"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4146"></a>10.3.3. Az állapot jelölése</h3></div></div></div><p>Az állapotnak az átmenettel szemben van id&#337;tartama, tehát egy adott állapotba az
+               objektum belép, majd valamennyi id&#337; után abból kilép, tehát az állapot id&#337;tartamhoz
+               kötött. Egy adott absztrakt állapotban tartózkodó objektum ebben az id&#337;szakban több
+               konkrét állapotot is felvehet. (Például a &#8222;tárgyat nem teljesítette&#8221; absztrakt
+               állapotban állapoton belül marad a hallgató az aláírás megtagadva &#8211; aláírás pótolva &#8211;
+               elégtelen vizsgajegy konkrét állapotokat felvéve.)</p><p>Minden állapothoz legalább egy átmenet vezet, és onnan legalább egy átmenet vezet
+               egy másik állapotba. Lehetséges olyan esemény, amelynek hatására ugyanabba az
+               állapotba tér vissza az objektum. (Például az elégtelen ismételt vizsga a &#8222;tárgyat
+               nem teljesítette&#8221; állapotból ugyanabba az állapotba viszi vissza a hallható
+               objektumot.)</p><p>A diagramon két speciális állapot jelenhet meg:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>kezd&#337;állapot: ebbe kerül az objektum, amikor létrejön. Ebbe az állapotba nem
+                     vezethet átmenet. A kezd&#337;állapotot kitöltött körrel jelezzük.</p></li><li class="listitem"><p>végállapot: az objektum megsz&#369;nését jelzi. Ebb&#337;l az állapotból nem indulhat
+                     ki átmenet. Egy körbe rajzolt ponttal jelöljük.</p></li></ol></div><p>Bár a valóságban minden objektumnak van életciklusa (kezd&#337; és végállapota), ez a
+               tény a modellezés szempontjából lehet lényegtelen, tehát a fenti speciális állapotok
+               hiányozhatnak a diagramról.</p><p>Az állapot jelölése egy kerekített sarkú téglalap, amelynek fels&#337; részében az
+               állapot megnevezése található (ez kötelez&#337;) majd a vonal alatt a további elemei,
+               melyek opcionálisak. A jelölés:</p><p></p><div class="figure"><a name="d0e4167"></a><p class="title"><b>10.7. ábra -  Állapot jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image66.jpg" align="middle" alt="Állapot jelölése"></div></div></div><br class="figure-break"><p>Az opcionális elemek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>entry / Annak a tevékenységnek a leírása, ami az állapotba való belépés
+                     esetén elvégzend&#337;. Ez a tevékenység mindig végrehajtódik, attól függetlenül,
+                     hogy milyen átmenet miatt lépett be az objektum az állapotba.</p></li><li class="listitem"><p>do/ Annak a tevékenységnek a leírása, amely az adott állapothoz tartozik. Ha
+                     több ilyen is van, azokat a végrehajtásuk sorrendjében soroljuk fel. Ezt a
+                     tevékenységet egy esemény félbeszakíthatja. Az esemény lehet:</p></li><li class="listitem"><p>esemény / Bels&#337; esemény bekövetkezéséhez kapcsolt tevékenység
+                     leírása.</p></li><li class="listitem"><p>exit / Annak a tevékenységnek a leírása, amelyet bármely átmenet
+                     bekövetkezése esetén még az állapotból való kilépés el&#337;tt végre kell
+                     hajtani.</p></li></ol></div><p>Példaként, ha már a kommunikációs diagrammal kapcsolatban szóba került, rajzoljuk
+               meg egy ATM állapotgép diagramját. (A valóságban ennél biztosan több állapota van, és
+               nem biztos, hogy minden állapot átmenet az ábrának megfelel&#337;, de a diagram
+               jelöléseinek szemléltetésére ez is elegend&#337;.)</p><p></p><div class="figure"><a name="d0e4189"></a><p class="title"><b>10.8. ábra - ATM állapotdiagramja</b></p><div class="figure-contents"><div align="center"><img src="images/image67.jpg" align="middle" alt="ATM állapotdiagramja"></div></div></div><br class="figure-break"><p>Figyeljük meg, hogy ezen az ábrán nincs kezd&#337; és végállapot feltüntetve, azaz az
+               ATM objektumot &#8222;örökélet&#369;ként&#8221; modelleztük. A kezd&#337; állapot a telepítést, a
+               végállapot a leszerelést jelentené ebben az esetben, de ez a m&#369;ködés modellezése
+               szempontjából nem lényeges.</p></div><div class="sect2" title="10.3.4. Strukturált állapotgép diagram"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4195"></a>10.3.4. Strukturált állapotgép diagram</h3></div></div></div><p>Bonyolultabb viselkedés&#369; objektum esetén az állapotok és a köztük lehetséges
+               átmenetek száma olyan nagy lehet, hogy a diagram áttekinthetetlenné válna.</p><p>Az áttekinthet&#337;ség érdekében ilyenkor az összetartozó állapotokat
+               szuperállapotokba foglalhatjuk. A szuperállapotok tartalmazhatnak alállapotokat és
+               azok közötti átmeneteket. A szuperállapotokat külön ábrába is foglalhatjuk.</p><p>A fenti ábrában például ilyen, külön részletezhet&#337; állapot az &#8222;Üzemkész&#8221;, hiszen
+               az ATM viselkedésének pontos leírásához ezt egy külön diagramban kellene
+               definiálni.</p><p>A strukturált diagram bemutatására rajzoljuk át a fenti ábrát úgy, hogy három f&#337;
+               állapotot különböztetünk meg: Kikapcsolt, Üzemel, Hibaállapot. Az Üzemel állapot
+               foglalja magában az összes többi állapotot.</p><p></p><div class="figure"><a name="d0e4207"></a><p class="title"><b>10.9. ábra - Struktúrált állapotgép diagram</b></p><div class="figure-contents"><div align="center"><img src="images/image68.jpg" align="middle" alt="Struktúrált állapotgép diagram"></div></div></div><br class="figure-break"><p></p></div><div class="sect2" title="10.3.5. Konkurencia"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4212"></a>10.3.5. Konkurencia</h3></div></div></div><p>Egy bonyolult viselkedés&#369; objektum esetén el&#337;fordulhat, hogy az állapotait leíró
+               attribútumai önállóan, egymással párhuzamosan változó részhalmazokra bonthatók. Ezt a
+               párhuzamosságot úgy jelölhetjük, hogy az objektumnak egy szuperállapotot feleltetünk
+               meg, amelyet vízszintesen szaggatott vonallal több részre osztunk. Minden részben egy
+               önálló állapotgép diagram rajzolható, amelyek önálló kezdeti és vég állapotokkal is
+               rendelkezhetnek, és amelyek konkurens módon, egymással párhuzamosan m&#369;ködnek. Az
+               ilyen összetett szuperállapotból kivezet&#337; állapot átmenet az összes többi konkurens
+               m&#369;ködést félbeszakítja. Az összetett állapot automatikus átmente akkor következik be,
+               ha valamennyi rész állapotváltozás eléri a vég állapotot.</p><p>Példa: egy tárgy aláírásának megszerzéséhez egy félévközi zárthelyit kell megírni
+               (amely pótolható) és egy féléves feladatot kell beadni Az aláírás feltétele mindkett&#337;
+               sikeres teljesítése. Az ennek megfelel&#337; állapot diagram:</p><p></p><div class="figure"><a name="d0e4220"></a><p class="title"><b>10.10. ábra -  Konkurencia az állapotgép diagramban</b></p><div class="figure-contents"><div align="center"><img src="images/image69.jpg" align="middle" alt="Konkurencia az állapotgép diagramban"></div></div></div><br class="figure-break"><p>A Féléves munka állapotból az Aláírás megszerezve állapotba csak mindkét
+               (konkurens módon végrehajtott) állapot átmenet sorozat végállapotának elérése során
+               lehet eljutni. Bármelyikb&#337;l induló, a határon átlép&#337; átmenet a másik folyamat
+               megszakítását is jelenti, ezzel fejezhetjük ki, hogy a két feltételnek együttesen
+               kell teljesülnie.</p><p></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10s02.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch10.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch10s04.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">10.2. 
+            
+            Kommunikációs diagram&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;10.4. 
+            
+            Aktivitás diagram</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch10s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:59 GMT -->
+</html>

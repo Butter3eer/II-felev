@@ -1,0 +1,35 @@
+-- 16. Mennyit vettek az egyes vevők a különböző pizzákból?
+SELECT vevo.vnev , pizza.pnev, SUM(tetel.db) AS db
+FROM vevo NATURAL JOIN rendeles NATURAL JOIN tetel NATURAL JOIN pizza
+GROUP BY vevo.vazon, pizza.pazon;
+
+-- 17. Ki hány pizzát szállított házhoz az egyes napokon?
+SELECT rendeles.idopont, futar.fnev, SUM(tetel.db) AS db
+FROM futar NATURAL JOIN tetel NATURAL JOIN pizza NATURAL JOIN rendeles
+GROUP BY futar.fnev;
+
+-- 18. Ki hány pizzát rendelt az egyes napokon?
+SELECT rendeles.idopont, vevo.vnev, SUM(tetel.db) AS db
+FROM vevo NATURAL JOIN tetel NATURAL JOIN pizza NATURAL JOIN rendeles
+GROUP BY vevo.vnev;
+
+-- 19. Mennyi volt a bevétel az egyes napokon?
+SELECT rendeles.idopont, SUM(tetel.db * pizza.par) AS bevetel
+FROM rendeles NATURAL JOIN futar NATURAL JOIN pizza NATURAL JOIN tetel NATURAL JOIN vevo
+WHERE tetel.razon = rendeles.razon AND tetel.pazon = pizza.pazon
+GROUP BY rendeles.idopont;
+
+-- 20. Hány pizza fogyott naponta?
+SELECT rendeles.idopont, SUM(tetel.db)
+FROM rendeles NATURAL JOIN tetel
+GROUP BY rendeles.idopont;
+
+-- 34. Kik rendeltek pizzát a nyitás napján? 
+SELECT vevo.vnev 
+FROM vevo JOIN rendeles USING(vazon) 
+WHERE date(rendeles.idopont) * (SELECT MIN(DATE(rendeles.idopont)) FROM rendeles);
+
+-- 35. Mely pizzak olcsóbbak a Capricciosa pizzánál? 
+SELECT pnev 
+FROM pizza 
+WHERE par < (SELECT pizza.par FROM pizza WHERE pnev = "Capricciosa");

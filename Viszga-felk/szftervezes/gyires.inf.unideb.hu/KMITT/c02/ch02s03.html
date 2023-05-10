@@ -1,0 +1,45 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:42 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>2.3. Komponens alapú fejlesztés</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch02.html" title="2. fejezet - A szoftverfejlesztés életciklus modelljei"><link rel="prev" href="ch02s02.html" title="2.2. &nbsp;Evolúciós fejlesztés"><link rel="next" href="ch02s04.html" title="2.4. A folyamatiteráció"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.3. 
+            
+            Komponens alapú fejlesztés</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02s02.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">2. fejezet - A szoftverfejlesztés életciklus modelljei</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch02s04.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="2.3. Komponens alapú fejlesztés"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e382"></a>2.3. 
+            
+            <a name="__RefHeading__23_120998265"></a>Komponens alapú fejlesztés</h2></div></div></div><p>A komponens alapú fejlesztés alapgondolata az, mint ahogy az elnevezés is utal rá,
+            ahogy próbáljuk meg az elkészítend&#337; szoftvert újrafelhasználható komponensekb&#337;l
+            felépíteni. Erre az ad okot, hogy a szoftverfolyamatok többségében megtalálható
+            valamelyest a szoftverek újrafelhasználása. Ilyen esetekben el&#337;keresik a korábbi kódot
+            (komponenst) és újra átdolgozva, esetleg általánosítva beledolgozzák a
+            rendszerbe.</p><div class="figure"><a name="d0e389"></a><p class="title"><b>2.3. ábra - Újrafelhasználás orientált modell</b></p><div class="figure-contents"><div align="center"><img src="images/image3.png" align="middle" alt="Újrafelhasználás orientált modell"></div></div></div><br class="figure-break"><p>Az újrafelhasználás-orientált megközelítési mód nagymértékben az elérhet&#337;
+            újrafelhasználható szoftverkomponensekre, illetve azok egységes szerkezetbe történ&#337;
+            integrációjára támaszkodik. Néha ezek a komponensek saját létjogosultsággal
+            rendelkeznek. Amíg a kezdeti követelményspecifikációs és validációs szakasz
+            összehasonlítható más folyamatokkal, addig a közöttük található szakaszok az
+            újrafelhasználás-orientált fejlesztésekben különböznek. Ezen szakaszok a
+            következ&#337;k:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Komponenselemzés: az adott követelményspecifikációnak megfelel&#337;en megkeressük
+                  azon komponenseket, amelyek megvalósítják azok funkcióit, implementálták azokat. A
+                  legtöbb esetben nincs egzakt illeszkedés, a felhasznált komponens a funkciók csak
+                  egy részét nyújtja.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Követelménymódosítás: a fázisban a megtalált komponensek információit
+                  felhasználva elemezzük a követelményeket. Majd módosítani kell azokat az elérhet&#337;
+                  komponenseknek megfelel&#337;en. Ahol nem lehetséges a követelmény módosítása, ott újra
+                  el kell végezni a komponenselemzést és alternatív megoldást kell keresni.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Rendszertervezés újrafelhasználással: ebben a szakaszban a rendszer
+                  szerkezetének tervezését hajtjuk végre. A tervezés kulcseleme az, hogy milyen
+                  komponenseket akarunk újrafelhasználni, és úgy alakítani a szerkezetet, hogy azok
+                  m&#369;ködhessenek. Amennyiben nincs elérhet&#337; újrafelhasználható komponens, akkor új
+                  szoftverek is kifejleszthet&#337;k.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Fejlesztés és integráció: a nem megvásárolt, illetve átalakításra kerül&#337;
+                  komponenseket ki kell fejleszteni és a rendszerbe integrálni. A
+                  rendszer-integráció ebben a modellben sokkal inkább tekinthet&#337; a fejlesztési
+                  folyamat részének, mint különálló tevékenységnek.</p></li></ol></div><p>&nbsp;A fejlesztés komponens alapokra való helyezése mind el&#337;nyökkel mind hátrányokkal is
+            jár. El&#337;nyként említhet&#337;, hogy csökkenti a kifejlesztend&#337; szoftverek számát a
+            komponensek újrafelhasználásával, ezzel pedig közvetve a költségeket redukálja, illetve
+            felmerül&#337; kockázati tényez&#337;ket. Sok esetben a rendszer így gyorsabban is leszállítható a
+            megrendel&#337;nek. Hátrányként azonban felmerül, hogy a követelményeknél elkerülhetetlenek a
+            kompromisszumok. Mindezek oda vezethetnek, hogy az elkészült rendszer nem felel meg a
+            megrendel&#337; valódi kívánságainak.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02s02.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch02.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch02s04.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">2.2. 
+            
+            &nbsp;Evolúciós fejlesztés&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;2.4. 
+            
+            A folyamatiteráció</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:43 GMT -->
+</html>

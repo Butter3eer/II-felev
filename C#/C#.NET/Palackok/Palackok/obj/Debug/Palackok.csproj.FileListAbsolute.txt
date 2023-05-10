@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Palackok\Palackok\bin\Debug\Palackok.exe.config
+E:\STUDY\Petrik\II-felev\C#\Palackok\Palackok\bin\Debug\Palackok.exe
+E:\STUDY\Petrik\II-felev\C#\Palackok\Palackok\bin\Debug\Palackok.pdb
+E:\STUDY\Petrik\II-felev\C#\Palackok\Palackok\obj\Debug\Palackok.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Palackok\Palackok\obj\Debug\Palackok.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Palackok\Palackok\obj\Debug\Palackok.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Palackok\Palackok\obj\Debug\Palackok.exe
+E:\STUDY\Petrik\II-felev\C#\Palackok\Palackok\obj\Debug\Palackok.pdb

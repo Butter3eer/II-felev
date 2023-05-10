@@ -1,0 +1,177 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch09.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:52 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>9. fejezet - Strukturális diagramok</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch08s06.html" title="8.6. Ellen&#337;rz&#337; kérdések"><link rel="next" href="ch09s02.html" title="9.2. A csomag diagram"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">9. fejezet - Strukturális diagramok</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch08s06.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch09s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="9. fejezet - Strukturális diagramok"><div class="titlepage"><div><div><h2 class="title"><a name="d0e3439"></a>9. fejezet - Strukturális diagramok</h2></div></div></div><p>A követelmények összegy&#369;jtése után a modellezés második fontos lépése a rendszer
+         statikus nézetének megalkotása. Ennek során felderítjük, hogy a rendszer milyen
+         részegységekb&#337;l, architekturális elemekb&#337;l áll. Az UML strukturális diagramjai a statikus
+         nézet dokumentálására adnak eszközöket. Ez a fejezet a legfontosabb, leggyakrabban használt
+         diagram típusokat tartalmazza.</p><div class="sect1" title="9.1. Az osztálydiagram"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e3444"></a>9.1. 
+            
+            <a name="__RefHeading__99_120998265"></a>Az osztálydiagram</h2></div></div></div><p>Az osztálydiagram az UML egyik legtöbbet használt diagram típusa.</p><p>Ebben az alpontban összefoglaljuk az osztálydiagramok elemeire vonatkozó szabályokat,
+            de nem foglalkozunk az egyes elemek felhasználási módjaival. Az ismertetés nem teljes.
+            Az egyszer&#369;sítés kedvéért és a terjedelmi korlátok miatt néhány &#8211; a tapasztalatok
+            szerint ritkábban használt &#8211; elemet nem tárgyalunk. Az osztálydiagramnak a modellezés
+            egyes fázisaiban betöltött szerepét a következ&#337; fejezetekben tárgyaljuk.</p><p>Az osztálydiagram osztályokat és azok kapcsolatait ábrázolja. Az &#8222;osztály&#8221; fogalma az
+            objektum orientált programozásból már ismer&#337;s, ezért fontos hangsúlyozni, hogy az UML
+            osztály fogalma nem teljesen azonos a programozási nyelvekb&#337;l megismerttel, attól
+            általánosabb értelemben használjuk.</p><p>Az UML terminológiájában az osztály a rendszer valamely statikus, strukturális
+            összetev&#337;je. Az analízis modell felállítása során az osztály a problématér (alkalmazási
+            szakterület) fogalmait reprezentálja. Ugyanakkor &#8211; a programozási nyelvekhez
+            szemléletéhez hasonlóan - tekinthet&#337; absztrakt típusként is, amelynek vannak adatokkal
+            leírható tulajdonságai (attribútumai) és viselkedési mintái (operációi). Ez az
+            értelmezése a tervezési és az implementációs modell elkészítése során válik
+            hangsúlyosabbá.</p><p>Az UML osztály által modellezett rendszer elemek kiterjedése is eltér&#337; a programozási
+            nyelvek osztályaitól: a modell részletezettségének szintjét&#337;l függ&#337;en akár egy egész
+            alrendszer is lehet, mert határait nem (feltétlenül) implementációs szempontok
+            határozzák meg.</p><p>AZ UML osztályait különböz&#337; absztrakciós szinteken is megfogalmazhatjuk. Az egyes
+            fejlesztési fázisok különböz&#337; megközelítést tesznek szükségessé, ennek megfelel&#337;en
+            különböztethetjük meg az alábbi absztrakciós szinteket.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Analízis, elemzés. Ezen a szinten az osztályok az alkalmazási szakterület
+                  fogalmait reprezentálják. Az els&#337;dleges feladat, hogy ezeket a fogalmakat és
+                  kapcsolataikat értsük meg, ezért számos részlet még hiányozhat. Egy elemzési
+                  osztálydiagram elemei közvetlenül még nem lennének implementálhatók.</p></li><li class="listitem"><p>Tervezés. Mivel a fázis célja az analízis során megismert struktúra technikai
+                  megvalósíthatóságának a biztosítása, az elemzési osztályok a tervezés során
+                  feltárt további információkkal és implementációs részletekkel b&#337;vülnek. Ezek
+                  mellett a modellben megjelennek olyan osztályok is, amelyek nem a szakterület
+                  fogalmait modellezik, hanem technikai elemei a megoldásnak (a problématér
+                  osztályai mellett megjelennek a megoldási tér osztályai is).</p></li><li class="listitem"><p>Megvalósítás, implementáció. Ezen szinten az osztályok minden olyan részletet
+                  tartalmaznak, amelyeknek segítségével egy adott programozási eszköz nyelvi elemei
+                  leképezhet&#337;k. Ehhez már ismerni kell a célnyelvet, mert nem minden szabályos UML
+                  osztály valósítható meg bármely implementációs környezetben (például másként kell
+                  megtervezni egy olyan osztályt, amelyet Java osztályra képezünk le, mint amelyet
+                  egy adatbázis táblára).</p></li></ol></div><div class="sect2" title="9.1.1. Az osztály szimbóluma"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3471"></a>9.1.1. Az osztály szimbóluma</h3></div></div></div><p>Az osztály jele
+               alapesetben egy függ&#337;legesen három részre osztott téglalap. A legfels&#337; részbe írandó
+               az osztály neve, a középs&#337;be az attribútumok, az alsóba az operációk specifikációja.
+               A fejlesztés korai fázisaiban még nincs feltétlenül minden rész kitöltve, és a
+               kitöltés részletessége is változhat. Az egyetlen kötelez&#337; kellék a megnevezés. Ha
+               csak a nevével hivatkozunk egy osztályra, a téglalap felosztása is elmaradhat.</p><p></p><div class="figure"><a name="d0e3477"></a><p class="title"><b>9.1. ábra -  Osztály szimbóluma</b></p><div class="figure-contents"><div align="center"><img src="images/image40.jpg" align="middle" alt="Osztály szimbóluma"></div></div></div><br class="figure-break"><p>Az osztály jelölése további rekeszekkel is b&#337;víthet&#337;, amelyben speciális
+               attribútum vagy operáció fajták, esetleg más diagramok, vagy azok elemei tüntethet&#337;k
+               fel, ezzel is kifejezve, hogy azok az osztályhoz tartoznak. Alkalmazhatjuk ez a
+               lehet&#337;séget arra, hogy például az operációkat meghatározó használati eseteket, vagy
+               egyes operációk végrehajtását leíró aktivitás vagy szekvencia diagramot helyezzünk el
+               ezekben a rekeszekben.</p><p>Ha túl sok, esetleg a tartalma miatt túl nagy rekeszekkel egészítjük ki az
+               osztályt, az a diagramot nehezen áttekinthet&#337;vé teszi, ezért használatában célszer&#369;
+               mértéket tartani. Minden vizuális modellez&#337; eszköz lehet&#337;vé teszi az egyes modell
+               elemek közötti kapcsolatok létrehozását, az összefüggések feltüntetésére használjuk
+               inkább ezt a lehet&#337;séget.</p><div class="sect3" title="9.1.1.1. &nbsp;Attribútumok"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3485"></a>9.1.1.1. &nbsp;Attribútumok</h4></div></div></div><p>Az osztály adat jelleg&#369; tulajdonságainak felsorolása. Az attribútum jelentése
+                  az egyes absztrakciós szinteken az alábbiak szerint írható le.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Analízis: az osztálynak van ilyen elnevezés&#369; adata.</p></li><li class="listitem"><p>Tervezési szint: az osztálynak van adott típusú adata, amelyen
+                        meghatározott operációk hajthatók végre (például beállítható,
+                        lekérdezhet&#337;).</p></li><li class="listitem"><p>Implementációs szint: az osztály adott típusú, elérési módú adata. Pontos
+                        megjelenése attól függ, hogy az osztályt hogyan implementáljuk.
+                        Például:</p></li></ol></div><p></p><p>Az attribútum jelölése:</p><p>láthatóság név : típus = alapérték</p><p>Ahol a láthatóságot az alábbi karakterek valamelyike jelzi:</p><p>+ public</p><p># protected</p><p>~ csomagszint&#369;</p><p>- private</p><p>Az attribútum valamennyi tulajdonságát általában csak az implementációs szint&#369;
+                  osztálydiagram tartalmazza.</p></div><div class="sect3" title="9.1.1.2. &nbsp;Operációk"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3517"></a>9.1.1.2. &nbsp;Operációk</h4></div></div></div><p>Az osztály példányain végezhet&#337; m&#369;veletek felsorolása. Az operáció jelentése az
+                  egyes absztrakciós szinteken az alábbiak szerint írható le.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Analízis: az osztály objektumainak egy lényeges viselkedési eleme.</p></li><li class="listitem"><p>Tervezési szint: az osztály esetén annak publikus módszerei, adatbázis
+                        tábla esetén a legfontosabb lekérdezések</p></li><li class="listitem"><p>Implementációs szint: az osztály adott szignatúrájú és elérési módú
+                        metódusa. Pontos megjelenése attól függ, hogy az osztályt hogyan
+                        implementáljuk.</p></li></ol></div><p>Az operáció jelölése:</p><p>láthatóság név(param) : típus{comment}</p><p></p></div></div><div class="sect2" title="9.1.2. Az objektum szimbóluma"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3537"></a>9.1.2. Az objektum szimbóluma</h3></div></div></div><p>Bizonyos esetekben szükséges lehet adott osztály objektumának vagy objektumainak
+               és a közöttük lev&#337; kapcsolatoknak az ábrázolására is. Az objektum jele maximum két
+               részre osztott téglalap (hiszen operációkat nem kell tudni feltüntetni). </p><p>Egy konkrét objektum jelölése:</p><div class="figure"><a name="d0e3544"></a><p class="title"><b>9.2. ábra - Objektum jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image41.jpg" align="middle" alt="Objektum jelölése"></div></div></div><br class="figure-break"><p></p><p>Egy osztály tetsz&#337;leges objektuma:</p><div class="figure"><a name="d0e3551"></a><p class="title"><b>9.3. ábra - Egy osztály tetsz&#337;leges objektuma</b></p><div class="figure-contents"><div align="center"><img src="images/image42.jpg" align="middle" alt="Egy osztály tetsz&#337;leges objektuma"></div></div></div><br class="figure-break"><p></p><p>Megadhatók konkrét attribútum értékek is:</p><div class="figure"><a name="d0e3558"></a><p class="title"><b>9.4. ábra - Objektum adott attribútum értékekkel</b></p><div class="figure-contents"><div align="center"><img src="images/image43.jpg" align="middle" alt="Objektum adott attribútum értékekkel"></div></div></div><br class="figure-break"><p>Figyelem: az aláhúzás az objektum és osztály névnél, és a kett&#337;spont az osztály
+               neve el&#337;tt a jelölés része!</p><p>Ez az objektum jelölés az UML nyelven belül egységes, tehát minden olyan diagram
+               esetén, amelyeknek van objektum eleme, szintén ezt kell alkalmazni.</p></div><div class="sect2" title="9.1.3. Osztályok közötti kapcsolatok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3566"></a>9.1.3. Osztályok közötti kapcsolatok</h3></div></div></div><p>Az osztály diagramban jelölhetjük az osztályok közötti kapcsolatokat. A
+               kapcsolatokhoz számos jellemz&#337; kapcsolható.</p><p>Az általános kapcsolat jele az osztályok között rajzolt egyszer&#369; vonal, ezt
+               asszociációnak nevezzük. Jelentése: &#8222;valamilyen kapcsolat van a két osztály
+               között&#8221;.</p><p>Az UML néhány speciális kapcsolat fajtát is nevesít, amelyeknek specifikált
+               jelentése van, és egyedi jelölés tartozik hozzá.</p><div class="sect3" title="9.1.3.1. Asszociáció"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3575"></a>9.1.3.1. Asszociáció</h4></div></div></div><p>Az asszociáció jele az egyszer&#369; vonal. Az asszociációhoz számos tulajdonság
+                  kapcsolható. Minden asszociációnak (mint modell elemnek) van elnevezése. Szokás
+                  szerint ezt a vonal közepénél a vonal alá írjuk. Az asszociációt jelz&#337; vonalak
+                  végére, a vonal fölé írható az, hogy az adott osztály a kapcsolatban milyen
+                  szerepkörben vesz részt. A szerepkör név elhagyható, ha a kapcsolat nevéb&#337;l
+                  egyértelm&#369;en következik. Az asszociáció iránya is jelölhet&#337; a vonal végére
+                  helyezett nyílvéggel (&#8222;navigálhatóság&#8221;). Ha nincs a vonalon nyílhegy, az kétirányú
+                  kapcsolatot jelent. A nyíl (vagy annak hiánya) azt jelenti, hogy a másik oldalon
+                  álló osztály ismeri, használhatja az osztályt.</p><p>A kapcsolatok további lehetséges jellemz&#337;i:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A szerepkörök számossága. A számosságot ugyanúgy jelöljük, mint a
+                        használati diagram esetén.</p></li><li class="listitem"><p>Az asszociáció min&#337;sít&#337;je is jelölhet&#337;.</p></li><li class="listitem"><p>Az asszociációhoz a tulajdonságait leíró osztály is rendelhet&#337;.</p></li></ol></div><p>Egy egyszer&#369; példa:</p><div class="figure"><a name="d0e3594"></a><p class="title"><b>9.5. ábra - Asszociáció és alap tulajdonságai</b></p><div class="figure-contents"><div align="center"><img src="images/image44.jpg" align="middle" alt="Asszociáció és alap tulajdonságai"></div></div></div><br class="figure-break"><p>A fenti ábra azt fejezi ki, hogy a Cég és a Személy osztály között &#8222;Alkalmazás&#8221;
+                  kapcsolat van. A kapcsolatban a Cég szerepköre az alkalmazó, a Személyé az
+                  alkalmazott. (Ebben az esetben a szerepkör nevek értelemszer&#369;ek, tehát elhagyhatók
+                  lennének, csak a jelölésrendszer szemléltetése miatt tüntettük fel.)</p><p>Az alkalmazó szerepkör számossága 0..1, ami azt jelenti, hogy egy Személynek 0
+                  vagy 1 alkalmazója lehet. A másik oldali számosság szerint egy Cégnek legalább
+                  egy, de egyébként tetsz&#337;leges számú alkalmazottja lehet. A kapcsolat kétirányú,
+                  hiszen a Cégnek és az alkalmazott Személynek kölcsönösen ismerniük kell
+                  egymást.</p><p>Két osztály közötti asszociációhoz tartozhat több szerepkör is. Ilyenkor minden
+                  szerephez egy vonal tarozik, így az egyes szerepkörök és azok számossága
+                  elkülöníthet&#337; módon jelölhet&#337;. Példa:</p><p></p><div class="figure"><a name="d0e3605"></a><p class="title"><b>9.6. ábra - Több szerepkör jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image45.jpg" align="middle" alt="Több szerepkör jelölése"></div></div></div><br class="figure-break"><p>A fenti ábra azt rögzíti, hogy hallgató és tárgy között kétféle kapcsolat
+                  lehet. Felvehet egy tárgyat, amit hallgat, de dolgozhat egy tanszéken
+                  demonstrátorként is, így egy másik tárgynak lehet gyakorlatvezet&#337;je.</p><p>Ez az osztálydiagram egyben példa arra is, hogy egy diagram nem feltétlenül tud
+                  kifejezni minden szükséges információt. A fenti diagram például nem tartalmazza
+                  azt a nyilvánvaló korlátozást, hogy egy hallgató nem lehet egyszerre egy tárgynak
+                  a regisztrált hallgatója, ugyanakkor demonstrátorként gyakorlatvezet&#337;je. Ezt az a
+                  korlátozást csak UML-en kívüli eszközökkel tudjuk kifejezni.</p><p>El&#337;írható, hogy egy adott szerepkörben az objektumoknak kötött sorrendben kell
+                  részt venniük. A sorrendiség az {ordered} megszorítással írható el&#337;. Példa:</p><p></p><div class="figure"><a name="d0e3616"></a><p class="title"><b>9.7. ábra - Sorrendiségi szerepkör jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image46.jpg" align="middle" alt="Sorrendiségi szerepkör jelölése"></div></div></div><br class="figure-break"><p></p><p>Ha ki akarjuk hangsúlyozni, hogy a kapcsolat valamelyik irányban nem
+                  navigálható (azaz azt az osztályt a másik nem láthatja), a vonal nem látható
+                  osztály fel&#337;li végére egy x jelet teszünk.</p><p></p><div class="figure"><a name="d0e3624"></a><p class="title"><b>9.8. ábra - Nem navigálgató asszociáció</b></p><div class="figure-contents"><div align="center"><img src="images/image47.jpg" align="middle" alt="Nem navigálgató asszociáció"></div></div></div><br class="figure-break"><p>A fenti ábra azt fejezi ki, hogy a jelszóból mindig képezhet&#337; a tárolt jelszó,
+                  de a tárolt alapból nem állítható vissza az eredeti jelszó.</p><p>A többes szerepkör esetén megadható egy min&#337;sít&#337;, ami a számosság csökkentésére
+                  alkalmas adat. Ha az adat egyedivé teszi a kiválasztást, a számosság egyre
+                  csökkenhet.</p><p>Jelölése:</p><div class="figure"><a name="d0e3634"></a><p class="title"><b>9.9. ábra - Szerepkör min&#337;sít&#337;je</b></p><div class="figure-contents"><div align="center"><img src="images/image48.jpg" align="middle" alt="Szerepkör min&#337;sít&#337;je"></div></div></div><br class="figure-break"><p>Ebben a példában a min&#337;sít&#337; egyértelm&#369;en meghatároz egy tárgyat.</p><p>A kapcsolat lehet elég összetett ahhoz, hogy önálló adatokkal és funkciókkal
+                  rendelkezhet. Ebben az esetben a kapcsolathoz egy, a kapcsolatot kezel&#337; osztály
+                  rendelhetünk. Ebben az osztályban foglalhatjuk össze azokat az adatokat és
+                  viselkedésformákat, amelyek magára a kapcsolatra jellemz&#337;k. Az ilyen osztályt az
+                  asszociációt jelz&#337; vonalhoz szaggatott vonallal kapcsoljuk.</p><p>Példa:</p><div class="figure"><a name="d0e3644"></a><p class="title"><b>9.10. ábra - Asszociációs osztály</b></p><div class="figure-contents"><div align="center"><img src="images/image49.jpg" align="middle" alt="Asszociációs osztály"></div></div></div><br class="figure-break"><p>Az eddigi példákban az asszociáció mindig két osztályt kötött össze (bináris
+                  asszociációk). Vannak azonban olyan esetek, amikor három osztály vesz részt egy
+                  kapcsolatban egyenrangú félként (ternáris asszociáció). Jelölése:</p><p></p><div class="figure"><a name="d0e3651"></a><p class="title"><b>9.11. ábra - Ternáris asszociáció</b></p><div class="figure-contents"><div align="center"><img src="images/image50.jpg" align="middle" alt="Ternáris asszociáció"></div></div></div><br class="figure-break"><p>Az ilyen asszociációk nehezen implementálhatók, ezért els&#337;sorban elemzési
+                  osztálydiagramokban fordulnak el&#337;. Legkés&#337;bb a megvalósítási szint&#369; diagram
+                  készítésekor ezeket át kell alakítani implementálható formára.</p></div><div class="sect3" title="9.1.3.2. Általánosítás"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3657"></a>9.1.3.2. Általánosítás</h4></div></div></div><p>A programozási nyelvekb&#337;l is ismert örökl&#337;dési mechanizmus, amelyet az UML
+                  általánosításként ismer. Jele egy kitöltetlen, zárt nyílvég&#369; nyíl (amint azt már a
+                  használati esetek esetén is alkalmaztuk), amely a speciálisabb (leszármazott)
+                  elemt&#337;l az általánosabb (&#337;s) osztály felé mutat. Egy &#337;snek tetsz&#337;leges számú
+                  leszármazottja lehet, és egy osztály tetsz&#337;leges számú &#337;s leszármazottja lehet
+                  (többszörös örökl&#337;dés). (Az osztályok közötti többszörös örökl&#337;dést nem minden
+                  programozási nyelv támogatja.)</p><p>Jele:</p><p></p><div class="figure"><a name="d0e3665"></a><p class="title"><b>9.12. ábra - Általánosítás jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image51.jpg" align="middle" alt="Általánosítás jelölése"></div></div></div><br class="figure-break"><p></p></div><div class="sect3" title="9.1.3.3. Tartalmazás"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3670"></a>9.1.3.3. Tartalmazás</h4></div></div></div><p>A tartalmazásnak (egész-rész viszonynak) két alapvet&#337; formáját
+                  különböztethetjük meg:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>kompozíció: a tartalmazott önmagában nem létezhet, csak valaminek a
+                        részeként,</p></li><li class="listitem"><p>aggregáció: a rész hozzátartozik valamihez (esetleg csak id&#337;legesen), de
+                        önállóan is létez&#337; entitás.</p></li></ol></div><p>A kétféle viszony nem mindig könnyen különböztethet&#337; meg egymástól. Az alábbi
+                  néhány szempont segíthet ebben.</p><p>Kompozíció. Példa: tartalmazó - képerny&#337; ablak, rész - gördít&#337; sáv.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A rész soha nem jöhet létre a tartalmazó el&#337;tt, és biztosan megsz&#369;nik a
+                        tartalmazóval együtt. A tartalmazó életciklusán belül létrejöhet és meg is
+                        sz&#369;nhet.</p></li><li class="listitem"><p>A kompozíciós egység soha nem lehet egy id&#337;ben két tartalmazó
+                        része.</p></li></ol></div><p>Aggregáció. Példa: Egy autó motorja és kerekei. Ezek alkatrészként önállóan is
+                  léteznek (cserélhet&#337;k, megvásárolhatók).</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A rész el&#337;bb is létrejöhet, mint a tartalmazó, és életciklusa során
+                        válhat részévé a tartalmazónak, de el is válthat attól. (Pl. téli-nyári
+                        gumicsere). A résznek legkés&#337;bb a tartalmazottá válás pillanatában kell
+                        létrejönnie, és nem sz&#369;nhet meg addig, amíg tartalmazottként funkcionál. A
+                        tartalmazó megsz&#369;nése nem jelenti egyben a tartalmazott megsz&#369;nését
+                        is.</p></li><li class="listitem"><p>Az aggregációs egység egyszerre több tartalmazónak is lehet része. (Az
+                        autós példa erre éppen nem jó minta, de ha mondjuk egy céget az
+                        alkalmazottak összességeként modellezzük, akkor egy személy egy szerre több
+                        cégnek is lehet része.)</p></li></ol></div><p>A kompozíciót a tartalmazó fel&#337;li végén fekete rombusszal végz&#337;d&#337; vonal jelöli. </p><p></p><div class="figure"><a name="d0e3705"></a><p class="title"><b>9.13. ábra - Kompozíció jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image52.jpg" align="middle" alt="Kompozíció jelölése"></div></div></div><br class="figure-break"><p>A fenti ábra azt fejezi ki, hogy egy képerny&#337; ablaknak része pontosan egy
+                  címsor, és része lehet (lásd a 0..1 számosságot) a gördít&#337; sáv. A gördít&#337; sáv az
+                  ablak életciklusa alatt számtalanszor létrejöhet és megsz&#369;nhet, ahogyan azt a
+                  valóságban is tapasztaljuk.</p><p></p><p>Az aggregációt a fentihez hasonlóan, de kitöltés nélküli rombusszal
+                  jelöljük.</p><p></p><div class="figure"><a name="d0e3715"></a><p class="title"><b>9.14. ábra -  Aggregáció jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image53.jpg" align="middle" alt="Aggregáció jelölése"></div></div></div><br class="figure-break"><p></p></div></div><div class="sect2" title="9.1.4. &nbsp;Parametrizált osztály"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3720"></a>9.1.4. &nbsp;Parametrizált osztály</h3></div></div></div><p>Másik magyar elnevezése: sablon osztály.</p><p>Számos programozási nyelv támogatja a polimorfizmusnak az a módját, amikor egy
+               osztálydefiníció típus (és esetlen érték) paramétereket tartalmazhat. Az ilyen
+               osztályból nem lehet példányosítani, hanem a paraméterek megadásával konkrét
+               osztálydefiníciókat hozhatunk létre (ez a konkretizálás vagy realizáció m&#369;velete). A
+               parametrizált osztály tehát osztály létrehozására szolgáló sablon.</p><p>A parametrizált osztály UML jelölése az osztály téglalapját kiegészíti egy
+               szaggatott vonallal rajzolt téglalappal a paraméterek jelölésére. A konkretizálást a
+               sablon osztály felé mutató szaggatott vonallal rajzolt nyíl jelöli. A nyilat a
+               «realize» sztereotípia min&#337;síti. A konkretizáláshoz használt paramétereket a «bind»
+               sztereotípiával adhatjuk meg.</p><p></p><p>Példa:</p><div class="figure"><a name="d0e3732"></a><p class="title"><b>9.15. ábra - Parametrizált osztály és konkretizálása</b></p><div class="figure-contents"><div align="center"><img src="images/image54.jpg" align="middle" alt="Parametrizált osztály és konkretizálása"></div></div></div><br class="figure-break"><p>A fenti ábrán a Lista sablonosztály paramétere a Tombelem típus, és az n egész
+               szám. A típus helyére Telefonszam típust helyettesítve a Telefonkönyv osztályt,
+               Hallgató típust helyettesítve a kurzusnévsor osztályt kapjuk.</p><p>A parametrizált osztály els&#337;sorban a tervezési és a megvalósítási modellben
+               alkalmazható.</p></div><div class="sect2" title="9.1.5. Absztakt osztály"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3740"></a>9.1.5. Absztakt osztály</h3></div></div></div><p>Az absztrakt osztály olyan osztály, amely tartalmaz olyan operációkat, amelyeket
+               specifikálunk, de nem definiáljuk a megvalósítás módját. Ezért az ilyen osztály nem
+               példányosítható, de lehet &#337;s osztály. A leszármazott osztály fogja a hiányzó operáció
+               definíciókat meghatározni.</p><p>Az absztrakt osztály nevét d&#337;lt szedéssel írjuk, vagy fölé az «abstract»
+               sztereotípiát írjuk.</p><p>A hiányzó definíciójú (tehát szintén absztrakt) operációkat is d&#337;lt bet&#369;s
+               szedéssel különböztetjük meg a definiáltaktól.</p><p>Példa:</p><div class="figure"><a name="d0e3751"></a><p class="title"><b>9.16. ábra -  Absztrakt osztály és leszármazottai</b></p><div class="figure-contents"><div align="center"><img src="images/image55.jpg" align="middle" alt="Absztrakt osztály és leszármazottai"></div></div></div><br class="figure-break"><p>A fenti ábrán a Sikidom absztrakt osztály, mert bár tudjuk, hogy van kerülete és
+               területe, de nem tudjuk megmondani, hogy azt általánosságban hogyan tudjuk
+               kiszámítani. Ezért a két operáció is absztrakt. A leszármazottak konkrét síkidomok, a
+               megfelel&#337; adatokkal, így a kerület és terület számító operációknak konkrét definíciót
+               tudnak adni.</p><p>Az absztrakt osztály a tervezési és az implementációs modellben
+               alkalmazható.</p></div><div class="sect2" title="9.1.6. &nbsp;Interfész"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3759"></a>9.1.6. &nbsp;Interfész</h3></div></div></div><p>Az interfész hasonlít az absztrakt osztályokhoz, de nem tartalmazhat
+               attribútumokat, s&#337;t konkrét operációkat (m&#369;veleteket) sem, csak viselkedés mintákat
+               (absztrakt operációkat). Ilyen elemre az analízis modell során nincs szükségünk, mert
+               jellegzetesen technikai tulajdonságokat írhatunk le segítségükkel.</p><p>Az interfész által el&#337;írt viselkedésmintákat az adott interfészt megvalósító
+               (realizáló) osztály definiálja. Ennek az osztálynak az interfész által el&#337;írt
+               valamennyi operációt definiálnia kell.</p><p>Más osztályok használhatják az adott interfészt, ami a használó és a megvalósító
+               osztály közötti közvetett kapcsolatot jelent.</p><p>Interfészek között jelölhet&#337; az általánosítás kapcsolat ugyanolyan szabályokkal,
+               mint az osztályok között.</p><p>Az interfészt ugyanolyan téglalappal jelöljük, mint az osztályt, csak a neve felé
+               az «interface» sztereotípiát írjuk.</p><p>További jelöléseket láthatunk az alábbi ábrán:</p><p></p><div class="figure"><a name="d0e3775"></a><p class="title"><b>9.17. ábra - Interfész, interfészek közötti örökl&#337;dés, interfészt implementáló és
+               használó osztály jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image56.jpg" align="middle" alt="Interfész, interfészek közötti örökl&#337;dés, interfészt implementáló és használó osztály jelölése"></div></div></div><br class="figure-break"><p>A fenti ábrán az A interfészt a B osztály implementálja, a C osztály pedig
+               használja. Az A interfész az A1 leszármazottja.</p><p>Egy osztály tetsz&#337;leges számú interfészt implementálhat egy id&#337;ben. Ilyenkor
+               minden interfész által el&#337;írt operációt meg kell valósítania.</p><p>Egy osztály lehet egyszerre leszármazottja tetsz&#337;leges számú osztálynak, és
+               implementátora tetsz&#337;leges számú interfésznek.</p><p>Az interfész a tervezési és a megvalósítási modellben alkalmazható.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch08s06.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch09s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">8.6. 
+            
+            Ellen&#337;rz&#337; kérdések&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;9.2. 
+            
+            A csomag diagram</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch09.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:55 GMT -->
+</html>

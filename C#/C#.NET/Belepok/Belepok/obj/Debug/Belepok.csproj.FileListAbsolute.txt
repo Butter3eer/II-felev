@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Belepok\Belepok\obj\Debug\Belepok.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Belepok\Belepok\obj\Debug\Belepok.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Belepok\Belepok\obj\Debug\Belepok.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Belepok\Belepok\bin\Debug\Belepok.exe.config
+E:\STUDY\Petrik\II-felev\C#\Belepok\Belepok\bin\Debug\Belepok.exe
+E:\STUDY\Petrik\II-felev\C#\Belepok\Belepok\bin\Debug\Belepok.pdb
+E:\STUDY\Petrik\II-felev\C#\Belepok\Belepok\obj\Debug\Belepok.exe
+E:\STUDY\Petrik\II-felev\C#\Belepok\Belepok\obj\Debug\Belepok.pdb

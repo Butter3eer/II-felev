@@ -1,0 +1,9 @@
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\obj\Debug\film600-hazi.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\obj\Debug\film600-hazi.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\obj\Debug\film600-hazi.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\bin\Debug\filmek.csv
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\bin\Debug\film600-hazi.exe.config
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\bin\Debug\film600-hazi.exe
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\bin\Debug\film600-hazi.pdb
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\obj\Debug\film600-hazi.exe
+E:\STUDY\Petrik\II-felev\C#\film600-hazi\film600-hazi\obj\Debug\film600-hazi.pdb

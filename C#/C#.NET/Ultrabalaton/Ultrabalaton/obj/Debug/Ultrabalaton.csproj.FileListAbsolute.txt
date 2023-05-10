@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Ultrabalaton\Ultrabalaton\bin\Debug\Ultrabalaton.exe.config
+E:\STUDY\Petrik\II-felev\C#\Ultrabalaton\Ultrabalaton\bin\Debug\Ultrabalaton.exe
+E:\STUDY\Petrik\II-felev\C#\Ultrabalaton\Ultrabalaton\bin\Debug\Ultrabalaton.pdb
+E:\STUDY\Petrik\II-felev\C#\Ultrabalaton\Ultrabalaton\obj\Debug\Ultrabalaton.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Ultrabalaton\Ultrabalaton\obj\Debug\Ultrabalaton.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Ultrabalaton\Ultrabalaton\obj\Debug\Ultrabalaton.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Ultrabalaton\Ultrabalaton\obj\Debug\Ultrabalaton.exe
+E:\STUDY\Petrik\II-felev\C#\Ultrabalaton\Ultrabalaton\obj\Debug\Ultrabalaton.pdb

@@ -1,0 +1,164 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch06s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:47 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>6.3. Felhasználói felületek tervezése</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch06.html" title="6. fejezet - A szoftvertervezés folyamata"><link rel="prev" href="ch06s02.html" title="6.2. Objektumorientált tervezés"><link rel="next" href="ch06s04.html" title="6.4. Ellen&#337;rz&#337; kérdések"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6.3. 
+            
+            Felhasználói felületek
+         tervezése</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06s02.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">6. fejezet - A szoftvertervezés folyamata</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch06s04.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="6.3. Felhasználói felületek tervezése"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2042"></a>6.3. 
+            
+            <a name="__RefHeading__67_120998265"></a>Felhasználói felületek
+         tervezése</h2></div></div></div><p>A különböz&#337; számítógépes rendszerek
+            tervezési kérdései között a felhasználói felületek tervezési problémái szintén nagy
+            hangsúlyt kell kapjon. Egy jól áttekinthet&#337;, gondos felhasználói felület megtervezése
+            fontos része a teljes szoftvertervezési folyamatának. Általában a felhasználói felület
+            az els&#337;dleges kapcsolódási pont a felhasználó és a számítógép között, ezért fontos, hogy
+            megfelel&#337; színvonalon legyen kidolgozva.</p><p>Természetesen az nem csak az esztétikus kinézet a cél, hiszen az egy szubjektív
+            fogalom, de vannak olyan alapvet&#337; tervezési elvek, melyek figyelembevételével jobb
+            eredmény érhet&#337; el. A jó felhasználói fe­lület terve kritikus a rendszer megbízhatósága
+            szempontjából. Célszer&#369; a kialakítandó felhasználói felület illeszteni a felhasználó
+            szakértelméhez, tapasztalatához és elvárásaihoz. A felület félretervezése mindig
+            következményeket von maga után. Például a felhasználó esetleg nem fér hozzá a rendszer
+            bizonyos jellemz&#337;ihez, hibázik, és úgy érzi, hogy a rendszer segítség­nyújtás helyett
+            inkább gátolja &#337;t annak a célnak az elérésében, amiért a rendszert használja.</p><p>A mai modern szoftverek világában egy felhasználói felületnek számos megjelenítési
+            formája lehet. Beszélhetünk egyszer&#369; ablakos vastagkliens alkalmazásokról, web-es
+            rendszerekr&#337;l, mobiltelefonok, PDA-k megjelenítési megoldásairól, és nem utolsó sorban a
+            pixelgrafikus alkalmazásokról. Bármilyen feladat is áll a tervez&#337; el&#337;tt a döntési során
+            figyelembe kell venni a szoftvert használó emberek fizikai és mentális
+            képességeit.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Az emberek korlátozott rövid távú memóriával rendelkeznek. Ha egyidej&#369;leg túl
+                  sok információval terheljük meg a felhasználót, elképzelhet&#337;, hogy nem tudja
+                  azokat befogadni.</p></li><li class="listitem"><p>Ha a rendszer elromlik, és figyelmeztet&#337;, valamint hibaüzeneteket ad, akkor a
+                  felhasználók általában feszültebbé vál­nak, ami megnöveli a hibázás
+                  esélyét.</p></li><li class="listitem"><p>Nem szabad saját képességeinkre tervezni a rendszert, és feltételezni, hogy
+                  majd minden felhasználó képes lesz megbirkózni a felülettel. Fizikai képességeink
+                  (látás, hallás, érzékelés, kézügyesség)eltérhetnek.</p></li><li class="listitem"><p>Különböz&#337; interakciós módokat részesítünk el&#337;nyben. Némelyek képekkel, mások
+                  szövegekkel szeretnek dolgozni.</p></li></ol></div><p></p><div class="sect2" title="6.3.1. Felhasználói felületek tervezési elvei"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2067"></a>6.3.1. Felhasználói felületek tervezési elvei</h3></div></div></div><p></p><p>Ha a felhasználói felületek alapvet&#337; tervezési elveit szeretnénk összegy&#369;jteni és
+               megfogalmazni, akkor az emberi képességek alapján kell elindulnunk. Ezek olyan
+               általános elvek, amelyek minden felhasználói felület tervére alkal­mazhatók, és
+               ezekb&#337;l speciális szervezetek vagy rendszertípusok számára rész­letesebb tervezési
+               irányelvek származtathatók.</p><p>Felhasználói jártasság: a felületnek olyan kifejezéseket és fogalmakat kell
+               használnia, amelyek megfelelnek a rendszert legtöbbet használó emberek
+               tapasztalatainak. Nem szabad egy felületet csak azért ráer&#337;ltetni a felhasználókra,
+               mert az kényelmesen implementálható.</p><p>Konzisztencia: a felületnek lehet&#337;ség szerint a ha­sonló m&#369;veleteket hasonló módon
+               kell realizálnia. Azt jelenti, hogy a rendszer paran­csainak és menüinek ugyanazzal a
+               formátummal kell rendelkezniük, a paramé­tereket minden parancshoz ugyanúgy kell
+               átadni, és hasonlónak kell lennie a pa­rancsok formájának.</p><p>Minimális meglepetés: a rendszer soha ne okozzon meglepetést a felhasználóknak,
+               mert nagyon ingerültté válnak, ha a rendszer nem várt módon viselkedik. A rendszert
+               hasz­nálva a felhasználók felépítik magukban a rendszer m&#369;ködésének gondolati
+               mo­delljét. Amennyiben valamely része a szoftvernek eltér&#337; gondolatmenettel m&#369;ködik,
+               a felhasználó meglepetté és zavarttá válik.</p><p>Visszaállíthatóság: a felületnek rendelkeznie kell olyan mechanizmusokkal, amelyek
+               lehet&#337;­vé teszik a felhasználók számára a hiba után történ&#337; visszaállítást. Ezen
+               lehet&#337;ségeknek három fajtája lehetséges:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Az ártalmas tevékenységek meger&#337;sítése. Ha a felhasználók potenciálisan
+                     ártal­mas tevékenységet hajtanak végre, az információ megsemmisítése el&#337;tt
+                     meg­er&#337;sítést kell t&#337;lük kérni.</p></li><li class="listitem"><p>Visszavonási lehet&#337;ség biztosítása. A visszavonás a rendszert visszaállítja
+                     a tevé­kenység bekövetkezése el&#337;tti állapotba.</p></li><li class="listitem"><p>Ellen&#337;rz&#337; pontok készítése. Célszer&#369; a rendszer állapotát bizonyos
+                     id&#337;közön­ként elmenteni, így lehet&#337;vé téve, hogy azt a legutóbbi ellen&#337;rz&#337;
+                     ponttól újra tudjuk indítani.</p></li></ol></div><p></p><p>Felhasználói útmutatás: a felületnek hiba bekövetkezése esetén értelmes
+               visszacsatolást kell biztosítania és környezet-érzékeny felhasználói súgóval is
+               rendelkeznie kell. Ezeknek be kell épülni a rendszerbe, és különböz&#337; szint&#369;
+               segítséget és tanácsot kell adni.</p><p>Felhasználói sokféleség: a felületnek megfelel&#337; interakciós lehet&#337;ségekkel kell
+               rendelkeznie a rendszer különféle felhasználói számára. A rendszernek lehetnek
+               alkalmi és rendszeres felhasználói.</p><p></p></div><div class="sect2" title="6.3.2. Felhasználói felületek tervezési folyamata"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2097"></a>6.3.2. Felhasználói felületek tervezési folyamata</h3></div></div></div><p>A tervezés során a felhasználók együttm&#369;ködnek a
+               tervez&#337;kkel, és prototípusokat készítenek a rendszer felületér&#337;l. Az elkészült
+               prototípusok segítségével döntenek a rendszer felhasználói felületének jellemz&#337;ir&#337;l,
+               felépítésér&#337;l és kinézetér&#337;l, vonnak le következtetéseket a rendszer felhasználói
+               interakciójának m&#369;ködésr&#337;l.</p><p>A felhasználói felületek tervezését éppen ezért célszer&#369; iteratív úton
+               fejleszteni. A felület pro­totípusa különállóan is elkészíthet&#337;, párhuzamosan más
+               szoftvertervezési tevé­kenységekkel, amely gyorsítja a rendszer
+               kifejlesztését.</p><p>A felületek tervezési folyamatát alapvet&#337;en a következ&#337; három szakaszra bontva
+               tárgyalják:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Felhasználók elemzése: meg kell vizsgálni, hogy a felhasználók milyen
+                     feladatokat végeznek, milyen munkakörnyezetben dolgoznak, milyen egyéb
+                     rendszereket használnak, munkájuk során.</p></li><li class="listitem"><p>Prototípus-készítés: a felhasználói felület terve alapján prototípust kell
+                     készíteni.</p></li><li class="listitem"><p>Felületek értékelése: a prototípus formálisabb értékelése. A felhasználók
+                     interfészhasználat közben szerzett aktuális tapasztalatait gy&#369;jtjük
+                     össze.</p></li></ol></div><p></p><div class="sect3" title="6.3.2.1. 6.3.2.1 Felhasználók elemzése"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2117"></a>6.3.2.1. 6.3.2.1 Felhasználók elemzése</h4></div></div></div><p></p><p>A felhasználói felület tervezési folyamatának alapgondolata, hogy elemezni kell
+                  azon felhasználói tevé­kenységeket, amelyeket a rendszernek támogatnia kell. Meg
+                  kell értenünk a szoftver, és a felületek pontos célját.</p><p>A felhasználók elemzésére há­rom alapvet&#337; lehet&#337;ségünk van: a feladatelemzés,
+                  az interjúztatás vagy kérd&#337;­ívek kitöltetése, valamint az etnográfia. A
+                  feladatelemzés és az interjúztatás az egyénre és az egyén munkájára összpontosít,
+                  míg az etnográfia szélesebb szem­szögb&#337;l vizsgálja azt, hogy az emberek hogyan
+                  kommunikálnak és hatnak egy­másra, hogyan rendezik el munkakörülményeiket, és
+                  miként m&#369;ködnek együtt feladatok megoldásában.</p><p>A feladatelemzésnek különböz&#337; formái vannak, de legszéle­sebb körben a
+                  hierarchikus feladatelemzést (Hierarchical Task Analysis, HTA) használják. A HTA-t
+                  eredetileg a felhasználói kézikönyvek készítésének el&#337;segí­tésére hozták létre, de
+                  használható annak meghatározására is, hogy mit kell a fel­használóknak tenniük egy
+                  bizonyos cél elérése érdekében. A HTA-ban a magas szint&#369; feladatot részfeladatokra
+                  bontjuk, és terveket készítünk, hogy megadjuk, hogy egy adott helyzetben mi
+                  történhet. A felhasználó céljából kiindulva egy hie­rarchiát készítünk, amely
+                  leírja, hogy mit kell tennünk a cél érdekében. A HTA jelölésrendszerében a doboz
+                  alatti vonal azt jelöli, hogy az adott feladatot nem bontjuk
+                  részfeladatokra.</p><p>A HTA el&#337;nye a természetes nyelvi forgatókönyvekkel szemben, hogy rákényszerít
+                  bennünket arra, hogy minden feladatot átgondoljunk, és eldöntsük, hogy
+                  felbontható-e, avagy sem. A természetes nyelvi forgatókönyvek használata során
+                  könnyen kimaradhatnak fontos feladatok, emellett a forgatókönyvek hosszúvá és
+                  unalmassá válhatnak, ha sok részletet szeretnénk beleírni.</p><p>A HTA legnagyobb problémája azonban, hogy leginkább csak a szekvenciális
+                  folyamatok­ként leírható feladatokra alkalmazható. Ha konkurens tevékenységeket
+                  szeretnénk leírni vele, akkor a jelölésmód kényelmetlenné válik.</p><p>Az interjúztatás célja, hogy a HTA-hoz kiegészít&#337; információkat gy&#369;jtsünk be a
+                  felhasználóktól. A cél az, hogy megtudjuk a felhasználók valójában mit is
+                  csinálnak. Az interjúkat úgy kell megtervezni, hogy a felhasználók minden, általuk
+                  szükségesnek tartott infor­mációt közölhessenek. Ez azt jelenti, hogy nem szabad
+                  mereven ragaszkodnunk az el&#337;re elkészített kérdésekhez, hanem a kérdéseknek
+                  nyitottnak kell lenniük, és arra kell serkenteniük a felhasználókat, hogy
+                  elmondják, mit és miért tesznek.</p><p>A tervezés során nemcsak az információk begy&#369;jtése a fontos, hanem azok
+                  valamilyen formában történ&#337; dokumentálása is. Meg kell találni a módját annak,
+                  hogy úgy írják le a felhasználói elemzéseket, hogy utána az alapján a feladatok
+                  lényegét mind a többi tervez&#337;, mind pedig maguk a felhasználók felé kommunikálni
+                  tudják. A leírásra nincs követend&#337; egyezményes eszköz, de egy hatékony megoldást
+                  kínál az UML szekvencia diagramja.</p></div><div class="sect3" title="6.3.2.2. 6.3.2.2 Prototípus készítése"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2135"></a>6.3.2.2. 6.3.2.2 Prototípus
+                  készítése</h4></div></div></div><p>A felhasználói felületek mindig
+                  valamilyen dinamikus folyamatot reprezentálnak, ezért a felületekkel szemben
+                  tá­masztott követelmények kifejezésére a szöveges leírások és a diagramok nem elég
+                  jók. Nem képesek kifejezni és leírni a folyamatot teljes egészében. Csakis a
+                  végfelhasználó bevonásával végzett prototípus-készítés az egyetlen hatékony módja
+                  a grafikus felhasználói felületének tervezésének és fejlesztésének.</p><p>A prototípus-készítés célja az, hogy egy elkészült példafelület segítségével a
+                  tervez&#337;k tapasztalatokat szerezzenek a m&#369;ködéssel kapcsolatosan. Nem könny&#369;
+                  absztrakt módon gondolkodni egy felhasználói felületr&#337;l, és pontosan elmagyarázni,
+                  hogy mit szeretnénk. Ha viszont egy példán keresztül sikerül bemutatni, akkor
+                  könnyen meg tudjuk mondani, hogy mely jellemz&#337;ket szeretjük, és melyeket
+                  nem.</p><p>Ideális esetben a prototípus-készítés során a folyamatot két lépésben hajtjuk
+                  végre:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A folyamat elején papíralapú prototípusokat - a képerny&#337;tervek makettjeit
+                        - készítünk, és ezeket áttekintjük a végfelhasználókkal.</p></li><li class="listitem"><p>Finomítjuk a tervet, és egyre kifinomultabb automatizált prototípusokat
+                        fejlesztünk, amelyeket tesztelésre és a tevékenységek szimulálása érdekében
+                        odaadunk a felhasználóknak.</p></li></ol></div><p>A papíralapú prototípus-készítés el&#337;nye, hogy igen olcsó és meglehet&#337;sen
+                  hatékony. Nem kell futtatható programot készítenünk, és a terveket sem kell profi
+                  módon megrajzolni. Csupán a rendszer azon képerny&#337;it kell papírra lerajzolni,
+                  amelyeken kapcsolatba lép a rendszerrel. Emellett forgatókönyveket is
+                  létrehozunk, amelyek azt tartalmazzák, hogy a rendszer miképpen
+                  használható.</p><p>A papíralapú prototípus kezdeti tapasztalatai után a felület tervének
+                  szoftve­res prototípusát kell implementálnunk. Az elkészítésre az alábbi három
+                  lehet&#337;ségünk van:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Szkriptvezérelt megközelítés: vizuális elemeket (gombokat, menüket stb.)
+                        tartalmazó képerny&#337;ket hozunk létre valamilyen szerkeszt&#337; eszköz
+                        segítségével, és ezek­hez szkripteket társítunk. A felhasználói interakció
+                        során a szkript végrehaj­tásra kerül, és megjelenik a következ&#337; képerny&#337;,
+                        amely a korábbi tevékenysé­gek eredményeit mutatja be.</p></li><li class="listitem"><p>Vizuális programozási nyelvek: valamilyen vizuális programozási nyelv
+                        segítségével gyorsan létrehozhatunk felületeket, amely objektumaihoz
+                        komponenseket és szkripteket társíthatunk.</p></li><li class="listitem"><p>Internetalapú prototípus-készítés: ezek a megoldások egy web böngész&#337;n és
+                        egy nyelven alapulnak. A funkcionalitást ekkor a nyelv nyújtja (pl.: Java).
+                        Ezek a kódrészletek (appletek) az oldal böngész&#337;be töltésekor automatikusan
+                        végrehajtódnak.</p></li></ol></div><p></p></div><div class="sect3" title="6.3.2.3. 6.3.2.3 &nbsp; Prototípus értékelése"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2166"></a>6.3.2.3. 6.3.2.3 &nbsp; Prototípus értékelése</h4></div></div></div><p>A felületek értékelésén azt értjük, amikor megvizsgáljuk,
+                  hogy mennyire használható az adott felület, majd ellen&#337;rizzük, hogy megfelel-e a
+                  felhasználói követel­ményeknek. Az ellen&#337;rzési folyamat ugyanolyan fontos, mint a
+                  tervezés, vagy a prototípus készítése, semmiféleképpen sem elhanyagolandó.</p><p>Az értékelés valamilyen szinten szubjektív dolog, azonban vannak olyan
+                  használhatósági jellemz&#337;k, amelyek jó alapot kínálnak az elemzésre. Ezek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Tanulhatóság: mennyi id&#337; szükséges a rendszer megtanulásához.</p></li><li class="listitem"><p>M&#369;veleti sebesség: a rendszer válaszideje megfelel-e a felhasználók
+                        munkagyakorlatának.</p></li><li class="listitem"><p>Robusztusság: milyen a rendszer hiba t&#369;r&#337;képessége.</p></li><li class="listitem"><p>Visszaállíthatóság: hibák esetén milyen lehet&#337;ségek vannak a
+                        visszaállításra.</p></li><li class="listitem"><p>Adaptálhatóság: mennyire kötött a rendszer modellje.</p></li></ol></div><p></p><p>Az értékelés során fontos, hogy milyen eszközzel végezzük a mérést és milyen
+                  formában. A felhasználói felületek értékelésére számos egyszer&#369;bb, kevésbé drága,
+                  és a tervezés bizonyos hiányosságainak azonosítására képes technika is
+                  létezik:</p><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Kérd&#337;ívek, amelyek arról gy&#369;jtenek információt, hogy a felhasználók mit
+                        gon­dolnak a felületr&#337;l.</p></li><li class="listitem"><p>A rendszer felhasználóinak munka közben történ&#337; megfigyelése.</p></li><li class="listitem"><p>A jellegzetes rendszerhasználat videó &#8222;pillanatfelvételei&#8221;.</p></li><li class="listitem"><p>Olyan kódrészlet beépítése a szoftverbe, amely a legtöbbször használt
+                        lehet&#337;ségekr&#337;l és a leggyakoribb hibákról gy&#369;jt információt.</p></li></ol></div><p></p><p>A felhasználók kérd&#337;ív segítségével történ&#337; felmérése a felület értékelésének
+                  egy viszonylag olcsó módja. A kérdéseknek inkább pontosnak, mint általánosaknak
+                  kell lenniük.</p><p>A megfigyelésen alapuló értékelés egyszer&#369;en a felhasználók figyelését
+                  jelenti, miközben azok használják a rendszert.</p><p>A videó felvétel alapú értékelés azt jelenti, hogy valamilyen képrögzít&#337;
+                  felszerelés segítségével felvételeket készítünk a rendszer használatáról abból a
+                  célból, hogy a felhasználó tevékenységeket kés&#337;bb elemezni tudjuk.</p><p>Azt mondhatjuk, hogy az egyik leghatékonyabb elemzési módszert a statisztika
+                  készít&#337; kódrészlet beépítése a szoftverbe. Ez a felületek sokféle tökéletesítését
+                  teszik lehet&#337;vé. Felfedezhet&#337;k a leggyakoribb m&#369;veletek, és a felületet át lehet
+                  úgy szervezni, hogy ezeket a lehet&#337; leggyorsabban lehessen kiválasztani.</p><p></p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06s02.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch06.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch06s04.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">6.2. 
+            
+            Objektumorientált
+         tervezés&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;6.4. 
+            
+            Ellen&#337;rz&#337; kérdések</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch06s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:47 GMT -->
+</html>

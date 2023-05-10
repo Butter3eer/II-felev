@@ -1,0 +1,348 @@
+﻿<Window x:Class="Keresztrejtveny.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Keresztrejtveny"
+        mc:Ignorable="d"
+        Title="Harry Potter Keresztrejtvény" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <VisualBrush Viewbox="10,10,5100,2500" ViewboxUnits="Absolute">
+                <VisualBrush.Visual>
+                    <Image Source="/Keresztrejtveny_hatter.jpg">
+                        <Image.BitmapEffect>
+                            <BlurBitmapEffect Radius="75"/>
+                        </Image.BitmapEffect>
+                    </Image>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+
+        <Popup x:Name="felugro" Placement="Center" MouseLeftButtonDown="Popup_click">
+            <Border BorderThickness="1">
+                <TextBlock x:Name="felugroText" Background="DarkGreen" Foreground="PeachPuff" Padding="30" FontSize="20" FontFamily="Impact" TextWrapping="Wrap"/>
+            </Border>
+        </Popup>
+
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Click="MenuItem_Open"/>
+            </MenuItem>
+            <MenuItem Header="Difficulty">
+                <MenuItem Header="RON (Easy)" Click="Easy_click"/>
+                <MenuItem Header="HARRY (Normal)" Click="Medium_click"/>
+                <MenuItem Header="HERMIONE (Hard)" Click="Hard_click"/>
+            </MenuItem>
+            <MenuItem Header="Menü" Click="Menu_click"/>
+            <MenuItem Header="Ellenőrzés" Click="Ellenorzes"/>
+        </Menu>
+
+        <Grid x:Name="MainPage" Grid.Row="1" Visibility="Visible">
+            <TextBlock Text="HARRY POTTER KERESZTREJTVÉNY" Margin="0,0,0,250" Foreground="PeachPuff" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontFamily="Courier New" FontWeight="Bold">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="4" BlurRadius="5" Opacity="0.75" Direction="315"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Text="by Pál Csenge" Margin="0,0,0,150" Foreground="PeachPuff" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontFamily="Courier New" >
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="4" BlurRadius="5" Opacity="0.75" Direction="315"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock Text="A játék kezdéséhez válassz ki egy nehézségi szintet!" Margin="0,50,0,0" Foreground="PeachPuff" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontFamily="Courier New" FontWeight="Bold">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="4" BlurRadius="5" Opacity="0.75" Direction="315"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+        </Grid>
+
+        <Grid x:Name="EasyJatek" Grid.Row="1" Visibility="Collapsed">
+
+            <Grid Grid.Row="1" x:Name="hogwarts" GotFocus="hogwartsFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB11" Tag="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,200,100" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,220,115" Grid.Row="1" FontSize="9" Width="5" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox Text="O" MaxLength="1" TextAlignment="Center" x:Name="ETB12" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,150,100" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB13" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,100,100" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox Text="W" MaxLength="1" TextAlignment="Center" x:Name="ETB14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,50,100" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,100" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,100" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,0,0,100" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox Text="S" MaxLength="1" TextAlignment="Center" x:Name="ETB18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,0,0,100" Grid.Row="1"  Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="norbert" GotFocus="norbertFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB21" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,150,150" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,167,164" Grid.Row="1" FontSize="9" Width="5" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB22" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,150,100" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB23" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,150,50" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,150,0" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,200,0" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB26" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,250,0" Grid.Row="1"  Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB27" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,250,0" Grid.Row="1"  Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="love" GotFocus="loveFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB41" HorizontalAlignment="Center" Margin="150,0,100,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,0,117,264" Grid.Row="1" FontSize="9" Width="6" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB42" HorizontalAlignment="Center" Margin="150,0,50,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="V" MaxLength="1" TextAlignment="Center" x:Name="ETB43" HorizontalAlignment="Center" Margin="150,0,0,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB44" HorizontalAlignment="Center" Margin="200,0,0,250" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+            
+            <Grid Grid.Row="1" x:Name="vajsor" GotFocus="vajsorFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB31" HorizontalAlignment="Center" Margin="150,0,0,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,0,17,264" Grid.Row="1" FontSize="9" Width="6" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB32" HorizontalAlignment="Center" Margin="150,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB33" HorizontalAlignment="Center" Margin="150,0,0,150" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB34" HorizontalAlignment="Center" Margin="150,0,0,100" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB35" HorizontalAlignment="Center" Margin="150,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB36" HorizontalAlignment="Center" Margin="150,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="weasley" GotFocus="weasleyFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB51" HorizontalAlignment="Center" Margin="0,0,50,100" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,68,113" Grid.Row="1" FontSize="9" Width="6" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB52"  HorizontalAlignment="Center" Margin="0,0,50,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB53" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB54" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB55" HorizontalAlignment="Center" Margin="50,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB56" HorizontalAlignment="Center" Margin="100,50,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="ETB57" HorizontalAlignment="Center" Margin="100,100,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="MediumJatek" Grid.Row="1" Visibility="Collapsed">
+            <Grid Grid.Row="1" x:Name="csikocsor" GotFocus="csikocsorFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB11" HorizontalAlignment="Center" Margin="0,0,100,300" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,117,315" Grid.Row="1" FontSize="9" Width="5" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB12" HorizontalAlignment="Center" Margin="0,0,100,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="I" MaxLength="1" TextAlignment="Center" x:Name="MTB13" HorizontalAlignment="Center" Margin="0,0,100,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB14" HorizontalAlignment="Center" Margin="0,0,100,150" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB15" HorizontalAlignment="Center" Margin="0,0,100,100" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB16" HorizontalAlignment="Center" Margin="0,0,100,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB17" HorizontalAlignment="Center" Margin="0,0,100,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB18" HorizontalAlignment="Center" Margin="0,50,100,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="R" MaxLength="1" TextAlignment="Center" x:Name="MTB19" HorizontalAlignment="Center" Margin="0,100,100,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="griffendel" GotFocus="griffendelFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB21" HorizontalAlignment="Center" Margin="0,0,200,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,217,215" Grid.Row="1" FontSize="9" Width="6" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB22" HorizontalAlignment="Center" Margin="0,0,150,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB23" HorizontalAlignment="Center" Margin="0,0,100,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB24" HorizontalAlignment="Center" Margin="0,0,50,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB25" HorizontalAlignment="Center" Margin="0,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB26" HorizontalAlignment="Center" Margin="50,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB27" HorizontalAlignment="Center" Margin="100,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB28" HorizontalAlignment="Center" Margin="150,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB29" HorizontalAlignment="Center" Margin="200,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="L" MaxLength="1" TextAlignment="Center" x:Name="MTB210" HorizontalAlignment="Center" Margin="250,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="mirtill" GotFocus="mirtillFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB31" HorizontalAlignment="Center" Margin="0,100,200,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,216,15" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB32" HorizontalAlignment="Center" Margin="0,100,150,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB33" HorizontalAlignment="Center" Margin="0,100,100,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB34" HorizontalAlignment="Center" Margin="0,100,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB35" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="L" MaxLength="1" TextAlignment="Center" x:Name="MTB36" HorizontalAlignment="Center" Margin="50,100,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB37" HorizontalAlignment="Center" Margin="100,100,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="always" GotFocus="alwaysFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB41" HorizontalAlignment="Center" Margin="50,50,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,50,15,15" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB42" HorizontalAlignment="Center" Margin="50,100,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB43" HorizontalAlignment="Center" Margin="50,150,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB44" HorizontalAlignment="Center" Margin="50,200,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB45" HorizontalAlignment="Center" Margin="50,250,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="S" MaxLength="1" TextAlignment="Center" x:Name="MTB46" HorizontalAlignment="Center" Margin="50,300,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="bolyhoska" GotFocus="bolyhoskaFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB51" HorizontalAlignment="Center" Margin="250,0,0,300" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="250,0,15,315" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB52" HorizontalAlignment="Center" Margin="250,0,0,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB53" HorizontalAlignment="Center" Margin="250,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB54" HorizontalAlignment="Center" Margin="250,0,0,150" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB55" HorizontalAlignment="Center" Margin="250,0,0,100" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="O" MaxLength="1" TextAlignment="Center" x:Name="MTB56" HorizontalAlignment="Center" Margin="250,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB57" HorizontalAlignment="Center" Margin="250,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB58" HorizontalAlignment="Center" Margin="250,50,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB59" HorizontalAlignment="Center" Margin="250,100,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="roxmorts" GotFocus="roxmortsFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB61" HorizontalAlignment="Center" Margin="200,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="200,0,15,65" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB62" HorizontalAlignment="Center" Margin="250,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB63" HorizontalAlignment="Center" Margin="300,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB64" HorizontalAlignment="Center" Margin="350,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB65" HorizontalAlignment="Center" Margin="400,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB66" HorizontalAlignment="Center" Margin="450,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB67" HorizontalAlignment="Center" Margin="500,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB68" HorizontalAlignment="Center" Margin="550,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="mumus" GotFocus="mumusFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB71" HorizontalAlignment="Center" Margin="0,300,150,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,300,165,15" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB72" HorizontalAlignment="Center" Margin="0,300,100,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB73" HorizontalAlignment="Center" Margin="0,300,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB74" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="MTB75" HorizontalAlignment="Center" Margin="50,300,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="HardJatek" Grid.Row="1" Visibility="Collapsed">
+            <Grid Grid.Row="1" x:Name="zsupszkulcs" GotFocus="zsupszkulcsFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB11" HorizontalAlignment="Center" Margin="0,0,500,150" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,515,165" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB12" HorizontalAlignment="Center" Margin="0,0,500,100" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB13" HorizontalAlignment="Center" Margin="0,0,500,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB14" HorizontalAlignment="Center" Margin="0,0,500,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB15" HorizontalAlignment="Center" Margin="0,50,500,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB16" HorizontalAlignment="Center" Margin="0,100,500,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB17" HorizontalAlignment="Center" Margin="0,150,500,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB18" HorizontalAlignment="Center" Margin="0,150,450,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB19" HorizontalAlignment="Center" Margin="0,150,400,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="C" MaxLength="1" TextAlignment="Center" x:Name="HTB110" HorizontalAlignment="Center" Margin="0,150,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB111" HorizontalAlignment="Center" Margin="0,150,300,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="varangydudva" GotFocus="varangydudvaFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB21" HorizontalAlignment="Center" Margin="50,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,15,215" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox Text="A" MaxLength="1" TextAlignment="Center" x:Name="HTB22" HorizontalAlignment="Center" Margin="100,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB23" HorizontalAlignment="Center" Margin="150,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB24" HorizontalAlignment="Center" Margin="200,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB25" HorizontalAlignment="Center" Margin="200,0,0,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB26" HorizontalAlignment="Center" Margin="200,0,0,300" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB27" HorizontalAlignment="Center" Margin="200,0,0,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB28" HorizontalAlignment="Center" Margin="250,0,0,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB29" HorizontalAlignment="Center" Margin="300,0,0,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB210" HorizontalAlignment="Center" Margin="350,0,0,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB211" HorizontalAlignment="Center" Margin="400,0,0,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="A" MaxLength="1" TextAlignment="Center" x:Name="HTB212" HorizontalAlignment="Center" Margin="450,0,0,350" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="tarantallegra" GotFocus="tarantallegraFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB41" HorizontalAlignment="Center" Margin="0,0,100,300" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,115,315" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox Text="A" MaxLength="1" TextAlignment="Center" x:Name="HTB42" HorizontalAlignment="Center" Margin="0,0,100,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB43" HorizontalAlignment="Center" Margin="0,0,100,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB44" HorizontalAlignment="Center" Margin="0,0,100,150" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB45" HorizontalAlignment="Center" Margin="0,0,50,150" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB46" HorizontalAlignment="Center" Margin="0,0,50,100" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB47" HorizontalAlignment="Center" Margin="0,0,50,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="L" MaxLength="1" TextAlignment="Center" x:Name="HTB48" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB49" HorizontalAlignment="Center" Margin="0,50,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB410" HorizontalAlignment="Center" Margin="0,100,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB411" HorizontalAlignment="Center" Margin="0,150,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB412" HorizontalAlignment="Center" Margin="0,150,100,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB413" HorizontalAlignment="Center" Margin="0,200,100,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="sectumsempra" GotFocus="sectumsempraFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB51" HorizontalAlignment="Center" Margin="0,0,550,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,565,365" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB52" HorizontalAlignment="Center" Margin="0,0,500,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB53" HorizontalAlignment="Center" Margin="0,0,450,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB54" HorizontalAlignment="Center" Margin="0,0,400,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB55" HorizontalAlignment="Center" Margin="0,0,350,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB56" HorizontalAlignment="Center" Margin="0,0,300,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB57" HorizontalAlignment="Center" Margin="0,0,300,300" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB58" HorizontalAlignment="Center" Margin="0,0,300,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB59" HorizontalAlignment="Center" Margin="0,0,250,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB510" HorizontalAlignment="Center" Margin="0,0,200,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB511" HorizontalAlignment="Center" Margin="0,0,150,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB512" HorizontalAlignment="Center" Margin="0,0,100,250" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="incarcerandus" GotFocus="incarcerandusFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB61" HorizontalAlignment="Center" Margin="0,0,350,100" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,365,115" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB62" HorizontalAlignment="Center" Margin="0,0,350,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="C" MaxLength="1" TextAlignment="Center" x:Name="HTB63" HorizontalAlignment="Center" Margin="0,0,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB64" HorizontalAlignment="Center" Margin="0,50,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB65" HorizontalAlignment="Center" Margin="0,100,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB66" HorizontalAlignment="Center" Margin="0,150,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB67" HorizontalAlignment="Center" Margin="0,200,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB68" HorizontalAlignment="Center" Margin="0,250,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB69" HorizontalAlignment="Center" Margin="0,300,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB610" HorizontalAlignment="Center" Margin="0,300,400,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB611" HorizontalAlignment="Center" Margin="0,300,450,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB612" HorizontalAlignment="Center" Margin="0,300,500,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB613" HorizontalAlignment="Center" Margin="0,300,550,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+            
+            <Grid Grid.Row="1" x:Name="comikulissimus" GotFocus="comikulissimusFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB31" HorizontalAlignment="Center" Margin="0,0,350,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,365,15" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB32" HorizontalAlignment="Center" Margin="0,0,300,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB33" HorizontalAlignment="Center" Margin="0,0,250,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB34" HorizontalAlignment="Center" Margin="0,0,200,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB35" HorizontalAlignment="Center" Margin="0,0,150,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB36" HorizontalAlignment="Center" Margin="0,0,100,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB37" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB38" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB39" HorizontalAlignment="Center" Margin="50,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="S" MaxLength="1" TextAlignment="Center" x:Name="HTB310" HorizontalAlignment="Center" Margin="100,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB311" HorizontalAlignment="Center" Margin="150,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB312" HorizontalAlignment="Center" Margin="200,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox Text="U" MaxLength="1" TextAlignment="Center" x:Name="HTB313" HorizontalAlignment="Center" Margin="250,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB314" HorizontalAlignment="Center" Margin="300,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="padlasszorny" GotFocus="padlasszornyFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB71" HorizontalAlignment="Center" Margin="100,0,0,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,0,15,265" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB72" HorizontalAlignment="Center" Margin="100,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB73" HorizontalAlignment="Center" Margin="100,0,0,150" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB74" HorizontalAlignment="Center" Margin="100,0,0,100" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB75" HorizontalAlignment="Center" Margin="100,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB76" HorizontalAlignment="Center" Margin="100,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB77" HorizontalAlignment="Center" Margin="100,50,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB78" HorizontalAlignment="Center" Margin="100,100,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB79" HorizontalAlignment="Center" Margin="100,150,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB710" HorizontalAlignment="Center" Margin="100,200,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB711" HorizontalAlignment="Center" Margin="100,250,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB712" HorizontalAlignment="Center" Margin="100,300,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="aragog" GotFocus="aragogFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB81" HorizontalAlignment="Center" Margin="450,0,0,350" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="8" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="450,0,15,365" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB82" HorizontalAlignment="Center" Margin="450,0,0,300" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB83" HorizontalAlignment="Center" Margin="450,0,0,250" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB84" HorizontalAlignment="Center" Margin="450,0,0,200" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB85" HorizontalAlignment="Center" Margin="450,0,0,150" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB86" HorizontalAlignment="Center" Margin="450,0,0,100" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+
+            <Grid Grid.Row="1" x:Name="bumszalagbor" GotFocus="bumszalagborFocus">
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB91" HorizontalAlignment="Center" Margin="250,0,0,50" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBlock Text="9" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="250,0,15,65" Grid.Row="1" FontSize="9" Width="7" Height="10" FontFamily="Lucida Handwriting"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB92" HorizontalAlignment="Center" Margin="250,0,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB93" HorizontalAlignment="Center" Margin="250,50,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB94" HorizontalAlignment="Center" Margin="250,100,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB95" HorizontalAlignment="Center" Margin="250,150,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB96" HorizontalAlignment="Center" Margin="300,150,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB97" HorizontalAlignment="Center" Margin="350,150,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB98" HorizontalAlignment="Center" Margin="400,150,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB99" HorizontalAlignment="Center" Margin="450,150,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB910" HorizontalAlignment="Center" Margin="450,200,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB911" HorizontalAlignment="Center" Margin="450,250,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+                <TextBox MaxLength="1" TextAlignment="Center" x:Name="HTB912" HorizontalAlignment="Center" Margin="450,300,0,0" VerticalAlignment="Center" Width="25" Height="25"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

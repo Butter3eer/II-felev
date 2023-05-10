@@ -1,0 +1,82 @@
+Weblap készítése:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balaton tagadók</title>
+</head>
+<body>
+    <h1>Ezennel bemutatjuk a Balaton tagadók nevű hálózat konfiguráló csapatot. (Csakis szerényen)</h1>
+
+
+router ip 192.168.1.1
+host name beállítás:
+Palaptin_Iroda
+
+DHCP setup:
+      staring IP:
+      192.168.1.10-192.168.1.19
+wireless setup(2,4Ghz):
+       network name: palpatin
+       securitiy: abcd1234
+router restart
+
+switch konfigurálása:
+
+en
+conf t
+hostname S1
+enable secret jelszo
+line con 0
+pass jelszo
+login
+exit
+line vty 0 15
+login
+exit
+int vlan 1
+ip add 192.168.0.2 255.255.255.0
+exit
+service pass
+banner motd #Authorized Access Only!!#
+exit
+
+
+router config:
+
+en
+conf t
+hostname R1
+enable secret jelszo
+line con 0
+login
+exit
+line vty 0 15
+pass jelszo
+login
+exit
+service pass-enc
+banner motd #Authorized Access Only!!#
+int fa0/0
+ip add 192.168.0.1 255.255.255.0
+exit
+
+SSH setup
+
+ip domain-name 
+crypto key gen rsa
+ip ssh ver 2
+username admin priv 15 pass jelszo
+line vty 0 15
+login local
+trans input ssh
+priv level 15
+
+Cisco Router DHCP:
+ip dhcp exclude 192.168.0.10 192.168.0.20
+ip dhcp pool lan 1
+network 192.168.0.0 255.255.255.0
+def 192.168.0.1

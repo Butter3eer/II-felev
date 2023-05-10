@@ -1,0 +1,101 @@
+-- 20. Mely fővárosok népesebbek 20 millió főnél?
+SELECT orszagok.fovaros, orszagok.nep_fovaros
+FROM orszagok
+WHERE orszagok.nep_fovaros > 20000;
+
+-- 21. Mely országok népsűrűsége nagyobb 500 fő/km2-nél?
+SELECT orszagok.orszag, round(orszagok.nepesseg * 1000 / orszagok.terulet, 0) AS nepsuruseg
+FROM orszagok
+WHERE round(orszagok.nepesseg * 1000 / orszagok.terulet, 0) > 500;
+
+-- 22. Hány ország államformája köztársaság?
+SELECT orszagok.orszag, orszagok.allamforma
+FROM orszagok
+WHERE orszagok.allamforma = "köztársaság";
+
+-- 23. Mely országok pénzneme a kelet-karib dollár?
+SELECT orszagok.orszag, orszagok.penznem
+FROM orszagok
+WHERE orszagok.penzjel = "XCD";
+
+-- 24. Hány ország nevében van benne az "ORSZÁG" szó?
+SELECT orszagok.orszag
+FROM orszagok
+WHERE orszagok.orszag LIKE '%ORSZÁG';
+
+-- 25. Mely országokban korona a hivatalos fizetőeszköz?
+SELECT orszagok.orszag, orszagok.penznem
+FROM orszagok
+WHERE orszagok.penznem LIKE '%korona';
+
+-- 26. Mennyi Európa területe?
+SELECT SUM(orszagok.terulet) AS euTerulet
+FROM orszagok;
+
+-- 27. Mennyi Európa lakossága?
+SELECT SUM(orszagok.nepesseg) * 1000 AS euNepesseg
+FROM orszagok;
+
+-- 28. Mennyi Európa népsűrűsége?
+SELECT (SUM(orszagok.nepesseg) * 1000 / SUM(orszagok.terulet)) AS euNepsuruseg
+FROM orszagok;
+
+-- 29. Hány ország van Afrikában?
+SELECT COUNT(orszagok.orszag) AS AfriakiOrszagokDB
+FROM orszagok
+WHERE orszagok.foldr_hely LIKE '%Afrika%';
+
+-- 30. Mennyi Afrika lakossága?
+SELECT SUM(orszagok.nepesseg) * 1000 AS afrikaLakossag
+FROM orszagok
+WHERE orszagok.foldr_hely LIKE '%Afrika%';
+
+-- 31. Mennyi Afrika népsűrűsége?
+SELECT SUM(orszagok.nepesseg) * 1000 / SUM(orszagok.terulet) AS AfrikaNepsuruseg
+FROM orszagok
+WHERE orszagok.foldr_hely LIKE '%Afrika%';
+
+-- 32. Melyek a szigetországok?
+SELECT orszagok.orszag, orszagok.foldr_hely
+FROM orszagok
+WHERE orszagok.foldr_hely LIKE '%(szigetország)' OR orszagok.orszag LIKE '%sziget%' OR orszagok.foldr_hely LIKE '%szigetek%';
+
+-- 33. Mely országok államformája hercegség, vagy királyság?
+SELECT orszagok.orszag, orszagok.allamforma
+FROM orszagok
+WHERE orszagok.allamforma LIKE '%hercegség%' OR orszagok.allamforma LIKE '%királyság%';
+
+-- 34. Hány országnak nincs autójelzése?
+SELECT COUNT(orszagok.orszag) AS AutoJelzesMentes
+FROM orszagok
+WHERE orszagok.autojel = '';
+
+-- 35. Mennyi a váltószáma az aprópénznek azokban az országokban, ahol nem 100?
+SELECT orszagok.valtopenz
+FROM orszagok
+WHERE orszagok.valtopenz > 100 OR orszagok.valtopenz < 100;
+
+-- 36. Hány ország területe kisebb Magyarországénál?
+SELECT COUNT(orszagok.orszag) as KisebbMagyarnal
+FROM orszagok
+WHERE orszagok.terulet < (SELECT orszagok.terulet FROM orszagok WHERE orszagok.orszag LIKE "Magyarország");
+
+-- 37. Melyik a legnagyobb területű ország, és mennyi a területe?-- 38. Melyik a legkisebb területű ország, és mennyi a területe?
+SELECT orszagok.orszag, orszagok.terulet
+FROM orszagok
+WHERE orszagok.terulet LIKE(SELECT MAX(orszagok.terulet) FROM orszagok);
+
+-- 38. Melyik a legkisebb területű ország, és mennyi a területe?
+SELECT orszagok.orszag, orszagok.terulet
+FROM orszagok
+WHERE orszagok.terulet LIKE(SELECT MIN(orszagok.terulet) FROM orszagok);
+
+-- 39. Melyik a legnépesebb ország, és hány lakosa van?
+SELECT orszagok.orszag, orszagok.nepesseg
+FROM orszagok
+WHERE orszagok.nepesseg LIKE(SELECT MAX(orszagok.nepesseg) FROM orszagok);
+
+-- 40. Melyik a legkisebb népességű ország, és hány lakosa van?
+SELECT orszagok.orszag, orszagok.nepesseg
+FROM orszagok
+WHERE orszagok.nepesseg LIKE(SELECT MIN(orszagok.nepesseg) FROM orszagok);

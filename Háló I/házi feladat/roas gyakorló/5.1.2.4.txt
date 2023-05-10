@@ -1,0 +1,89 @@
+en
+conf t
+no ip domain-lookup
+hostname R1
+enable secret class
+line vty 0
+password cisco
+login
+exit
+line con 0
+password cisco
+login
+exit
+int g0/0
+ip add 192.168.20.1 255.255.255.0
+no sh
+int g0/1
+ip add 192.168.10.1 255.255.255.0
+no sh
+end
+copy ru st
+
+en
+conf t
+hostname S1
+no ip domain-lookup
+enable secret class
+line vty 0
+password cisco
+login
+exit
+line con 0
+password cisco
+login
+exit
+vlan 10
+name Student
+int range f0/5-6
+switchport mode access
+switchport access vlan 10
+exit
+int vlan 10
+ip add 192.168.10.11 255.255.255.0
+no sh
+exit
+int f0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20
+no sh
+exit
+ip default-gateway 192.168.10.1
+vlan 20
+name Faculty-Admin
+end
+copy ru st
+
+en
+conf t
+hostname S2
+no ip domain-lookup
+enable secret class
+line vty 0
+password cisco
+login
+exit
+line con 0
+password cisco
+login
+exit
+vlan 20
+name Faculty-Admin
+int range f0/11, f0/18
+switchport mode access
+switchport access vlan 20
+exit
+int vlan 10
+ip add 192.168.10.11 255.255.255.0
+no sh
+exit
+int f0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20
+no sh
+exit
+ip default-gateway 192.168.10.1
+vlan 10
+name Student
+end
+copy ru st

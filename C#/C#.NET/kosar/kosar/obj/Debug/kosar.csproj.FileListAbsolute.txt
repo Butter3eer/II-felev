@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\kosar\kosar\bin\Debug\kosar.exe.config
+E:\STUDY\Petrik\II-felev\C#\kosar\kosar\bin\Debug\kosar.exe
+E:\STUDY\Petrik\II-felev\C#\kosar\kosar\bin\Debug\kosar.pdb
+E:\STUDY\Petrik\II-felev\C#\kosar\kosar\obj\Debug\kosar.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\kosar\kosar\obj\Debug\kosar.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\kosar\kosar\obj\Debug\kosar.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\kosar\kosar\obj\Debug\kosar.exe
+E:\STUDY\Petrik\II-felev\C#\kosar\kosar\obj\Debug\kosar.pdb

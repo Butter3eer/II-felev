@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Furdostat\Furdostat\bin\Debug\Furdostat.exe.config
+E:\STUDY\Petrik\II-felev\C#\Furdostat\Furdostat\bin\Debug\Furdostat.exe
+E:\STUDY\Petrik\II-felev\C#\Furdostat\Furdostat\bin\Debug\Furdostat.pdb
+E:\STUDY\Petrik\II-felev\C#\Furdostat\Furdostat\obj\Debug\Furdostat.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Furdostat\Furdostat\obj\Debug\Furdostat.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Furdostat\Furdostat\obj\Debug\Furdostat.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Furdostat\Furdostat\obj\Debug\Furdostat.exe
+E:\STUDY\Petrik\II-felev\C#\Furdostat\Furdostat\obj\Debug\Furdostat.pdb

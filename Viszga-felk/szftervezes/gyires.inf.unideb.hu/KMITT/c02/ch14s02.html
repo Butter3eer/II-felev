@@ -1,0 +1,93 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch14s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>14.2. Létrehozási minták(Creational patterns)</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch14.html" title="14. fejezet - Tervezési minták"><link rel="prev" href="ch14.html" title="14. fejezet - Tervezési minták"><link rel="next" href="ch14s03.html" title="14.3. Szerkezeti minták (Structural Patterns)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">14.2. Létrehozási minták(Creational patterns)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch14.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">14. fejezet -  Tervezési minták </th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch14s03.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="14.2. Létrehozási minták(Creational patterns)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e5216"></a>14.2. Létrehozási minták(Creational patterns)</h2></div></div></div><p>
+      A létrehozási minták osztályokat egyedeket példányosítanak. Két részre oszthatjuk ezeket: osztály vagy objektum létrehozó minták.
+      Amíg az új osztályt létrehozó minták eszköze a származtatás, addig a példányt létrehozó mintáké a delegáció. Általában szeretnénk e létrehozás
+módját, a létrehozandó elem szerkezetét elrejteni, és a létrehozás módját függetleníteni az elemekt&#337;l.      
+    </p><div class="sect2" title="14.2.1. Prototípus (Prototype)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5221"></a>14.2.1. Prototípus (Prototype)</h3></div></div></div><p>
+        
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Elemek létrehozása el&#337;zetes minta (prototípus) alapján</p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Akkor használjuk, ha egy objektum létrehozásának módjától függetlennek kell
+                lennie a rendszernek. Nem szeretnénk gyárakat építeni. Gyakran használjuk, ha a
+                példányosítandó osztály típusa futásid&#337;ben derül ki.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Akkor használjuk, ha a rendszernek  függetlennek kell lennie az új példány létrehozásától, szerkezetét&#337;l, megjelenítését&#337;l.</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_10"></a><img src="images/prototype.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Client
+osztály, ami az  új objektumot szeretné létrehozni, a prototípust kéri meg önmaga klónozására.
+
+</p></li><li class="listitem"><p>Protype, ami egy interfészt deklarál  önmaga klónozásához.
+</p></li><li class="listitem"><p>ConcretePrototype
+ osztály, ami implementálja  klónozó függvényt (saját maga másolására)</p></li></ol></div><p>
+
+                
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>A kliens a prototípus interfészt használva megkéri a konkrét prototípust objektumot önmaga klónozására.</p></dd><dt><span class="term">Következmények</span></dt><dd><p>Elrejti a termék osztályok részleteit, függetleníti azt a termék szerkezetét&#337;l. Nem kell ismernie a kér&#337; (kliens) 
+                objektumnak a konkrét elemnek a nevét, amit létre akar hozni, hiszen az interfészt használja. Aki az interfészt implementálja, 
+                azt lehet létrehozni, és nem kell arról a klienst értesíteni.
+              </p></dd></dl></div><p>
+      
+            </p></div><div class="sect2" title="14.2.2. Egyke (Singleton)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5283"></a>14.2.2. Egyke (Singleton)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Biztosítani azt, hogy egy osztályból csak egy példány létezzen a rendszerben, és az elérhet&#337; legyen globálisan több elem számára is.</p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Hogyan biztosíthatjuk, hogy egy osztálynak csak egy példánya létezzen, és ez példány könnyen elérhet&#337; legyen? A globális változó segítségével a globális használat könnyen biztosítható lenne, de nem akadályozza meg a több példány létrehozását.
+
+Helyesebb, ha magát az osztályt tesszük felel&#337;ssé azért, hogy privát elemként tartalmazza a példányt, és kérés esetén kiadja annak elérhet&#337;ségét csak olvasható módon.
+</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Csak olvasható módon biztosítani szeretnénk egy példányban futó objektum globális elérését. Tipikus példa az adatbázis kapcsolat (ConnectionPool), loggolást, és az üzenet sorok.</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_11"></a><img src="images/singleton.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Kliens osztály, ami kéri az egyetlen globális példányt. </p></li><li class="listitem"><p>Singleton
+definiál egy Instance (példány) m&#369;veletet, amivel a kliensek hozzáférhetnek az egyedüli példányhoz. Instance mindenképpen egy osztálym&#369;velet.
+
+Általában felel&#337;s a  saját egyedüli példányának a létrehozásáért. Ha csak lehet tiltja a több példány létrehozását (privát konstruktor).
+</p></li></ol></div><p>
+
+                     
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>A kliensek a Singleton példányát kizárólag a Singleton Instance m&#369;veletén keresztül érik el, amely ha nem létezett, akkor létrehozza, és visszatér a példánnyal. Általában a létrehozásnak nincs paramétere.</p></dd><dt><span class="term">Következmények</span></dt><dd><p>Nem lehet létrehozni több példányt az objektumból. Globális változókat váltja
+                ki, így szabályzottan (loggoltható, debuggolható) férhetünk a globális objektumhoz.
+                Általában paraméter nélküli példányosítást tesz lehet&#337;vé, vagy a paraméterek nem a
+                külvilágból származnak. </p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.2.3. Épít&#337; (Builder)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5342"></a>14.2.3. Épít&#337; (Builder)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Egy építési folyamattal több, különböz&#337; szerkezet&#369;  elemek létrehozása. A létrehozás folyamata független az ábrázolástól.</p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Akkor használjuk, ha lépésr&#337;l lépésre kell létrehozni az elemet (több lépés), és
+                a termék azonnal létrejön. Gyakran Factory mintával kezd&#337;dik a tervezés, fejlesztés,
+                de ha túl sok lépésb&#337;l áll, akkor áttérünk Builder-re.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Akkor alkalmazzuk, ha a létrehozási folyamatnak függetlennek kell lennie, a létrehozás algoritmusa (inicializáló algoritmusok) független kell legyen a szerkezett&#337;l. Ha egy osztály sok rész-osztályt használ (komplex osztály), mindenképp használjuk ezt, mert a részek változásakor változtatni kell a létrehozó kódokat is. Új részek felvételét is kezeli, hoszen a használó (kliens) nem változik.</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_12"></a><img src="images/builder.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Builder interfész, amely deklarálja a termékrész objektum létrehozására szolgáló absztrakt m&#369;veleteket.
+</p></li><li class="listitem"><p>ConcreteBuilder osztály, amely pontosan definiálja a  Builder interfészben el&#337;írt létrehozó metódusokat, felépíti és összeállítja a termék részeit.
+Definiálja és nyomon követi az általa készített megjelenítési módokat.
+Metódus(oka)t biztosít a termék beolvasásához.
+</p></li><li class="listitem"><p>Director osztály, amely ismeri, és használja a  Builder interfészt, kéri a termék létrehozását. </p></li><li class="listitem"><p>Product osztály, ami az elkészítend&#337; osztály maga. A ConcreteBuilder felépíti a ennek a termék bels&#337; ábrázolását és definiálja az összeállítási folyamatokat.</p></li></ol></div><p>
+
+                     
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A kliens létrehozza a Director objektumot és beállítja a kívánt Builder objektummal.</p></li><li class="listitem"><p>A Director értesíti a builder-t, ha egy objektum részét fel kell építeni.</p></li><li class="listitem"><p>A Builder kezeli a dircetor-tól érkez&#337; kéréseket és a részeket ad a termékhez.</p></li><li class="listitem"><p>A kliens lekéri a terméket a builder-t&#337;l.</p></li></ol></div><p>
+                        </p></dd><dt><span class="term">Következmények</span></dt><dd><p>Csak a director felügyelete mellett lehet felépíteni a terméket, amely több
+                lépésb&#337;l áll. A director csak akkor veszi át a terméket, ha az már kész van.</p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.2.4. Elvont gyár (Abstract Factory)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5421"></a>14.2.4. Elvont gyár (Abstract Factory)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Létrehozási interfészt biztosítani kapcsolódó vagy függ&#337; objektumok családjának, a konkrét osztályok megadása nélkül.</p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Akkor használjuk, ha a létrehozandó objektumokat családba rendezhetjük, azaz
+                függ&#337;ség van közöttük. Általában a létrehozás kevés lépésb&#337;l áll.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Akkor használjuk az Abstract Factory mintát, ha
+
+-a rendszernek függetlennek kell lenni attól, hogyan hozza létre, állítja össze és jeleníti meg a termékeit.
+A rendszernek be kell állítania egyet termékcsalád közül, 
+ a kapcsolódó termékobjektumok egy családját együttes használatra tervezték, és ezt a megszorítást ki kell kényszeríteni, gondoskodni kell a termékek osztálykönyvtáráról, és csak az interfészüket fedhetjük fel, de a megvalósításukat nem.
+
+</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_13"></a><img src="images/abstractfactory.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>AbstractFactory interfész, amely 
+ az absztrakt termékobjektumokat létrehozó interfészt deklarálja.
+Több is lehet bel&#337;le, mindegyiket ismerni kell a kliensnek.</p></li><li class="listitem"><p>ConcreteFactory
+osztály, amit a konkrét termékobjektumok létrehozására szolgáló m&#369;veleteket implementálja.
+</p></li><li class="listitem"><p>AbstractProduct
+ interfész, amely a termékobjektumok egy típusának interfészt deklarálja. Több is lehet bel&#337;le, mindegyiket ismerni kell a kliensnek.
+</p></li><li class="listitem"><p>ConcreteProduct
+osztály, amely definiálja a létrehozandó termékobjektumot a megfelel&#337; konkrét factory (gyár) mellett, implementálja az AbstractProduct interfészt.
+</p></li></ol></div><p>
+
+                     
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>A ConcreateFactory egy példánya jön létre futásid&#337;ben, amely ismeri a konkrét
+                termék osztályt. Ha a kliens más osztályú objektumot akar létrehozni, akkor más
+                ConcreateFactory kell használnia.</p></dd><dt><span class="term">Következmények</span></dt><dd><p>A konkrét osztályok elszigeteltek, a kliensnek nem kell ismernie azokat.
+                Megkönnyíti a termékcsaládok cseréjét, de megnehezíti az újak bevezetését.</p></dd></dl></div><p>
+            </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch14.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch14.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch14s03.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">14. fejezet -  Tervezési minták &nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;14.3. Szerkezeti minták (Structural Patterns)</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch14s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:03 GMT -->
+</html>

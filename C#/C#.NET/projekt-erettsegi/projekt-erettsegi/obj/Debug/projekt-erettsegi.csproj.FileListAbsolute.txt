@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\projekt-erettsegi\projekt-erettsegi\bin\Debug\projekt-erettsegi.exe.config
+E:\STUDY\Petrik\II-felev\C#\projekt-erettsegi\projekt-erettsegi\bin\Debug\projekt-erettsegi.exe
+E:\STUDY\Petrik\II-felev\C#\projekt-erettsegi\projekt-erettsegi\bin\Debug\projekt-erettsegi.pdb
+E:\STUDY\Petrik\II-felev\C#\projekt-erettsegi\projekt-erettsegi\obj\Debug\projekt-erettsegi.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\projekt-erettsegi\projekt-erettsegi\obj\Debug\projekt-erettsegi.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\projekt-erettsegi\projekt-erettsegi\obj\Debug\projekt-erettsegi.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\projekt-erettsegi\projekt-erettsegi\obj\Debug\projekt-erettsegi.exe
+E:\STUDY\Petrik\II-felev\C#\projekt-erettsegi\projekt-erettsegi\obj\Debug\projekt-erettsegi.pdb

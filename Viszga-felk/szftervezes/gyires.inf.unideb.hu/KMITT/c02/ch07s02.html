@@ -1,0 +1,91 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch07s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:47 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>7.2. Az UML fogalma, tervezési alapelvei</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch07.html" title="7. fejezet - A Unified Modeling Language (UML)"><link rel="prev" href="ch07.html" title="7. fejezet - A Unified Modeling Language (UML)"><link rel="next" href="ch07s03.html" title="7.3. UML diagram típusok"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7.2. 
+            
+            Az UML fogalma, tervezési alapelvei</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch07.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">7. fejezet - A Unified Modeling Language (UML)</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch07s03.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="7.2. Az UML fogalma, tervezési alapelvei"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2325"></a>7.2. 
+            
+            <a name="__RefHeading__75_120998265"></a>Az UML fogalma, tervezési alapelvei</h2></div></div></div><p>Az UML tehát egy nyelv (a szó informatikai értelmében, mint arra rövidesen még
+            kitérünk). A definíciójához használjunk fel hiteles forrást. Az OMG Unified Modeling
+            Language Specification, vers. 1.5 dokumentum 1.1 pontjának (Overview) els&#337; két
+            mondata:</p><p>&#8220;The Unified Modeling Language (UML) is a language for specifying, visualizing,
+            constructing, and documenting the artifacts of software systems, as well as for business
+            modeling and other non-software systems. The UML represents a collection of the best
+            engineering practices that have proven successful in the modeling of large and complex
+            systems.&#8221;</p><p>A fenti definíció szerint tehát az UML rendszerek modelljeinek vizuális
+            dokumentálására alkalmas eszköz. A &#8222;rendszer&#8221; lehet szoftver, üzleti folyamatok
+            rendszere, vagy bármi más is. Természetesen számunkra a szoftver alapú rendszerek
+            modelljeinek leírása a legfontosabb. Fontos kulcsszó még a fenti meghatározásban az,
+            hogy komplex rendszerek modellezésére is alkalmas eszközként határozza meg az
+            UML-t.</p><p>Az OMG definíciója:</p><p>
+            
+            <span class="emphasis"><em>"The Unified Modeling Language (UML) is a graphical language for
+               visualizing,</em></span>
+            
+            <span class="emphasis"><em>specifying, constructing, and documenting the artifacts of a
+               software-intensive system.</em></span>
+            
+            <span class="emphasis"><em>The UML offers a standard way to write a system's blueprints, including
+               conceptual</em></span>
+            
+            <span class="emphasis"><em>things such as business processes and system functions as well as concrete
+               things such</em></span>
+            
+            <span class="emphasis"><em>as programming language statements, database schemas, and reusable
+               software</em></span>
+            
+            <span class="emphasis"><em>components."</em></span>
+         
+         </p><p>A fenti definíciókból is kit&#369;nik, hogy az UML egy eszköz (nyelv) a fejlesztés során
+            el&#337;állítandó modell egyes elemeinek dokumentálására, de nem módszertan. Önmagában nem ad
+            tanácsokat vagy el&#337;írásokat, hogy elemeit mikor, milyen sorrendben, mire érdemes
+            használni. Ebb&#337;l a szempontból hasonló a programozási nyelvekhez: ha valaki csupán egy
+            nyelv szintaktikáját és szemantikáját tanulja meg, még nem fog tudni m&#369;köd&#337;, és valós
+            problémát megoldó programot írni &#8211; ehhez az adott nyelv eszközeinek lehetséges
+            felhasználási módjait is meg kell tanulnia (algoritmusok, adatszerkezetek,
+            programtervezési és programozás technikai fogások stb.). </p><p>Az UML tehát számtalan módon felhasználható a szoftverfejlesztési folyamat
+            támogatására, de hogy ez hogyan történjen, a konkrét módszertanok írhatják el&#337;. Annyit
+            azonban megállapíthatunk, hogy szabványosságából és a szakmán belüli ismertségéb&#337;l
+            adódóan gyakorlatilag minden ma folyó fejlesztési projekt felhasználja, bármilyen
+            fejlesztési módszertant is alkalmaz.</p><p>Az UML tervezése során az alkotók rögzítettek néhány alapvet&#337; célkit&#369;zést. A
+            továbbiakban vegyük sorra ezeket az alapelveket.</p><div class="sect2" title="7.2.1. Kifejez&#337; vizuális modellez&#337; nyelv biztosítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2364"></a>7.2.1. Kifejez&#337; vizuális modellez&#337; nyelv biztosítása</h3></div></div></div><p>A
+               fejleszt&#337;knek egy olyan jól használható, kifejez&#337; modellez&#337; nyelvre van szükségük,
+               amelynek segítségével pontosan le tudják írni a modell egyes elemeit és azok
+               összefüggéseit. Ezek a modell leírások a fejleszt&#337; csapat minden tagja számára
+               ugyanazt kell jelentsék. Az UML egységbe foglal számos olyan modellezési eszközt,
+               amelyek különböz&#337; módszertanokban megtalálhatók. A tervezés során az volt a cél, hogy
+               az UML eszközei alkalmazhatók legyenek különböz&#337; jelleg&#369; és komplexitású rendszerek
+               fejlesztése során is. Ennek érdekében számos elemet definiál, amelyekb&#337;l egy adott
+               fejlesztés során elég csak a projekt sajátosságainak megfelel&#337;ket alkalmazni. Így
+               egyszerre biztosít lehet&#337;séget a nagy bonyolultságú, nagy méret&#369; és az egyszer&#369;bb
+               rendszerek fejlesztésére, és képes alkalmazkodni a különböz&#337; jelleg&#369; rendszerek
+               (például vállalati információs rendszerek, real-time rendszerek, web alkalmazások
+               stb.) igényeihez. </p></div><div class="sect2" title="7.2.2. Lehet&#337;ség az alap koncepció b&#337;vítésére és specializálására"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2369"></a>7.2.2. Lehet&#337;ség az alap koncepció b&#337;vítésére és specializálására</h3></div></div></div><p>Az alkalmazásfejlesztéssel szemben támasztott mai követelmények szükségessé
+               teszik, hogy az UML alkalmazkodni tudjon újonnan felmerül&#337; igényekhez, újonnan
+               kifejlesztett technológiákhoz és speciális fejlesztési területekhez. Az UML lehet&#337;vé
+               teszi, hogy</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>egy legtöbb, szokásos jelleg&#369; &nbsp;fejlesztéshez elegend&#337; legyen az alap
+                     eszköztár</p></li><li class="listitem"><p>új elképzelésekkel az alapok módosítása nélkül legyen kiegészíthet&#337;
+                     (kiterjesztési mechanizmus)</p></li><li class="listitem"><p>egy adott alkalmazásterület speciális igényei szerint testre szabható
+                     legyen</p></li></ol></div></div><div class="sect2" title="7.2.3. Programozási nyelvt&#337;l és módszertantól független legyen"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2384"></a>7.2.3. Programozási nyelvt&#337;l és módszertantól független legyen</h3></div></div></div><p>Az UML használható a ma ismert bármelyik programozási nyelvet és módszertant
+               használó fejlesztés során, mert azoktól független absztrakciós szinten fogalmazza meg
+               a rendszer modelljét. Például egy megfelel&#337; részletesség&#369; osztálydiagram
+               implementálható Java osztályok halmazaként, vagy akár SQL utasítások sorozataként. Az
+               UML diagramtípusait pedig minden jelenleg ismert módszertan be tudja illeszteni a
+               saját koncepciójába.</p><p></p></div><div class="sect2" title="7.2.4. Biztosítson formális alapot a modellez&#337; nyelv megértéséhez"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2390"></a>7.2.4. Biztosítson formális alapot a modellez&#337; nyelv megértéséhez</h3></div></div></div><p>Az UML egy nyelv a szó informatikai értelmében (mint például a programozási
+               nyelvek.) Ahhoz, hogy UML-t támogató eszközök készülhessenek, precíz (lehet&#337;leg
+               formális) definíciók szükségesek az eszköz készít&#337;k számára. Az UML formális
+               definíciója egy metamodell, amit osztály diagramok segítségével definiáltak. Bár ez
+               matematikai értelemben nem teljesen pontos definíció, ezért néhány eleme szóbeli
+               értelmezésre is szorul, a fejleszt&#337;eszközök írói számára elegend&#337;.</p><p>Az UML nyelv alkalmazóinak ez a metamodell túlságosan absztrakt, ezért számukra
+               több magyarázatot tartalmazó specifikáció, illetve számos tutoriál áll
+               rendelkezésre.</p></div><div class="sect2" title="7.2.5. Támogatja az objektum orientált eszközök fejlesztését"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2397"></a>7.2.5. Támogatja az objektum orientált eszközök fejlesztését</h3></div></div></div><p>Miután a szakemberek által ismert és használt, szabványos eszköz, UML diagramok
+               készítésére számos program került kifejlesztésre. Ezek közül a legegyszer&#369;bbek csupán
+               diagram rajzolók, de vannak a teljes fejlesztési ciklust lefedni szándékozó
+               fejlesztési környezetet biztosító termékek is.</p></div><div class="sect2" title="7.2.6. Az eddigi gyakorlati tapasztalatok (&#34;best practices&#34;) integrálása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2402"></a>7.2.6. Az eddigi gyakorlati tapasztalatok ("best practices") integrálása</h3></div></div></div><p>Az UML tekinthet&#337; egy olyan koncepciónak, ami az eddigi fejlesztések
+               tapasztalatait feldolgozva, integrálja az azok során összegy&#369;lt bevált
+               megoldásokat.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch07.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch07.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch07s03.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">7. fejezet - A Unified Modeling Language (UML)&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;7.3. 
+            
+            UML diagram típusok</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch07s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:47 GMT -->
+</html>

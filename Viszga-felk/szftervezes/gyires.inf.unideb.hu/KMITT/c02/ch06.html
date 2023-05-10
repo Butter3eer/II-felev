@@ -1,0 +1,265 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch06.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:46 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>6. fejezet - A szoftvertervezés folyamata</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch05s04.html" title="5.4. Ellen&#337;rz&#337; kérdések"><link rel="next" href="ch06s02.html" title="6.2. Objektumorientált tervezés"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6. fejezet - A szoftvertervezés folyamata</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05s04.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch06s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="6. fejezet - A szoftvertervezés folyamata"><div class="titlepage"><div><div><h2 class="title"><a name="d0e1669"></a>6. fejezet - A szoftvertervezés folyamata</h2></div></div></div><p>A szoftvertervezés a követelmények tisztázása és dokumentálása után a következ&#337;
+         mérföldk&#337;nek számító fontos tevékenység, amely fejlesztési modellt&#337;l függetlenül egységesen
+         jelenik meg bármely szoftver fejlesztésénél. &nbsp;A fejezet célja, hogy egy általános
+         áttekintést nyújtson a tervezési folyamat egészér&#337;l, az egyes fejlesztési részterületeken
+         alkalmazható modellekr&#337;l. </p><p>A szoftvertervezés lényegében egy emberi tényez&#337;t igényl&#337; olyan tervezési folyamat,
+         amely során a szoftver logikai szerkezetére vonatkozóan döntéseket kell meghozni. Mikre is
+         vonatkoznak valójában ezek a döntési kérdések? Röviden az alábbi pontokat kell
+         megválaszolni a tervnek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>az implementálandó szoftver struktúrája </p></li><li class="listitem"><p>az ada­tok szervezése és áramlása a rendszerben, </p></li><li class="listitem"><p>a (rendszer)kompo­nensek közötti interfészek tisztázása,</p></li><li class="listitem"><p>a használt algoritmusok leírása.</p></li></ol></div><p>A tervezési folyamat &#8222;indítómotorja&#8221; az követelmény-feltárás és specifikációs fázis
+         eredményeképpen el&#337;állított követelménydokumentum. A korábbi fejezetben már kihangsúlyoztuk
+         eme fázis fontosságát. Nem véletlen, hiszen a félreértett vagy rosszul dokumentált
+         követelmények itt, a tervezés folyamatában további problémákat generálhatnak. Ekkor a
+         rendszer logikai szerkezetét a rossz követelményeknek megfelel&#337;en alakítjuk ki, amely pedig
+         egy hibásan m&#369;köd&#337; rendszert eredményez. Mindez pedig egy-egy komponens, vagy akár a teljes
+         rendszer újratervezéséhez vezethet, amely jelent&#337;s id&#337; és anyagi forrásokat emészthet
+         fel.</p><p>A tervezési folyamat során a tervez&#337;k nem egyenes úton haladnak, hanem iteratív módon
+         számos különféle verzió kifejlesztésén keresztül. Erre sokszor azért van szükség, mert a
+         kifejlesztend&#337; rendszer bizonyos részei kevésbé érthet&#337;k lehetnek (pl.: bizonyos
+         szakterületi követelmények esetén), így úgynevezett prototípusok létrehozásával
+         tapasztalatokat gy&#369;jthetnek a készítend&#337; rendszerr&#337;l.</p><p>A tervezési folyamat járulékos formalitást és kifejtést is magában foglal a terv
+         fejlesztése közben, valamint folytonos visszalépéseket a korábbi tervek javítására. Nem
+         ritka azonban az sem, hogy a tervezés során különböz&#337; követelményproblémák (ellentmondás,
+         többértelm&#369;ség, stb) merülnek fel. Ilyenkor a specifikáció finomítása, a hibák korrigálása
+         szükséges.</p><p>A tervezési folyamat számos különféle absztrakciós szinten lev&#337; rendszermo­dell
+         kifejlesztését is tartalmazhatja. Amint a tervet részekre osztjuk, napvilágra kerülnek a
+         korábbi hibák és hiányosságok. Ezek a visszacsatolások biztosítják, hogy
+         továbbfejleszthessük a korábbi tervezési modelleket. A tervezési folyamat tevékenységei
+         át­fedik egymást. A következ&#337; ábra a tervezés folyamatát általánosságban mutatja be.</p><p></p><div class="figure"><a name="d0e1698"></a><p class="title"><b>6.1. ábra - A tervezési folyamat általános modellje</b></p><div class="figure-contents"><div align="center"><img src="images/image17.png" align="middle" alt="A tervezési folyamat általános modellje"></div></div></div><br class="figure-break"><p>Az ábrán jól megfigyelhet&#337;k a tervezési folyamat egyes állomásai, valamint az, hogy
+         minden fázis mellett egy a tevékenységnek megfelel&#337; specifikáció készül el. Ezek a
+         dokumentumok az adott terv szintjének részletes leírásai. Ahogy folytatódik a tervezés
+         folyamata, ezek a specifikációk egyre részletesebbé válnak. A folyamat végeredménye pedig
+         az implementálandó algoritmusok és adatszerkezetek precíz specifikációja. </p><p>Nagyon fontos, hogy a folyamat során részletesen kitérjünk minden felmerül&#337; kérdésre.
+         Ebben az esetben az implementáció során nem kell meg nem válaszolt tervezési kérdésekkel
+         foglalkozni. A tervezési folyamat tevékenységei röviden a következ&#337;k:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Architekturális tervezés: a rendszert felépít&#337; alrendszerek és a köztük találha­tó
+               kapcsolatok azonosítása és dokumentálása. </p></li><li class="listitem"><p>Absztrakt specifikáció: meg kell adni az azonosított alrendszerek megszorításainak
+               és szolgáltatásainak absztrakt specifikációját, melyek mellett azok m&#369;ködnek.</p></li><li class="listitem"><p>Interfész tervezése: meg kell tervezni és do­kumentálni az egyes alrendszerek
+               egyéb alrendszerek felé mutatott interfészeit. Az interfész specifikációjának
+               egyértelm&#369;nek kell lennie.</p></li><li class="listitem"><p>Komponens tervezése: a szolgáltatásokat azokat megvalósító komponensekre kell
+               bontani, és meg kell tervezni a komponensek interfészeit.</p></li><li class="listitem"><p>Adatszerkezet tervezése: meg kell határozni és részletesen meg kell tervezni a
+               rendszer implementációjában használt adatszerkezeteket.</p></li><li class="listitem"><p>Algoritmus tervezése: meg kell tervezni és pontosan meg kell határozni a
+               szol­gáltatások biztosításához szükséges algoritmusokat.</p></li></ol></div><p>Bizonyos esetekben a szoftver logikai szerkezetét modellez&#337; nyelvek segítségével
+         célszer&#369; szemléletesebbé és jobban érthet&#337;bbé tenni. Ilyenkor egy modellez&#337;nyelv
+         segítségével alkotjuk meg a szoftver modelljét. Az irodalomban számos ilyen nyelv fejl&#337;dött
+         ki, amelyek közül talán az UML (Unified Modelling Language) a legelterjedtebb a
+         gyakorlatban. Más esetekben a tervet informális jelölésrendszerrel leírt vázla­tokkal
+         reprezentálhatjuk. &nbsp;</p><div class="sect1" title="6.1. Architekturális tervezés"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1727"></a>6.1. 
+            
+            <a name="__RefHeading__63_120998265"></a>Architekturális tervezés</h2></div></div></div><p>Az architekturális tervezés a legels&#337; lépcs&#337;fok a tervezés folyamatban.
+            Ebben a lépésben meg kell próbálni a nagy rendszereket egymással kapcsolatban álló,
+            egymásnak szolgáltatásokat nyújtani képes alrendszerek csoportjára bontani.
+            Természetesen mindezt úgy, hogy a terv eleget tegyen a követelmények dokumentumában
+            rögzített funkcionális és nem funkcionális követelményrendszernek. Architekturális
+            tervezésen pedig azt a folyamatot értjük, amely ezen alrendszerek azonosítására, az
+            alrendszer vezérlésére és a kommunikációjára szolgáló keretrendszer létreho­zásával
+            foglalkozik.</p><p>Egy fontos és kreatív folyamat, amely alapjában véve befolyásolja a rendszer
+            teljesítményét, robusztus­ságát, eloszthatóságát és karbantarthatóságát. Biztosítani
+            kell tehát azt, hogy a szoftvertervez&#337;k a tervezés kulcsfontosságú aspektusaival már a
+            folyamat korai szakaszában foglalkozza­nak. Egy alkalmazás szá­mára választott szerkezet
+            olyan nemfunkcionális rendszerkövetelményekt&#337;l is függhet, mint például a teljesítmény,
+            védettség, biztonságosság, rendelkezésre állás, és karbantarthatóság. Amennyiben ezeket
+            a megkötéseket a tervezés eme fázisában nem vagy kevésbé vesszük figyelembe, a kés&#337;bbi
+            folyamatokban számos további probléma merülhet fel.</p><p>Az architekturális tervezés magában foglalja a rendszerek alrendszerekre bontását is.
+            Az alrendszerek tervezése tulajdonképpen a rendszer durva szemcsézettség&#369; komponensekre
+            történ&#337; absztrakt felbontása, amely komponensek lehetnek önálló rendszerek. Az
+            alrendszerek terveit általában blokkdiagram segítségével írjuk le.</p><div class="sect2" title="6.1.1. Architekturális tervezési döntések"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1738"></a>6.1.1. Architekturális tervezési döntések</h3></div></div></div><p>Az architekturális tervezési folyamat során a rendszer
+               tervez&#337;inek számos olyan döntést kell meghozniuk, amelyek alapvet&#337;en kihatnak a
+               rendszerre és a fejlesztési folyamatra. Tudásuk és tapasztalataik alapján a következ&#337;
+               alapvet&#337; kérdésekre kell válaszolniuk:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Létezik-e olyan általános alkalmazás architektúra, amely a tervezend&#337;
+                     rendszer számára mintául szolgálhat?</p></li><li class="listitem"><p>Hogyan osztjuk szét a rendszert processzorokra?</p></li><li class="listitem"><p>Milyen architekturális stílus lenne a rendszer számára megfelel&#337;?</p></li><li class="listitem"><p>Milyen alapvet&#337; megoldásokat alkalmazunk a rendszer strukturálására?</p></li><li class="listitem"><p>Hogyan lehet a rendszer szerkezeti egységeit modulokra felbontani?</p></li><li class="listitem"><p>Milyen stratégiát kell alkalmazni az egységek m&#369;ködésének vezérlésével
+                     kap­csolatban?</p></li><li class="listitem"><p>Hogyan értékelik majd ki az architekturális tervet?</p></li><li class="listitem"><p>Hogyan kell a rendszer-architektúrát dokumentálni?</p></li></ol></div><p>Természetesen a kérdések és a válaszok köre nagymértékben függ a kifejlesztend&#337;
+               szoftver típusától. Egy egyszer&#369; személyi számítógépes rendszer esetén például nincs
+               szükség elosztott architektúrára.</p><p>Az architekturális tervezési folyamat eredménye egy architekturális tervezési
+               dokumentum, amely tartalmazza a rendszer grafikus reprezentációit és a hozzájuk
+               kapcsolódó leíró szöveget. Célszer&#369; az általános logikai felépítést mindig valamilyen
+               grafikus reprezentációval modellezni, mert az emberi agy vizualizált objektumokkal
+               könnyebben dolgozik. Továbbá a dokumentumnak részletesen vázolnia kell azt, hogy a
+               rendszert hogyan lehet alrendszerekre bontani és az egyes alrendszerek miképpen
+               oszthatók modulokra.</p><p>Bár minden szoftver architektúrája valamilyen szinten egyedi, az alkalmazott
+               megoldások általánosításával a következ&#337; modellcsoportok merülnek fel:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Statikus szerkezeti modell: megmutatja, hogyan lehet az alrendszereket és
+                     komponenseket különálló egységként fejleszteni.</p></li><li class="listitem"><p>Dinamikus folyamatmodell: ábrázolja, hogy a rendszer hogyan szervezhet&#337;
+                     futási idej&#369; folyamatokba. Különbözhet a statikus modellt&#337;l.</p></li><li class="listitem"><p>Interfészmodell: az alrendszerek által nyúj­tott szolgáltatásait írja
+                     le.</p></li><li class="listitem"><p>Kapcsolatmodellek: az alrendszerek közötti kapcsolatokat (például
+                     adatáram­lás) mutatják be.</p></li><li class="listitem"><p>Elosztási modell: azt adja meg, hogy az egyes alrendszereket hogyan kell
+                     el­osztani a számítógépek között.</p></li></ol></div><p>Azt, milyen eszközzel reprezentáljuk a rendszer-architektúráját, nincs megkötés.
+               Az irodalomban azonban számos kutató az architektúra leíró nyelvek
+               (ArchitecturalDescriptionLanguages, ADL) használatát és az UML nyelvet
+               javasolja.</p><p></p></div><div class="sect2" title="6.1.2. 6.1.2 A rendszer felépítése"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1793"></a>6.1.2. 6.1.2 A rendszer felépítése</h3></div></div></div><p>Az architekturális tervezési folyamat korai szakaszában döntenünk kell a rendszer
+               teljes szerkezeti modelljér&#337;l. Ezt szervezési mód az alrendszerek akár közvetlenül is
+               tükrözhetik, de gyakran el&#337;fordul, hogy az alrendszer modellje részletesebb a
+               szerkezeti modellnél.</p><p>A rendszer felépítését számos modell segítségével írhatjuk le. Bár minden rendszer
+               architektúrája más lehet, vannak széles körben alkalmazott módszertanok. Most ezekb&#337;l
+               nézünk meg a három legáltalánosabbat.</p><div class="sect3" title="6.1.2.1. 6.1.2.1 A tárolási modell"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1800"></a>6.1.2.1. 6.1.2.1 A tárolási modell</h4></div></div></div><p>A tárolási
+                  modell alapvet&#337;en az adatok tárolási módjára helyezi a f&#337; hangsúlyt az alapján,
+                  hogy a rendszert felépít&#337; alrendszerek együttm&#369;ködnek és információkat cserélnek
+                  egymás között. Ez az információcsere alapvet&#337;en két módon történhet:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Az adatotokat minden alrendszer által elérhet&#337;, központi adat­bázisban
+                        helyezik el.</p></li><li class="listitem"><p>Minden alrendszer saját adatbázist tart fent. Ekkor az egyéb alrendszerek
+                        kö­zötti adatcsere üzenetküldés segítségével történik.</p></li></ol></div><p>A megosztott adatbázison alapuló rendszermodellt tárolási modellnek nevezzük. A
+                  nagy mennyiség&#369; adatokkal dolgozó rendszerek mindig valamilyen osztott adatbázisok
+                  és tá­rolók köré szervez&#337;dnek. Ez a modell azon alkalmazások számára megfelel&#337;,
+                  ahol az egyik alrendszerben keletkez&#337; adatok egy másik alrendszerben kerülnek
+                  felhasználásra.</p><p>A megosztott tárolók el&#337;nyei és hátrányai a következ&#337;k:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Hatékony módszer nagy mennyiség&#369; adat megosztására, mert nem szükséges az
+                        adatokat explicit módon átvinni egyik alrendszerb&#337;l a másikba
+                        közvetlenül.</p></li><li class="listitem"><p>Tárolási modell esetén az alrendszerek azonos adattárolási modellel kell
+                        rendelkezniük. Ez rosszirányban befolyásolhatja a teljesítményt, mert
+                        kompromisszumokra van szükség az egyes eszközök között. A közös sémának nem
+                        megfelel&#337; adatmodellel rendelkez&#337; új alrendszerek in­tegrálása nehézzé vagy
+                        lehetetlenné válik.</p></li><li class="listitem"><p>Az adatokat el&#337;állító alrendszereknek foglalkozniuk kell azzal, hogy a
+                        többi alrendszer hogyan fogja használni azokat az adatokat.</p></li><li class="listitem"><p>Bizonyos tevékenységek (pl.: biztonsági mentés, a védelem, a hozzáférés
+                        szabályozás és a hiba utáni visszaállítás) központosítottak, így az eszközök
+                        lényeges feladataikra össz­pontosíthatnak.</p></li><li class="listitem"><p>A tá­rolási modell viszont ugyanazt a politikát kényszeríti rá minden
+                        alrendszerre.</p></li><li class="listitem"><p>A megosztottság modellje a tárolási sémán keresztül látható. Ez nagyban
+                        megkönnyíti az új eszközök integrálását.</p></li><li class="listitem"><p>A tároló több gép közötti elosztása bonyolult lehet. Bár megoldható egy
+                        logikailag központosított tároló elosztása, problémák léphetnek fel az
+                        adatok redundanciájával és inkonzisztenciájával kapcsolatban.</p></li></ol></div></div><div class="sect3" title="6.1.2.2. 6.1.2.2 A kliens-szerver modell"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1838"></a>6.1.2.2. 6.1.2.2 A kliens-szerver modell</h4></div></div></div><p>A kliens-szerver architektúra az egyik legkorábban kialakult
+                  rendszermodell. Alapgondolata egy klasszikus osztott rendszermodellje, amely
+                  megmutatja, hogy az adat és a feldolgozás hogyan oszlik meg feldolgozóegysé­gek
+                  között. Három f&#337; komponensb&#337;l, a kliensek és szerverek halmazából, valamint a
+                  hálózatból tev&#337;dik össze:</p><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Kliensek halmaza: olyan számítógépek, szoftverek, amelyek a szerverek
+                        által biztosított szolgáltatásokat igényelnek. Egy kliensprogramnak számos
+                        példánya futhat egyidej&#369;leg.</p></li><li class="listitem"><p>Hálózat: lehet&#337;vé teszi, hogy a kliensek hozzáférjenek a
+                        szolgáltatá­sokhoz. Ez nem szükséges akkor, ha mind a kliensek, mind pedig a
+                        szerve­rek egyetlen gépen futnak.</p></li><li class="listitem"><p>Szerverek halmaza: más alrendszerek, számítógépek számára
+                        szolgáltatásokat nyújtanak. Ilyenek például a nyomtatószerverek.</p></li></ol></div><p></p><p>A modell jellegzetes tulajdonsága, hogy a klienseknek explicite ismerni kell az
+                  elérhet&#337; szerverek és az általuk biztosított szolgáltatások neveit. Csak így
+                  vehetik igénybe a szolgáltatásokat. A szervereknek azonban nem kell tudniuk sem a
+                  kliens azonosságát, sem pedig azt, hogy hány kliens van. </p><p>A kliensek a szerverek által biztosított szolgáltatásokat távoli
+                  eljáráshívásokkal érik el, egy kérés-válasz alapú protokoll segítségével, mint
+                  például a www esetén használt http protokoll. Lényegében a kliens elküld egy
+                  kérést a szervernek, és addig várakozik, amíg választ nem kap.</p><p>A kliens-szerver modell legfontosabb el&#337;nye osztott architektúrája.
+                  Leghatékonyabban igazán olyan környezetben használható, ahol sok klienssel,
+                  osztott egységgel rendelkez&#337; hálózattal dolgozunk. Egy új szerver könnyen
+                  hozzáadható a rendszerhez és integrálható annak többi részével.</p><p>A következ&#337; ábra egy példát mutat be a kliens-szerver architektúrára:</p><p></p><div class="figure"><a name="d0e1864"></a><p class="title"><b>6.2. ábra -  Általános kliens szerver architektúra</b></p><div class="figure-contents"><div align="center"><img src="images/image18.png" align="middle" alt="Általános kliens szerver architektúra"></div></div></div><br class="figure-break"></div><div class="sect3" title="6.1.2.3. 6.1.2.3 &nbsp;Rétegzett modell"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1868"></a>6.1.2.3. 6.1.2.3 &nbsp;Rétegzett modell</h4></div></div></div><p>A rétegzett modell a rendszert egymástól jól elkülöníthet&#337;,
+                  alá-fölérendeltséggel rendelkez&#337; rétegekbe szervezi. Akkor beszélhetünk külön
+                  rétegr&#337;l, ha az adott szint valamilyen szolgáltatást biztosít az alatta és felette
+                  lév&#337; réteg számára. Az egyes szintek általános megközelítésben így egy absztrakt
+                  gépként értelmezhet&#337;k, amelynek gépi nyelvét a réteg által biztosított
+                  szolgáltatások definiálják. Az adott szint nyelve arra szolgál, hogy eltakarja az
+                  alatta lév&#337; szintek megvalósításait és alapul szolgáljon az absztrakt gép
+                  következ&#337; szintjének megvalósításához. Példaként jól említhet&#337; a hálózati
+                  protokollok OSI-referenciamodellje.</p><p>A következ&#337; ábra a rétegzett modell általános felépítését mutatja.</p><p></p><div class="figure"><a name="d0e1876"></a><p class="title"><b>6.3. ábra -  Rétegzett rendszerek</b></p><div class="figure-contents"><div align="center"><img src="images/image19.png" align="middle" alt="Rétegzett rendszerek"></div></div></div><br class="figure-break"><p>A rétegalapú megközelítés egyik el&#337;nye, hogy jól összeköthet&#337; az inkrementális
+                  fejlesztés gondolatmenetével. Amennyiben egy réteg elkészült, az általa
+                  biztosított szolgáltatások elérhet&#337;vé tehet&#337;k a megrendel&#337; vagy a felhasználók
+                  számára. További el&#337;nye, hogy mivel a rétegek jól elkülöníthet&#337;k egymástól, melyek
+                  interfésze jól definiált, így egy réteg könnyedén helyettesíthet&#337; egy másik, azzal
+                  ekvivalens réteggel, ha interfésze nem változik meg. Még az sem okoz nagy
+                  problémát, ha egy réteg interfésze megváltozik vagy új szolgáltatásokkal
+                  b&#337;vítették, mert a módosítások csakis szomszédos réteget érin­tik. A rétegzett
+                  modell csak egy ponton, egy rétegen keresztül tartja a kapcsolatot az operációs
+                  rendszerrel. Ez a legalsó réteg, ahol a gép és operációs rendszerfügg&#337; részek
+                  elhelyezkednek. Változás esetén csak ebben a bels&#337;, gépfügg&#337; rétegben kell
+                  módosítani, hogy figyelembe vegyük egy másik ope­rációs rendszer vagy adatbázis
+                  lehet&#337;ségeit.</p><p>A rétegzett megközelítés hátránya, hogy ily módon bizonyos rendszerek
+                  strukturá­lása igen bonyolulttá is válhat. Az alapvet&#337; adottságokat (pl.:
+                  fájlkezelés), amelyre minden absztrakt gépnek szüksége van a bels&#337; rétegek
+                  biztosíthatják. A küls&#337; réteg felhasználó által igényelt szolgáltatásainak le kell
+                  egészen jutniuk több szomszédos rétegen keresztül, hogy hozzáférjenek a több
+                  réteggel alattuk elhelyezked&#337; réteg szolgáltatásaihoz. Ez ellentmond a modell
+                  alapgondolatával, mert így egy küls&#337; réteg a továbbiakban már nem csupán
+                  egyszer&#369;en a közvetlen megel&#337;z&#337;jét&#337;l függ.</p></div><div class="sect3" title="6.1.2.4. Moduláris felbontás"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1884"></a>6.1.2.4. Moduláris felbontás</h4></div></div></div><p>Amennyiben döntés született a rendszer átfogó architektúrájáról, meg kell
+                  határozni, hogy az alrend­szerek modulokra bontása során milyen megközelítést
+                  célszer&#369; alkalmazni. Azt, hogy mit ért a szakirodalom modul kifejezés alatt nem
+                  egységes, és nem is különböztethet&#337; meg egyértelm&#369;en az alrendszer fogalmától. Egy
+                  szokásos megkülönböztetés a következ&#337; lehet:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Alrendszer: önálló rendszer, m&#369;ködése nem függ más alrendszerek
+                        szolgáltatásaitól. Az alrendszerek modulokból épülnek fel.</p></li><li class="listitem"><p>Modul: rendszerint egyszer&#369; rendszerkomponens, amely más modulok számára
+                        szolgáltatás(oka)t biztosít. </p></li></ol></div><p>Az alrendszerek modulokra bontása során két f&#337; stratégia ismeretes. Egyik
+                  széles körben ismert megoldás az objektumorientált felbontás, amikor is a
+                  rendszert egymással kommunikáló objektu­mok halmazára bontjuk fel. Egy kevésbé
+                  ismert megoldás a funkcióorientált cs&#337;vezetékek használata, amely során a
+                  rendszert bemen&#337; adatokat elfo­gadó és azokat kimen&#337; adatokká alakító funkcionális
+                  transzformációkra bontjuk fel.</p><div class="sect4" title="6.1.2.4.1. Objektumorientált felbontás"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1898"></a>6.1.2.4.1. Objektumorientált felbontás</h5></div></div></div><p>Egy objektumorientált architekturális modell a rendszert lazán kapcsolódó,
+                     jól de­finiált interfészekkel rendelkez&#337; objektumok halmazára tagolja. Az
+                     objektumok szolgáltatásokat biztosítanak más objektumok részére. Az
+                     objektumorientált felbontás objektumosztályokkal, azok attribútumaival és
+                     m&#369;veleteivel foglalkozik, hogy hogyan építhet&#337; fel a rendszer ezen
+                     komponensekb&#337;l. A szoftver implementációjakor az objektumok ezekb&#337;l az
+                     osztá­lyokból jönnek létre, és az objektum m&#369;veleteinek koordinálásához
+                     valamilyen vezérlési modellt alkalmaznak.</p><p>Az objektumorientált megközelítés el&#337;nye, hogy az objektumok lazán
+                     kapcsolódnak, így az objektumok implementációja változtatható anélkül, hogy az
+                     hatással lenne más objektumokra. A komponensek közvetlen implementációjának
+                     biztosítására objektumorientált programozási nyelveket fejlesztettek ki.</p><p>Azonban az objektumorientált megközelítésnek vannak hátránya: az
+                     objektumoknak explicit módon kell hivat­koznia a többi objektum nevére és
+                     interfészére. Ha a rendszerben interfész változtatás történik, akkor a
+                     változtatást minden, a megváltozott objektumot használó helyen át kell vezetni. </p></div><div class="sect4" title="6.1.2.4.2. Funkcionált cs&#337;vezeték"><div class="titlepage"><div><div><h5 class="title"><a name="d0e1907"></a>6.1.2.4.2. Funkcionált cs&#337;vezeték</h5></div></div></div><p>A funkcióorientált cs&#337;vezetéket más néven adatfolyam-modellnek is nevezik.
+                     Alapgondolata az, a rendszer moduljai között adatok áramlanak (f&#337;ként egy
+                     irányban). Minden modul bemenetét funkcionális transzformációk dolgozzák fel,
+                     majd hoznak létre kimeneteket. A modulok egymásutánisága egy transzformáció
+                     sorozatot alkot, ahol minden feldolgozási lépést egy külön transzformáció
+                     való­sít meg. A rendszer adatok ezeken a transzformációkon keresztül menve a
+                     végleges kimeneti adatokká alakulnak. A transzformációk mind szekvenciálisan,
+                     mind pedig párhuzamosan végrehajthatók. Az adatok pedig egyesével vagy
+                     kötegelve is feldolgozhatók. Példaként említhetjük a Unix rendszerekben
+                     alkalmazott cs&#337;vezetéket, ahol a parancsok jelentik az egyes funkcionális
+                     transzformációkat.</p><p>A modellt régóta alkalmazzák a számítástechnikában, f&#337;leg a korai években
+                     f&#337;leg automatikus feldolgozásokra. Interaktív rendszerek készítésére nem
+                     ajánlott, nehéz cs&#337;vezetékelv&#369; modell alapján megírni. </p><p>El&#337;szeretettel alkalmazzák, mert támogatja a transzformációk
+                     újrafelhasználhatóságát, könnyen érthet&#337; és b&#337;víthet&#337; új transzformációkkal,
+                     implementálható konkurens és szekvenciális környezetben egyaránt. Hátránya
+                     viszont az, hogy az egyes transzformációknak vagy egyeztetniük kell egymással
+                     az átadandó adatok formátumát, vagy a kommuni­kációban részt vev&#337; adatok
+                     számára egy szabványos formátumot kell kialakítani.</p></div></div></div><div class="sect2" title="6.1.3. Vezérlési stílusok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1916"></a>6.1.3. Vezérlési stílusok</h3></div></div></div><p>Az alrendszerek és modulok logikai struktúrájának kialakítása után szükség van a
+               vezérlés menetének meghatározására. A vezérlés biztosítja, hogy az alrendszerek
+               szolgáltatásai a megfelel&#337; helyre a meg­felel&#337; id&#337;ben eljussanak. Mivel a
+               strukturális modellek nem tartalmaznak ilyen elemeket ezért a rendszer kiépít&#337;jének
+               az alrendszereket valamilyen ve­zérlési modellnek megfelel&#337;en kell szerveznie. A
+               vezérlési modellek az alrendszerek közötti vezérlési folyamatokkal
+               fog­lalkoznak.</p><p>A szoftverrendszerekben két általános vezérlési stílust alkalmaznak:</p><p>1. Központosított vezérlés: létezik egy központi vezérl&#337; alrendszer, amely a
+               vezérlés teljes felel&#337;sségét ellátja. Beindítja és leállítja a többi
+               alrendszert.</p><p>2. Eseményalapú vezérlés: a vezérlést nem egyetlen egy alrendszer végzi
+               központosítottan, hanem minden alrendszer válaszolhat egy küls&#337;leg létrejött
+               eseményre. Ezek az események vagy más alrendszerekb&#337;l, vagy a rendszer környezetéb&#337;l
+               származhatnak.</p><p>A vezérlési stílusok kiegészítik a strukturális stílusokat. Minden korábban
+               be­mutatott strukturális stílust meg lehet valósítani központosított és eseményalapú
+               vezérléssel egyaránt.</p><div class="sect3" title="6.1.3.1. 6.1.3.1 &nbsp;Központosított vezérlés"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1929"></a>6.1.3.1. 6.1.3.1 &nbsp;Központosított vezérlés</h4></div></div></div><p>A modell alapja egy kitüntetett alrendszer, a rendszer­vezérl&#337;, amely a többi
+                  alrendszer végrehajtásáért felel&#337;s. &#336; irányít mindent, a többi alrendszer
+                  indítását, leállítását, és az információ áramlását is. A központosított vezér­lési
+                  modellek két csoportba oszthatók attól függ&#337;en, hogy a vezérelt alrendszerek
+                  szekvenciálisan vagy párhuzamosan hajtódnak-e végre.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A hívás-visszatérés modell: a megszokott fentr&#337;l le alprogram modellje,
+                        ahol a vezérlés az alprogram-hierarchia csúcsán kezd&#337;dik, és
+                        alprogramhívások se­gítségével jut el a fa alsóbb szintjeire. Ez a modell
+                        csak szekvenciális rendsze­rek esetén alkalmazható.</p><div class="figure"><a name="d0e1938"></a><p class="title"><b>6.4. ábra - A hívás-visszatérés modell</b></p><div class="figure-contents"><div align="center"><img src="images/image20.png" align="middle" alt="A hívás-visszatérés modell"></div></div></div><br class="figure-break"><p>A vezérlési hierarchia egy fastruktúrát alkot, amelyben vezérlés menete a
+                        magasabb szint&#369; rutintól jut el az alacsonyabb szinten lév&#337;höz, majd visszatér a
+                        hívás helyére. A hívás-visszatérés modell jól alkalmazható modulszinten a
+                        tevékenységek és ob­jektumok vezérlésére, mert sok objektumorientált rendszerben
+                        az objektumok m&#369;ve­letei (metódusok) eljárásként vagy függvényként vannak
+                        implementálva.</p><p>A modell viszonylag merev és korlátozott. Ez azonban nemcsak hátránya, hanem
+                        egyben er&#337;ssége is. Er&#337;ssé­ge abban rejlik, hogy a rendszer válasza viszonylag
+                        egyszer&#369;en kiszámítható a bemenetek függvényében. Gyakorlatilag a fa ágain lefelé
+                        a rendszer válasza felderíthet&#337;. Hátránya pedig az, hogy a normálistól eltér&#337;
+                        m&#369;ködés esetén használata kényelmetlen lehet.</p></li><li class="listitem"><p>A kezel&#337;modell: ez a modell alkalmazható konkurens és szekvenciális
+                        rendszerek esetén is. Egy kijelölt rendszerkezel&#337; rendszerkomponens
+                        irányítja a többi rendszerfolyamat in­dítását, leállítását, valamint
+                        koordinálja azokat. A folyamat olyan alrendszer vagy modul, amely
+                        végrehajtható más folyamatokkal párhuzamosan.</p><p>A rendszert központi vezérl&#337; folyamata folyamatosan felügyeli a rendszer
+                        állapotát. A rendszer állapotváltozói alapján eldönti, hogy az egyes folyamatokat
+                        mikor kell elindítani, illetve leállítani. A vezérl&#337; általában ciklikusan
+                        ellen&#337;rzi az érzékel&#337;ket és folyamato­kat, hogy bekövetkezett-e valamilyen esemény
+                        vagy állapotváltozás. Ellen&#337;rzi, hogy a többi folyamat hozott-e létre
+                        feldolgozandó vagy feldolgozásra továbbküldend&#337; információt. Ezt a modellt más
+                        néven eseményciklus-modellnek is szokás nevezni.</p><p></p></li></ol></div><p>A rendszert központi vezérl&#337; folyamata folyamatosan felügyeli a rendszer
+                  állapotát. A rendszer állapotváltozói alapján eldönti, hogy az egyes folyamatokat
+                  mikor kell elindítani, illetve leállítani. A vezérl&#337; általában ciklikusan
+                  ellen&#337;rzi az érzékel&#337;ket és folyamato­kat, hogy bekövetkezett-e valamilyen esemény
+                  vagy állapotváltozás. Ellen&#337;rzi, hogy a többi folyamat hozott-e létre
+                  feldolgozandó vagy feldolgozásra továbbküldend&#337; információt. Ezt a modellt más
+                  néven eseményciklus-modellnek is szokás nevezni.</p><p></p></div><div class="sect3" title="6.1.3.2. 6.1.3.2 &nbsp;Eseményvezérelt rendszerek"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1955"></a>6.1.3.2. 6.1.3.2 &nbsp;Eseményvezérelt rendszerek</h4></div></div></div><p>Az esemény­vezérelt vezérlési modelleket küls&#337;leg bekövetkezett események
+                  irányítják. Az eseményvezérelt rendszereknek sok fajtája ismeretes, beleértve a
+                  szer­keszt&#337;ket, ahol a szerkeszt&#337;utasításokat felhasználói felület események
+                  jelzik. A továbbiakban két eseményvezérelt vezérlési modellt mutatunk be:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Eseményszóró modellek: ezekben a modellekben egy esemény minden
+                        alrend­szerhez eljut, és bármelyik, az esemény kezelésére programozott
+                        alrendszer reagálhat rá. A vezérlési politika nincs beépítve az esemény- és
+                        üzenet­kezel&#337;be. Az alrendszerek eldöntik, hogy mely eseményekre tartanak
+                        igényt, az esemény- és üzenetkezel&#337; pedig biztosítja, hogy ezek az események
+                        eljussanak hozzájuk.</p></li><li class="listitem"><p>Megszakítás vezérelt modellek: ezeket kizárólag olyan valós idej&#369;
+                        rendszerekben használják, ahol egy megszakítás-kezel&#337; észleli a küls&#337;
+                        megszakításokat. Ezek aztán valamely más komponenshez kerülnek
+                        feldolgozásra.</p></li></ol></div><p></p></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05s04.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch06s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">5.4. 
+         Ellen&#337;rz&#337; kérdések&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;6.2. 
+            
+            Objektumorientált
+         tervezés</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch06.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:46 GMT -->
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feladat03</title>
+</head>
+<body>
+    <p><input type="number" id="a"></p>
+    <p><input type="number" id="b"></p>
+    <p><button type="button" id="terulet" onclick="terulet()">Terület</button></p>
+    <p><button type="button" id="kerulet" onclick="kerulet()">Kerület</button></p>
+    <p id="teruletEred"></p>
+    <p id="keruletEred"></p>
+
+    <script>
+        function terulet(){
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            var eredmeny = a * b;
+            document.getElementById("teruletEred").innerHTML = "A téglalap területe: " + eredmeny;
+        }
+
+        function kerulet(){
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            var eredmeny = 2 * (a + b);
+            document.getElementById("keruletEred").innerHTML = "A téglalap kerülete: " + eredmeny;
+        }
+    </script>
+</body>
+</html>

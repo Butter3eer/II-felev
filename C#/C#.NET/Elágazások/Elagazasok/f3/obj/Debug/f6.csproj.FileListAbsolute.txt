@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II félév\C#\Elágazások\Elagazasok\f3\bin\Debug\f3.exe.config
+E:\STUDY\Petrik\II félév\C#\Elágazások\Elagazasok\f3\bin\Debug\f3.exe
+E:\STUDY\Petrik\II félév\C#\Elágazások\Elagazasok\f3\bin\Debug\f3.pdb
+E:\STUDY\Petrik\II félév\C#\Elágazások\Elagazasok\f3\obj\Debug\f6.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II félév\C#\Elágazások\Elagazasok\f3\obj\Debug\f6.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II félév\C#\Elágazások\Elagazasok\f3\obj\Debug\f6.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II félév\C#\Elágazások\Elagazasok\f3\obj\Debug\f3.exe
+E:\STUDY\Petrik\II félév\C#\Elágazások\Elagazasok\f3\obj\Debug\f3.pdb

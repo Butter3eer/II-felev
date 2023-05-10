@@ -1,0 +1,407 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch08s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:50 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>8.4. Használati eset modell készítése</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch08.html" title="8. fejezet - A használati eset modell"><link rel="prev" href="ch08s03.html" title="8.3. Kapcsolatok"><link rel="next" href="ch08s05.html" title="8.5. A használati eset modell helye a fejlesztési folyamatban"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8.4. 
+            
+            Használati eset modell készítése</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch08s03.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">8. fejezet - A használati eset modell</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch08s05.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="8.4. Használati eset modell készítése"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2806"></a>8.4. 
+            
+            <a name="__RefHeading__91_120998265"></a>Használati eset modell készítése</h2></div></div></div><p>A használati eset modell a rendszer funkcionális követelményeinek leírásának elemzése
+            segítségével készíthet&#337; el. Els&#337; lépésként célszer&#369; az aktorokat azonosítani, mert az
+            általában könnyebb, és még bonyolult rendszerek esetén sem kell túl sok aktorral
+            számolnunk. Az aktorok köre már a fejlesztés elején is pontosan meghatározható.</p><p>Következ&#337; lépés a használati esetek azonosítása. Egy bonyolult rendszer esetén nagyon
+            sok használati esettel kell foglalkozni, ezért ebben is az inkrementális megközelítés
+            javasolt.</p><div class="sect2" title="8.4.1. Aktorok azonosítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2815"></a>8.4.1. Aktorok azonosítása</h3></div></div></div><p>Az aktorokra a feladat leírásában, a funkciólistákban többnyire valamilyen
+               f&#337;névvel hivatkozunk. Fontos azonban, hogy az aktor</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>a rendszeren kívül létez&#337; entitás</p></li><li class="listitem"><p>a rendszerrel valamilyen funkcionális kapcsolatba kerül.</p></li></ol></div><p>Egy tanulmányi nyilvántartó rendszer leírásában (mint amilyen például a Neptun)
+               találhatunk például egy alábbi mondatot:</p><p>&#8222;A portásfülke el&#337;tt elhelyezett terminálon bejelentkezett hallgató megnézheti,
+               hogy egy általa felvett tárgynak mikor vannak a vizsgái.&#8221;</p><p>Nyilvánvaló, hogy a portásfülke, és a terminál, bár a rendszeren kívül álló
+               dolgok, nem aktorai a rendszernek, mert nem lépnek vele kapcsolatba, és nem igénylik
+               annak szolgáltatásait, a &#8222;hallgató&#8221; azonban egy lehetséges aktor.</p></div><div class="sect2" title="8.4.2. Használati esetek azonosítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2833"></a>8.4.2. Használati esetek azonosítása</h3></div></div></div><p>Az aktorok azonosítása után a használati esetek azonosítása következik. Használati
+               esetekre valamilyen igei szerkezet utalhat a feladat leírásában, azonban nem olyan
+               közvetlenül, mint az aktorok esetén. A fenti példa mondatban három funkció is el van
+               rejtve:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>a hallgató lekéri az általa felvett tárgyak listáját,</p></li><li class="listitem"><p>a hallgató kijelöl egy tárgyat ezek közül,</p></li><li class="listitem"><p>a hallgató lekéri a kijelölt tárgy vizsgaid&#337;pontjait.</p></li></ol></div><p>Az UML nem mondja meg, hogy egy használati eset milyen összetett funkciót
+               modellezhet. A jelölés rendszer ismertetése során a példák egyszer&#369;
+               funkcionalitásokat tartalmaztak, de ha egy bonyolult rendszert ilyen egyszer&#369;
+               funkciókból szeretnénk felépíteni, akár több ezer használati esetet tartalmazó
+               modellt kaphatnánk.</p><p>A tapasztalatok szerint egy áttekinthet&#337; használati eset diagram legfeljebb
+               tíz-húsz használati esetet tartalmazhat. A használati eset modellt tehát számos
+               használati eset diagramból kell felépíteni. Ezt úgy tudjuk elérni, hogy</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>a rendszert részrendszerekre bontjuk, és azokat külön-külön
+                     modellezzük,</p></li><li class="listitem"><p>el&#337;bb nagyobb funkcionális egységeket modellezünk egy használati esetként,
+                     majd ezeket részletezve jutunk el a finomabb felbontásig.</p></li></ol></div></div><div class="sect2" title="8.4.3. Egy összetettebb példa"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2859"></a>8.4.3. Egy összetettebb példa</h3></div></div></div><p>Ebben a fejezetben egy olyan példát mutatunk, amelyben majdnem minden jelölési
+               elem szerepet kap, és illusztrálja, hogy milyen elemzése lépéseken keresztül
+               juthatunk el egy használati eset modell megalkotásáig.</p><p>A modellezend&#337; rendszer (pénztári rendszer) leírása:</p><p>&#8222;A rendszer egy pár alkalmazottat foglalkoztató, néhány pénztárral m&#369;köd&#337; kis
+               önkiszolgáló élelmiszerbolt pénztári rendszere. A vev&#337; egy kosárban összegy&#369;jti a
+               megvásárolni kívánt árukat. A pénztáros az árukat a vonalkódok beolvasásával
+               azonosítja, és így készíti el a blokkot, ami alapján a vev&#337; fizet. A megvásárolt áruk
+               mennyiségével a rendszer csökkenti a raktárkészletet. Bizonyos áruk csak betétdíjas
+               göngyöleggel együtt adhatók el, és a göngyöleg készletét is nyilván kell tartani.
+               (Például a sör&#8230;).</p><p>A boltvezet&#337; bármikor helyettesíthet egy pénztárost, ha annak valami miatt félbe
+               kell szakítania a munkáját. A boltvezet&#337;nek joga van egy törzsvásárló esetén hitelbe
+               is odaadni az árut, ezt a pénztáros nem teheti meg.</p><p>Ha egy áru vonalkódja sérült, ezért nem olvasható be, a pénztáros az árut a
+               megnevezése alapján keresi vissza az adatbázisból.&#8221;</p><div class="sect3" title="8.4.3.1. Aktorok azonosítása"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2872"></a>8.4.3.1. Aktorok azonosítása</h4></div></div></div><p>A fenti leírásból szerepl&#337;ként kiemelhet&#337;k az alábbi szerepkörök:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>vev&#337;</p></li><li class="listitem"><p>pénztáros</p></li><li class="listitem"><p>boltvezet&#337;</p></li></ol></div><p>Ezek közül a vev&#337; &#8211; bár szerepl&#337;je a folyamatnak &#8211; nem aktor, mert a
+                  rendszerrel nincs közvetlen kapcsolata. Kapcsolata van a pénztárossal, de ez
+                  rendszeren kívüli kapcsolat, tehát a modellben nem kell szerepelnie. Így marad
+                  aktorként a pénztáros és a boltvezet&#337;.</p><p>A két aktor között egy általánosítási kapcsolat van: a boltvezet&#337; mindig lehet
+                  pénztáros szerepkörben, tehát a pénztáros leszármazottjaként modellezhet&#337;. (Vegyük
+                  észre, hogy bár ez egy hierarchikus kapcsolat, de a beosztási hierarchiával most
+                  éppen ellentétes irányú.)</p><p>Ez az egyszer&#369; példa is rámutat a szakterületi követelmények fontosságára, és
+                  egyben problémát okozó szerepére. Aki ilyen rendszert akar fejleszteni, annak
+                  ugyanis tisztában kell lennie azzal, hogy a pénztárgép nem egyszer&#369; számológép: a
+                  vonatkozó rendeletek szerint ugyanis kell rendelkeznie egy speciális memória
+                  modullal, az úgynevezett adómemóriával, amibe minden blokk adatát be kell írnia,
+                  és ennek a memóriának a tartalma nem változtatható meg, csak kiolvasható.</p><p>A szakterületi követelmények értelmében tehát van egy harmadik aktor is, az
+                  adómemória. Ez nem felhasználó, hanem egy eszköz.</p><p>A használati modell aktorai tehát:</p><p></p><div class="figure"><a name="d0e2898"></a><p class="title"><b>8.9. ábra - A pénztári rendszer aktorai</b></p><div class="figure-contents"><div align="center"><img src="images/image34.jpg" align="middle" alt="A pénztári rendszer aktorai"></div></div></div><br class="figure-break"></div><div class="sect3" title="8.4.3.2. &nbsp;Használati esetek azonosítása"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2902"></a>8.4.3.2. &nbsp;Használati esetek azonosítása</h4></div></div></div><p>A leírásból kiolvasható, hogy a központi használati eset a blokkolás. Ehhez a
+                  pénztáros aktor kapcsolódik. A blokkolásnak szerves része a göngyöleg kezelés,
+                  raktárkészlet módosítás és az adómemóriába írás. Ezek tehát &#8222;include&#8221; kapcsolatban
+                  vannak a blokkolással, mert feltétel nélkül, minden esetben végrehajtandók a
+                  blokkolás során. Az adómemóriába íráshoz kapcsolódik az adómemória aktor.</p><p>A blokkolás különleges esete az, ha nem olvasható a vonalkód. Ilyenkor az áru
+                  név szerinti visszakeresése funkció (egyben használati eset) kiegészíti az alap
+                  funkcionalitást, tehát a blokkolással &#8222;extend&#8221; kapcsolatban van. (Csak bizonyos
+                  feltételes teljesülése esetén &#8211; ha nem olvasható a vonalkód &#8211; szükséges.)</p><p>A boltvezet&#337;nek van egy olyan funkciója, ami csak rá jellemz&#337;: adhat hitelt, ez
+                  az utolsó felfedezett használati eset a leírás elemzéséb&#337;l.</p><p>A fenti elemzés alapján az alábbi használati eset diagram építhet&#337; fel:</p><p></p><div class="figure"><a name="d0e2914"></a><p class="title"><b>8.10. ábra - A pénztári rendszer használati eset  diagramja</b></p><div class="figure-contents"><div align="center"><img src="images/image35.jpg" align="middle" alt="A pénztári rendszer használati eset diagramja"></div></div></div><br class="figure-break"><p></p></div></div><div class="sect2" title="8.4.4. A használati eset modell dokumentációja"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2919"></a>8.4.4. A használati eset modell dokumentációja</h3></div></div></div><p>A diagram rajzolása során mind az aktoroknak, mind a használati eseteknek nevet
+               kell adni. Az elnevezések nem csak azonosító szerepet töltenek be, (hiszen erre a
+               rajzolásra használt programok által alapértelmezésben adott &#8222;Use case 1&#8221;, &#8222;Use case
+               2&#8221; stb. stílusú azonosítók is alkalmasak lennének), hanem segít a diagram tartalmának
+               megértésében.</p><p>Minden további modell típusra is általánosan érvényes az, hogy az elnevezési
+               kényszer egyben annak ellen&#337;rzése, hogy az adott funkciót, fogalmat, kapcsolatot &#8211;
+               általánosságban minden modell elem jelentését pontosan megértettük-e. A tapasztalatok
+               alapján elmondható, hogy ha egy modell elemre nem tudunk rövid, frappáns, kifejez&#337;
+               elnevezést találni, annak mindig az az oka, hogy nem tisztáztuk pontosan az adott
+               elem jelentését és a modellen belül játszott szerepét.</p><p>Minden vizuális modellez&#337; eszköznek van olyan funkciója, aminek segítségével az
+               egyes modell elemekhez rövid, tömör, néhány mondatos leírást rendelhetünk. A
+               használati eset modell dokumentációjának ez a második eleme. A tömör leírás segít
+               abban, hogy a modellt könnyebben megértse a fejlesztésben résztvev&#337;k
+               mindegyike.</p><p>A fejlesztés korai id&#337;szakában a leírásokkal kiegészített diagramok elegend&#337;ek a
+               használati eset modell definiálására. A kés&#337;bbi fázisokban ezt ki kell egészíteni a
+               használati esetek által modellezett funkció végrehajtásának részletes leírásával,
+               hiszen ezek alapján lehet megtervezni és implementálni a megvalósításért felel&#337;s
+               szoftver elemeket.</p><p>Egy használati eset konkrét végrehajtási folyamatának leírását forgatókönyvnek
+               nevezzük. Egy használati esethez számos forgatókönyv kapcsolódhat.</p><p>Minden használati esethez általában tartoznak el&#337;feltételek, úgynevezett
+               prekondíciók, amelyeknek teljesülése szükséges ahhoz, hogy bármelyik forgatókönyv
+               alapján a funkció végrehajtható legyen. A végrehajtás után el&#337;álló állapotot nevezzük
+               postkondíciónak (utóhatásnak).</p><p>A forgatókönyveket aktor interakció &#8211; rendszer válasz párok sorozataként
+               specifikálhatjuk. Bonyolultabb használati esetek forgatókönyvét ezen felül aktivitás
+               vagy szekvencia diagrammal is szemléltethetjük.</p><p>Gyakran hasznos az egyes használati esetek fontosságát. prioritását (&#8222;rank&#8221;) is
+               megadni, mert ez segíthet a fejlesztési munka ütemezésében. Általában az alacsony &#8211;
+               közepes &#8211; magas prioritás skála elegend&#337;.</p><p>A jegyzet UML ábráit a Visual Paradigm vizuális modellez&#337; szoftver oktatási
+               verziójával készítettük. Ez a szoftver is lehet&#337;séget ad arra, hogy az egyes modell
+               elemekhez további információkat csatoljunk, és ezekb&#337;l az információkból html, pdf
+               vagy Microsoft Word formátumú dokumentációt generáljunk.</p><p>Az összefoglaló dokumentáció egy részlete a 8-15. ábra diagramjához:</p><p>Summary</p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col></colgroup><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Name</p>
+                        
+                        </td><td style="border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Documentation</p>
+                        
+                        </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>
+                              
+                              <img src="images/image36.png" align="middle">
+                              Pénztáros
+                           </p>
+                        
+                        </td><td style="border-bottom: 0.5pt solid ; ">
+                           
+                           <p>A pénztárgépet kezel&#337; személy. Felel&#337;s az eladott áruk
+                              regisztrálásáért és a pénz kezeléséért.</p>
+                        
+                        </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>
+                              
+                              <img src="images/image37.png" align="middle">
+                              Blokkolás
+                           </p>
+                        
+                        </td><td style="border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Az eladott áruk regisztrálása, a blokk elkészítése és a fizetend&#337;
+                              összeg kijelzése.</p>
+                        
+                        </td></tr><tr><td style="border-right: 0.5pt solid ; ">
+                           
+                           <p>
+                              
+                              <img src="images/image36.png" align="middle">
+                              Boltvezet&#337;
+                           </p>
+                        
+                        </td><td style="">
+                           
+                           <p>Az üzlet vezet&#337;je. Bármikor helyettesítheti a pénztárost.</p>
+                        
+                        </td></tr></tbody></table></div><p></p><p>A &#8222;Blokkolás&#8221; használati eset részletes dokumentációja:</p><p>Use Case Descriptions</p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col></colgroup><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Full</p>
+                        
+                        </td><td class="auto-generated" style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">&nbsp;</td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Use Case ID</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>UC8.10 </p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Super Use Case</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p></p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Primary Actor</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Pénztáros </p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Secondary Actor(s)</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p></p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Brief Description</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Blokkolás </p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Preconditions</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>A pénztárgép megnyitva </p>
+                           
+                           <p>A pénztáros bejelentkezve. </p>
+                           
+                           <p>&nbsp;Az el&#337;z&#337; blokk lezárva </p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Flow of Events</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>
+                           
+                              </p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col><col></colgroup><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>Actor Input</p>
+                                          
+                                             <p></p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>System Response</p>
+                                          
+                                             <p></p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>1</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>Új vásárló </p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>2</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>&nbsp;Új blokk niytása </p>
+                                          
+                                             <p>&nbsp;Fizetend&#337; összeg 0. </p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>3</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>Vonalkód beolvasás </p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>4</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>Darabszám megadás </p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>5</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>&nbsp;Újabb blokk tétel kiírása </p>
+                                          
+                                             <p>&nbsp;Fizetend&#337; összeg növelése </p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>6</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>Blokk lezárása </p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>7</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>Végs&#337; fizetend&#337; összeg kiírása </p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>8</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p>A vev&#337; által átadott összeg beírása </p>
+                                       
+                                          </td><td style="border-bottom: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td></tr><tr><td style="border-right: 0.5pt solid ; ">
+                                          
+                                             <p>9</p>
+                                       
+                                          </td><td style="border-right: 0.5pt solid ; ">
+                                          
+                                             <p></p>
+                                       
+                                          </td><td style="">
+                                          
+                                             <p>&nbsp;Visszajáró pénz kijelzése </p>
+                                          
+                                             <p>&nbsp;Kasszafiók kinyitása </p>
+                                       
+                                          </td></tr></tbody></table></div><p>
+                           </p>
+                           
+                           <p></p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Post-conditions</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Elkészült és kinyomtatásra került a blokk. </p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Alternative flows and exceptions</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>&nbsp;Hibás darabszám lett megadva - stornózni kell! </p>
+                           
+                           <p>&nbsp;Áru vonalkódjának ismételt beolvasása - stornózni kell! </p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Non-behavior requirements</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p></p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Assumptions</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p></p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Issue</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p></p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Source</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p></p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Author</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                           
+                           <p>Ficsor Lajos </p>
+                        
+                        </td><td class="auto-generated" style="border-bottom: 0.5pt solid ; ">&nbsp;</td></tr><tr><td style="border-right: 0.5pt solid ; ">
+                           
+                           <p>Date</p>
+                        
+                        </td><td style="border-right: 0.5pt solid ; ">
+                           
+                           <p>2011.02.21. 22:49:26 </p>
+                        
+                        </td><td class="auto-generated" style="">&nbsp;</td></tr></tbody></table></div><p></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch08s03.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch08.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch08s05.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">8.3. 
+            
+            Kapcsolatok&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;8.5. 
+            
+            A használati eset modell helye a fejlesztési
+            folyamatban</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch08s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:51 GMT -->
+</html>

@@ -1,0 +1,30 @@
+C:\work\tanari\gyakorlat\11\Jegesmedve\bin\Debug\net6.0\Jegesmedve.exe
+C:\work\tanari\gyakorlat\11\Jegesmedve\bin\Debug\net6.0\Jegesmedve.deps.json
+C:\work\tanari\gyakorlat\11\Jegesmedve\bin\Debug\net6.0\Jegesmedve.runtimeconfig.json
+C:\work\tanari\gyakorlat\11\Jegesmedve\bin\Debug\net6.0\Jegesmedve.dll
+C:\work\tanari\gyakorlat\11\Jegesmedve\bin\Debug\net6.0\Jegesmedve.pdb
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\Jegesmedve.csproj.AssemblyReference.cache
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\Jegesmedve.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\Jegesmedve.AssemblyInfoInputs.cache
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\Jegesmedve.AssemblyInfo.cs
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\Jegesmedve.csproj.CoreCompileInputs.cache
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\Jegesmedve.dll
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\refint\Jegesmedve.dll
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\Jegesmedve.pdb
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\Jegesmedve.genruntimeconfig.cache
+C:\work\tanari\gyakorlat\11\Jegesmedve\obj\Debug\net6.0\ref\Jegesmedve.dll
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\bin\Debug\net6.0\Jegesmedve.exe
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\bin\Debug\net6.0\Jegesmedve.deps.json
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\bin\Debug\net6.0\Jegesmedve.runtimeconfig.json
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\bin\Debug\net6.0\Jegesmedve.dll
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\bin\Debug\net6.0\Jegesmedve.pdb
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\Jegesmedve.csproj.AssemblyReference.cache
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\Jegesmedve.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\Jegesmedve.AssemblyInfoInputs.cache
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\Jegesmedve.AssemblyInfo.cs
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\Jegesmedve.csproj.CoreCompileInputs.cache
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\Jegesmedve.dll
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\refint\Jegesmedve.dll
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\Jegesmedve.pdb
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\Jegesmedve.genruntimeconfig.cache
+C:\Users\sara\Documents\suli\tanári 2\gyakorlat\zárótanítás\Jegesmedve\obj\Debug\net6.0\ref\Jegesmedve.dll

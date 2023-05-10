@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Oroklodes\Oroklodes\bin\Debug\Oroklodes.exe.config
+E:\STUDY\Petrik\II-felev\C#\Oroklodes\Oroklodes\bin\Debug\Oroklodes.exe
+E:\STUDY\Petrik\II-felev\C#\Oroklodes\Oroklodes\bin\Debug\Oroklodes.pdb
+E:\STUDY\Petrik\II-felev\C#\Oroklodes\Oroklodes\obj\Debug\Oroklodes.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Oroklodes\Oroklodes\obj\Debug\Oroklodes.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Oroklodes\Oroklodes\obj\Debug\Oroklodes.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Oroklodes\Oroklodes\obj\Debug\Oroklodes.exe
+E:\STUDY\Petrik\II-felev\C#\Oroklodes\Oroklodes\obj\Debug\Oroklodes.pdb

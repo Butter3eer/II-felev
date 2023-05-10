@@ -1,0 +1,62 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch05.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:44 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>5. fejezet - Követelmény analízis</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch04s04.html" title="4.4. Az OMT és a modern fejlesztési folyamat"><link rel="next" href="ch05s02.html" title="5.2. &nbsp;A szoftver követelmények"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. fejezet - Követelmény analízis</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s04.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="5. fejezet - Követelmény analízis"><div class="titlepage"><div><div><h2 class="title"><a name="d0e1179"></a>5. fejezet - Követelmény analízis</h2></div></div></div><p>A szoftverfolyamat, amelynek eredményeképpen el&#337;áll egy kész szoftvertermék,
+         tevékenységek és kapcsolódó eredmények soraként értelmezhet&#337;. Ezek a folyamatok komplexek,
+         és nagyon összetettek, valamint er&#337;sen függenek az emberi tevékenységekt&#337;l és döntésekt&#337;l.
+         &nbsp;Emiatt a folyamatok nem automatizálhatók a megfelel&#337; mértékben, mindig szükség van az
+         emberi tényez&#337;re. Fontos cél lehet, hogy az emberi tényez&#337;k mellett minél több
+         részfolyamatot lehessen teljesen vagy féli automatizálni. A számítógéppel segített
+         szoftvertervezés eszközei (CASE) képesek a folyamatok bizonyos tevékenységeinek
+         támogatására, de nincs lehet&#337;ség nagyobb mérték&#369; automatizációra. Nyugodtan kijelenthetjük
+         továbbá azt is, hogy nincs olyan folyamat, amely minden számára megfelel&#337; lenne. Különböz&#337;
+         szervezetek a szoftverfejlesztést homlokegyenest különböz&#337; néz&#337;pontokból közelítik meg.
+         &nbsp;Mégpedig úgy, hogy a folyamatokat úgy alakítják ki, hogy kiaknázzák a szervezeten belül az
+         emberek különféle képességeit és a fejleszt&#337; rendszer jellegzetességeit.</p><p>Bár minden szoftverfolyamat különböz&#337;, vannak olyan alapvet&#337; tevékenységek, amelyek
+         minden szoftverfolyamatban közösek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Szoftverspecifikáció: a szoftver funkcióit, illetve annak megszorításait
+               definiálja.</p></li><li class="listitem"><p>Szoftvertervezés és implementáció: A specifikációnak megfelel&#337; szoftvert el&#337; kell
+               állítani.</p></li><li class="listitem"><p>Szoftvervalidáció: a szoftvert validálni kell, hogy biztosítsuk, azt
+               fejlesztettük, amit az ügyfél kíván.</p></li><li class="listitem"><p>Szoftverevolúció: A szoftvert úgy kell kialakítani, hogy megfeleljen a megrendel&#337;
+               kívánsága szerint történ&#337; változtatásoknak.</p></li></ol></div><p>Bárki számára felmerülhet a kérdés, hogy annak ellenére, hogy tudjuk nincs &#8222;ideális&#8221;
+         szoftverfolyamat, miért érdemes alkalmazni a szoftverfejlesztési elveket? Bár a folyamatok
+         különböznek, számos terület van, ahol a szervezeten belüli szoftverfolyamatokon
+         javíthatunk, mert gyakran elavult technikákat tartalmaznak, vagy esetleg nem is élnek a
+         tervezési módszerek lehet&#337;ségeivel.</p><p>A fejezetben a továbbiakban a szoftverkövetelmények analízisével, a
+         szoftverspecifikációval foglalkozunk részletesen.</p><p></p><div class="sect1" title="5.1. A szoftverspecifikáció"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1204"></a>5.1. 
+            
+            <a name="__RefHeading__51_120998265"></a>A szoftverspecifikáció</h2></div></div></div><p>A szoftverspecifikáció során, vagy más néven a követelménytervezés fázisában
+            els&#337;dleges célunk az, hogy részletesen megértsük és definiáljuk az adott rendszer
+            m&#369;ködését. Meg kell határozni, hogy a rendszernek milyen szolgáltatásokat kell
+            biztosítania. Mindezek mellett azonosítjuk a rendszer üzemeltetésének és fejlesztésének
+            megszorításait is. A kö­vetelmények tervezése a szoftverfolyamat különösen kritikus
+            szakasza. Az ebben a szakaszban vétett hibák elkerülhetetlenül problémákhoz vezetnek
+            majd a rendszertervezés kés&#337;bbi szakaszában és az implementációban. A folyamat eredménye
+            a követelmény dokumentum el&#337;állítása, amely a rendszer specifiká­ciója. A követelmények
+            tervezési folyamatát a következ&#337; ábra mutatja be.</p><p></p><div class="figure"><a name="d0e1212"></a><p class="title"><b>5.1. ábra - A követelménytervezés folyamata</b></p><div class="figure-contents"><div align="center"><img src="images/image12.png" align="middle" alt="A követelménytervezés folyamata"></div></div></div><br class="figure-break"><p>A követelmények tervezésének négy nagy fázisát különböztethetjük meg. Ezeket találjuk
+            az ábra fels&#337; vonalában:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Megvalósíthatósági tanulmány: els&#337; lépésként meg kell becsülni, hogy a
+                  felhasználók kívánsá­gai kielégíthet&#337;k-e az adott szoftver- és hardvertechnológia
+                  mellett. A vizsgá­latoknak el kell dönteniük, hogy a rendszer költséghatékony-e,
+                  és hogy az kivi­telezhet&#337;-e. A megvalósíthatóság elemzésének relatíve olcsónak és
+                  gyorsnak kell lennie. Eredménye a megvalósíthatósági jelentés.</p></li><li class="listitem"><p>Követelmények feltárása és elemzése: ez a folyamat a rendszerkövetelmények
+                  meglév&#337; rendszereken történ&#337; megfigyelésén, a potenciális felhasználókkal és
+                  beszerz&#337;kkel folytatott megbeszéléseken, tevékenységelemzéseken alapszik. Akár egy
+                  vagy több különböz&#337; rendszermodell, illetve prototípus elkészítését is magában
+                  foglalhatja.</p></li><li class="listitem"><p>Követelmény specifikáció: a követelményspecifikáció az elemzési tevékenységek
+                  során összegy&#369;jtött információk egységes dokumentummá alakítása. A dokumentumnak a
+                  követel­mények két típusát, a felhasználói követelményeket, és a konkrét
+                  rendszerkövetelményeket kell tartalmaznia.</p></li><li class="listitem"><p>Követelmény-validáció: a tevékenység során ellen&#337;rizzük, hogy mennyire
+                  valószer&#369;ek, konzisztensek és teljesek a követelmények. Fontos cél, hogy a
+                  folyamat során feltárjuk a követelmények dokumentumában található hibákat, és
+                  kijavítani.</p></li></ol></div><p></p><p>Nagyon fontos megjegyeznünk, hogy nem mindig célszer&#369; a követelménytervezés különböz&#337;
+            tevékenységeit szigorú sor­rendben végrehajtani. Például a követelmények elemzése
+            folytatható a meghatározásuk és specifikálásuk alatt, továbbá a folyamat során bármikor
+            napvilágra kerülhetnek új követelmények is. Bizonyos esetekben ilyenkor az elemzés, a
+            meghatározás és a specifikáció te­vékenységei összefésülhet&#337;k, és egymást átfedhetik a
+            folyamatban.</p><p></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s04.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">4.4. 
+            
+            Az OMT és a modern fejlesztési folyamat&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;5.2. 
+            
+            &nbsp;A szoftver követelmények</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch05.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:45 GMT -->
+</html>

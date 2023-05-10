@@ -1,0 +1,563 @@
+id	nev	producer
+1	John Brabourne	1
+2	David Brown	1
+3	Jonas Rivera	1
+4	Peter Yates	1
+5	Robert Alan Aurthur	1
+6	Patrick J. Palmer	1
+7	Joseph Janni	1
+8	Jeremy Kleiner	1
+9	Marvin Worth	1
+10	Frank Ross	1
+11	James Woolf	1
+12	Arthur Hornblow Jr.	1
+13	Jon Kilik	1
+14	Argosy-Wanger	0
+15	Anthony Minghella	1
+16	James Mangold	1
+17	Ralph Nelson	1
+18	Jim Sheridan	1
+19	Aaron Rosenberg	1
+20	Ben Affleck	1
+21	Bob Balaban	1
+22	Alain Sarde	1
+23	Marc Platt	1
+24	Jerry Wald	1
+25	John Roberdeau	1
+26	Brian Currie	1
+27	Paramount Publix	0
+28	Duncan Kenworthy	1
+29	Patrick Palmer	1
+30	Michael Schaefer	1
+31	Marco Morabito	1
+32	Michael Jacobs	1
+33	Jeffrey Levy-Hinte	1
+34	Ceán Chaffin	1
+35	Edward Saxon	1
+36	Lili Fini Zanuck	1
+37	Michael London	1
+38	Alan Marshall	1
+39	Feature Productions	0
+40	Paul Newman	1
+41	Gray Frederickson	1
+42	Lee Daniels	1
+43	Ray Stark	1
+44	Martin Bregman	1
+45	Jeremy Dawson	1
+46	Gianluigi Braschi	1
+47	Gabrielle Tana	1
+48	Michael Shamberg	1
+49	Stanley R. Jaffe	1
+50	Jonathan Sanger	1
+51	Michael Sugar	1
+52	Cy Feuer	1
+53	Dan Levine	1
+54	Paramount	0
+55	Charles H. Joffe	1
+56	Robert De Niro	1
+57	Bill Miller	1
+58	Oliver Stone	1
+59	Walt Disney	1
+60	Lawrence Weingarten	1
+61	Joey McFarland	1
+62	Melvin Frank	1
+63	Scott Rudin	1
+64	Liberty Films	0
+65	Barry Spikings	1
+66	Kathleen Kennedy	1
+67	Peter Saraf	1
+68	Steve Golin	1
+69	Walter Mirisch	1
+70	Leonardo DiCaprio	1
+71	Ceci Dempsey	1
+72	Samuel Goldwyn Jr.	1
+73	Duncan Henderson	1
+74	Martin Brest	1
+75	Kevin Feige	1
+76	Harold Hecht	1
+77	Andy Harries	1
+78	Noah Baumbach	1
+79	Carlo Ponti	1
+80	Ron Yerxa	1
+81	The Caddo Company	0
+82	David Permut	1
+83	Richard Sakai	1
+84	Kevin Messick	1
+85	Gary Kurtz	1
+86	Robert F. Colesberry	1
+87	Adam McKay	1
+88	Uberto Pasolini	1
+89	Michael Katz	1
+90	Jenno Topping	1
+91	Fox	0
+92	Rachel Winter	1
+93	Jesse L. Lasky	0
+94	David T. Friendly	1
+95	Emile Sherman	1
+96	Herbert Ross	1
+97	Charles Roven	1
+98	Pharrell Williams	1
+99	David Weisman	1
+100	Selznick International Pictures	0
+101	Ron Howard	1
+102	Brad Pitt	1
+103	Sydney Pollack	1
+104	Philip S. Hobel	1
+105	Mark Wahlberg	1
+106	Richard Attenborough	1
+107	Cathy Schulman	1
+108	Martin McDonagh	1
+109	Dan Janvey	1
+110	Callum McDougall	1
+111	Lee Magiday	1
+112	Edward Lewis	1
+113	Joel Coen	1
+114	Stephen Woolley	1
+115	Mihálisz Kakojánnisz	1
+116	Albert S. Ruddy	1
+117	Alfonso Cuarón	1
+118	Stephen Tenenbaum	1
+119	Walter Wanger	1
+120	Charles K. Feldman	1
+121	Oprah Winfrey	1
+122	Mel Gibson	1
+123	Finola Dwyer	1
+124	Simon Channing-Williams	1
+125	Robert Benmussa	1
+126	Alberto Grimaldi	1
+127	Stanley Kramer	1
+128	Carl Foreman	1
+129	Charles Brackett	1
+130	Robert Altman	1
+131	Noel Pearson	1
+132	Wes Anderson	1
+133	Steve Starkey	1
+134	John Woolf	1
+135	Lauren Beck	1
+136	Gary Gilbert	1
+137	Eli Bush	1
+138	Chelsea Winstanley	1
+139	William Wyler	1
+140	J. Arthur Rank-Cineguild	0
+141	Saul Zaentz	1
+142	Dana Brunetti	1
+143	Paul Webster	1
+144	Gary Magness	1
+145	Cathleen Sutherland	1
+146	Hal B. Wallis	1
+147	Dick Richards	1
+148	Rainbow Productions	0
+149	William Vince	1
+150	Kristi Zea	1
+151	Michael Mann	1
+152	Donna Gigliotti	1
+153	Carla Hacken	1
+154	Michael Douglas	1
+155	Redmond Morris	1
+156	Graham Broadbent	1
+157	Michael Nathanson	1
+158	Jim Taylor	1
+159	Claude Berri	1
+160	George Stevens	1
+161	J. Miles Dale	1
+162	John Calley	1
+163	Kimberly Steward	1
+164	Robert B. Radnitz	1
+165	Paul Junger Witt	1
+166	Kvak Sine	1
+167	Michael Deeley	1
+168	Christopher Nolan	1
+169	Jan Chapman	1
+170	Ridley Scott	1
+171	Spike Jonze	1
+172	Michael Gottwald	1
+173	Iain Canning	1
+174	Amy Pascal	1
+175	Gerald R. Molen	1
+176	David Puttnam	1
+177	Charles Chaplin Productions	0
+178	Taika Waititi	1
+179	Daniel Dubiecki	1
+180	David Lancaster	1
+181	Lawrence Gordon	1
+182	Gaetano Daniele	1
+183	Charles B. Wessler	1
+184	David Valdes	1
+185	Stephen J. Friedman	1
+186	Luca Guadagnino	1
+187	Philip D'Antoni	1
+188	First National	0
+189	Richard Linklater	1
+190	Ismail Merchant	1
+191	Alex Rose	1
+192	Sean McKittrick	1
+193	Douglas Wick	1
+194	Barbra Streisand	1
+195	Megan Ellison	1
+196	Sam Spiegel	1
+197	Stuart Benjamin	1
+198	Sam Zimbalist	1
+199	Sarah Siegel-Magness	1
+200	George Clooney	1
+201	Henry Ginsberg	1
+202	Aaron Ryder	1
+203	Fred Coe	1
+204	Richard Suckle	1
+205	Ross Katz	1
+206	Henry Blanke	1
+207	Realization D'Art Cinematographique	0
+208	Hszü Li-kung	1
+209	Irwin Winkler	1
+210	Niki Marvin	1
+211	Andrew A. Kosove	1
+212	Otto Preminger	1
+213	Eric Fellner	1
+214	Theodore Melfi	1
+215	Andrew Lazar	1
+216	Todd Black	1
+217	Mildred Lewis	1
+218	Sol Lesser (produkciós cég)	0
+219	Wendy Finerman	1
+220	Debra Hayward	1
+221	Raymond Mansfield	1
+222	Warner Bros.-First National	0
+223	Quentin Tarantino	1
+224	Tony Ray	1
+225	Keith Redmon	1
+226	Steve Coogan	1
+227	Caroline Baron	1
+228	Martin Brown	1
+229	Kerry Orent	1
+230	Gary Ross	1
+231	Andrew Scheinman	1
+232	Paul Haggis	1
+233	Christine Langan	1
+234	Pandro S. Berman	1
+235	Alexander Payne	1
+236	Greg Shapiro	1
+237	Tom Sternberg	1
+238	Angie Fielder	1
+239	Jerome Hellman	1
+240	Judie G. Hoyt	1
+241	Darla K. Anderson	1
+242	Michael Phillips	1
+243	Tim Bevan	1
+244	Jórgosz Lánthimosz	1
+245	Richard D. Zanuck	1
+246	Ron Bozman	1
+247	Barry Mendel	1
+248	James Schamus	1
+249	Paul Thomas Anderson	1
+250	RKO Radio	0
+251	Elda Ferri	1
+252	Leland Hayward	1
+253	Julie Yorn	1
+254	J. Arthur Rank-Archers	0
+255	Anthony Havelock-Allan	1
+256	London Films	0
+257	Burt Sugarman	1
+258	Nora Grossman	1
+259	Universal	0
+260	Alix Madigan	1
+261	Paul Mazursky	1
+262	20th Century	0
+263	Shannon McIntosh	1
+264	John Huston	1
+265	Edward Zwick	1
+266	Arthur Laurents	1
+267	Scott Franklin	1
+268	Ang Lee	1
+269	Ingo Preminger	1
+270	Howard G. Minsky	1
+271	Evelyn O'Neill	1
+272	Cameron Mackintosh	1
+273	Bridget Johnson	1
+274	Vittorio Cecchi Gori	1
+275	Taylor Hackford	1
+276	Samuel Goldwyn Productions	0
+277	Todd Phillips	1
+278	Kit Golden	1
+279	Metro-Goldwyn-Mayer	0
+280	Pong Dzsunho	1
+281	A. Kitman Ho	1
+282	Josh Penn	1
+283	Simon Kinberg	1
+284	Peter Morgan	1
+285	Kathryn Bigelow	1
+286	John Smithson	1
+287	Hal Roach (produkciós cég)	0
+288	Steven M. Rales	1
+289	Fred Kohlmar	1
+290	Bruce Gilbert	1
+291	Reginald Hudlin	1
+292	David Hoberman	1
+293	Ivan Reitman	1
+294	Bruce Cohen	1
+295	Jennifer Fox	1
+296	Joshua Logan	1
+297	William Perlberg	1
+298	Peter Chernin	1
+299	Alan J. Pakula	1
+300	Emilie Georges	1
+301	Denzel Washington	1
+302	Alejandro G. Iñárritu	1
+303	Baz Luhrmann	1
+304	Amanda Posey	1
+305	Jon Landau	1
+306	Frank Darabont	1
+307	Rob Reiner	1
+308	Matt Damon	1
+309	Stanley Kubrick	1
+310	Stefan Arndt	1
+311	Bill Gerber	1
+312	Mark Boal	1
+313	Lindsay Doran	1
+314	Norman Jewison	1
+315	Cecil B. DeMille	1
+316	Ian Bryce	1
+317	George Miller	1
+318	Todd Field	1
+319	Nellie Bellflower	1
+320	Margaret Menegoz	1
+321	Jim Burke	1
+322	Arthur Freed	1
+323	Sarah Green	1
+324	Dede Gardner	1
+325	Anthony Katagas	1
+326	Sherry Lansing	1
+327	Frederick Zollo	1
+328	Nicole Rocklin	1
+329	Martin Richards	1
+330	Nick Vallelonga	1
+331	Kenneth Utt	1
+332	Chris Moore	1
+333	Mary Parent	1
+334	Peter Jackson	1
+335	Steven Spielberg	1
+336	Stacey Sher	1
+337	Martin Scorsese	1
+338	Brian Oliver	1
+339	Roman Polański	1
+340	Howard Gottfried	1
+341	John Houseman	1
+342	Jason Reitman	1
+343	Walter Coblenz	1
+344	Adele Romanski	1
+345	Tracey Seaward	1
+346	Mario Cecchi Gori	1
+347	Ed Guiney	1
+348	Letty Aronson	1
+349	Timothy Burrill	1
+350	Buddy Adler	1
+351	Frank McCarthy	1
+352	Fred Baron	1
+353	Pilar Savone	1
+354	Ortus	0
+355	Jim Wilson	1
+356	Christian Colson	1
+357	Peter Weir	1
+358	Julian Krainin	1
+359	J. Arthur Rank-Two Cities Films	0
+360	Tamara Asseyev	1
+361	Fred Roos	1
+362	Daniel Lupi	1
+363	Bill Pohlad	1
+364	Mark Huffam	1
+365	Ingmar Bergman	1
+366	Billy Wilder	1
+367	Helen Estabrook	1
+368	Carthew Neal	1
+369	David Heyman	1
+370	Warner Bros.	0
+371	Lisa Weinstein	1
+372	Michael Cimino	1
+373	Arnold Kopelson	1
+374	John Boorman	1
+375	Fred Berger	1
+376	Two Cities Films	0
+377	Ross Hunter	1
+378	Michael Ohoven	1
+379	Emma Thomas	1
+380	Michael Grillo	1
+381	Vincent Landay	1
+382	Michael Todd	1
+383	Francis Ford Coppola	1
+384	Kristie Macosko Krieger	1
+385	Grant Hill	1
+386	Guillermo del Toro	1
+387	Gary Levinsohn	1
+388	Steve McQueen	1
+389	Ahmed Rachedi	1
+390	Marshall Herskovitz	1
+391	Mike Medavoy	1
+392	Jane Scott	1
+393	Kevin J. Walsh	1
+394	John Ford	1
+395	Lianne Halfon	1
+396	John Foreman	1
+397	20th Century-Fox	0
+398	Chris Columbus	1
+399	Tony Richardson	1
+400	David Levy	1
+401	Pieter Jan Brugge	1
+402	Alejandro González Iñárritu	1
+403	Martin Poll	1
+404	Jack Cummings	1
+405	Teddy Schwarzman	1
+406	Brian Grazer	1
+407	Alan Ladd Jr.	1
+408	Curtis Hanson	1
+409	Paramount Famous Lasky	0
+410	Harvey Weinstein	1
+411	James Cameron	1
+412	Bradley Cooper	1
+413	Jack L. Warner	1
+414	Hank Moonjean	1
+415	Sol C. Siegel	1
+416	Jordan Peele	1
+417	Columbia	0
+418	Grant Heslov	1
+419	Charles Gordon	1
+420	Bernard Smith	1
+421	Gil Netter	1
+422	Frank Marshall	1
+423	Michael Nozik	1
+424	Richard Wechsler	1
+425	Richard N. Gladstein	1
+426	Sam Mendes	1
+427	Ronald L. Schwary	1
+428	Jane Rosenthal	1
+429	Jeremy Thomas	1
+430	Ethan Coen	1
+431	Pippa Harris	1
+432	Fran Walsh	1
+433	James W. Skotchdopole	1
+434	Don Hahn	1
+435	William Kong	1
+436	Lawrence Lasker	1
+437	Lynette Howell Taylor	1
+438	John Wayne	1
+439	Bill Walsh	1
+440	Quincy Jones	1
+441	Bernard Schwartz	1
+442	Bill Mechanic	1
+443	Elia Kazan	1
+444	Rachael Horovitz	1
+445	Tony Thomas	1
+446	Steve Tisch	1
+447	Charles Okun	1
+448	Norma Heyman	1
+449	Tony Bill	1
+450	Bruce Davey	1
+451	Henry Fonda and Reginald Rose	1
+452	Jonathan Gordon	1
+453	James L. Brooks	1
+454	Doug Mitchell	1
+455	Douglas Urbanski	1
+456	Robbie Brenner	1
+457	Anatole Litvak	1
+458	Dan Jinks	1
+459	Emma Tillinger Koskoff	1
+460	Blye Pagon Faust	1
+461	Bengt Forslund	1
+462	William Goetz	1
+463	Barry Levinson	1
+464	Jacques Perrin	1
+465	Anne Rosellini	1
+466	Robert Fox	1
+467	Arlene Donovan	1
+468	Steven Haft	1
+469	Albert Berger	1
+470	Lawrence Kasdan	1
+471	Howard Baldwin	1
+472	Walter Wanger (produkciós cég)	0
+473	Jason Blum	1
+474	Tom Rosenberg	1
+475	Marc Norman	1
+476	Andrew S. Karsch	1
+477	Brunson Green	1
+478	Fred Zinnemann	1
+479	Mark Johnson	1
+480	Ernest Lehman	1
+481	Fernando Ghia	1
+482	Gareth Unwin	1
+483	Celine Rattray	1
+484	Richard Roth	1
+485	Robert Lorenz	1
+486	Carolynne Cunningham	1
+487	Russell Smith	1
+488	Robert Greenhut	1
+489	Morton DaCosta	1
+490	Darryl F. Zanuck	1
+491	Merian C. Cooper	1
+492	Ido Ostrowsky	1
+493	Richard B. Goodwin	1
+494	Edward S. Feldman	1
+495	Leslie Holleran	1
+496	Robert Rossen	1
+497	Julia Phillips	1
+498	Branko Lustig	1
+499	Danny DeVito	1
+500	Cosmopolitan	0
+501	Gabriela Rodríguez	1
+502	Jordan Horowitz	1
+503	Shawn Levy	1
+504	Broderick Johnson	1
+505	William Peter Blatty	1
+506	Diana Ossana	1
+507	David Franzoni	1
+508	Pete Czernin	1
+509	Graham Leader	1
+510	Bob Rafelson	1
+511	David Parfitt	1
+512	Martin Elfand	1
+513	Lawrence Turman	1
+514	Robert Evans	1
+515	David Womark	1
+516	Mike Nichols	1
+517	Arnon Milchan	1
+518	JoAnne Sellar	1
+519	Kevin Costner	1
+520	Peter Spears	1
+521	Graham King	1
+522	Robert Rossen Productions	0
+523	Robert Chartoff	1
+524	Denis Héroux	1
+525	Robert Wise	1
+526	David Linde	1
+527	Clint Eastwood	1
+528	Michael Barnathan	1
+529	John Lesher	1
+530	Marc Turtletaub	1
+531	Alison Owen	1
+532	Edward H. Hamm Jr.	1
+533	John Peverall	1
+534	Anthony McCarten	1
+535	Walter Parkes	1
+536	Robert Redford	1
+537	Laurence Mark	1
+538	Robert Michael Geisler	1
+539	Jayne-Ann Tenggren	1
+540	Danny Boyle	1
+541	Robert F. Blumofe and Harold Leventhal	1
+542	Lewis Gilbert	1
+543	Warren Beatty	1
+544	Peter Farrelly	1
+545	Irwin Allen	1
+546	Cameron Crowe	1
+547	Michael De Luca	1
+548	Lawrence Bender	1
+549	Veit Heiduschka	1
+550	Todd Lieberman	1
+551	Mason Novick	1
+552	Nicolas Chartier	1
+553	Mercury	0
+554	Mark Gordon	1
+555	Sofia Coppola	1
+556	Laura Bickford	1
+557	Arthur P. Jacobs	1
+558	Barrie M. Osborne	1
+559	and Barry Mendel	1
+560	Thomas Langmann	1
+561	Lisa Bruce	1
+562	Spike Lee	1

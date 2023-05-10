@@ -1,0 +1,30 @@
+1.a 5
+1.b 5
+1.c 2
+1.d az ip route nem volt megfelelően beállítva
+
+2.1.a amikor manuálisan megadjuk a routereknek az ip route parancson keresztül az elérést
+2.1.b azért mert ezen a topológián mind a 2 hálózatot végig kell néznie a routernek, ezért igényel 2-őt
+2.1.c pipa
+2.1.d pipa
+
+2.2.a ott nem kell megadni a routernek mi a next hopp
+2.2.b show ip route
+2.2.c show ip route static
+2.2.d static s-el van jelezve a direct pedig d-vel
+
+2.3.a default route-nál ismeretlen lehet a célálélomás a hálózat ip címén kívül, míg static route-nál ismert minden részlet
+2.3.b hálózat ip, maszk, és a hozzá tartozó port
+
+2.4.a a megadott pc-től a megadott routeren át és annak megadott prtján kimenő adat a megadott érkezési hálózati címmel rendelkező routerbe érkezik
+		ip route 172.31.1.196 255.255.255.252 s0/0/1
+2.4.b R3 router: ip route 172.31.1.192 255.255.255.252 s0/0/1
+	R2 router: ip route 172.31.1.192 255.255.255.252 s0/0/0
+2.4.c R3 router: ip route 172.31.1.0 255.255.255.128 s0/0/1
+	R2 router: ip route 172.31.1.0 255.255.255.128 s0/0/0
+	R1 router: ip route 172.31.1.0 255.255.255.128 g0/0
+2.5.a show ip route
+	show ip route static
+3.1 pipa
+	
+	

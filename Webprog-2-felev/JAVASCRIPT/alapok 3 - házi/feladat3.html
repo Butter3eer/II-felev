@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick = "felugro()" id="koszontes">Köszöntés</button>
+
+    <script>
+        function felugro() {
+            var datum = new Date();
+            var date = datum.getHours();
+
+            if (date >= 6 && date <= 8)
+            {
+                alert("Jó reggelt!")
+            }
+            else if (date > 8 && date <= 11 )
+            {
+                alert("Jó napot!")
+            }
+            else if (date > 11 && date <= 17) 
+            {
+                alert("Kellemes délutánt!")
+            }
+            else if (date > 17 && date <= 22)
+            {
+                alert("Szép estét!")
+            }
+        }
+    </script>
+</body>
+</html>

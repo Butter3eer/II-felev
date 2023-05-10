@@ -1,0 +1,53 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch04s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:44 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>4.2. A módszertanok fejl&#337;dése</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch04.html" title="4. fejezet - Fejlesztési módszertanok"><link rel="prev" href="ch04.html" title="4. fejezet - Fejlesztési módszertanok"><link rel="next" href="ch04s03.html" title="4.3. Az OMT módszertan"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4.2. 
+            
+            A módszertanok fejl&#337;dése</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">4. fejezet - Fejlesztési módszertanok</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04s03.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="4.2. A módszertanok fejl&#337;dése"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e897"></a>4.2. 
+            
+            <a name="__RefHeading__43_120998265"></a>A módszertanok fejl&#337;dése</h2></div></div></div><p>Mint már említettük, a szoftver krízis jelenségének felismerése indította el a
+            szakmán belül a módszeres szoftverfejlesztési folyamat kifejlesztésére tett
+            er&#337;feszítéseket, rámutatva a szoftverfejlesztés mérnöki megközelítésének fontosságára. </p><p>Már az els&#337; tanulmányok felismerték a fejlesztési folyamat elemzési, tervezési és
+            implementációs szakaszokra bontásának fontosságát. A korai módszertanok a strukturális
+            programozás elvén alapultak. Ennek lényege, hogy a megoldandó problémát strukturális
+            elemzés alapján kell implementálható elemekre bontani.</p><p>Az 1970-es évek egyben a funkcionális szemlélet&#369; programozási nyelvek elterjedését is
+            hozták. Ezeknek a nyelveknek az alapgondolata, hogy a program adatszerkezetek és azokon
+            manipuláló algoritmusok (processzek, feldolgozási lépések) együttese. Ezért a
+            strukturális elemzés is ezen két összetev&#337; közül az egyiket tekintette kiindulási
+            alapnak.</p><div class="sect2" title="4.2.1. Processz alapú módszertanok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e908"></a>4.2.1. Processz alapú módszertanok</h3></div></div></div><p>Ez a megközelítés a rendszert a funkcionális dekompozíció segítségével bontja
+               kisebb funkcionális részekre. Minden funkcionális modul esetén elemzi az input és az
+               output adatokat, és a modul által megvalósítandó leképezést ez alapján tervezi meg. A
+               processz alapú módszerek legismertebb képvisel&#337;i:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>HIPO (Hierarchy Input Processing Output), IBM</p></li><li class="listitem"><p>SADT (Structured Analysis and Design Technique), <a class="ulink" href="http://en.wikipedia.org/wiki/Douglas_T._Ross" target="_top">Douglas T. Ross</a>
+                  
+                  </p></li></ol></div></div><div class="sect2" title="4.2.2. Adat alapú módszertanok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e923"></a>4.2.2. Adat alapú módszertanok</h3></div></div></div><p>A processz alapú megközelítés duálisaként a strukturálás alapját az
+               adatszerkezetek képezik. Alapgondolatuk, hogy az adatszerkezetek hierarchiája alapján
+               tervezhet&#337; meg a processzek, feldolgozási lépések struktúrája. Az adat alapú
+               módszerek legismertebb képvisel&#337;i:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>JSD (Jackson System Development)</p></li><li class="listitem"><p>SSADM (Structured Systems Analysis and Design Method)</p></li></ol></div></div><div class="sect2" title="4.2.3. Objektum orientált módszertanok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e935"></a>4.2.3. Objektum orientált módszertanok</h3></div></div></div><p>A korai módszerek közül a tapasztalatok alapján az adat alapú fejlesztési
+               módszertanok váltak be jobban a gyakorlatban. A legnagyobb &#8222;karriert&#8221; talán az SSADM
+               futotta be, amely a brit (és az 1990-es évek elején a magyar) kormányzati projektek
+               szabványa lett.</p><p>Az objektum orientált programozás nyelvek megjelenésével a program definíciója is
+               megváltozott. Az objektum orientált programozás szemléletében a program egymással
+               kommunikáló objektumok halmaza, amelynek struktúráját az osztályok közötti relációk,
+               viselkedését az objektumok közötti üzenetváltások határozzák meg. A szoftver
+               technológia kutatásának egy ismert képvisel&#337;jét&#337;l, Bertrand Meyert&#337;l származó
+               definíció az objektum orientált fejlesztésre:</p><p>&#8222;Software rendszerek felépítése absztrakt adattípusok implementációinak
+               strukturált együtteséb&#337;l.&#8221;</p><p>Rövidesen nyilvánvalóvá vált, hogy az új szemlélet&#369; nyelvek el&#337;nyeit csak akkor
+               lehet hatékonyan kihasználni, ha az implementációt megel&#337;z&#337; fázisok is ezt a
+               szemléletet követik. Így el&#337;ször a tervezés, majd az elemzés fázisait is lefed&#337; új
+               módszertanok jelentek meg. Ezzel párhuzamosan jelent meg a fejlesztés modell
+               szemlélet&#369; megközelítése is. </p><p>Az objektum orientált módszertanok néhány ismertebb képvisel&#337;je (a teljesség
+               igénye nélkül):</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>OMT (Object Modelling Technique, Rumbaugh, 1991, majd 1993) </p></li><li class="listitem"><p>OOD (Object Oriented Design, Booch, 1991, majd 1993)</p></li><li class="listitem"><p>OOA (Object Oriented Analysis, Coad &amp; Yourdon, 1991)</p></li><li class="listitem"><p>OOSD (Object-Oriented Structured Design, Wasserman, 1990)</p></li><li class="listitem"><p>HOOD (Hierachical Object Oriented Design, 1989)</p></li><li class="listitem"><p>Responsibility -Driven Design, Wirfs &amp; Buck, 1990</p></li><li class="listitem"><p>OOSE (Object Oriented Software Engineering, Jacobson, 1992)</p></li><li class="listitem"><p>RUP (Rational Unified Process) (UML + fejlesztési folyamat ajánlás,
+                     1998-1999)</p></li><li class="listitem"><p>scrum (Ken Schwaber, Mike Beedle, 2001)</p></li></ol></div><p>A RUP néhány alapvet&#337; tulajdonságát a 2. fejezetben a benne megfogalmazott
+               szoftver folyamat modell ismertetése során vázoltuk. Mivel a mai viszonyok között is
+               alkalmazható, keretrendszer jelleg&#369; módszertan, ismertetése jelen jegyzet kereteit
+               meghaladja, részletesebb tárgyalása a mesterképzés vonatkozó tárgyának a
+               feladata.</p><p>A scrum az úgynevezett &#8222;agilis szemléletet&#8221; támogató módszertan, áttekintése
+               szintén mesterképzés tárgya lehet.</p><p>A felsoroltak közül az OMT, OOD és OOSE az 1990-es években számos fejlesztési
+               projektben bizonyították használhatóságukat. Bár a mai fejlesztések igényeinek már
+               nem felelnek meg, jelölésrendszereik az UML modellez&#337; nyelv el&#337;djeinek tekinthet&#337;k,
+               ezért szerepük máig meghatározó.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch04s03.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">4. fejezet - Fejlesztési módszertanok&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;4.3. 
+            
+            Az OMT módszertan</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch04s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:44 GMT -->
+</html>

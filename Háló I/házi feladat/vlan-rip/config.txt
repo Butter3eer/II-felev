@@ -1,0 +1,28 @@
+en
+conf t
+hostname S1
+vlan 10
+name ZOLD
+int range f0/1-12
+switchport mode access
+switchport access vlan 10
+exit
+vlan 20
+name SARGA
+int range f0/13-24
+switchport mode access
+switchport access vlan 20
+exit
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20
+no sh
+exit
+int vlan 10
+ip add 192.168.0.1 255.255.255.128
+no sh
+int vlan 20
+ip add 192.168.0.129 255.255.255.128
+no sh
+end
+copy ru st

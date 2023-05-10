@@ -1,0 +1,125 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch16s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:07 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>16.4. A rendszer statikus modelljének kidolgozása</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch16.html" title="16. fejezet - Esettanulmány"><link rel="prev" href="ch16s03.html" title="16.3. A rendszer elemeinek, struktúrájának azonosítása"><link rel="next" href="ch16s05.html" title="16.5. A rendszer dinamikus modelljének kidolgozása"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">16.4. A rendszer statikus modelljének kidolgozása</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch16s03.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">16. fejezet - Esettanulmány</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch16s05.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="16.4. A rendszer statikus modelljének kidolgozása"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e6942"></a>16.4. A rendszer statikus modelljének kidolgozása</h2></div></div></div><p>A rendszert el&#337;ször egészében próbáljuk meg ábrázolni. Gyakori a réteges
+                    felépítés, mert a külvilág és más rendszerek számára logikát egységesen kell
+                    szolgáltatni. A statikus modell felépítésének általános menete a következ&#337;:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+                     <span class="bold"><strong>Alapvet&#337; osztályok azonosítása</strong></span>:
+                                kezdjük a használati eset diagramban szerepl&#337; aktorokkal, azok
+                                minden esetben osztályokká alakíthatóak. Ezután a megjelenítéshez,
+                                kommunikációhoz szükséges osztályok következnek.</p></li><li class="listitem"><p>
+                     <span class="bold"><strong> Alapvet&#337; kapcsolatok azonosítása </strong></span>: A rendszer osztályai között levö kapcsolatok
+                                felderítése a következ&#337; lépés. El&#337;ször a tartalmazás, aztán az
+                                ismeretség következik (ha tudjuk az irányt, akkor jelöljük azt
+                                is).</p></li><li class="listitem"><p>
+                     <span class="bold"><strong>Interfészek azonosítása</strong></span>:
+                                Programozzunk interfészt! Egy jó technika, ha az osztályok nem
+                                osztályként használják a másik példányt, hanem csak interfészként. A
+                                megfelel&#337; osztályok implementálják azokat. Így közben ki tudjuk majd
+                                cserélni az osztályokat is úgy, hogy a használó osztály nem veszi
+                                észre.</p></li><li class="listitem"><p>
+                     <span class="bold"><strong>Kapcsolatok pontosítása</strong></span>:
+                                Valamennyi eddig felfedezett kapcsolatot megvizsgálunk, nevesítjük,
+                                megállapítjuk a szerepköröket és számosságokat. Ne feledjük, hogy a
+                                kapcsolatok pontosítása új osztályok definiálásához is vezethet.
+                                Vázoljuk azokat a meggondolásokat, amelyek az osztálydiagram
+                                pontosításához vezetnek, és leírjuk, hogy mit változtat az eddigi
+                                információkon.</p></li><li class="listitem"><p>
+                     <span class="bold"><strong>Attribútumok azonosítása</strong></span>: Minden
+                                osztályhoz (vagy kapcsolathoz, ha ahhoz tartozik) hozzárendeljük a
+                                legfontosabb attribútumait. Ez az elemzés is vezethet új osztályok
+                                felfedezéséhez. Vázoljuk azokat a meggondolásokat, amelyek az
+                                osztálydiagram pontosításához vezetnek, és leírjuk, hogy mit
+                                változtat az eddigi információkon.</p></li><li class="listitem"><p>
+                     <span class="bold"><strong>Bázisosztályok keresése</strong></span>:
+                                Megvizsgálandó, hogy vannak-e olyan esetek, ahol az egyes
+                                osztályokban ismétl&#337;d&#337; argumentumok egy közös bázisosztályba
+                                emelhet&#337;k ki. Ha találunk ilyeneket, az általánosítás kapcsolatokkal
+                                kiegészítjük az osztálydiagramot. Vázoljuk azokat a meggondolásokat,
+                                amelyek az osztálydiagram pontosításához vezetnek, és leírjuk, hogy
+                                mit változtat az eddigi információkon. Az így pontosított
+                                osztálydiagram egy átmeneti munkaanyag, amely a dokumentum
+                                mellékletébe kerülhet (hivatkozással!), de nem kötelez&#337; része a
+                                dokumentumnak.</p></li></ol></div><p>
+         </p><p>Itt is réteges, mert a konzol kötözget&#337; is ugyanazt a logikát kell használja,
+                    mint a webes. A rendszer topológiája a következ&#337;: </p><div class="figure"><a name="openrmtextlayers"></a><p class="title"><b>16.4. ábra - A SZTAKI Openrtm kiterjesztésének felépítése</b></p><div class="figure-contents"><div align="center"><img src="images/openrtmext.png" align="middle" alt="A SZTAKI Openrtm kiterjesztésének felépítése"></div></div></div><p><br class="figure-break"> A rendszer 4 rétegb&#337;l áll, melyek a következ&#337;k:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>megjelenítési, és vezérlési,</p></li><li class="listitem"><p>logika réteg,</p></li><li class="listitem"><p>alacsonyszint&#369; réteg.</p></li><li class="listitem"><p>programozói middleware réteg</p></li></ul></div><p> A <span class="bold"><strong>megjelenítés és a vezérlés réteg</strong></span> (zöld szín&#369;). Feladatuk a rendszer interfészének
+                    biztosítása: </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>paraméterek fogadása, ellen&#337;rzése, </p></li><li class="listitem"><p> esetleges eredmények megjelenítése,</p></li><li class="listitem"><p>Szolgáltatásokat kér a vezérl&#337; rétegt&#337;l</p></li></ol></div><p>A rendszer interfésze webalkalmazás esetében szervletek és jsp
+                    oldalak, konzol alkalmazás esetén pedig a futtatható konzol alkalmazások. </p><p>Az OpenrtmExt_Logic, <span class="bold"><strong>logikai réteg</strong></span> (sárga
+                    szín&#369;) a logika réteg, amelynek feladata a megjelenítési réteg által kért
+                    funkciók kiszolgálása az OpenrtmExt_Iceport és az OpenRtm alrendszerek
+                    segítségével. Ez a réteg egy csomag (jar fájl), amely a web-, vagy konzol
+                    alkalmazás mellet kell legyen. </p><p>
+            <span class="bold"><strong>Alacsonyszint&#369; réteg</strong></span> tartalmazza az
+                    Openrtm-aist implementációját, ez küls&#337; rész, és az OpenrtmExt_Iceport részt.
+                    Ezek végzik az alacsony szint&#369; m&#369;veleteteket. Ezek minden esetben a futó
+                    komponensben vannak beágyazva. </p><p>Fontos, hogy a verziószámok minden szinten vannak, hiszen bármelyik változása
+                    dönt&#337;en befolyásolja a rendszer m&#369;ködését. A rétegeknek megfelel&#337;en 4
+                    alprojektb&#337;l áll rendszer a rendszer, melyek a következ&#337;k: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>OpenrtmExt_Control -&gt; jar file</p></li><li class="listitem"><p>OpenrtmExt_Iceport -&gt; jar file (ezt már kifejlesztettük)</p></li><li class="listitem"><p>OpenrtmExt_Server -&gt; (servletek) war file </p></li><li class="listitem"><p>OpenrtmExt_Tools -&gt; jar file (futtatható alkalmazások)</p></li></ul></div><p> Webalkalmazás esetén a fontos paraméterek beállíthatóak a
+                    szervlet jsp motor alatt. Ennek az az el&#337;nye, hogy nem kell minden frissítés,
+                    újratelepítés után/el&#337;tt átírni a paramétereket. Használható a régi metodika is
+                    , de nem javasolt. A JNDI lehet&#337;ségét kihasználva globális er&#337;forrásokat
+                    definiálunk, amelyeket a webalkalmazás lokális névterébe "linkelünk". A rétegek
+                    minden esetben egy alrendszert jelentenek, aminek egy a programozói nyelvben a
+                    csomag vagy névtér felel meg. </p><p>Ezek után azonosítsuk az alrendszerek meghatározó osztályait! Azokkal kell
+                    kezdenünk, amelyek az interfészét adják az alrendszernek, és azokat amelyek
+                    fogyasztják a másik alrendszert. Els&#337; körben csak a fontosakat dolgozzuk ki,
+                    majd az azokat közvetlen kiszolgálókat, végül mindet. Érdemes valamilyen
+                    felhasználói interfészen keresztül megközelíteni a rendszer feltérképezését.
+                    Ebben az esetben a weboldalaknál, szervleteknél kezdjük.</p><div class="tip" title="Tipp" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tipp]" src="../../system/docbook-xsl/images/tip.html"></td><th align="left">Tipp</th></tr><tr><td align="left" valign="top"><p>Érdemes el&#337;ször a rendszer teljes topológiáját kidolgozni az osztály
+                            részleteit&#337;l eltekinteni (az osztály maradjon tehát egyszer&#369; téglalap),
+                            mert ha minden osztály minden tagját feltüntetjük, akkor nem látjuk át
+                            és nem lehet kinyomtatni. Kés&#337;bbiek során is rejtsük el a részleteket a
+                            megjelenítéskor, nyomtatáskor. Ne feledjük a modell és a nézet más. A
+                            modellben benne kell, hogy legyen minden részlet (hiszen ebb&#337;l
+                            generáljuk a forráskódot), de a megjelenítést, megértést ne zavarjuk a
+                            felesleges részletekkel.</p></td></tr></table></div><p>
+                    
+            </p><div class="figure"><a name="openrmtextservereslogika"></a><p class="title"><b>16.5. ábra - A SZTAKI Openrtm kiterjesztésének szerver oldali struktúrája</b></p><div class="figure-contents"><div align="center"><img src="images/szerver_alkalmazas_felepitese.png" align="middle" alt="A SZTAKI Openrtm kiterjesztésének szerver oldali struktúrája"></div></div></div><p><br class="figure-break">Az osztályok létrehozásának menete ebben az esetben a következ&#337;:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Application - ApplicationWeb; openrtm_port - PortBean;
+                                openrtm_component - ComponentBean; manager</p></li><li class="listitem"><p>MangerBean, UserBean,UserRoles; ThreadlistComponentsRecursive,
+                                OpenrtmExtException</p></li><li class="listitem"><p>végül mindegyiket.</p></li></ol></div><p>Ezután a rendszer alap funkcióihoz kapcsolódó osztályokat kell
+                    részletesen kidolgozni. Ebben az esetben ez a logika alrendszer. Ebben az
+                    esetben egy flash alkalmazás kommunikál a szerverrel. Ilyenkor jó megoldás az
+                    xml alapú kommunikáció használata. Használhatunk web szervizeket, vagy
+                    sorosítást, de a leggyorsabb ha mi írjuk meg szerver oldalon az xml el&#337;állítást
+                    és a szerver oldalon az xml alapján létrehozzuk a példányokat. Ebben az esetben
+                    a kliens és a szerver oldal nyelve más, de a szerepek azonosak. Nehezebb
+                    webalkalmazást tervezni, fejleszteni, mint desktop alkalmazást, hiszen minden
+                    logika kettéválik és a http protokoll állapotmentessége miatt az objektumainkat
+                    valahol tárolni kell, át kell vinni az állapotot a különböz&#337; kérések között. Itt
+                    még nehezebb a helyzet hiszen a kliens nem a hagyományos vékony kliens (csak
+                    böngész&#337;) hiszen a kliens oldalon rajzolni, ellen&#337;rizni, dönteni kell. Újabb
+                    osztályokat vezethet be a felhasználó felület tervezése, és az alacsony szint&#369;
+                    réteg változása vagy annak illesztése. A logikai rész részletesebb struktúráját
+                    a következ&#337; ábra szemlélteti: </p><div class="figure"><a name="openrmtextlogikatopologia"></a><p class="title"><b>16.6. ábra - A SZTAKI Openrtm kiterjesztés logikájának struktúrája</b></p><div class="figure-contents"><div align="center"><img src="images/logika_reszletei.png" align="middle" alt="A SZTAKI Openrtm kiterjesztés logikájának struktúrája"></div></div></div><p><br class="figure-break"> Az osztályok létrehozásának sorrendje: </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Application, ComponentBean, PortBean;Item, PortItem,
+                                ComponentItem</p></li><li class="listitem"><p>FonálOsztályok</p></li><li class="listitem"><p>összes többi</p></li></ol></div><p>Az Item osztály arra jó, hogy rendszer alacsony szint&#369; szerepl&#337;i
+                    képviselje. Lekérdezés esetén a megfelel&#337; Item (megfelel&#337; paraméterrel)
+                    létrejön, majd az appendToXmlWriter vagy a toString fv.ét hívva kiírja az
+                    állapotát (vagy a kérés válaszába vagy a kimenetre). Itt használhatunk
+                    interfészt vagy származtatást is. A lényeg, hogy a metodika ugyanaz. Nem baj, ha
+                    nincs meg minden osztály, amikor szükség lesz rá az új osztályra akkor a
+                    megfelel&#337; fv. felüldefiniálásával beilleszthetjük. Érdemes már itt a tesztelést
+                    beépíteni. A f&#337;bb (felette lév&#337; rétegnek szolgáltató) osztályokra unit (JUnit)
+                    teszteket írunk, így könnyen tudjuk ellen&#337;rizni a rendszer rétegeit külön-külön,
+                    és nem kell a többi réteg a teszteléshez. </p><p>Amikor a rendszerük felépítése megvan, kezdhetünk neki a az egyes osztályok
+                    részleteinek a kidolgozásának. A tervezés fázis végén az összes (iterációs
+                    módszer eseten az adott iterációban kifejlesztend&#337; osztályok) osztály teljes
+                    leírását meg kell határoznunk. Itt a cél a teljesség. Még a teszt osztályokat is
+                    meg kell terveznünk. A tervezési fázis végén az osztály diagramból generálunk
+                    osztályokat, amelyek metódusainak a törzse üres. Az ideális az volna, ha az
+                    implementáció során nem kellene újabb adattagot és metódust definiálni, de
+                    nagyon nehéz ilyen részletesség&#369; tervet készíteni és nagy tapasztalat kell
+                    hozzá. Ami azonban nagyon fontos:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Az osztályok interfésze, publikus metódusainak a készlete nem
+                                változhat. Nem csökkenhet, hiszen ha valaki számít arra, és nincs
+                                meg, akkor fordítási hibát okoz. Nem b&#337;vülhet, mert akkor nem
+                                tervezett, ellen&#337;rzött módon (kikerül&#337; megoldásokkal) tudják
+                                használni az er&#337;forrásokat. Ha terv során valamely interfész
+                                megszületik, az tudatos, alapos munka eredménye. Lehet, hogy jót
+                                akarunk, de nem ismerve a teljes rendszer felépítését logikáját,
+                                olyan kerül&#337; utakat nyitunk, amely veszélyezteti a biztonságos
+                                stabil m&#369;ködést.</p></li><li class="listitem"><p>Az interfészt biztosító metódusok aláírása nem változhat, hiszen
+                                egy paraméter tudatosan érték vagy referencia szerint adódik át.
+                                Információt kap, vagy ad a hívás helyére.</p></li></ul></div><p>
+         </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch16s03.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch16.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch16s05.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">16.3. A rendszer elemeinek, struktúrájának azonosítása&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;16.5. A rendszer dinamikus modelljének kidolgozása</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch16s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:08 GMT -->
+</html>

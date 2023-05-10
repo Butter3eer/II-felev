@@ -1,0 +1,16 @@
+E:\STUDY\Petrik\II félév\C#\While-do-while\While-do-while\bin\Debug\While-do-while.exe.config
+E:\STUDY\Petrik\II félév\C#\While-do-while\While-do-while\bin\Debug\While-do-while.exe
+E:\STUDY\Petrik\II félév\C#\While-do-while\While-do-while\bin\Debug\While-do-while.pdb
+E:\STUDY\Petrik\II félév\C#\While-do-while\While-do-while\obj\Debug\While-do-while.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II félév\C#\While-do-while\While-do-while\obj\Debug\While-do-while.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II félév\C#\While-do-while\While-do-while\obj\Debug\While-do-while.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II félév\C#\While-do-while\While-do-while\obj\Debug\While-do-while.exe
+E:\STUDY\Petrik\II félév\C#\While-do-while\While-do-while\obj\Debug\While-do-while.pdb
+E:\STUDY\Petrik\II-felev\C#\While-do-while\While-do-while\bin\Debug\While-do-while.exe.config
+E:\STUDY\Petrik\II-felev\C#\While-do-while\While-do-while\bin\Debug\While-do-while.exe
+E:\STUDY\Petrik\II-felev\C#\While-do-while\While-do-while\bin\Debug\While-do-while.pdb
+E:\STUDY\Petrik\II-felev\C#\While-do-while\While-do-while\obj\Debug\While-do-while.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\While-do-while\While-do-while\obj\Debug\While-do-while.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\While-do-while\While-do-while\obj\Debug\While-do-while.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\While-do-while\While-do-while\obj\Debug\While-do-while.exe
+E:\STUDY\Petrik\II-felev\C#\While-do-while\While-do-while\obj\Debug\While-do-while.pdb

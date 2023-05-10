@@ -1,0 +1,98 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch10.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:56 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>10. fejezet - Viselkedés diagramok</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch09s04.html" title="9.4. Telepítési diagram"><link rel="next" href="ch10s02.html" title="10.2. Kommunikációs diagram"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">10. fejezet - Viselkedés diagramok</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch09s04.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch10s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="10. fejezet - Viselkedés diagramok"><div class="titlepage"><div><div><h2 class="title"><a name="d0e3891"></a>10. fejezet - Viselkedés diagramok</h2></div></div></div><p>A rendszer statikus nézetének megalkotása után a dinamikus nézet elemzése következik. A
+         dinamikus nézetet az UML viselkedés diagramjai segítségével írhatjuk le. Ebben a fejezetben
+         összefoglaljuk a legfontosabb viselkedés diagramokat.</p><div class="sect1" title="10.1. Szekvencia diagram"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e3896"></a>10.1. 
+            
+            <a name="__RefHeading__109_120998265"></a>Szekvencia diagram</h2></div></div></div><p>A szekvencia diagram feladata objektumok egymás közti üzenetváltásainak ábrázolása
+            egy id&#337;tengely mentén elhelyezve.</p><p>A diagram elemei:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Objektumok, amelyekt&#337;l egy szaggatott vonallal jelzett életvonal indul, amely
+                  felülr&#337;l lefelé az id&#337; múlását jelképezi. Az életvonalon jelölhet&#337;k az objektum
+                  aktivitási szakaszai. Az aktivitási szakaszt a szaggatott vonal helyett elnyújtott
+                  téglalap jelzi.</p></li><li class="listitem"><p>Üzenetváltások. Az egyes objektumok közötti üzenetváltásokat (interakciókat) a
+                  küld&#337; életvonalától a fogadóéig rajzolt nyíllal jelöljük. A nyílra az üzenet
+                  elnevezését írjuk, de feltüntethet&#337;k az üzenet paraméterei (az üzenet elnevezése
+                  után zárójelben, mint az operációk paraméterei), illetve az üzenethez kapcsolódó
+                  feltételek is. Az üzenet továbbítás ideje általában nullának tekinthet&#337;, ezért a
+                  nyilak vízszintesek. A nyilak formája az üzenetváltás módjára utal.</p></li><li class="listitem"><p>A diagram bal szélén megjegyzések, megszorítások és id&#337;beliségre utaló
+                  jelölések helyezhet&#337;k el.</p></li></ol></div><p>Egy egyszer&#369; példa a szekvencia diagramra a &#8222;Blokkolás&#8221; használati eset (lásd 8.
+            fejezet) forgatókönyvének részletezése szekvencia diagram formájában. (A szekvencia
+            diagramot a Blokkolás használati eset részletes leírásából a Visual Paradigm modellez&#337;
+            eszköz generálta automatikusan.)</p><p></p><div class="figure"><a name="d0e3918"></a><p class="title"><b>10.1. ábra - A Blokkolás használati eset forgatókönyve</b></p><div class="figure-contents"><div align="center"><img src="images/image60.jpg" align="middle" alt="A Blokkolás használati eset forgatókönyve"></div></div></div><br class="figure-break"><div class="sect2" title="10.1.1. Objektumok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3922"></a>10.1.1. Objektumok</h3></div></div></div><p>Az &#8222;objektum&#8221; kifejezés a szekvencia diagram szempontjából a programozási nyelvek
+               objektum fogalmához képest általánosabb értelm&#369; is lehet: valójában egy rendszer
+               valamilyen m&#369;ködésre képes részét, vagy &#8211; mint a fenti példa is mutatja &#8211; akár az
+               egész rendszert jelenheti. Ha valóban implementációs szint&#369; objektumról van szó,
+               akkor a szokásos objektum jelölést használjuk a téglalapban.</p><p>Speciális &#8222;objektumként&#8221; jelenhetnek meg a rendszer aktorai, hiszen egy
+               üzenetváltás gyakran az aktor és a rendszer (vagy annak valamely objektuma) közötti
+               interakcióval kezd&#337;dik, vagy az üzenet egy aktornak szól.</p></div><div class="sect2" title="10.1.2. Üzenetek"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3929"></a>10.1.2. Üzenetek</h3></div></div></div><p>Bár a fenti példa ábrán csak egy féle üzenet szerepel, lehet&#337;ségünk van több fajta
+               üzenet ábrázolására.</p><p>Az üzenetek fajtái:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Szinkron üzenet (kérés): a küld&#337; elküldi az üzenetet, majd vár a válaszra. A
+                     fogadó aktiválódik (ha nem volt az).</p></li><li class="listitem"><p>Válasz üzenet: mindig az el&#337;z&#337; üzenetre vonatkozik. A választ küld&#337;
+                     deaktiválódik, a fogadó pedig aktiválódik.</p></li><li class="listitem"><p>Aszinkron üzenet (szignál): a küld&#337; elküldi az üzenetet, de folytatja a
+                     munkáját, nem vár válaszra.</p></li><li class="listitem"><p>Objektum létrehozása: az üzenet hatására létrejön egy új objektum. A nyíl
+                     ilyenkor az objektum fejre mutat.</p></li><li class="listitem"><p>Objektum megszüntetése: az üzenet hatására egy objektum megsz&#369;nik. Az
+                     életvonal végét egy X zárja le.</p></li><li class="listitem"><p>Üzenet nem nulla továbbítási id&#337;vel: ha ki akarjuk hangsúlyozni, hogy egy
+                     üzenet továbbítása id&#337;t vesz igénybe, ferde nyilat használunk.</p></li><li class="listitem"><p>Saját magának küldött üzenet: egy objektum küldhet saját magának
+                     üzenetet.</p></li><li class="listitem"><p>Rekurzív üzenet: az objektum saját magának küld üzenetet. Ennek
+                     kiszolgálására az objektum f&#337; tevékenysége felfüggeszt&#337;dik a kiszolgálás
+                     idejére. (&#8222;Beágyazott aktivitási szakasz&#8221;)</p></li></ol></div><p>Az alábbi ábra az egyes üzenetfajták jelöléseit foglalja össze:</p><p></p><div class="figure"><a name="d0e3964"></a><p class="title"><b>10.2. ábra -  Üzenet fajták jelölése</b></p><div class="figure-contents"><div align="center"><img src="images/image61.jpg" align="middle" alt="Üzenet fajták jelölése"></div></div></div><br class="figure-break"><p></p></div><div class="sect2" title="10.1.3. Üzenetek id&#337;belisége"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3969"></a>10.1.3. Üzenetek id&#337;belisége</h3></div></div></div><p>Az objektumok életvonala egy felülr&#337;l lefelé mutató id&#337;tengelyt is képvisel. Az
+               id&#337;beliség azonban alapesetben csak sorrendiséget jelent: amelyik üzenet nyila
+               lejjebb található, az követi a felé rajzolt üzenetet. A lefelé lejt&#337; nyíllal jelölt
+               üzenet továbbítása &#8222;valamennyi id&#337;t&#8221; vesz igénybe.</p><p>Az életvonal elvileg valódi id&#337;skálával rendelkez&#337; id&#337;tengellyé is alakítható,
+               ahol a nyilak távolsága az egyes üzenetek között eltelt id&#337;t is jelezheti. Ha azonban
+               az üzenetek pontos id&#337;beli elhelyezkedése lényeges (egy valós idej&#369; rendszerben
+               például ez nagyon fontos lehet), célszer&#369;bb az UML 2.0-tól bevezetett id&#337;diagramot
+               használni. (A jegyzet terjedelmi korlátai miatt az id&#337;diagram ismertetésével nem
+               foglalkozunk.)</p><p>A szekvencia diagramon is ábrázolhatók azonban megszorításokkal az egyszer&#369;
+               sorrendiségt&#337;l pontosabb id&#337;korlátok, mint például két üzenet közötti maximális
+               megengedett id&#337;tartam, vagy egy üzenet id&#337;pontja. A fenti ábrán például jelöltük,
+               hogy az 1. üzenetre adott válasznak maximum 2 másodpercen belül meg kell érkeznie,
+               illetve hogy a 3. üzenetet minden nap 0 órakor el kell küldeni.</p></div><div class="sect2" title="10.1.4. Interakciós operátorok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e3978"></a>10.1.4. Interakciós operátorok</h3></div></div></div><p>Az UML 2.0-ás verziótól kezdve a nyelv bevezette a &#8222;komplex interakció&#8221; fogalmát,
+               azaz az üzeneteket (interakciókat) kombinálhatjuk, és a köztük lev&#337; viszonyokat
+               operátorokkal fejezhetjük ki.</p><p>Egy komplex interakció jele egy téglalap. A téglalap bal fels&#337; sarkában a rá
+               vonatkozó operátort tüntetjük fel, vízszintesen pedig &#8222;átfogja&#8221; az interakciókban
+               érintett objektumok életvonalait.</p><p>AZ UML számos interakciós operátort definiál, ebben a jegyzetben csak néhány,
+               gyakran használatos operátort nézünk meg. A többir&#337;l jó leírást találunk a Störle
+               irodalomban.</p><div class="sect3" title="10.1.4.1. A ref operátor"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3987"></a>10.1.4.1. A ref operátor</h4></div></div></div><p>Gyakran el&#337;fordul, hogy egy interakció
+                  sorozat több esetben is része a folyamatoknak. Ilyenkor ezeket célszer&#369; egy külön
+                  szekvencia diagramban ábrázolni, és mindenütt, ahol szüksége van rá, a ref
+                  operátorral hivatkozhatunk rá. A ref operátor tehát egyfajta interakció makró, de
+                  paraméterezhet&#337;, és visszatérési érték is rendelhet&#337; hozzá.</p></div><div class="sect3" title="10.1.4.2. A loop operátor"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3992"></a>10.1.4.2. A loop operátor</h4></div></div></div><p>A téglalapba foglalt interakció sorozat
+                  ismétl&#337;dését jelenti. Egyedi interakciókat és valamilyen operátorral azonosított
+                  komplex interakciókat is tartalmazhat, tehát a komplex interakciók egymásba
+                  ágyazhatók.</p></div><div class="sect3" title="10.1.4.3. A strict operátor"><div class="titlepage"><div><div><h4 class="title"><a name="d0e3997"></a>10.1.4.3. A strict operátor</h4></div></div></div><p>Azt írja el&#337;, hogy a befoglalt
+                  interakciók (az operandusai) szigorú sorrendben követik egymást. Az operandusait
+                  szaggatott vonal választja el egymástól. Mivel egy egyszer&#369; interakciókra ez az
+                  alapértelmezés, akkor van értelme használni, ha az operandusai között van legalább
+                  egy operátorral ellátott összetett interakció.</p><p>A szigorú sorrend azt jelenti, hogy egy operandus végrehajtása csak akkor
+                  kezd&#337;dhet el, ha az el&#337;z&#337; végrehajtása teljesen befejez&#337;dött.</p></div><div class="sect3" title="10.1.4.4. Feltételes végrehajtás operátorai"><div class="titlepage"><div><div><h4 class="title"><a name="d0e4004"></a>10.1.4.4. Feltételes végrehajtás operátorai</h4></div></div></div><p>Ezek az operátorokhoz egy feltétel is kapcsolódik, és az operandusaik a
+                  feltétel teljesülését&#337;l függ&#337;en futnak le.</p><p>opt: az operandus opcionálisan felléphet</p><p>alt: a feltételnek megfelel&#337; eset választódik ki a lehetséges alternatívák
+                  közül</p><p>break: a tartalmazó interakciót megszakítja. Valamilyen kivételes körülmény
+                  bekövetkezését kezelhetjük segítségével.</p></div></div><div class="sect2" title="10.1.5. Példa: a Blokkolás forgatókönyvének pontosítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4015"></a>10.1.5. Példa: a Blokkolás forgatókönyvének pontosítása</h3></div></div></div><p>Az eddig elmondottak ismeretében dolgozzuk át a fejezet els&#337; ábráján található
+               generált szekvencia diagramot. A diagram megfelel egy analízis modell részeként, de a
+               tervezési fázis számára már túlságosan elnagyolt, pontosítani, b&#337;víteni kell.</p><p>Egy lehetséges továbbfejlesztés például az alábbi:</p><p></p><div class="figure"><a name="d0e4023"></a><p class="title"><b>10.3. ábra - Kiegészített szekvencia diagram</b></p><div class="figure-contents"><div align="center"><img src="images/image62.jpg" align="middle" alt="Kiegészített szekvencia diagram"></div></div></div><br class="figure-break"><p>A kiinduló diagramhoz képest az alábbi változtatásokat tettük: </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A válasz üzenetek az ábrában csak számozással voltak kiemelve, ehelyett
+                     használjuk a szaggatott vonallal rajzolt nyilakat.</p></li><li class="listitem"><p>Az eredeti ábrából nem derül ki, hogy az egy tétel blokkolásához szükséges
+                     üzenetváltásoknak ismétl&#337;dniük kell. Ezt tényt a most a loop operátorral
+                     jelöltük.</p></li><li class="listitem"><p>A blokk lezárása után a blokk adatait a fekete doboz számára gy&#369;jteni kell.
+                     Ennek a folyamatnak a részleteit egy másik (&#8222;Vásárlás adatai a fekete dobozba&#8221;
+                     nev&#369;, a jelen jegyzetben nem részletezett) szekvencia diagramban ábrázoljuk, a
+                     ref operátor erre csak hivatkozik. A hivatkozott diagramnak természetesen a
+                     modellben léteznie kell. (Ezt az ábrát csak úgy lehetett elkészíteni, hogy
+                     felvettünk egy üres szekvencia diagramot a kívánt névvel.)</p></li><li class="listitem"><p>Kiegészítettük a kiindulási diagramot azzal, hogy készpénzes és bankkártyás
+                     fizetést is megengedünk. Ehhez fel kellett venni egy újabb objektumot, a
+                     Kártyaolvasót. A két fizetési mód közötti választási lehet&#337;séget az alt
+                     operátorral jeleztük. Az alternatív futási lehet&#337;ségeket a megfelel&#337;
+                     feltétellel (&#8222;guard&#8221;) jelöltük. A két lehet&#337;ség közül pontosan az egyik
+                     történik meg a valóságban.</p></li><li class="listitem"><p>Kiegészítettük a kiindulási diagramot azzal a kivételes esettel, ha a
+                     vásárló kártyája nem alkalmas a fizetésre (a bank nem adja meg az engedélyt,
+                     például fedezet hiány miatt). A break operátorral megjelölt folyamat csak ebben
+                     az esetben hajtódik végre, és a befoglaló interakciót (most a teljes Blokkolás
+                     folyamatot) megszakítja.</p></li><li class="listitem"><p>Figyeljük meg, hogy az egyes operátorokhoz tartozó téglalapok nem azonos
+                     szélesség&#369;ek: mindegyik csak azokat az életvonalakat fogja át, amely
+                     objektumoknak szerepük van az operandusaik végrehajtásában.</p></li></ol></div><p></p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch09s04.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch10s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">9.4. 
+            
+            Telepítési diagram&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;10.2. 
+            
+            Kommunikációs diagram</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch10.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:57 GMT -->
+</html>

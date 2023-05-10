@@ -1,0 +1,20 @@
+﻿<Window x:Class="WPF_sudoku.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_sudoku"
+        mc:Ignorable="d"
+        Title="Sudoku-ellenőrző" Height="210" Width="540">
+    <Grid>
+        <Button Click="plusz" Content="+" Margin="151,47,0,0" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox IsReadOnly="true" x:Name="tbmennyi" Text="4" Margin="186,47,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" Height="30" TextAlignment="Center" Padding="5"/>
+        <Label Content="Új feladvány mérete:" HorizontalAlignment="Left" Margin="28,47,0,0" VerticalAlignment="Top"/>
+        <Button Click="minusz" Content="-" Margin="221,47,0,0" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="szamsor" HorizontalAlignment="Left" Margin="28,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="460" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Hossz:" HorizontalAlignment="Left" Margin="28,138,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="hosszLabel" Content="0" HorizontalAlignment="Left" Margin="87,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.026,0.079"/>
+        <Button Click="Button_Click" Content="Ellenőriz" HorizontalAlignment="Left" Margin="430,151,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

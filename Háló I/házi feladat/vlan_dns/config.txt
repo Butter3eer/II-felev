@@ -1,0 +1,73 @@
+en
+conf t
+hostname R1
+banner motd #Authorized Access Only!!#
+int g0/0
+no sh
+int g0/0.1
+en dot1q 1
+ip add 172.20.10.1 255.255.255.192
+desc vlan1_subinterface
+int g0/0.10
+en dot1q 10
+ip add 172.20.10.65 255.255.255.192
+desc vlan10_subinterface
+int g0/0.20
+en dot1q 20
+ip add 172.20.10.129 255.255.255.192
+desc vlan20_subinterface
+int g0/0.30
+en dot1q 30
+ip add 172.20.10.193 255.255.255.192
+desc vlan30_subinterface
+exit
+copy ru st
+
+
+en
+conf t
+ip dhcp pool vlan10
+network 172.20.10.64 255.255.255.192
+default-router 172.20.10.1
+dns-server 172.20.10.2
+exit
+ip dhcp pool vlan20
+network 172.20.10.128 255.255.255.192
+default-router 172.20.10.1
+dns-server 172.20.10.2
+exit
+ip dhcp pool vlan30
+network 172.20.10.192 255.255.255.192
+default-router 172.20.10.1
+dns-server 172.20.10.2
+exit
+exit
+copy ru st
+
+
+en
+conf t
+hostname S1
+vlan 1
+int range g0/1-2
+switchport mode access
+switchport access vlan 1
+exit
+vlan 10
+int range f0/1-9
+switchport mode access
+switchport access vlan 10
+exit
+vlan 20
+int range f0/10-18
+switchport mode access
+switchport access vlan 20
+exit
+vlan 30
+int range f0/19-24
+switchport mode access
+switchport access vlan 30
+exit
+banner motd #Authorized Access Only!!#
+exit
+copy ru st

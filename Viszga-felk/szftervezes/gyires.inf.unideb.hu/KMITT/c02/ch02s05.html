@@ -1,0 +1,64 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02s05.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:43 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>2.5. A V-modell</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch02.html" title="2. fejezet - A szoftverfejlesztés életciklus modelljei"><link rel="prev" href="ch02s04.html" title="2.4. A folyamatiteráció"><link rel="next" href="ch02s06.html" title="2.6. RUP folyamatmodell"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.5. 
+            
+            A V-modell</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02s04.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">2. fejezet - A szoftverfejlesztés életciklus modelljei</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch02s06.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="2.5. A V-modell"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e505"></a>2.5. 
+            
+            <a name="__RefHeading__27_120998265"></a>A V-modell</h2></div></div></div><p>A V-modell szintén a korai modellek családjába tartozik, melyet a német védelmi
+            minisztérium fejlesztett ki, majd f&#337;leg a német hadsereg szoftverfejlesztéseiben vált
+            használatossá a továbbiakban. Maga az elnevezés nemcsak életciklus modellt, hanem egy
+            teljes módszertant jelöl, aminek több elemét az ISO 12207 szabvány is átvette. A
+            V-modell életciklus elképzelése nemcsak az egyes fázisok id&#337;beli sorrendjér&#337;l szól,
+            hanem arról is, hogy az egyes fázisokban mely korábbi fázisok termékeit kell
+            felhasználni; illetve az adott fázistevékenységét és termékét mely korábbi fázisban
+            leírt követelmények, illetve elkészített tervek alapján kell ellen&#337;rizni.</p><p>A V-modell használata f&#337;leg a biztonságkritikus számítógéprendszerek fejlesztése
+            esetében a terjedt el. A következ&#337; ábrán a modell fázisait mutatjuk be, ahol az egyes
+            fázisok V alakú elrendezésben követik egymást.</p><p>&nbsp; &nbsp; &nbsp; &nbsp; </p><div class="figure"><a name="d0e516"></a><p class="title"><b>2.6. ábra - A V modell</b></p><div class="figure-contents"><div align="center"><img src="images/image6.png" align="middle" alt="A V modell"></div></div></div><br class="figure-break"><p>A modellábrája a fejlesztés két folyamat két megközelítését tükrözi. Top-down
+            megközelítésként kifejezi a tervezési folyamat fentr&#337;l lefelé történ&#337; haladását a
+            diagram baloldali ágában, míg a tesztelési folyamat lentr&#337;l felfelé halad bottom-up
+            megközelítésben a jobboldali ágban. Az ilyen ábrázolás csak megközelít&#337;leg írja le a
+            fejlesztést. A gyakorlatban a különböz&#337; fázisok nem szigorúan a megadott sorrendben
+            hajtódnak végre. A tervezés gyakran nagyszámú iterációt foglal magában, olyan m&#369;veletek
+            sorával, amelyeket addig kell ismételni, amíg kielégít&#337; eredményre nem jutunk.
+            Párhuzamosságok ugyancsak lehetségesek.</p><p>Vizsgáljuk meg az egyes fejlesztési állomásokat a V-modellben:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Követelmények specifikálása: a fejlesztési folyamat kiindulási pontját képez&#337;
+                  követelmények feltárása, elemzése majd specifikációja történik. A fázis eredménye
+                  egy dokumentum, amely részletes információt tartalmaz a rendszer szolgáltatásairól
+                  és megszorításairól.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Hazárdok és kockázatok elemzése: célja a lehetséges veszélyhelyzetek
+                  meghatározása a rendszerben, a megel&#337;z&#337; kisz&#369;rés érdekében. Az analízisek
+                  elvégzéséhez különféle módszerek állnak rendelkezésre. A kockázatok elemzésére
+                  valószín&#369;ségszámítási segédeszközöket alkalmaznak leginkább, aminek eredményeként
+                  számszer&#369; értékeket rendelnek az egyes veszélyes következményekhez. Az elemzési
+                  folyamatok eredményeként létrehozandó a biztonsági követelmények dokumentációja.
+                  Ez a dokumentum arra ad el&#337;írást, hogy mit kell betartani a rendszernél, mit
+                  szabad, ill. mit nem szabad megengedni a rendszer m&#369;ködése során.</p></li><li class="listitem"><p>Teljes rendszer-specifikáció: a funkcionális követelmények valamint a
+                  biztonsági követelmények együttese alkotja. Mindezen specifikáció alapján
+                  megkezdhet&#337; a teljes rendszer konkrét tervezési folyamata.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Architekturális tervezés: a teljes informatikai rendszer hardver és szoftver
+                  architektúrájának megtervezése. A tervezésnek ebben a fázisában azt kell
+                  eldönteni, hogy mely funkciók legyenek megvalósítva hardver, és melyek szoftver
+                  által. </p></li><li class="listitem"><p>A szoftver modulokra bontása: a fázisban a fejlesztési folyamatot további
+                  kisebb részekre, úgynevezett modulokra bontjuk fel a tervezési folyamat
+                  egyszer&#369;sítése, áttekinthet&#337;bbé tétele végett. A tervezés eredményeként a szoftver
+                  modulok specifikációja, valamint a köztük lev&#337; kapcsolódási folyamatok terve
+                  készül el.</p></li><li class="listitem"><p>A modulok elkészítése és tesztelése: a szakaszban egyes modulok teljes
+                  implementációja kell megvalósuljon, majd ezt követ&#337;en pedig az elkészült modulok
+                  önálló tesztelése. Célszer&#369; a tesztelési folyamatokat szintén el&#337;zetesen
+                  megtervezni. A tesztelés már szerves része a szoftver verifikációs folyamatának,
+                  amelyben azt döntjük el, hogy egy-egy modul megfelel-e a specifikációjának.</p></li><li class="listitem"><p>Rendszerintegráció: a fázisban az elkészült szoftver-modulok integrálása
+                  történik egy teljes rendszerré miután mindegyik modul átment a tesztelésen.</p></li><li class="listitem"><p>Rendszerverifikáció: a fázis feladatta annak az eldöntése, hogy rendszer
+                  megfelel-e a specifikációjának, funkcionálisan teljesíti-e az összes specifikációs
+                  pontot. </p></li><li class="listitem"><p>Rendszervalidáció: el kell dönteni, hogy a teljes rendszer megfelel-e minden
+                  további nem funkcionális követelmények. Ebbe beletartozik a biztonsági feltételek
+                  teljesítésének eldöntése is: az ún. biztonság-igazolás.</p></li><li class="listitem"><p>Bizonylatolás (certification): a hatósági el&#337;írások és szabványok szerinti
+                  megfelelés eldöntése, és az erre vonatkozó bizonylatok kiállítása.</p></li><li class="listitem"><p>A rendszer üzemeltetése: üzembe helyezés, üzemeltetés, karbantartás, elavulás,
+                  üzemeltetés megszüntetése.</p></li></ol></div><p>A modellt mind a mai napig alkalmazzák, f&#337;leg Német területeken. Bár a bemutatott
+            els&#337; modell is kiválóan alkalmas a fejlesztési folyamatok szervezésére, számos új
+            kiegészítés és átalakítás született a kés&#337;bbiekben a kisebb hiányosságok pótlására, vagy
+            egy-egy részterületen való alkalmazásának specifikálására.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02s04.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch02.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch02s06.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">2.4. 
+            
+            A folyamatiteráció&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;2.6. 
+            
+            RUP folyamatmodell</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02s05.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:43 GMT -->
+</html>

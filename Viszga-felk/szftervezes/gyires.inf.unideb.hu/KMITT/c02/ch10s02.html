@@ -1,0 +1,49 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch10s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:57 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>10.2. Kommunikációs diagram</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch10.html" title="10. fejezet - Viselkedés diagramok"><link rel="prev" href="ch10.html" title="10. fejezet - Viselkedés diagramok"><link rel="next" href="ch10s03.html" title="10.3. Állapotgép diagram"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">10.2. 
+            
+            Kommunikációs diagram</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch10.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">10. fejezet - Viselkedés diagramok</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch10s03.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="10.2. Kommunikációs diagram"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e4049"></a>10.2. 
+            
+            <a name="__RefHeading__111_120998265"></a>Kommunikációs diagram</h2></div></div></div><p>A kommunikációs diagram, a szekvencia diagramhoz hasonlóan, objektumok közötti
+            üzenetváltásokat képes ábrázolni, azonban ebben az esetben nem az üzenetváltások
+            id&#337;beliségére helyezzük a hangsúlyt, hanem az üzenetváltásokban részvev&#337; objektumok
+            közötti kapcsolatokra. A szekvencia diagramon az objektumok kapcsolata csak közvetve
+            jelenik meg, azáltal, hogy mely elemek között van interakció. A kommunikációs diagramon
+            az együttm&#369;köd&#337; objektumok az osztálydiagramoknál már megismert, asszociációkat jelz&#337;
+            vonalakkal (nyilakkal) vannak összekötve. Az üzenetek id&#337;beli sorrendjét az üzeneteket
+            számozása jelzi.</p><p>A kommunikációs diagramon is szerepelhet aktor, mint az üzenet forrása vagy
+            címzettje.</p><p>Jelölni lehet, ha egy objektum aktív (önállóan képes üzenetet küldeni), illetve ha
+            egy üzenet nem egy objektumhoz, hanem azonos osztályhoz tartozó objektumok egy
+            halmazához irányul (multiobjektum).</p><p>Példaként rajzoljuk meg egy bank automatából való készpénzfelvétel kommunikációs
+            diagramját. Feltételezzük, hogy az ügyfél a kártya beolvasásával és a PIN lód
+            megadásával már azonosította magát, és a lehetséges funkciók közül kiválasztotta a
+            készpénzfelvételt.</p><p>A kézpénzfelvétel forgatókönyve:</p><p>Az ügyfél megadja a felvenni kívánt összeget. A összeget és a kártya adatait az ATM
+            továbbítja az automatákat vezérl&#337; gép felé. A vezérl&#337; gép a kártya adatok alapján
+            kiválasztja a megfelel&#337; bankot, és annak a gépére továbbítja az adatokat. A banki gép
+            ellen&#337;rzi a tranzakciót, és megadja az engedélyt, ami a vezérl&#337; gépen keresztül eljut az
+            ATM-hez. Ennek hatására az automata kiadja a pénz és a bizonylatot az ügyfélnek.</p><p></p><div class="figure"><a name="d0e4067"></a><p class="title"><b>10.4. ábra -  Készpénzfelvétel kommunikációs diagramja</b></p><div class="figure-contents"><div align="center"><img src="images/image63.jpg" align="middle" alt="Készpénzfelvétel kommunikációs diagramja"></div></div></div><br class="figure-break"><p>Az ábrán az ATM aktív objektumként van jelölve. Bár ez most inkább a jelölés
+            szemléltetését szolgálja, indokolható azzal, hogy hangsúlyozzuk azt a tényt, hogy az
+            ábrán nem szerepl&#337; el&#337;z&#337; m&#369;veletek (ügyfél azonosítás) már megtörténtek, és ezek
+            hatására az ATM aktív állapotba került.</p><p>A vezérl&#337; gép a 3. üzenetet egy multiobjektumnak küldi. Ezzel tudjuk kifejezni, hogy
+            a kártya adatok alapján el&#337;ször a megfelel&#337; bankot kell a vezérl&#337; gépnek kiválasztania,
+            és ennek megtörténte alapján tudja az engedélykérést a bank felé továbbítani.</p><p>Az üzenetek számozása az id&#337;rendjüket határozza meg. Az egyidej&#369;séget a sorszám után
+            bet&#369;kkel jelölhetjük. Például a 2a: és 2b: üzenetek egyidej&#369;ek, és az 1: után, de a 3:
+            el&#337;tt kerülnek elküldésre.</p><div class="sect2" title="10.2.1. A szekvencia és a kommunikációs diagram összehasonlítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4077"></a>10.2.1. A szekvencia és a kommunikációs diagram összehasonlítása</h3></div></div></div><p>Mindkét diagram típus interakciók ábrázolására szolgál, de a kommunikációs diagram
+               esetén jobban ábrázolható az üzenetek objektumok közötti terjedésének módja, és az
+               objektumok ehhez szükséges függ&#337;ségi rendszere. Minden kommunikációs diagram
+               átkonvertálható szekvencia diagramba. Fordítva ez csak a komplex interakciókat nem
+               tartalmazó szekvencia diagramokra igaz.</p><p>Az el&#337;bbi kommunikációs diagram például az alábbi szekvencia diagrammal
+               egyenérték&#369;:</p><p></p><div class="figure"><a name="d0e4085"></a><p class="title"><b>10.5. ábra -  A készpénzfelvétel szekvencia diagram formájában</b></p><div class="figure-contents"><div align="center"><img src="images/image64.jpg" align="middle" alt="A készpénzfelvétel szekvencia diagram formájában"></div></div></div><br class="figure-break"><p>Ebben az esetben mindkét diagram fajta szemléletes módon ábrázolja a
+               folyamatot.</p><p>A blokkolás egyszer&#369;sített szekvencia diagramjának kommunikációs diagramra
+               konvertált formája:</p><p></p><div class="figure"><a name="d0e4094"></a><p class="title"><b>10.6. ábra -  A blokkolás forgatókönyve kommunikációs diagramon</b></p><div class="figure-contents"><div align="center"><img src="images/image65.jpg" align="middle" alt="A blokkolás forgatókönyve kommunikációs diagramon"></div></div></div><br class="figure-break"><p>Láthatóan ebben az esetben ez a forma sokkal áttekinthetetlenebb. Ennek oka, hogy
+               két modell elem között túl sok üzenetváltás történik, ilyenkor a szekvencia diagram
+               szemléletesebb. Fordítva is igaz lehet: ha sok objektum szerepel a folyamatban, de
+               azok között viszonylag kevés interakció zajlik, a kommunikációs diagram lehet
+               célszer&#369;bb.</p><p>A blokkolás kib&#337;vített szekvencia diagramja nem konvertálható át, mert komplex
+               interakciókat tartalmaz.</p><p></p><p></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch10.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch10.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch10s03.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">10. fejezet - Viselkedés diagramok&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;10.3. 
+            
+            Állapotgép diagram</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch10s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:58 GMT -->
+</html>

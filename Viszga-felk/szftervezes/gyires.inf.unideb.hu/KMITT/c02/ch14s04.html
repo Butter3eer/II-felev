@@ -1,0 +1,235 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch14s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:04 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>14.4. Viselkedési minták (Behavioral Patterns)</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch14.html" title="14. fejezet - Tervezési minták"><link rel="prev" href="ch14s03.html" title="14.3. Szerkezeti minták (Structural Patterns)"><link rel="next" href="ch15.html" title="15. fejezet - További fejlesztési tevékenységek áttekintése"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">14.4. Viselkedési minták (Behavioral Patterns)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch14s03.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">14. fejezet -  Tervezési minták </th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch15.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="14.4. Viselkedési minták (Behavioral Patterns)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e5824"></a>14.4. Viselkedési minták (Behavioral Patterns)</h2></div></div></div><p>
+      A viselkedési minták az osztályok és az objektumok közötti kommunikációt írják le. A középpontban az algoritmusok megvalósítása, 
+      és a felel&#337;sségi körök elosztása (kommunikáció) áll. Segítenek abban, hogy a kapcsolatokra helyezzük a hangsúlyt, ahelyett hogy a 
+      vezérlésre kellene figyelnünk. Vannak osztály minták és objektum minták. Az osztályminták örökl&#337;déssel rendelik az osztályokhoz a szükséges 
+      viselkedést. Az objektum minták meghatározzák a viselkedés és objektum kompozíciót, azaz hogyan m&#369;ködjenek együtt társobjektumok egy csoportja 
+      a több objektumot igényl&#337; m&#369;veleteknél.
+    </p><div class="sect2" title="14.4.1. Parancs (Command)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5829"></a>14.4.1. Parancs (Command) </h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>
+              Kérelmek objektumba ágyazása. Ezáltal a klienseknek különböz&#337; parancsokat adhatunk át, amit naplózhatunk, sorba 
+              rendezhetünk és a visszavonást (undo) kezelhetjük le. Azaz az egyes kérelmek teljesen kivizsgálhatóak és hatálytalaníthatók 
+              lesznek. Mivel objektumba vannak ágyazva a kérelmek így lehet&#337;ség van a kérések ideiglenes tárolására.
+            </p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Néha muszáj, hogy kéréseket küldjünk egyes objektumokhoz úgy, hogy bármi ismeretünk lenne a kért folyamatról vagy a kérést fogadóról. A felhasználói felületek programozására gyakran használt könyvtárak, eszközkészletek többek között olyan objektumokat menüket és gombokat tartalmazhatnak, amelyek egy felhasználói esemény hatására indítnak el valamilyen m&#369;veleteket. Konkrét implementációt a menü, vagy a gomb objektumok nem képesek megvalósítani, mert csakis az eszközkészleteket használó alkalmazás tudja, mi mit csinál ilyenkor. Az eszközkészlet tervez&#337;i nem tudják el&#337;re, hogy a konkrét tevékenységet végül milyen objektum és hogyan hajtja végre. A Parancs (Command) mintával ezen kérések az elemkészlet objektumok számára megvalósíthatóvá válik oly módon, hogy a kéréseket is objektumként kezelik.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Commit támogatás: a m&#369;veletek ismét végrehajtásának támogatása
+              Undo támogatás: a m&#369;veletek visszavonásának támogatása, Unexecute m&#369;velet szükséges hozzá
+              Wizard-ok
+              Swing
+              Progress bar
+              Naplózás: változások naplózása rendszerösszeomlás, helyreállítás esetén.
+            </p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_4"></a><img src="images/command.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Parancs felület (Command)
+                  Létrehoz egy interfészt egy m&#369;velethez.
+                </p></li><li class="listitem"><p>KonkrétParancs osztály (ConcreteCommand)
+                  Egymáshoz rendeli Fogadó osztály (Receiver) - t és egy végrehajtandó m&#369;veletet.
+                  Fogadó osztály (Receiver) megfelel&#337; m&#369;veletének hívásával implementálja a Végrehajt (Execute) m&#369;veletet.
+                  Undo megvalósítása esetén KonkrétParancs osztály (ConcreteCommand) állapotát is tárolni kell.
+                </p></li><li class="listitem"><p>Ügyfél osztály (Client)
+                  Létrehoz egy KonkrétParancs osztály (ConcreteCommand) - t és beállítja annak Fogadó osztály (Receiver) &#8211; át.
+                </p></li><li class="listitem"><p>Hívó osztály (Invoker)
+                  Felkéri a Parancs felület (Command) - et a kérelem teljesítésére úgy, hogy meghívja annak Execute() metódusát.
+                </p></li><li class="listitem"><p>Fogadó osztály (Receiver)
+                  A kérést fogadja, birtokában van az adott kérelemhez kapcsolódó m&#369;veletek végrehajtásához szükséges tudásnak. Bármelyik osztály lehet fogadó.
+                </p></li></ol></div><p>
+              
+            
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>Az Ügyfél osztály (Client) létrehoz egy KonkrétParancs osztály (ConcreteCommand) - t és meghatározza annak fogadóját.
+              Valamelyik Hívó osztály (Invoker) elraktározza a KonkrétParancs osztály (ConcreteCommand) - t.
+              A Hívó osztály (Invoker) kérelmet bocsát ki.
+              A KonkrétParancs osztály (ConcreteCommand)  m&#369;veleteket hív meg a fogadóján.
+            </p></dd><dt><span class="term">Következmények</span></dt><dd><p>Alkalmazásának el&#337;nyei és hátrányai:
+              A Parancs (Command) minta alkalmazása feloldja a kapcsolatot a m&#369;veletet kezdeményez&#337; és az azt végrehajtó objektumok között.
+              A parancs objektumok is ugyanúgy használhatók és kib&#337;víthet&#337;k, tipikus objektumok.
+              A parancsok összetett parancsokká rendezhet&#337;k, mint például makrót képezve.
+              Parancsot osztálymódosítás nélkül vehetünk fel.
+            </p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.4.2. Megfigyel&#337; (Observer)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5897"></a>14.4.2. Megfigyel&#337; (Observer)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>
+              Objektumok közötti egy-több függ&#337;ségi kapcsolat létrehozása. Egy kiválasztott objektum módosulásáról 
+              értesít&#337; információt küldeni a t&#337;le függ&#337; objektumoknak, amik ezek alapján frissülnek.
+            </p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Modell-Nézet-Vezérl&#337; (MVC) vagy Document-View architektúránál gyakran el&#337;fordul, hogy a 
+              felhasználó megváltoztatja az egyik nézeten az adatokat, ezeket a többi nézeten is frissíteni kell, 
+              következetességet fent kell tartani. Egy táblázatkezel&#337; különböz&#337; adatmegjelenítéseket használ, megjelenítheti 
+              táblázatként és diagramként is az információt. A két megjelenítési objektum nem tud egymásról elég nekik a szükséges 
+              objektumok újrahasznosítását elvégezni. Ha felhasználó módosít egy adatot a táblázatban, akkor ezzel egy id&#337;ben a diagram is 
+              módosul és fordítva is. Ezt nem célszer&#369; szoros kötéssel megoldani, mert akkor csökken az osztályok újra felhasználásának 
+              lehet&#337;ségeinek száma. Erre jó megoldást nyújt a Megfigyel&#337; (Observer) minta. Megadja a szükséges kapcsolatok megvalósításának módját. 
+              F&#337;objektumai az Alany (Subject) és a Megfigyel&#337; felület (Observer), közöttük 1-több kapcsolat áll fent. 
+            </p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>
+              Olyan esetekben, amikor egy fogalomhoz két olyan interfésszel rendelkez&#337; objektum tartozik, hogy az egyik függ a másiktól. 
+              Amennyiben külön objektumba zárjuk ezeket a jelentéseket, úgy egymástól függetlenül módosíthatjuk, vagy hasznosíthatjuk újra &#337;ket.
+              Amikor egy objektum megváltoztatása további objektumokon való operációt vonja maga után, viszont ezen további objektumok száma 
+              ismeretlen számunkra. Amikor változásokról kell értesíteni más objektumokat, azonban nincs ismeretünk arról, melyek ezek az objektumok.
+            </p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_5"></a><img src="images/observer.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+                  Alany (Subject) Tárolja a Megfigyel&#337;ket. Interfészt biztosít a Megfigyel&#337; objektumok csatolására és leválasztására.
+                </p></li><li class="listitem"><p>
+                  Megfigyel&#337; felület (Observer) Frissít&#337; interfészt határoz meg az értesítend&#337; objektumok számára. Frissít&#337; (update) m&#369;velet.
+                </p></li><li class="listitem"><p>
+                  KonkrétAlany osztály (ConcreteSubject) Érdekes állapotokat tárol a Megfigyel&#337; felület számára és saját 
+                  állapotváltozásairól értesíti &#337;ket
+                </p></li></ol></div><p>
+              
+            
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>Az Alany (Subject) értesíti a Megfigyel&#337; felület (Observer) - t, az olyan változásokról, ami különböz&#337; állapotot eredményez, mint a sajátja.
+              Miután értesül az Alany (Subject) - ban bekövetkez&#337; módosulásokról + információkat kérhet, és összehangolhatja m&#369;ködését.
+            </p></dd><dt><span class="term">Következmények</span></dt><dd><p>Alkalmazásának el&#337;nyei és hátrányai:
+              Laza kapcsolat van az Alany (Subject) és Megfigyel&#337; (Observer) között, ami azt jelenti, hogy az Alanynak (Subject) tudomása van a Megfigyel&#337;kr&#337;l (Observer), de pontos információja nincs róla.
+              Üzenetszórás támogatás, értesítésnek nem kötelez&#337; definiálnia a fogadóját.
+              A modell újrafelhasználható! 
+              Új osztályokkal egyszer&#369;en b&#337;víthet&#337; a struktúra a modell és nézet osztály módosítása nélkül.
+              Az Alany (Subject) objektum változáskor informál több más objektumot úgy, hogy lenne róluk bár mi információja is.
+              El&#337;fordulhatnak szükségtelen, váratlan frissítések a nem precízen definiált függ&#337;ségi feltételek következtében.</p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.4.3. Közvetít&#337; (Mediator)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5959"></a>14.4.3. Közvetít&#337; (Mediator)</h3></div></div></div><p>
+        
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>
+              A minta célja definiálni egy olyan közvetít&#337; (mediator) objektumot, ami egymásra ható objektumhalmazok közötti 
+              interakciók irányítását végzi. Segítségével laza kapcsolat építhet&#337; fel azáltal, hogy az objektumok között nem 
+              történik egymásra való direkt hivatkozás. Ez lehet&#337;séget ad az objektumok közötti kapcsolatok független alakítására.
+            </p></dd><dt><span class="term">Motiváció</span></dt><dd><p>
+              Az objektum orientált tervezés a viselkedések objektumok közötti szétosztására biztat, melynek eredményeképpen bonyolult, 
+              rengeteg kapcsolatot tartalmazó objektum szerkezet alakulhat ki. Legrosszabb esetben a rendszer összes objektumának tudomása 
+              van egymásról. Ha egy rendszert objektumokra bontunk fel az általában fokozza az újra felhasználhatóságot, 
+              viszont ha túl sok az objektumok közötti kapcsolat az már csökkenti azt. A rengeteg kapcsolat valószín&#369;tlenné teszi annak a 
+              lehet&#337;ségét, hogy egy objektum önállóan m&#369;ködhessen, más objektumok támogatása nélkül, emiatt a rendszer viselkedése olyan, 
+              mintha tömbszer&#369; volna. S&#337;t mi több a rendszer viselkedésének módosítása is bonyolult lesz bármilyen úton, mivel a viselkedés 
+              számos objektum között van elosztva. Végül pedig a tervez&#337; kénytelen lesz számos alosztályt létrehozni a rendszer viselkedésének 
+              testre szabásához. 
+            </p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Akkor érdemes használni, ha olyan objektum halmazunk van, mely egyértelm&#369;en
+              meghatározott, viszont egymással összetett módon kommunikálnak. A kialakuló
+              kapcsolat rendszer szervezetlen és nehezen érthet&#337;. Ha egy objektum
+              újrafelhasználhatósága nehézzé válik a sok más objektumra való hivatkozás és azokkal
+              való kommunikáció miatt. Amennyiben egy viselkedést, mely számos osztály között
+              osztottunk szét szeretnénk testre szabni anélkül, hogy sok alosztályt hoznánk létre. </p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_7"></a><img src="images/mediator.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Közvetít&#337; (Mediator)
+                  A Kolléga (Colleague) elemhez definiál egy kommunikációs interfészt.</p></li><li class="listitem"><p>KonkrétKözvetít&#337; (Concrete Mediator)
+                  Az együtt m&#369;köd&#337; objektumokat irányítja.
+                  Társairól tud és ezekkel a kollégákkal kapcsolatot tart fent.
+                </p></li><li class="listitem"><p>Kolléga (Colleague) osztályok
+                  Minden Kolléga (Colleague) elemnek csak a Közvetít&#337;jér&#337;l (Mediator) van tudomása.
+                  A Közvetít&#337; (Mediator) elemnek központi elosztó szerepe van, ezen keresztül fut át minden interakció, kérés a Kollégák 
+                  (Colleague) között.
+                  
+                </p></li></ol></div><p>
+              
+            
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>A Kolléga (Colleague) elemek a Közvetít&#337;nek (Mediator) küldik a kéréseiket és az arra kapott válaszokat is t&#337;le fogadják.
+            </p></dd><dt><span class="term">Következmények</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+                  Korlátozza az alosztályok számát: A közvetít&#337; lokalizálja a viselkedési módokat, melyeket máskülönben számos osztály 
+                  között kellene szétosztani. Amennyiben szeretnénk ezt a viselkedést módosítani úgy csak a Közvetít&#337; elemb&#337;l kell képeznünk 
+                  alosztályokat, a Kolléga elemek felhasználhatósága így megmarad.
+                </p></li><li class="listitem"><p>
+                  Megszünteti a Kollégák közötti szoros kapcsolatot: A közvetít&#337; minta segítségével laza kapcsolat alakítható ki az objektumok 
+                  között, ami lehet&#337;séget ad arra, hogy a Kolléga (Colleague) és a Közvetít&#337; (Mediator) elemeket egymástól függetlenül is 
+                  felhasználhassuk vagy alakítsuk.
+                </p></li><li class="listitem"><p>
+                  Leegyszer&#369;síti az objektum protokollok: A Közvetít&#337; a több-több kapcsolatok helyett a közvetít&#337; és kollégák közötti 
+                  egy-több kapcsolatokat teremt, melyek könnyebben érthet&#337;ek, kezelhet&#337;ek és kiterjeszthet&#337;ek.
+                </p></li><li class="listitem"><p>
+                  Az objektumok együttm&#369;ködésének elvonatkoztatása: Közvetít&#337; minta alkalmazása lehet&#337;séget ad arra, hogy az 
+                  objektumok saját viselkedése helyett az elemek közötti interakciókra helyezzük a hangsúlyt. Ezzel tisztább képet 
+                  kaphatunk a rendszer objektumai közötti kölcsönhatásokról.
+                </p></li><li class="listitem"><p>
+                  A vezérlés központosítása: A Közvetít&#337; minta a kölcsönhatások bonyolultságát bár leegyszer&#369;síti, viszont a Közvetít&#337; (Mediator)
+                  elem felépítése bonyolulttá válik. Mivel egy közvetít&#337; protokollokat ágyaz be, így az sokkal összetettebbé válhat, mint bármelyik
+                  egyedi kolléga. Emiatt a közvetít&#337; elem olyan nagyméret&#369; egységgé válhat, aminek a kezelése igen nehéz.
+                </p></li></ol></div><p>
+                        </p></dd></dl></div><p>
+      
+            </p></div><div class="sect2" title="14.4.4. Bejáró (Iterator)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e6038"></a>14.4.4. Bejáró (Iterator)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>
+              Aggregált (összetett) objektumok elemeinek szekvenciális elérésének biztosítása, 
+              anélkül hogy az objektum bels&#337; tárolási formáját felfednénk.
+            </p></dd><dt><span class="term">Motiváció</span></dt><dd><p>
+              Egy összetett objektumnak, mint például egy lista, módot kell adnia arra, hogy az elemeit anélkül érhessük el, hogy annak bels&#337; 
+              szerkezetét ismernénk.
+            </p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Összetett objektum tartalmához való hozzáférés a bels&#337; szerkezet feltárása nélkül.
+              Többféle bejárás biztosítása összetett objektumok elemeihez.
+              Egy egységes interfészt akarunk nyújtani egymástól eltér&#337; aggregált szerkezetek bejárásához. (azaz a bejárás többalakúságát támogatjuk)
+              .</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_8"></a><img src="images/iterator.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+                  Bejáró (Iterator) az elemek hozzáféréséhez és bejárásához definiál egy interfészt.
+                </p></li><li class="listitem"><p>KonkrétBejáró (ConcreteIterator) a Bejáró (Iterator) interfészt valósítja meg. Nyomon követi az aktuális elem helyét az
+                  Összesít&#337; (Aggregate) bejárása közben.
+                </p></li><li class="listitem"><p>
+                  Összesít&#337; (Aggregate) a Bejáró (Iterator) objektum kreálásához definiál interfészt.
+                </p></li><li class="listitem"><p>KonkrétÖsszesít&#337; (ConcreteAggregate)
+                  A Bejáró (Iterator) elem létrehozását biztosító interfészt implementálja a megfelel&#337; KonkrétBejáró (ConcreteIterator)példány visszatéréséhez.
+                </p></li></ol></div><p>
+              
+            
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>
+              A KonkrétBejáró (ConcreteIterator) nyomon követi, hogy a bejárandó objektum mely eleménél járunk és ki tudja számítani, 
+              hogy melyik az objektum soron következ&#337; eleme.
+            </p></dd><dt><span class="term">Következmények</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Változatokat támogat egy összetett objektum bejárásához
+                  Komplex aggregált objektumokat számos módon lehet bejárni. A bejárók lehet&#337;séget adnak arra, hogy egyszer&#369;en változtathassuk a bejárást megvalósító algoritmust: mivelhogy csak az bejáró példányát kell kicserélni egy másikra. Ezen felül definiálhatunk Bejáró alosztályokat is az új bejárási algoritmusok támogatásához.
+                </p></li><li class="listitem"><p>Az iterátorok egyszer&#369;sítik az Összesít&#337; interfészét
+                  Az iterátor bejárási interfésze megel&#337;zi egy hasonló Összesít&#337; interfész alkalmazását, ezáltal leegyszer&#369;síti azt
+                </p></li><li class="listitem"><p>Egyid&#337;ben több bejárási folyamat is m&#369;ködhet egy aggregátumon
+                  Egyszerre több bejárást is folytathatunk, mivel egy iterátor nyomon követi a saját bejárásának állapotát.
+                </p></li></ol></div><p>
+                        </p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.4.5. Felel&#337;sséglánc (Chain of Responsibility)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e6114"></a>14.4.5. Felel&#337;sséglánc (Chain of Responsibility)</h3></div></div></div><p>
+        
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>
+              Az üzenet vagy kérés küld&#337;jének függetlenítése a fogadótól. Megvalósítása felel&#337;sségláncok kialakításával történik. 
+              A Felel&#337;sséglánc (Chain of Responsibility) nem más, mint láncolt lista, amin a kérelem végig halad mindaddig, amíg egy objektum 
+              le nem tudja kezelni. A kérelem a láncon meg is szakítható.
+            </p></dd><dt><span class="term">Motiváció</span></dt><dd><p>
+              Vegyünk egy grafikus felhasználói felület, amihez környezett&#337;l függ&#337; help rendszert akarunk csinálni. A felhasználó a felület
+              bármely részére kattint, kapjon help információt. A help nem csak attól függ, hogy a felhasználó a felület mely részére kattint, 
+              hanem a kiválasztott felületelem környezetét&#337;l is. Például egy dialógusablak gombjához más help információt tartalmazhat, mint a 
+              f&#337;ablak hasonló gombjához. Ha nincs a kijelölt felületelemnek saját help értesítése, akkor a help rendszer egy általánosabb help 
+              értesítést szemléltet a felületelem közvetlen környezetér&#337;l. (Például a dialógusablakról.) Egyértelm&#369;, hogy az értesítések 
+              rendezettséget mutatnak a legspeciálisabbtól a legáltalánosabbig. Azonfelül az is magától értet&#337;d&#337;, hogy a help értesítést a 
+              felhasználói interfész egyik objektuma kezeli le. Környezett&#337;l és a rendelkezésre álló help jellegzetességét&#337;l függ, hogy melyik 
+              objektum. Ami a gondot okozza, hogy a kiszolgáló objektum, ami kiszolgálja a help kérést nem mindenképpen ismert a kérést elindító 
+              objektum számára (nyomó gomb). Vagyis külön kell választani a gombot, ami a kérést elindítja azoktól az objektumoktól, amik a help 
+              értesítést biztosítják. A Felel&#337;sség lánc (Chain of Responsibility) tervezési minta ezt valósítja meg.
+            </p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Mikor egynél több objektum kezelhet le egy igényt és az igényt lekezel&#337; eleve nem ismert, automatikusan kell kiválasztani, 
+              hogy melyik objektum az. Igényünket objektumok együttesének egy objektumnak akarjuk címezni, a fogadó objektum pontos definiálása
+              nélkül. Igényt megvalósító objektumok csoportja dinamikusan választható ki.
+            </p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_9"></a><img src="images/chainofresposibility.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+                  Kezel&#337; (Handler) a kérések kezeléséhez definiál egy interfészt. Implementálhatja (Opcionálisan) a következ&#337; egyedhez a 
+                  kapcsolatot is.
+                </p></li><li class="listitem"><p>KonkrétKezel&#337;(ConcreteHandler)
+                  Lekezeli azokat a kéréseket, melyekért &#337; a felel&#337;s.
+                  Hozzáférhet a láncban az utána következ&#337; elemhez.
+                  A hozzáérkez&#337; kérést vagy lekezeli, ha le tudja, egyébként pedig a láncban továbbítja.
+                </p></li><li class="listitem"><p>Ügyfél (Client)
+                  Egy KonkrétKezel&#337; (ConcreteHandler) objektumhoz intéz kérést, ezzel elindítva a kérelmét a láncban.
+                </p></li></ol></div><p>
+            
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>
+              El&#337;ször felépítik a kezel&#337;kb&#337;l a felel&#337;sség láncot. Minden elem (láncszem tudja a feladatát, hogy miért felel&#337;s, mit tud kezelni.
+              Ha a láncban elindul egy kérés az addig halad a láncon belül, míg egy olyan KonkrétKezel&#337; (ConcreteHandler) objektumhoz nem ér, 
+              aminek hatáskörébe tartozik az adott kérés lekezelése.
+            </p></dd><dt><span class="term">Következmények</span></dt><dd><p>
+              A minta alkalmazása szükségtelenné teszi, hogy a kérést intéz&#337; objektumoknak ismerete legyen a kérésüket lekezel&#337; objektumról. 
+              Csupán azt tudják, hogy a kérésüket ki fogják szolgálni. A kérést feldolgozó elemeknek sincs ismerete a küld&#337; kilétér&#337;l, illetve a 
+              lánc szerkezetér&#337;l, amelybe tartoznak. Azáltal, hogy a lánc objektumai csupán csak a következ&#337; elemre referálnak, így egyszer&#369;södik 
+              az objektumok közötti kapcsolati háló. A Felel&#337;sséglánc viselkedési minta alkalmazása magasabb rugalmassági szintet nyújt az
+              objektumok közötti felel&#337;sségek kiosztásában. A lánc futási id&#337;ben is módosítható vagy kib&#337;víthet&#337; az egyes kérések lekezeléséhez. 
+              Ezt a módszert kombinálhatjuk azzal, hogy statikusan egyes kérésekre specializált alosztályokat is létrehozunk.
+              Azonban nincs garantálva, hogy a kérések minden esetben teljesítve lesznek. Mivel az egyes kérések nem egy konkrét fogadó objektumhoz 
+              futnak be, így nincs rá garancia, hogy a láncon végigfutva az le lesz kezelve. Ezt az is okozhatja, ha a láncot nem helyesen 
+              konfigurálják.
+            </p></dd></dl></div><p>
+            </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch14s03.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch14.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch15.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">14.3. Szerkezeti minták (Structural Patterns)&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;15. fejezet - További fejlesztési tevékenységek áttekintése</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch14s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:05 GMT -->
+</html>

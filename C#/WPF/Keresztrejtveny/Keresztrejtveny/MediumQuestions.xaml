@@ -1,0 +1,29 @@
+﻿<Window x:Class="Keresztrejtveny.MediumQuestions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Keresztrejtveny"
+        mc:Ignorable="d"
+        Title="MediumQuestions" Height="450" Width="300">
+    <Grid>
+        <Grid.Background>
+            <VisualBrush Viewbox="0,0,950,1740" ViewboxUnits="Absolute">
+                <VisualBrush.Visual>
+                    <Image Source="/kerdesek_hatter.jpg">
+                        <Image.BitmapEffect>
+                            <BlurBitmapEffect Radius="30"/>
+                        </Image.BitmapEffect>
+                    </Image>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+        <TextBlock x:Name="kerdes1" Text="1. Mi a Hagrid által adott neve a megmentett hippogriffnek?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes2" Text="2. Melyik házba tartozott Dumbledore?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,65,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes3" Text="3. Mi volt a keresztneve a titkok kamrája első áldozatának?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,100,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes4" Text="4. After all this time? ..." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,155,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes5" Text="5. Hogyan nevezte Hagrid azt a lényt, amely a bölcsek kövéhez vezető utat őrizte?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,175,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes6" Text="6. Mi a magyar megfelelője Hogsmeade-nek?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,230,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes7" Text="7. Melyik lény képes megjeleníteni a félelmeinket?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,265,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+    </Grid>
+</Window>

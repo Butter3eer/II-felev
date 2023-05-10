@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Csata\Csata\bin\Debug\Csata.exe.config
+E:\STUDY\Petrik\II-felev\C#\Csata\Csata\bin\Debug\Csata.exe
+E:\STUDY\Petrik\II-felev\C#\Csata\Csata\bin\Debug\Csata.pdb
+E:\STUDY\Petrik\II-felev\C#\Csata\Csata\obj\Debug\Csata.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Csata\Csata\obj\Debug\Csata.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Csata\Csata\obj\Debug\Csata.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Csata\Csata\obj\Debug\Csata.exe
+E:\STUDY\Petrik\II-felev\C#\Csata\Csata\obj\Debug\Csata.pdb

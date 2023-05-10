@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\C#\Elso\f15\bin\Debug\f15.exe.config
+E:\STUDY\Petrik\C#\Elso\f15\bin\Debug\f15.exe
+E:\STUDY\Petrik\C#\Elso\f15\bin\Debug\f15.pdb
+E:\STUDY\Petrik\C#\Elso\f15\obj\Debug\f15.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\C#\Elso\f15\obj\Debug\f15.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\C#\Elso\f15\obj\Debug\f15.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\C#\Elso\f15\obj\Debug\f15.exe
+E:\STUDY\Petrik\C#\Elso\f15\obj\Debug\f15.pdb

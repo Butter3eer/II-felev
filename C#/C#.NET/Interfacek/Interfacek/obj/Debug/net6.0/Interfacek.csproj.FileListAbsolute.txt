@@ -1,0 +1,15 @@
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\bin\Debug\net6.0\Interfacek.exe
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\bin\Debug\net6.0\Interfacek.deps.json
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\bin\Debug\net6.0\Interfacek.runtimeconfig.json
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\bin\Debug\net6.0\Interfacek.dll
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\bin\Debug\net6.0\Interfacek.pdb
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\Interfacek.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\Interfacek.GeneratedMSBuildEditorConfig.editorconfig
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\Interfacek.AssemblyInfoInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\Interfacek.AssemblyInfo.cs
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\Interfacek.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\Interfacek.dll
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\refint\Interfacek.dll
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\Interfacek.pdb
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\Interfacek.genruntimeconfig.cache
+E:\STUDY\Petrik\II-felev\C#\Interfacek\Interfacek\obj\Debug\net6.0\ref\Interfacek.dll

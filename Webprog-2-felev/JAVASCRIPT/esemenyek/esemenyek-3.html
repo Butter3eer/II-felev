@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Események</title>
+</head>
+<body>
+    <button onclick="console.log('Rákattintott')">Gomb</button>
+
+    <form>
+        <div>
+            <label for="nev">Név:</label>
+            <input type="text" id="nev" placeholder="Add meg a neved">
+        </div>
+        <button type="button" id="nevElkuld">Elküld</button>
+        <p id="koszontes"></p>
+    </form>
+
+    <script>
+        // JavaScript DOM
+        const nevInput = document.getElementById("nev");
+        const elkuldGomb = document.getElementById("nevElkuld");
+        const koszonFelirat = document.getElementById("koszontes");
+        
+        elkuldGomb.addEventListener("click", nevKiir)
+
+        function nevKiir() {
+            const nev = nevInput.value;
+            if (nev.lenght == 0) {
+                koszonFelirat.innerHTML = "";
+            } else {
+                koszonFelirat.innerHTML = "Hello " + nev;
+            }
+        }
+    </script>
+
+    <section>
+        <h2>Kattints a villanykörtére</h2>
+        <img src="pic_bulboff.gif" alt="Villanykörte" height="150px" id="villanykorte">
+
+        <script>
+            /*
+            const villanykorte = document.getElementById("villanykorte");
+                villanykorte.addEventListener("click", () => {
+                    if (villanykorte.src.includes("pic_bulboff.gif")) {
+                        villanykorte.src = "pic_bulbon.gif"
+                    } else {
+                        villanykorte.src = "pic_bulboff.gif"
+                    }
+                })
+        
+            villanykorte.addEventListener("mouseover", () => {
+                villanykorte.src = "pic_bulbon.gif"
+            })
+            */
+            villanykorte.addEventListener("mouseenter", () => {
+                villanykorte.src = "pic_bulbon.gif"
+            })
+
+            villanykorte.addEventListener("mouseleave", () => {
+                villanykorte.src = "pic_bulboff.gif"
+            })
+        </script>
+    </section>
+
+    <form>
+        <input type="text" id="konzolosInput" oninput="kiirKonzolra();"
+            onfocus = "konzolosFocus()" onblur="konzolosBlur()">
+            <p id="konzolosUtasitasok"></p>
+        <script>
+            const konzolosUtasitasok = document.getElementById("konzolosUtasitasok");
+            function kiirKonzolra() {
+                const konzolosInput = document.getElementById("konzolosInput");
+                console.log("Beviteli mező tartalma:", konzolosInput.value);
+            }
+
+            function konzolosFocus() {
+                konzolosUtasitasok.innerHTML = "Írj be valamit"
+            }
+
+            function konzolosBlur() {
+                konzolosUtasitasok.innerHTML = "Nézd meg a konzolt"
+            }
+        </script>
+    </form>
+</body>
+</html>

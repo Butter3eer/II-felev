@@ -1,0 +1,47 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch12s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>12.4. Adattárolás eszközének kiválasztása</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch12.html" title="12. fejezet - A tervezési modell"><link rel="prev" href="ch12s03.html" title="12.3. Alrendszerek telepítési terve"><link rel="next" href="ch12s05.html" title="12.5. Konkurencia kezelése"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">12.4. 
+            
+            Adattárolás eszközének kiválasztása</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch12s03.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">12. fejezet - A tervezési modell</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch12s05.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="12.4. Adattárolás eszközének kiválasztása"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e4941"></a>12.4. 
+            
+            <a name="__RefHeading__131_120998265"></a>Adattárolás eszközének kiválasztása</h2></div></div></div><p>A számítógépes rendszerek az esetek többségében perzisztens adatokat is kezelnek.
+            Ezeknek háttértáron kell elhelyezkedniük. A tárolás formája függ az adatok
+            mennyiségét&#337;l, a szükséges elérési módoktól és az adatok közötti kapcsolatok
+            bonyolultságától. A leggyakoribb adattárolási módok a file és az adatbázis.</p><div class="sect2" title="12.4.1. Adattárolás adatbázisokban"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4948"></a>12.4.1. Adattárolás adatbázisokban</h3></div></div></div><p>Ha nagy tömeg&#369;, kapcsolatokkal rendelkez&#337; adatokat kell tárolnunk, amelyeket
+               sokféleképpen kell elérnünk, felhasználnunk az adatokat adatbázisba szervezzük.
+               Jelenleg a legátalánosabban használt adatbázisok a relációs adatbázisok.</p><p>A tervezés során össze kell gy&#369;jteni a perzisztens tárolást kívánó adatok körét,
+               és a közöttük lév&#337; kapcsolatokat. Ezek alapján fel kell építeni a szemantikai
+               adatmodellt, amit relációs modellé kell konvertálni. Az UML ezekhez a modellekhez nem
+               biztosít eszközöket, de a szemantikai modellre az ER vagy EER diagram, a relációs
+               modellre a relációs diagram a legtöbbször alkalmazott eszköz.</p><p>Az adatbázis tervezés a fejlesztési folyamaton belül is speciális szakértelmet
+               igényel, ezért az informatikus képzésekben külön tárgyak foglalkoznak ezzel a
+               területtel. A fejleszt&#337; cégek is gyakran külön erre specializálódott szakért&#337;ikre
+               bízzák ezt a munkát.</p><p>A tervezés során célszer&#369; eldönteni, melyik adatbázis kezel&#337;t akarjuk használni,
+               vagy éppen azt a tényt, hogy a rendszernek bármely adatbázis kezel&#337;vel m&#369;ködnie kell
+               tudni.</p></div><div class="sect2" title="12.4.2. Adattárolás file-okban"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4959"></a>12.4.2. Adattárolás file-okban</h3></div></div></div><p>Speciális formátumban tárolható információk (például kép, hang, videó) esetén, ha
+               nem túl sok elemet kell tárolni, célszer&#369; lehet ezeket speciális szerkezet&#369;
+               file-okban tárolni. Ha azonban ez nagyon sok file tárolását jelentené, vagy az
+               információk között bonyolult módon kell tudni keresni, az adatbázisban való tárolás a
+               jobb megoldás.</p><p>Egyszer&#369;, nem túl nagy elemszámú, ritkán változó adat tárolására választhatjuk a
+               szövegfile-ban való tárolási formát is. Ilyen jelleg&#369; adatok lehetnek például a
+               rendszer m&#369;ködését szabályozó adatok (&#8222;konfigurációs file-ok&#8221;- például mi a használt
+               adatbázis neve, mi legyen az alkalmazás nyelve), többnyelv&#369; alkalmazás esetén az
+               egyes nyelvekhez tartozó szövegek stb. Az ilyen módon tárolt adatok változtatása
+               általában a file újraírását jelenti. A file-ban tárolt adatok elérése korlátozott,
+               ezért többnyire úgy használjuk, hogy a tartalmát beolvassuk és a memóriában
+               tároljuk.</p><p>A szövegfile-ok egy speciális formája az XML file. Az XML nyelv szabályai szerint
+               létrehozott file-ok strukturált formában tartalmazzák az adatokat, és az adatokhoz
+               való hozzáférés majdnem olyan rugalmas lehet, mint az adatbázisok esetén. XML
+               formátumú file-ok kezelésére el&#337;re megírt eszközök állnak a programozók
+               rendelkezésére. Ma már egyre gyakoribb a használata például a konfigurációs adatok
+               tárolására, és alkalmas lehet rendszerek közötti adatátvitel megvalósítására is.
+               Nagyon nagy számú, vagy gyors elérést követel&#337; adatok esetén az adatbázis használata
+               a célszer&#369;.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch12s03.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch12.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch12s05.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">12.3. 
+            
+            Alrendszerek telepítési terve&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;12.5. 
+            
+            Konkurencia kezelése</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch12s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+</html>

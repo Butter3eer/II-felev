@@ -1,0 +1,39 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch08.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:48 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>8. fejezet - A használati eset modell</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch07s05.html" title="7.5. UML eszközök"><link rel="next" href="ch08s02.html" title="8.2. A használati eset"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8. fejezet - A használati eset modell</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch07s05.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch08s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="8. fejezet - A használati eset modell"><div class="titlepage"><div><div><h2 class="title"><a name="d0e2590"></a>8. fejezet - A használati eset modell</h2></div></div></div><p>A használati eset fogalma és a használati eset diagram már az UML megalkotása el&#337;tt
+         megjelent Jacobson munkáiban, az általa kifejlesztett OOSE fejlesztési módszertan
+         részeként. A használati eset diagram célja leírni a modellezend&#337; rendszer és a környezete
+         kapcsolatait.</p><p>A használati eset modell a rendszer felhasználói nézetét szemlélteti. A modell
+         elemei:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>egy vagy több használati eset diagram,</p></li><li class="listitem"><p>a diagramokon megjelen&#337; modell elemek megnevezése, rövid, összefoglaló leírása,
+               amely a fejlesztés korai fázisában kialakul,</p></li><li class="listitem"><p>az egyes modell elemek részletes specifikációja, amely a fejlesztés kés&#337;bbi
+               fázisaiban b&#337;víti, pontosítja a modellt.</p></li></ol></div><p>A használati eset modell a feltárt követelmények elemzése alapján készülhet el.
+         Jelölésrendszere elég egyszer&#369; és szemléletes ahhoz, hogy a megrendel&#337; is megértse, ezért
+         alkalmas a megrendel&#337; és a fejleszt&#337; közötti kommunikáció pontosítására.</p><p>A használati eset diagramok alapvel&#337; elemei az alábbiak:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>használati eset (use case): egy felhasználó által látható / igényelhet&#337;, a
+               fejlesztend&#337; rendszer által megvalósítandó funkció vagy funkció csoport</p></li><li class="listitem"><p>aktor (actor): a rendszerrel kapcsolatba kerül&#337; személyek, küls&#337; rendszerek,
+               akik/amelyek a rendszer szolgáltatásait igénybe veszik</p></li><li class="listitem"><p>Kapcsolatok az aktorok és használati esetek között.</p></li><li class="listitem"><p>Kapcsolatok a használati esetek között</p></li><li class="listitem"><p>Kapcsolatok az aktorok között.</p></li></ol></div><div class="sect1" title="8.1. Az aktor"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2627"></a>8.1. 
+            
+            <a name="__RefHeading__85_120998265"></a>Az aktor</h2></div></div></div><p>A fejlesztend&#337; rendszer tekinthet&#337; egy funkció halmaznak. Ezek a funkciók a
+            felhasználók munkáját segítik, számukra valamilyen hasznos szolgáltatást nyújtanak.
+            Ebb&#337;l a szempontból azonban nem az a lényeges, hogy ki a felhasználó, hanem az, hogy
+            milyen szerepet játszik a rendszer használata során. (Nem az a fontos például a Neptun
+            rendszerben, hogy Kiss Pistának hívják azt, aki egy vizsgára akar jelentkezni, hanem
+            hogy &#337; hallgató.)</p><p>Az aktor tehát a felhasználó egy lehetséges szerepkörét jelenti, amelyet betöltve lép
+            kapcsolatba a rendszerrel, hogy annak információt szolgáltasson, vagy egy szolgáltatását
+            igénybe vegye. Aktor nem csak személy lehet, hanem valamilyen küls&#337; rendszer, eszköz is.
+            (Például egy bérszámfejt&#337; rendszernek adatokat kell szolgáltatni az adóhatóság felé a
+            levont adóel&#337;legr&#337;l, így ennek a rendszernek egy aktora az adóhatóság rendszere, amely
+            ezt a jelentést fogadja.)</p><p>A felhasználó és az aktor fogalmak között több-több kapcsolat van.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Több felhasználó - egy aktor: sok tényleges felhasználó léphet kapcsolatba a
+                  rendszerrel ugyanolyan szerepkörben (például minden egyetemre beiratkozott személy
+                  használhatja a Neptun rendszert hallgatóként)</p></li><li class="listitem"><p>Egy felhasználó - több aktor: ugyanaz a személy több szerepkörben is
+                  használhatja a rendszert (például egy doktorandusz lehet tanszéki alkalmazott, aki
+                  hallgató szerepkörben használja a Neptunt, amikor felvesz egy neki meghirdetett
+                  tárgyat, ugyanakkor oktatói szerepkörben például beírhat egy vizsgajegyet.)</p></li></ol></div><p>Az aktor szimbóluma egy pálcikaember. A szimbólum alá kell írni a szerepkör
+            megnevezését.</p><p></p><div class="figure"><a name="d0e2648"></a><p class="title"><b>8.1. ábra - Aktor</b></p><div class="figure-contents"><div align="center"><img src="images/image26.jpg" align="middle" alt="Aktor"></div></div></div><br class="figure-break"><p></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch07s05.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch08s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">7.5. 
+            
+            UML eszközök&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;8.2. 
+            
+            A használati eset</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch08.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:48 GMT -->
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="draggable-elements">
+        <i draggable="true" id="cat" class="draggable fa-solid fa-cat" style="color:peachpuff"></i>
+        <i draggable="true" id="dog" class="draggable fa-solid fa-dog" style="color:#4E3524"></i>
+        <i draggable="true" id="dove" class="draggable fa-solid fa-dove" style="color:#D3BC8D"></i>
+        <i draggable="true" id="fish" class="draggable fa-solid fa-fish" style="color:#63EBE8"></i>
+        <i draggable="true" id="frog" class="draggable fa-solid fa-frog" style="color:#00A86B"></i>
+    </section>
+
+    <section class="droppable-elements">
+        <div class="droppable" data-droppable-id="cat"><span>Cat</span></div>
+        <div class="droppable" data-droppable-id="dog"><span>Dog</span></div>
+        <div class="droppable" data-droppable-id="dove"><span>Dove</span></div>
+        <div class="droppable" data-droppable-id="fish"><span>Fish</span></div>
+        <div class="droppable" data-droppable-id="frog"><span>Frog</span></div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

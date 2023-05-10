@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\WPF\IntelligensLetformak\IntelligensLetformak\bin\Debug\IntelligensLetformak.exe.config
+E:\STUDY\Petrik\II-felev\C#\WPF\IntelligensLetformak\IntelligensLetformak\bin\Debug\IntelligensLetformak.exe
+E:\STUDY\Petrik\II-felev\C#\WPF\IntelligensLetformak\IntelligensLetformak\bin\Debug\IntelligensLetformak.pdb
+E:\STUDY\Petrik\II-felev\C#\WPF\IntelligensLetformak\IntelligensLetformak\obj\Debug\IntelligensLetformakFeladat.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\WPF\IntelligensLetformak\IntelligensLetformak\obj\Debug\IntelligensLetformakFeladat.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\WPF\IntelligensLetformak\IntelligensLetformak\obj\Debug\IntelligensLetformakFeladat.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\WPF\IntelligensLetformak\IntelligensLetformak\obj\Debug\IntelligensLetformak.exe
+E:\STUDY\Petrik\II-felev\C#\WPF\IntelligensLetformak\IntelligensLetformak\obj\Debug\IntelligensLetformak.pdb

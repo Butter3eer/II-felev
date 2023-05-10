@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat05</title>
+</head>
+<body>
+    <!-- 5. feladat -->
+    <p>Visszafelé</p>
+    <p><input type="text" id="input5"></p>
+    <p><button type="button" id="feladat5" onclick="F5();">5. Feladat</button></p>
+    <p id="output5"></p>
+    <br>
+
+    <script>
+        function F5(){
+            const szo = document.getElementById("input5").value;
+            let vissza = [...szo].reverse().join("");
+            document.getElementById("output5").innerHTML = vissza;
+        }
+    </script>
+</body>
+</html>

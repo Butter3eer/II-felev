@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feladat02</title>
+    <script src="feladat02.js"></script>
+</head>
+<body>
+    <form id="pont_urlap">
+        <div>
+            <p>
+                <label for="inputX" class="form-label">X: </label>
+                <input type="number" id="inputX" name="x" class="form-control" placeholder="X" required>
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <label for="inputY" class="form-label">Y: </label>
+                <input type="number" id="inputY" name="y" class="form-control" placeholder="Y" required>
+            </p>
+        </div>
+
+        <p id="kiir"></p>
+
+        <p><button type="button" onclick="hozzaAd();">Hozzáad</button></p>
+        <p><button type="button" onclick="kiir();">Kiír</button></p>
+    </form>
+
+    <script>
+        const pontok = [];
+
+        function hozzaAd() {
+            const x = parseInt(document.getElementById("inputX").value);
+            const y = parseInt(document.getElementById("inputY").value);
+            pontok.push(new Pont(x, y))
+            document.getElementById("inputX").value = "";
+            document.getElementById("inputY").value = "";
+        }
+
+        function kiir(){
+            if (pontok.length == 1){
+                document.getElementById("kiir").innerHTML = pontok[0].tavolsagAzOrigotol() + " az első pont távolsága az Origotól.<br>"
+            }else {
+                document.getElementById("kiir").innerHTML = pontok[0].tavolsagAzOrigotol() + " az első pont távolsága az Origotól.<br>" + Pont.tavolsag(pontok[0], pontok[1]) + " a távolság az első 2 megadott pont között. ";
+            }
+            
+        }
+    </script>
+</body>
+</html>

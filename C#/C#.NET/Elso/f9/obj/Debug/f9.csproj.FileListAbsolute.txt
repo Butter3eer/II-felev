@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\C#\Elso\f9\bin\Debug\f9.exe.config
+E:\STUDY\Petrik\C#\Elso\f9\bin\Debug\f9.exe
+E:\STUDY\Petrik\C#\Elso\f9\bin\Debug\f9.pdb
+E:\STUDY\Petrik\C#\Elso\f9\obj\Debug\f9.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\C#\Elso\f9\obj\Debug\f9.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\C#\Elso\f9\obj\Debug\f9.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\C#\Elso\f9\obj\Debug\f9.exe
+E:\STUDY\Petrik\C#\Elso\f9\obj\Debug\f9.pdb

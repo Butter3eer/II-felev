@@ -1,0 +1,125 @@
+-- 1.1 Listázza ki a 20-as részleg dolgozóinak nevét, belépési idejét, foglalkozását a nevek szerint csökkenően rendezve. (F01-01.sql)
+SELECT emp.ENAME, emp.HIREDATE, emp.JOB
+FROM emp
+WHERE emp.DEPTNO = 20
+ORDER BY emp.ENAME DESC;
+
+-- 1.2 Készítsen két listát, melyek a dolgozók adatait tartalmazzák. Az egyiket a fizetés szerint növekvően, a másikat a fizetés szerint csökkenően rendezze.
+SELECT *
+FROM emp
+ORDER BY emp.SAL DESC;
+---------
+SELECT *
+FROM emp
+ORDER BY emp.SAL ASC;
+
+-- 1.3 Listázza ki a dolgozók nevét, fizetést, jövedelmét a jövedelmük szerint csökkenően rendezve. (A jövedelem a fizetés és a jutalék összege.)
+SELECT emp.ENAME, emp.SAL, (emp.SAL + IFNULL(emp.COMM, 0)) AS jovedelem
+FROM emp
+ORDER BY 3 DESC;
+
+-- 1.4 Listázza ki a dolgozók nevét, részlegüket, jövedelmüket, és az adójukat (a jövedelmük 20%-a), az adójuk szerint csökkenően, a nevük szerint pedig növekvő módon rendezve.
+SELECT emp.ENAME, emp.DEPTNO, ROUND(((emp.SAL + IFNULL(emp.COMM, 0))/ 20), 2) AS ado
+FROM emp
+ORDER BY 3 DESC, emp.ENAME ASC;
+
+-- 1.5 Írassa ki azon alkalmazottak nevét, munkakörét és fizetését, akiknek fizetése nincs az 1500-2850 USD tartományban. A lista fejléce legyen ”Név”, ”Munkakör”, ”Fizetés”.
+SELECT emp.ENAME AS Név, emp.JOB AS Munkakör, emp.SAL AS Fizetés
+FROM emp
+WHERE emp.SAL BETWEEN 1500 AND 2850;
+
+-- 1.6 Írassa ki azon dolgozók nevét, munkakörét, fizetését, jutalékát és részleg-azonosítóját, akik 1000 USD-nál többet keresnek, és 1981. március 1. és szeptember 30. között léptek be a vállalathoz. 
+SELECT emp.ENAME, emp.JOB, emp.SAL, emp.COMM, emp.DEPTNO
+FROM emp
+WHERE emp.SAL > 1000 AND (emp.HIREDATE BETWEEN '1981-03-01' AND '1981-09-30');
+
+-- 1.7 Írassa ki minden jutalékkal rendelkező alkalmazott nevét, jutalékát, főnökének azonosítóját. Legyen a lista rendezett a főnök azonosítója, és az alkalmazottak neve szerint.
+SELECT emp.ENAME, emp.COMM, emp.MGR
+FROM emp
+WHERE emp.COMM IS NOT NULL
+ORDER BY emp.MGR, emp.ENAME;
+
+-- 1.8 Írassa ki azon alkalmazottak azonosítóját, nevét, foglalkozását, fizetését és jutalékát, akiknek jutaléka meghaladja a fizetésük 50%-át.
+SELECT emp.EMPNO, emp.ENAME, emp.JOB, emp.SAL, emp.COMM
+FROM emp
+WHERE emp.COMM > (emp.SAL * 0.5);
+
+-- 1.9 Írja ki azon dolgozók nevét, foglalkozását, fizetését és belépési dátumát, akik 1981-ben léptek be a vállalathoz. A lista legyen a belépési dátum szerint rendezve. 
+SELECT emp.ENAME, emp.JOB, emp.SAL, emp.HIREDATE
+FROM emp
+WHERE YEAR(emp.HIREDATE) = 1981
+ORDER BY emp.HIREDATE;
+
+-- 1.10 Listázza azon alkalmazottak nevét, foglalkozását, jövedelmét, akiknek a nevében két ”L” betű szerepel, továbbá vagy a 30-as részlegen dolgozik, vagy a főnökének azonosítója 7782.
+SELECT emp.ENAME, emp.JOB, (emp.SAL + IFNULL(emp.COMM, 0)) AS jovedelem
+FROM emp
+WHERE emp.ENAME LIKE "%L%L%" AND emp.DEPTNO = 30 OR emp.MGR = 7782;
+
+-- 1.11 Listázza ki részlegazonosító szerint rendezve a clerk és a salesman munkakörű dolgozók éves fizetését a részleg szerint rendezve.
+SELECT emp.ENAME, (emp.SAL * 12) AS Eves_fizetes
+FROM emp
+WHERE emp.JOB = "CLERK" OR emp.JOB = "SALESMAN"
+ORDER BY emp.DEPTNO;
+
+-- 1.12 Listázza ki az összes dolgozót oly módon, hogy azoknál, akik nem kapnak jutalékot, az a szöveg jelenjen meg, hogy ”Nincs jutalék”. A lista fejléce legyen azonosító, belépési dátum, név, foglalkozás, jutalék.
+SELECT emp.EMPNO AS Azonosító, emp.HIREDATE AS Belépési_dátum, emp.ENAME AS Név, emp.JOB AS Foglalkozás, (IFNULL(emp.COMM, "Mincs jutalék")) AS Jutalék
+FROM emp;
+
+-- 1.13 Listázza ki a man karaktersorozatot tartalmazó munkakörben dolgozók nevét és munkakörét, a munkakör és a név szerint rendezve.
+SELECT emp.ENAME, emp.JOB
+FROM emp
+WHERE emp.JOB LIKE "%MAN%"
+ORDER BY emp.JOB, emp.ENAME;
+
+-- 1.14 Listázza foglalkozás szerint csoportosítva azon dolgozók nevét, foglalkozását, jövedelmét és részlegét, akiknek jövedelme kisebb 2500 USD-nál, valamint 1981 és 1982 között léptek be. A keletkezett lista elsődlegesen a foglalkozás, másodlagosan a dolgozó neve szerint legyen rendezve.
+SELECT emp.ENAME, emp.JOB, (emp.SAL + IFNULL(emp.COMM, 0)) AS jovedelem, emp.DEPTNO
+FROM emp
+WHERE ((emp.SAL + IFNULL(emp.COMM, 0)) < 2500) AND (YEAR(emp.HIREDATE) BETWEEN 1981 AND 1982)
+GROUP BY emp.JOB
+ORDER BY emp.JOB, emp.ENAME;
+
+-- 1.15 Listázza ki azoknak az alkalmazottaknak a nevét, éves fizetését és a munkában eltöltött hónapjainak számát, akik 1981.07.01. előtt léptek be a vállalathoz. A lista legyen a hónapszámok szerint csökkenően rendezve. 
+SELECT emp.ENAME, (emp.SAL * 12) AS Eves_fizetes, TIMESTAMPDIFF(MONTH, emp.HIREDATE, CURRENT_DATE) AS honapok
+FROM emp
+WHERE emp.HIREDATE < '1981-07-01'
+ORDER BY TIMESTAMPDIFF(MONTH, emp.HIREDATE, CURRENT_DATE) DESC;
+
+-- 1.16 Listázza ki a C és az M betűvel kezdődő foglalkozású alkalmazottak nevét (nevüket nagy betűvel kezdve és kisbetűvel folytatva), valamint nevük hosszát. Rendezze a listát a foglalkozás szerint.
+SELECT CONCAT(SUBSTR(emp.ENAME, 1, 1), LOWER(SUBSTR(emp.ENAME, 2))) AS Név, LENGTH(emp.ENAME) AS Nev_hossz, emp.JOB
+FROM emp
+WHERE emp.ENAME LIKE "C%" OR emp.ENAME LIKE "M%"
+ORDER BY emp.JOB;
+
+-- 1.17 A belépési dátum napjai szerint csoportosítva listázza azon dolgozók azonosítóját, nevét, jövedelmét, munkába állásuk napját, részlegét, akiknek jövedelme 1300 és 5500 USD közötti érték. A keletkezett lista elsődlegesen a napok sorszáma szerint, másodlagosan a dolgozó neve szerint legyen rendezve. A hét első napja legyen a vasárnap.
+SELECT emp.EMPNO, emp.ENAME, (emp.SAL + IFNULL(emp.COMM, 0)) AS jovedelem, emp.HIREDATE, emp.DEPTNO, ((DAYOFWEEK(emp.HIREDATE) - 1) % 7) AS Hetnap
+FROM emp
+WHERE (emp.SAL + IFNULL(emp.COMM, 0)) BETWEEN 1300 AND 5500
+GROUP BY DAY(emp.HIREDATE)
+ORDER BY ((DAYOFWEEK(emp.HIREDATE) - 1) % 7);
+
+-- 1.18 A vállalatnál hűségjutalmat adnak, és ehhez szükséges azon dolgozók azonosítója, neve, fizetése, munkában eltöltött éve, akik legalább 15 éve álltak munkába. Rendezze a listát a munkában eltöltött évek szerint csökkenően, valamint az azonosító szerint növekvően.
+SELECT emp.EMPNO, emp.ENAME, emp.SAL, TIMESTAMPDIFF(YEAR, emp.HIREDATE, CURRENT_DATE) AS Eltoltott_evek
+FROM emp
+WHERE TIMESTAMPDIFF(YEAR, emp.HIREDATE, CURRENT_DATE) >= 15
+ORDER BY TIMESTAMPDIFF(YEAR, emp.HIREDATE, CURRENT_DATE) DESC, emp.EMPNO ASC;
+
+-- 1.19 Listázza a dolgozók nevét, munkakörét, fizetését és a fizetési kategóriáját, mely 1000 USD alatt 1, 2000 USD alatt 2, stb., ez utóbbi szerint csökkenően rendezve. (A fizetéstartomány 1..6000 USD.)
+SELECT emp.ENAME, emp.JOB, emp.SAL,
+CASE
+WHEN sal<1000 THEN '1'
+WHEN sal<2000 THEN '2'
+WHEN sal<3000 THEN '3'
+WHEN sal<4000 THEN '4'
+WHEN sal<5000 THEN '5'
+WHEN sal<6000 THEN '6'
+END AS kategoria
+FROM emp 
+ORDER BY kategoria DESC;
+
+-- 1.20 Listázza a dolgozók nevét, azonosítóját és beosztását a név szerint rendezve. Egy dolgozó beosztása ”Főnök”, ha vanbeosztottja, egyébként NULL érték.
+SELECT emp.ENAME, emp.EMPNO,
+CASE
+WHEN emp.EMPNO IN (SELECT `MGR` FROM emp) THEN 'FŐNÖK' ELSE NULL
+END AS beosztas
+FROM emp
+ORDER BY emp.ENAME;

@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Haziallatok\Haziallatok\bin\Debug\Haziallatok.exe.config
+E:\STUDY\Petrik\II-felev\C#\Haziallatok\Haziallatok\bin\Debug\Haziallatok.exe
+E:\STUDY\Petrik\II-felev\C#\Haziallatok\Haziallatok\bin\Debug\Haziallatok.pdb
+E:\STUDY\Petrik\II-felev\C#\Haziallatok\Haziallatok\obj\Debug\Haziallatok.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Haziallatok\Haziallatok\obj\Debug\Haziallatok.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Haziallatok\Haziallatok\obj\Debug\Haziallatok.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Haziallatok\Haziallatok\obj\Debug\Haziallatok.exe
+E:\STUDY\Petrik\II-felev\C#\Haziallatok\Haziallatok\obj\Debug\Haziallatok.pdb

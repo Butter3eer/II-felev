@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II félév\C#\orai-tomb-lista\orai-tomb-lista\obj\Debug\orai-tomb-lista.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II félév\C#\orai-tomb-lista\orai-tomb-lista\obj\Debug\orai-tomb-lista.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II félév\C#\orai-tomb-lista\orai-tomb-lista\obj\Debug\orai-tomb-lista.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II félév\C#\orai-tomb-lista\orai-tomb-lista\bin\Debug\orai-tomb-lista.exe.config
+E:\STUDY\Petrik\II félév\C#\orai-tomb-lista\orai-tomb-lista\bin\Debug\orai-tomb-lista.exe
+E:\STUDY\Petrik\II félév\C#\orai-tomb-lista\orai-tomb-lista\bin\Debug\orai-tomb-lista.pdb
+E:\STUDY\Petrik\II félév\C#\orai-tomb-lista\orai-tomb-lista\obj\Debug\orai-tomb-lista.exe
+E:\STUDY\Petrik\II félév\C#\orai-tomb-lista\orai-tomb-lista\obj\Debug\orai-tomb-lista.pdb

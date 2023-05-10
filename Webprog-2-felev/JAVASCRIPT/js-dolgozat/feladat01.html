@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat01</title>
+</head>
+<body>
+    <p><input type="number" placeholder="Adjon meg egy számot" id="input"></p>
+    <p><button type="button" id="hozzaad" onclick="hozzaad()">Hozzáad</button></p>
+    <p><button type="button" id="kiir" onclick="kiir()">Kiír</button></p>
+
+    <p id="print"></p>
+
+    <script>
+        var lista = [];
+
+        function hozzaad(){
+            var item = document.getElementById("input").value;
+            lista.push(item);
+            document.getElementById("input").value = "";
+        }
+
+        function kiir(){
+            lista = lista.reverse();
+            document.getElementById("print").innerHTML = lista;
+        }
+    </script>
+</body>
+</html>

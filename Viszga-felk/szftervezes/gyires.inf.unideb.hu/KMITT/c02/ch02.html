@@ -1,0 +1,74 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:42 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>2. fejezet - A szoftverfejlesztés életciklus modelljei</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch01s05.html" title="1.5. Kihívások a szoftver fejlesztés során"><link rel="next" href="ch02s02.html" title="2.2. &nbsp;Evolúciós fejlesztés"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. fejezet - A szoftverfejlesztés életciklus modelljei</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s05.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch02s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="2. fejezet - A szoftverfejlesztés életciklus modelljei"><div class="titlepage"><div><div><h2 class="title"><a name="d0e273"></a>2. fejezet - A szoftverfejlesztés életciklus modelljei</h2></div></div></div><p>A szoftverfejlesztések számának és legf&#337;képpen az egy-egy fejlesztéshez szükséges
+         er&#337;források volumenének növekedésével természetes módon jelent meg az igény a fejlesztési
+         folyamat racionalizálására, ami többek között az ütemezési és pénzügyi tervezhet&#337;séget, az
+         eredmények megvalósíthatóságának illetve tényleges megvalósulásának kontrollját, és a
+         biztonsági problémák tervezhet&#337;ségét érinti. Ezeknek megfelel&#337;en alakultak ki a különböz&#337;
+         életciklus modellek, melyek célja a fejlesztési folyamat modellezése. A szoftverfejlesztés
+         életciklusában megjelen&#337; általános feladatok a következ&#337;k:</p><p>1. Követelmények megfogalmazása - funkcionális specifikáció</p><p>2. Rendszertervezés (design) - rendszerterv</p><p>3. Kódolás, testreszabás és tesztelés</p><p>4. Bevezetés</p><p>A szoftverfolyamat modellje a szoftverfolyamat absztrakt reprezentációja. Minden egyes
+         modell különböz&#337; speciális perspektívából reprezentál egy folyamatot, de ily módon csak
+         részleges információval szolgálhat magáról a folyamatról. Ezek az általános modellek nem a
+         szoftverfolyamat pontos, végleges leírásai, hanem valójában inkább hasznos absztrakciók,
+         amelyet a szoftverfejlesztés különböz&#337; megközelítési módjainak megértéséhez használhatunk.
+         Az irodalomban számos szoftverfejlesztési modell alakult ki az évek során és található meg,
+         melyekb&#337;l a legismertebb folyamatmodellek a következ&#337;k: </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A vízesésmodell: a folyamat alapvet&#337; tevékenységeit a folyamat különálló
+               fázisainak tekinti. Ezek a fázisok a követelményspecifikáció, a szoftvertervezés, az
+               implementáció, a tesztelés, integráció és a karbantartás.</p></li><li class="listitem"><p>Evolúciós vagy iteratív fejlesztés: ez a megközelítési mód összefésüli a
+               specifikáció, a fejlesztés és a validáció tevékenységeit.</p></li><li class="listitem"><p>Komponens alapú fejlesztés: ez a megközelítés nagy mennyiség&#369; újrafelhasználható
+               komponensek létezésén alapszik. </p></li></ol></div><p>A modellek használata azonban korántsem kizárólagos. S&#337;t, talán ki is jelenthetjük, hogy
+         kevés olyan vállalat van, aki csupán egy modellt használ folyamatainak leírásához. A
+         gyakorlatban inkább el&#337;szeretettel alkalmaznak több fejlesztési modellt egyszerre, f&#337;ként
+         nagy, komplex rendszerek fejlesztésekor. Ebben az esetben legf&#337;bb cél mindig az, hogy az
+         adott fejlesztési környezet mellett a modellek a környezetre vetített el&#337;ny&#337;s
+         tulajdonságaikat emeljék ki, és adoptálják az adott környezetre.</p><div class="sect1" title="2.1. &nbsp;A vízesésmodell"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e300"></a>2.1. 
+            
+            <a name="__RefHeading__19_120998265"></a>&nbsp;A vízesésmodell</h2></div></div></div><p>A
+            szoftverfejlesztés történetének els&#337; publikált modellje (WaterfallModel, Royce1970),
+            amely más tervez&#337;i modellekb&#337;l származik. Az elnevezése onnan fakad, hogy a
+            fejlesztésben felmerül&#337; tevékenységeket jól elválasztható lépésekben, lépcs&#337;sen
+            ábrázolja, ami alapján vízesésmodellként vált ismertté. Ezt illusztrálja az következ&#337;
+            ábra. </p><p></p><div class="figure"><a name="d0e308"></a><p class="title"><b>2.1. ábra - A szoftver életciklusa</b></p><div class="figure-contents"><div align="center"><img src="images/image1.png" align="middle" alt="A szoftver életciklusa"></div></div></div><br class="figure-break"><p>A modell alapvet&#337; szakaszai alapvet&#337; fejlesztési tevékenységekre képezhet&#337;k le.
+            Ezek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Követelmények elemzése és meghozása: a rendszer szolgáltatásai, megszorításai
+                  és célja a rendszer felhasználóival történ&#337; konzultáció alapján alakul ki. &nbsp;Ezeket
+                  kés&#337;bb részletesen kifejtik, és ezek szolgáltatják a rendszer
+                  specifikációt.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Rendszer- és szoftvertervezés: a rendszer tervezési folyamatában választódnak
+                  szét a hardver- és szoftverkövetelmények. Itt kell kialakítani a rendszer átfogó
+                  architektúráját. A szoftver tervezése az alapvet&#337; szoftverrendszer-absztrakciók,
+                  illetve a közöttük lev&#337; kapcsolatok azonosítását és leírását is magában
+                  foglalja.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Implementáció és egységteszt: ebben a szakaszban a szoftverterv programok,
+                  illetve programegységek halmazaként realizálódik. Az egységteszt azt ellen&#337;rzi,
+                  hogy minden egység megfelel-e a specifikációjának. </p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Integráció és rendszerteszt: megtörténik a különálló programegységek, illetve
+                  programok integrálása és teljes rendszerként való tesztelése, hogy a rendszer
+                  megfelel-e a követelményeknek. A tesztelés után a szoftverrendszer átadható az
+                  ügyfélnek.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>M&#369;ködtetés és karbantartás: általában ez a szoftver életciklusának leghosszabb
+                  fázisa. Megtörtént a rendszertelepítés és megtörtént a rendszer gyakorlati
+                  használatbavétele. A karbantartásba beletartozik az olyan hibák javítása,
+                  amelyekre nem derült fény az életciklus korábbi szakaszaiban, a rendszeregységek
+                  implementációjának továbbfejlesztése, valamint a rendszer szolgáltatásainak
+                  továbbfejlesztése a felmerül&#337; új követelményeknek megfelel&#337;en.</p></li></ol></div><p></p><p></p><p>A fázisok eredménye tulajdonképpen egy dokumentum. A modell fontos szabálya, hogy a
+            következ&#337; fázis addig nem indulhat el, amíg az el&#337;z&#337; fázis be nem fejez&#337;dött. A
+            gyakorlatban persze ezek a szakaszok kissé átfedhetik egymást. Maga a szoftverfolyamat
+            nem egyszer&#369; lineáris modell, hanem a fejlesztési tevékenységek iterációjának sorozata.
+            Ez a vízesésmodellnél a visszacsatolásokban jelenik meg.</p><p>A dokumentumok el&#337;állításának költségéb&#337;l adódóan az iterációk költségesek, és
+            jelent&#337;s átdolgozást igényelnek. Ezért megszokott, hogy már kisszámú iteráció után is
+            befagyasztják az adott fejlesztési fázist, és a fejlesztést kés&#337;bbi fázisokkal
+            folytatják. A problémák feloldását kés&#337;bbre halasztják, kihagyják vagy kikerülik azokat.
+            A követelmények ilyen id&#337; el&#337;tti befagyasztása oda vezethet, hogy a rendszer nem azt
+            fogja tenni, mint amit a felhasználó akart.</p><p>Az életciklus utolsó szakaszában a felhasználók használatba veszik a szoftvert.
+            Ilyenkor derülnek ki az eredeti rendszerkövetelmények hibái és hiányosságai. Program és
+            tervezési hibák kerülnek el&#337;, továbbá felmerülhet új funkciók szükségessége is. Ezekb&#337;l
+            adódóan a rendszert át kell alakítani, amely néhány vagy akár az összes korábbi
+            folyamatszakasz megismétlésével is járhat.</p><p>A vízesésmodell legf&#337;bb problémáját a projekt szakaszainak különálló részekké történ&#337;
+            nem flexibilis partícionálása okozza. Egy komplex, bonyolult probléma megoldása nem
+            végezhet&#337; el hatékonyan ezzel a megközelítéssel. A vízesésmodell csak akkor használható
+            jól, ha már el&#337;re jól ismerjük a követelményeket, melyeket részletes és pontos
+            specifikáció követ.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s05.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch02s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">1.5. 
+            
+            Kihívások a szoftver fejlesztés során&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;2.2. 
+            
+            &nbsp;Evolúciós fejlesztés</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:42 GMT -->
+</html>

@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Meterologia\Meterologia\bin\Debug\Meterologia.exe.config
+E:\STUDY\Petrik\II-felev\C#\Meterologia\Meterologia\bin\Debug\Meterologia.exe
+E:\STUDY\Petrik\II-felev\C#\Meterologia\Meterologia\bin\Debug\Meterologia.pdb
+E:\STUDY\Petrik\II-felev\C#\Meterologia\Meterologia\obj\Debug\Meterologia.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Meterologia\Meterologia\obj\Debug\Meterologia.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Meterologia\Meterologia\obj\Debug\Meterologia.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Meterologia\Meterologia\obj\Debug\Meterologia.exe
+E:\STUDY\Petrik\II-felev\C#\Meterologia\Meterologia\obj\Debug\Meterologia.pdb

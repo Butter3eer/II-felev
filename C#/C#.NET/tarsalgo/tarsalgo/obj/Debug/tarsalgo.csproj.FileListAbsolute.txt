@@ -1,0 +1,16 @@
+D:\celescsenge\tarsalgo\tarsalgo\bin\Debug\tarsalgo.exe.config
+D:\celescsenge\tarsalgo\tarsalgo\bin\Debug\tarsalgo.exe
+D:\celescsenge\tarsalgo\tarsalgo\bin\Debug\tarsalgo.pdb
+D:\celescsenge\tarsalgo\tarsalgo\obj\Debug\tarsalgo.csproj.AssemblyReference.cache
+D:\celescsenge\tarsalgo\tarsalgo\obj\Debug\tarsalgo.csproj.SuggestedBindingRedirects.cache
+D:\celescsenge\tarsalgo\tarsalgo\obj\Debug\tarsalgo.csproj.CoreCompileInputs.cache
+D:\celescsenge\tarsalgo\tarsalgo\obj\Debug\tarsalgo.exe
+D:\celescsenge\tarsalgo\tarsalgo\obj\Debug\tarsalgo.pdb
+E:\STUDY\Petrik\II-felev\C#\tarsalgo\tarsalgo\bin\Debug\tarsalgo.exe.config
+E:\STUDY\Petrik\II-felev\C#\tarsalgo\tarsalgo\bin\Debug\tarsalgo.exe
+E:\STUDY\Petrik\II-felev\C#\tarsalgo\tarsalgo\bin\Debug\tarsalgo.pdb
+E:\STUDY\Petrik\II-felev\C#\tarsalgo\tarsalgo\obj\Debug\tarsalgo.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\tarsalgo\tarsalgo\obj\Debug\tarsalgo.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\tarsalgo\tarsalgo\obj\Debug\tarsalgo.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\tarsalgo\tarsalgo\obj\Debug\tarsalgo.exe
+E:\STUDY\Petrik\II-felev\C#\tarsalgo\tarsalgo\obj\Debug\tarsalgo.pdb

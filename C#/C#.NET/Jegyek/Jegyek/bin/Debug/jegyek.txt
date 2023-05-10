@@ -1,0 +1,14 @@
+Berlet - 2022/11/10 - 30 - Érvényesség dátuma: 2022/12/10
+Vonaljegy - False
+Vonaljegy - True
+Diakberlet - 2023/03/03 - 30 - Érvényesség dátuma: 2023/04/02 - 76752544
+Berlet - 2023/03/20 - 15 - Érvényesség dátuma: 2023/04/04
+Vonaljegy - True
+Vonaljegy - True
+Diakberlet - 2023/03/30 - 15 - Érvényesség dátuma: 2023/04/14 - 56804349
+Diakberlet - 2023/03/15 - 60 - Érvényesség dátuma: 2023/05/14 - 66424275
+Berlet - 2023/02/20 - 30 - Érvényesség dátuma: 2023/03/22
+Vonaljegy - True
+Diakberlet - 2023/02/28 - 30 - Érvényesség dátuma: 2023/03/30 - 38469245
+Berlet - 2023/03/30 - 1 - Érvényesség dátuma: 2023/03/31
+Vonaljegy - False

@@ -1,0 +1,58 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch08s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:49 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>8.3. Kapcsolatok</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch08.html" title="8. fejezet - A használati eset modell"><link rel="prev" href="ch08s02.html" title="8.2. A használati eset"><link rel="next" href="ch08s04.html" title="8.4. Használati eset modell készítése"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8.3. 
+            
+            Kapcsolatok</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch08s02.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">8. fejezet - A használati eset modell</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch08s04.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="8.3. Kapcsolatok"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2688"></a>8.3. 
+            
+            <a name="__RefHeading__89_120998265"></a>Kapcsolatok</h2></div></div></div><p>A használati eset diagram elemei között kapcsolatokat jelölhetünk. A diagram
+            jellegéb&#337;l adódóan nem lehet olyan eleme, amely legalább egy másik elemmel nincs
+            kapcsolatban.</p><div class="sect2" title="8.3.1. Kapcsolat aktor és use case között"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2695"></a>8.3.1. Kapcsolat aktor és use case között</h3></div></div></div><p>Aktor és use case között jelzett kapcsolat azt jelenti, hogy az aktor használja a
+               use case-t. </p><p>Jele egy vonal a két elem között. Egyes UML szerkeszt&#337;k nyilat használnak, ami
+               lehet&#337;vé teszi, hogy hangsúlyozzuk, hogy az aktor kezdeményez&#337; (ekkor a nyíl a
+               használati eset felé mutat) vagy információt fogadó (a nyíl az aktor felé mutat)
+               viszonyban van a használati esettel.</p><p>Példa:</p><p></p><div class="figure"><a name="d0e2705"></a><p class="title"><b>8.3. ábra - Aktor és használati eset kapcsolata</b></p><div class="figure-contents"><div align="center"><img src="images/image28.jpg" align="middle" alt="Aktor és használati eset kapcsolata"></div></div></div><br class="figure-break"><p>Az ilyen kapcsolatot, amikor két modell elem együttm&#369;ködését jelezzük, nem
+               nevesítve az együttm&#369;ködés módját, az UML ábrákban asszociációnak nevezzük.</p><p>Bár ritkán, de szükség lehet az asszociáció számosságát is jelölni, amit a
+               kapcsolat valamelyik végére írhatunk, és azt jelöli, hogy az adott kapcsolatban az
+               adott elem milyen multiplicitással vesz részt. A lehetséges jelölések:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>n..m vagy n-m ami az [n,m] intervallumot jelenti</p></li><li class="listitem"><p>n,m, ...,k: a lehetséges értékek felsorolása</p></li><li class="listitem"><p>n,m stb lehet pozitív szám, 0 vagy *, aminek jelentése &#8222;bármennyi&#8221;</p></li><li class="listitem"><p>a * magában a 0..* -ot jelenti.</p></li></ol></div><p>Például, ha ki akarjuk hangsúlyozni, hogy jelszó változtatáskor az új jelszót
+               kétszer kell megadni:</p><p></p><div class="figure"><a name="d0e2729"></a><p class="title"><b>8.4. ábra - Használati eset és aktor kapcsolata számossággal</b></p><div class="figure-contents"><div align="center"><img src="images/image29.jpg" align="middle" alt="Használati eset és aktor kapcsolata számossággal"></div></div></div><br class="figure-break"><p></p><p>Hasonlóan, például egy &#8222;chat&#8221; funkció esetén a &#8222;Felhasználó&#8221; aktor oldalán
+               megjelölhetjük a 2..* számosságot (hiszen egy kommunikációhoz legalább két fél
+               szükséges.)</p><p></p></div><div class="sect2" title="8.3.2. Kapcsolat a használati esetek között"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2737"></a>8.3.2. Kapcsolat a használati esetek között</h3></div></div></div><p>A használati esetek között három féle kapcsolat lehetséges:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>include (tartalmazás)</p></li><li class="listitem"><p>extend (kib&#337;vítés)</p></li><li class="listitem"><p>általánosítás / pontosítás (örökl&#337;dés)</p></li></ol></div><div class="sect3" title="8.3.2.1. &#8222; include&#8221; kapcsolat"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2752"></a>8.3.2.1. &#8222; include&#8221; kapcsolat</h4></div></div></div><p>A és B használati eset között tartalmazás (include) kapcsolat áll fenn, ha az A
+                  használati eset végrehajtásakor a B mindig, feltétel nélkül végrehajtódik. Az A
+                  használati esetnek részét képezi a B, esetleg a B ismétl&#337;désével hajtható végre. A
+                  tartalmazott használati eset lehet közvetett kapcsolatban egy aktorral, a
+                  tartalmazó funkción keresztül, de közvetlen kapcsolatban is állhat
+                  aktorral.</p><p>Akkor alkalmazzuk ezt a lehet&#337;séget, ha ki akarjuk hangsúlyozni, hogy az A
+                  használati eset milyen résztevékenységekb&#337;l áll össze. Egy használati eset több
+                  más használati esetnek is lehet része, ilyenkor a közös funkciók kiemelése
+                  egyszer&#369;síti, redundancia mentessé teszi a modellt.</p><p>Például egy web áruházban több olyan tevékenység is lehet, ami bejelentkezéshez
+                  kötött. Az alábbi ábra azt szemlélteti, hogy ilyenek az áru min&#337;sítése, a vásárlás
+                  és az üzenet küldés más felhasználóknak.</p><div class="figure"><a name="d0e2761"></a><p class="title"><b>8.5. ábra - Használati esetek &#8222;include&#8221; kapcsolata</b></p><div class="figure-contents"><div align="center"><img src="images/image30.jpg" align="middle" alt="Használati esetek &#8222;include&#8221; kapcsolata"></div></div></div><br class="figure-break"><p>A tartalmazás kapcsolat jele a tartalmazótól a tartalmazott felé mutató,
+                  szaggatott vonallal rajzolt nyíl, amelyet az «Include» sztereotípiával
+                  min&#337;sítünk.</p></div><div class="sect3" title="8.3.2.2. &#8222; extern&#8221; kapcsolat"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2767"></a>8.3.2.2. &#8222; extern&#8221; kapcsolat</h4></div></div></div><p>A b&#337;vítés kapcsolat az jelenti, hogy egy használati eset bizonyos esetekben
+                  (valamilyen feltétel fennállása esetén) egy másik funkció végrehajtását igényli. A
+                  b&#337;vít&#337; használati eset kiegészíti az alap funkciót, vagy valamilyen kivételes
+                  esetet kezel. Az ilyen használati eset önmagában &#8211; önállóan &#8211; nem fordulhat el&#337;,
+                  és aktorral közvetlenül nem lehet kapcsolatban.</p><p>Példa: számos web-es szolgáltatás igénybevételének feltétele a felhasználó
+                  azonosítása. Az azonosítás része a név és jelszó megadása. (Ezeket a funkciókat az
+                  azonosítás funkció tartalmazza.) Ha a felhasználó még nem ismert a rendszer
+                  számára, regisztrálnia kell magát. Ha elfelejtette a jelszavát, kérheti azt egy
+                  e-mailben. Ezek kiegészít&#337; funkciók. Az alábbi ábra ezt modellezi.</p><p></p><div class="figure"><a name="d0e2775"></a><p class="title"><b>8.6. ábra - Használati esetek &#8222;extend&#8221; kapcsolata</b></p><div class="figure-contents"><div align="center"><img src="images/image31.jpg" align="middle" alt="Használati esetek &#8222;extend&#8221; kapcsolata"></div></div></div><br class="figure-break"><p>Az extend kapcsolat jele a kiegészít&#337; használati eset fel&#337;l az alap funkció
+                  felé mutató szaggatott vonallal rajzolt nyíl, amelyet az «Extend» sztereotípiával
+                  min&#337;sítünk.</p><p></p></div><div class="sect3" title="8.3.2.3. Általánosítás kapcsolat"><div class="titlepage"><div><div><h4 class="title"><a name="d0e2782"></a>8.3.2.3. Általánosítás kapcsolat</h4></div></div></div><p>Használati esetek között jelölhet&#337; az objektum orientált programozásból már
+                  ismert általánosítás &#8211; pontosítás kapcsolat (örökl&#337;dés, generalization). Ez a
+                  használati esetek közötti is-a kapcsolatot jelenti. Ha A használati eset
+                  leszármazottja B, akkor azt jelenti, hogy B egy speciális esete A-nak (azaz tudja
+                  mindazt, amit A, de van néhány speciális, csak rá jellemz&#337; tulajdonsága).</p><p>Például egy web áruház különböz&#337; fizetési módokat ismerhet:</p><p></p><div class="figure"><a name="d0e2790"></a><p class="title"><b>8.7. ábra -  Használati esetek általánosítás kapcsolata</b></p><div class="figure-contents"><div align="center"><img src="images/image32.jpg" align="middle" alt="Használati esetek általánosítás kapcsolata"></div></div></div><br class="figure-break"><p></p></div></div><div class="sect2" title="8.3.3. Kapcsolat az aktorok között"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2795"></a>8.3.3. Kapcsolat az aktorok között</h3></div></div></div><p>Az aktorok között csak az általánosítás &#8211; pontosítás kapcsolat értelmezett. Minden
+               más kapcsolat &#8211; ha a valóságban létezik is - a rendszeren kívüli, ezért a rendszer
+               szempontjából közömbös. Ha a B aktort az A leszármazottjának jelöljük, az a szokásos
+               kapcsolatot jelenti: a B bármikor felveheti az A szerepkörét. Például egy rendszer
+               adminisztrátora mindig lehet a rendszer egyszer&#369; felhasználója is, azaz közöttük az
+               alábbi kapcsolat áll fenn:</p><p></p><div class="figure"><a name="d0e2801"></a><p class="title"><b>8.8. ábra - Aktorok általánosítás kapcsolata</b></p><div class="figure-contents"><div align="center"><img src="images/image33.jpg" align="middle" alt="Aktorok általánosítás kapcsolata"></div></div></div><br class="figure-break"><p></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch08s02.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch08.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch08s04.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">8.2. 
+            
+            A használati eset&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;8.4. 
+            
+            Használati eset modell készítése</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch08s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:50 GMT -->
+</html>

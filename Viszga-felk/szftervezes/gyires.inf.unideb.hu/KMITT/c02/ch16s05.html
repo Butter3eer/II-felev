@@ -1,0 +1,310 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch16s05.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:08 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>16.5. A rendszer dinamikus modelljének kidolgozása</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch16.html" title="16. fejezet - Esettanulmány"><link rel="prev" href="ch16s04.html" title="16.4. A rendszer statikus modelljének kidolgozása"><link rel="next" href="ch17.html" title="17. fejezet - Animációk"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">16.5. A rendszer dinamikus modelljének kidolgozása</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch16s04.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">16. fejezet - Esettanulmány</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch17.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="16.5. A rendszer dinamikus modelljének kidolgozása"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e7094"></a>16.5. A rendszer dinamikus modelljének kidolgozása</h2></div></div></div><p>A statikus modellel párhuzamosan, vagy egy általános dinamikus modell akár azt
+                    megel&#337;z&#337;en is készülhet a rendszerr&#337;l. Ezt mindenképpen a rendszer
+                    szolgáltatásainak a leírásával érdemes kezdeni. Vesszük a használati eseteket,
+                    és azokat leírjuk aktivitás vagy együttm&#369;ködési diagrammal (a szekvencia diagram
+                    csak a kés&#337;bbiekenben a részletes leírásra javasolnám, mert ott már kellenek az
+                    objektumok is). Egy-egy alpontban az SRS-b&#337;l átvett használati esetek szokásos
+                    m&#369;ködési eseteire elkészítjük a szükséges diagrammokat. A használati esetre a
+                    nevével hivatkozunk. Ebben az alpontokban dokumentáljuk a szükséges
+                    állapotdiagramokat is. Az állapotdiagramok ábra aláírásában szerepeljen a
+                    vonatkozó osztály neve. Én az aktivitás diagrammot szeretem használni, mert az
+                    tulajdonképpen egy kiterjesztett folyamatábra, így mindenki számára könnyen
+                    érthet&#337;, és megjelenik a párhuzamosság és a döntési pont is.</p><p>Formája lehet:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Általános leírás</p></li><li class="listitem"><p>UML diagram. Aktivitás diagram esetén a készítés menete:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> kezdünk egy aktivitással, amin belül lesznek a
+                                            résztevékenységek (action)</p></li><li class="listitem"><p>adjuk meg az aktivitás paramétereit (bemeneti és
+                                            kimeneti).</p></li><li class="listitem"><p>résztevékenységek megadása (action). Akciók sorrendjét
+                                            határozzuk meg, de ha fontos akkor emeljük ki az
+                                            objektumokat! </p></li></ol></div><p>
+                  </p></li><li class="listitem"><p>Diagram elemeinek leírása (folyamat részletes leírás). Én ki
+                                szoktam venni a közös elemeket. Sok esetben mind a kliens mind a
+                                szerver oldalon (webalkalmazás esetében) ugyanazokat lépéseket
+                                hajtjuk végre csak esetleg más programozói nyelven.  Vannak olyan
+                                elemek, amelyek összekötik a két oldalt, ezeket is érdemes itt
+                                szerepeltetni. Ha sávos, akkor minden sáv elemeit külön táblázatban
+                                érdemes szerepeltetni.</p></li></ul></div><p>
+                
+         </p><div class="sect2" title="16.5.1. Bejelentkezés"><div class="titlepage"><div><div><h3 class="title"><a name="d0e7123"></a>16.5.1. Bejelentkezés</h3></div></div></div><p> A felhasználó a kliens grafikus felületén megadja a paramétereit, amit a
+                        hálózaton keresztül elküld a szervernek. A szerver ellen&#337;rzi a felhasználó
+                        paramétereit, és ha megfelel&#337;, akkor nyit session, amiben eltárolja a
+                        felhasználó objektumot. Válaszban elküldi a m&#369;velet sikerességét. </p><div class="figure"><a name="FelhasznaloBejelentkezese"></a><p class="title"><b>16.7. ábra - Felhasználó bejelentkezésének folyamata</b></p><div class="figure-contents"><div align="center"><img src="images/felhasznalo_bejelentkezese.png" align="middle" alt="Felhasználó bejelentkezésének folyamata"></div></div></div><p><br class="figure-break"> Aktivitás paraméterei:</p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col></colgroup><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Megnevezés</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Felhasználó név</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Típus</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>&nbsp;String</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Dokumentáció</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Felhasználó azonosítója. El&#337;z&#337;leg regisztrálnia
+                                                kell, minimum 6 karakter a mérete.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Irány</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>bemenet</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; ">
+                      
+                              <p>Kötelez&#337;</p>
+                    
+                           </td><td style="">
+                      
+                              <p>Igen</p>
+                    
+                           </td></tr></tbody></table></div><p>
+                        
+               </p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col></colgroup><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Megnevezés</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Jelszó</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Típus</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>&nbsp;String</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Dokumentáció</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Felhasználó jelszava. El&#337;z&#337;leg meg kell adni,
+                                                minimum 6 karakter a mérete.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Irány</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>bemenet</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; ">
+                      
+                              <p>Kötelez&#337;</p>
+                    
+                           </td><td style="">
+                      
+                              <p>Igen</p>
+                    
+                           </td></tr></tbody></table></div><p>
+                    
+            </p><p>Közös elemek: 
+                            </p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col></colgroup><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Megnevezés</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Dokumentáció</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>&nbsp;Kliens </p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>A rendszer flash plugin alatt futó logika része
+                                                (grafikus).</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>&nbsp;Szerver </p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>A rendszer szerveren futó logika része.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Kérés</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Http kérés post vagy get (tartlama függ a
+                                                funkkciótól)</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; ">
+                      
+                              <p>Válasz XML</p>
+                    
+                           </td><td style="">
+                      
+                              <p>http válasz, melynek tartalma XML</p>
+                    
+                           </td></tr></tbody></table></div><p>
+                    
+            </p><p>Kliens elemei: </p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col></colgroup><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Megnevezés</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Dokumentáció</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>ManagerRequestEvent.LOGIN</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Esemény, amely indítja az aktivitást. </p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Kérés küldés el&#337;készítés</td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Minden kérés azonos séma alapján épül fel. Egy
+                                                indikátort frissít a felhasználói felüleleten. Ha a
+                                                kérés blokkoló, akkor homokóra kurzor megjelenítése,
+                                                felületek tiltása.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Kliens ellen&#337;rzi a paramétereket</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>A bemen&#337; paramétereket ellen&#337;rzi (hossz és
+                                                tartalom).</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Összeállítja a kérést</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Több szervlet-et használunk, de csak 1 session-t.
+                                                Emiatt csak egy kapcsolat tartó objektum lehet,
+                                                aminek a paramétereit minden kérés el&#337;tt
+                                                változtatjuk.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Szerver válasz ellen&#337;rzés</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Kapott XML válasz tartalmának ellen&#337;rzése.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>ServerOperationFailed.USER_LOGGEDIN_FAILED</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Válasz XML alapján a megfelel&#337; üzenet
+                                                generálása.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; ">
+                      
+                              <p>UserEvent.USER_LOGGED_IN</p>
+                    
+                           </td><td style="">Válasz XML alapján a megfelel&#337; üzenet generálása.</td></tr></tbody></table></div><p>
+                    
+            </p><p>Szerver elemei: </p><div class="informaltable"><table style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col><col></colgroup><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Megnevezés</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Dokumentáció</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>&nbsp;Session</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Szerver oldalon tárolt objektum.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>A felhasználó ellen&#337;rzése </p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>A felhasználói példány létezésének ellen&#337;rzése a
+                                                session-ban.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Aktuális felhasználó kijelentkeztetése</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Ha a kliens már be van jelentkezve, akkor töröljük
+                                                a régi objektumát. Valószín&#369;leg egy másik
+                                                böngész&#337;b&#337;l jelentkezett be.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Felhasználó adatok ellen&#337;rzése az
+                                                adatbázisban</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Megfelel&#337; táblában olyan rekord keresése, amelyben
+                                                a mez&#337;k megfelel&#337;ek.</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">
+                      
+                              <p>&nbsp;Kivétel dobása</p>
+                    
+                           </td><td style="border-bottom: 0.5pt solid ; ">
+                      
+                              <p>Hibák esetén kivételek dobása (helyztelen jelszó,
+                                                adatbázis nem érhet&#337; el, ...).</p>
+                    
+                           </td></tr><tr><td style="border-right: 0.5pt solid ; ">
+                      
+                              <p>&nbsp;Válasz XML összeállítása</p>
+                    
+                           </td><td style="">
+                      
+                              <p>A válaszba generáljuk a kérés kiszolgálásnak
+                                                sikerességét, és ha lekérdez&#337; volt, akkor az
+                                                eredményt is.</p>
+                    
+                           </td></tr></tbody></table></div><p>
+                    
+            </p></div><div class="sect2" title="16.5.2. Rendszer osztályainak részletei"><div class="titlepage"><div><div><h3 class="title"><a name="d0e7483"></a>16.5.2. Rendszer osztályainak részletei</h3></div></div></div><p>Itt minden részletet meg kell határoznunk. A modellben eltárolt
+                        információk alapján generál(tat)juk az osztályokat. Vesszük sorra a statikus
+                        modell osztályait, és feltöltjük adattagokkal, tagvfüggvényekkel. Sok
+                        programozási nyelv támogatja a tulajdonságokat is, amit érdemes használni,
+                        mert az osztály használó elemek olvashatóbbak (generált kódjuk általában
+                        függvény). Itt is érdemes táblázatos formát használni. Minden osztály egy
+                        alpont a fejezeten belül. Minden osztályról a következ&#337;ket kell megadnunk: </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>felel&#337;ssége, feladata</p></li><li class="listitem"><p>együttm&#369;köd&#337;k</p></li><li class="listitem"><p>attribútumok</p></li><li class="listitem"><p> operációk </p></li></ul></div><p>
+            </p><div class="sect3" title="16.5.2.1. PortBean"><div class="titlepage"><div><div><h4 class="title"><a name="d0e7502"></a>16.5.2.1. PortBean</h4></div></div></div><p>
+                  <span class="bold"><strong>Feladata, felel&#337;sség</strong></span>:  Egy adapter
+                            osztály az Openrtm Port osztályához. Feladata a komponens portjaink a
+                            vezérlése, adatainak visszaadása.</p><p>
+                  <span class="bold"><strong>Eggyütm&#369;köd&#337;k</strong></span>: PortBeanItem</p><p>
+                  <span class="bold"><strong>Attributumok</strong></span>: </p><div class="table"><a name="d0e7520"></a><p class="title"><b>16.5. táblázat - PortBean adattagok</b></p><div class="table-contents"><table summary="PortBean adattagok" style="border: none;"><colgroup><col><col></colgroup><thead><tr><th style="border-bottom: 0.5pt solid ; " colspan="2">log : Logger</th></tr></thead><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Típus</td><td style="border-bottom: 0.5pt solid ; ">Logger osztály</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Hozzáférés</td><td style="border-bottom: 0.5pt solid ; ">privát</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Getter</td><td style="border-bottom: 0.5pt solid ; ">nincs</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Setter</td><td style="border-bottom: 0.5pt solid ; ">nincs</td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; ">Statikus</td><td style="border-bottom: 0.5pt solid ; ">igen</td></tr><tr><td style="border-right: 0.5pt solid ; ">Számosság</td><td style="">1</td></tr></tbody></table></div></div><p><br class="table-break">
+               </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch16s04.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch16.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch17.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">16.4. A rendszer statikus modelljének kidolgozása&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;17. fejezet - Animációk</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch16s05.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:08 GMT -->
+</html>

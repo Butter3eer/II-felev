@@ -1,0 +1,46 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch07s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:48 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>7.4. Kiterjesztési mechanizmusok</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch07.html" title="7. fejezet - A Unified Modeling Language (UML)"><link rel="prev" href="ch07s03.html" title="7.3. UML diagram típusok"><link rel="next" href="ch07s05.html" title="7.5. UML eszközök"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7.4. 
+            
+            Kiterjesztési mechanizmusok</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch07s03.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">7. fejezet - A Unified Modeling Language (UML)</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch07s05.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="7.4. Kiterjesztési mechanizmusok"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2471"></a>7.4. 
+            
+            <a name="__RefHeading__79_120998265"></a>Kiterjesztési mechanizmusok</h2></div></div></div><p>Mivel az UML alapvet&#337;en vizuális nyelv, legfontosabb eszközei a diagramok. A modellek
+            leírásához szükséges információk azonban olyan széles kör&#369;ek és változatosak, hogy nem
+            minden írható le a diagramok eszközkészletével, az UML biztosít egy kiterjesztési
+            mechanizmust a diagramokkal ki nem fejezhet&#337; tartalmak leírására. Ez egyben lehet&#337;séget
+            biztosít a nyelv kib&#337;vítésére, speciális igényekhez való igazítására is, mint ahogyan
+            azt az egyik tervezési alapelv is megköveteli.</p><p>A kiterjesztési mechanizmusok olyan UML elemek, amelyek segítségével más modell
+            elemek jelentését pontosíthatjuk, azokhoz másként nem kifejezhet&#337; többlet információkat
+            társíthatunk, illetve új, az UML által nem szabványosított modell elemeket vezethetünk
+            be. Ezért ezeket még a diagram típusok ismertetése el&#337;tt célszer&#369; áttekinteni, hiszen
+            bármilyen diagram részeként el&#337;fordulhatnak. </p><p>Az UML kiterjesztési mechanizmusa több, meglehet&#337;sen eltér&#337; bonyolultságú eszközt
+            foglal magában.</p><div class="sect2" title="7.4.1. Megjegyzés"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2482"></a>7.4.1. Megjegyzés</h3></div></div></div><p>A legegyszer&#369;bb, minden nyelvben ismert lehet&#337;ség arra, hogy tetsz&#337;leges
+               információval b&#337;vítsük a formális eszközökkel leírt tartalmat. Tetsz&#337;leges diagramon,
+               tetsz&#337;leges helyen és céllal elhelyezhetjük. Mivel az UML egy grafikus nyelv, egy
+               ikon tartozik hozzá.</p><div class="figure"><a name="d0e2487"></a><p class="title"><b>7.3. ábra - Megjegyzés</b></p><div class="figure-contents"><div align="center"><img src="images/image24.png" align="middle" alt="Megjegyzés"></div></div></div><br class="figure-break"><p>Kapcsolható egy tetsz&#337;leges más elemhez:</p><div class="figure"><a name="d0e2493"></a><p class="title"><b>7.4. ábra -  Kapcsolt megjegyzés</b></p><div class="figure-contents"><div align="center"><img src="images/image25.png" align="middle" alt="Kapcsolt megjegyzés"></div></div></div><br class="figure-break"><p>A megjegyzés ikonban tetsz&#337;leges szöveg, hivatkozás, más kiterjesztési mechanizmus
+               eszköz (például kulcsszavas érték) is elhelyezhet&#337;.</p></div><div class="sect2" title="7.4.2. Sztereotípia"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2499"></a>7.4.2. Sztereotípia</h3></div></div></div><p>A sztereotípia (stereotype) formálisan francia idéz&#337;jelek között elhelyezett
+               tetsz&#337;leges (bár többnyire egy-két szavas) szöveg.</p><p>« megnevezés »</p><p>Segítségével megjelölhetünk, min&#337;síthetünk tetsz&#337;leges modell elemet. A min&#337;sített
+               név el&#337;tt vagy fölött kell megadni. Ikon is rendelhet&#337; hozzá, ezáltal szimbolikus
+               vagy vizuális sztereotípiák is létrehozhatók.</p><p>Az UML specifikációjának mellékletében mintegy nyolc oldalnyi el&#337;re definiált
+               szöveges sztereotípia található. Ezeket - a félreértések elkerülése végett &#8211; csak a
+               definiált jelentésükben szabad használni. A modell készít&#337;je által használt saját
+               sztereotípiák jelentését pedig &#8211; ha az nem egyértelm&#369; &#8211;dokumentálni kell.</p><p>A kés&#337;bbiekben látunk majd példákat el&#337;re definiált sztereotípiák
+               használatára.</p></div><div class="sect2" title="7.4.3. Megszorítás (Constraint)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2512"></a>7.4.3. Megszorítás (Constraint)</h3></div></div></div><p>Formája kapcsos zárójelek közé zárt szöveg.</p><p>{megszorítás leírása}</p><p>A leírás lehet szabad szöveges, de létezik formális leírás is. Az eredetileg az
+               IBM által kifejlesztett OCL (Object Constraints Language) speciális leíró nyelv
+               továbbfejlesztett változata ma már az UML szabvány része.</p><p>Megadható a min&#337;sített elem után vagy alatt, vagy kapcsolt megjegyzésben.</p></div><div class="sect2" title="7.4.4. Kulcsszavak értékek"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2523"></a>7.4.4. Kulcsszavak értékek</h3></div></div></div><p>Formája kapcsos zárójelbe zárt név-érték párok felsorolása, vessz&#337;vel elválasztva.
+               Érték önállóan is szerepelhet, ha egyértelm&#369; a jelentése. Formálisan ez is egy
+               speciális megszorítás, így szintén a min&#337;sített elem után vagy alatt, vagy kapcsolt
+               megjegyzésben adható meg. Például:</p><p>{author="Kiss Pista", version=0.9.9, date=2011.01.01}</p></div><div class="sect2" title="7.4.5. Profilok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2530"></a>7.4.5. Profilok</h3></div></div></div><p>Sztereotípiák és kulcsszavas értékek halmazát profilba foglalhatjuk össze. Számos
+               el&#337;re definiált profil létezik az UML-hez, de egy fejlesztési projekt vagy egy
+               fejleszt&#337; szervezet saját igényei szerint újabbak is kialakíthatók. Ezzel az UML
+               szabványos eszközkészlete b&#337;víthet&#337;.</p><p>El&#337;re definiált profilok léteznek fejlesztési platformok (például .NET, EJB)
+               programozási nyelvek vagy például a SQL specifikus eszközök UML-be
+               integrálására.</p><p></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch07s03.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch07.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch07s05.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">7.3. 
+            
+            UML diagram típusok&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;7.5. 
+            
+            UML eszközök</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch07s04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:48 GMT -->
+</html>

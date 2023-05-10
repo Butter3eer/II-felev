@@ -1,0 +1,15 @@
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\bin\Debug\net6.0\Labda.exe
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\bin\Debug\net6.0\Labda.deps.json
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\bin\Debug\net6.0\Labda.runtimeconfig.json
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\bin\Debug\net6.0\Labda.dll
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\bin\Debug\net6.0\Labda.pdb
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\Labda.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\Labda.GeneratedMSBuildEditorConfig.editorconfig
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\Labda.AssemblyInfoInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\Labda.AssemblyInfo.cs
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\Labda.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\Labda.dll
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\refint\Labda.dll
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\Labda.pdb
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\Labda.genruntimeconfig.cache
+E:\STUDY\Petrik\II-felev\C#\Labda\Labda\obj\Debug\net6.0\ref\Labda.dll

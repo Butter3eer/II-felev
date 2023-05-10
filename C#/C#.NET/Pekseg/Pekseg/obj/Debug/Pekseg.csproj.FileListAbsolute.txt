@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Pekseg\Pekseg\obj\Debug\Pekseg.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Pekseg\Pekseg\obj\Debug\Pekseg.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Pekseg\Pekseg\obj\Debug\Pekseg.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Pekseg\Pekseg\bin\Debug\Pekseg.exe.config
+E:\STUDY\Petrik\II-felev\C#\Pekseg\Pekseg\bin\Debug\Pekseg.exe
+E:\STUDY\Petrik\II-felev\C#\Pekseg\Pekseg\bin\Debug\Pekseg.pdb
+E:\STUDY\Petrik\II-felev\C#\Pekseg\Pekseg\obj\Debug\Pekseg.exe
+E:\STUDY\Petrik\II-felev\C#\Pekseg\Pekseg\obj\Debug\Pekseg.pdb

@@ -1,0 +1,69 @@
+-- 1. Mi MADAGASZKÁR fővárosa?
+SELECT fovaros
+FROM orszagok
+WHERE orszag = 'MADAGASZKÁR';
+
+-- 2. Melyik ország fővárosa OUAGADOUGOU?
+SELECT orszag
+FROM orszagok
+WHERE fovaros = 'OUAGADOUGOU';
+
+-- 3. Melyik ország autójele a TT?
+SELECT orszag
+FROM orszagok
+WHERE `autojel` = 'TT';
+
+-- 4. Melyik ország pénzének jele az SGD?
+SELECT orszag
+FROM orszagok
+WHERE `penzjel` = 'SGD';
+
+-- 5. Melyik ország nemzetközi telefon-hívószáma a 61?
+SELECT orszag
+FROM orszagok
+WHERE `telefon` = 61;
+
+-- 6. Mekkora területű Monaco?
+SELECT `terulet`
+FROM orszagok
+WHERE `orszag` = 'Monaco';
+
+-- 7. Hányan laknak Máltán?
+SELECT `nepesseg`
+FROM orszagok
+WHERE `orszag` = 'Málta';
+
+-- 8. Mennyi Japán népsűrűsége?
+SELECT orszag, nepesseg/terulet * 1000 AS nepsuruseg
+FROM orszagok
+WHERE orszag = 'Japán';
+
+-- 9. Hány lakosa van a Földnek?
+SELECT SUM(nepesseg/1000000) AS milliard_fo
+FROM orszagok;
+       
+-- 10. Mennyi az országok területe összesen?
+SELECT SUM(terulet)
+FROM orszagok;
+           
+-- 11. Mennyi az országok átlagos népessége?
+SELECT AVG(nepesseg)
+FROM orszagok;
+          
+-- 12. Mennyi az országok átlagos területe?
+SELECT AVG(terulet)
+FROM orszagok;
+          
+-- 13. Mennyi a Föld népsűrűsége?
+SELECT SUM(nepesseg) / SUM(terulet) * 1000 AS fold_nepsuruseg
+FROM orszagok;
+
+-- 14. Hány 1.000.000 km2-nél nagyobb területű ország van?
+SELECT COUNT(*)
+FROM orszagok
+WHERE orszagok.terulet > 1000000;
+           
+-- 15. Hány 100 km2-nél kisebb területű ország van?
+SELECT COUNT(*)
+FROM orszagok
+WHERE orszagok.terulet < 100;

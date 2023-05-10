@@ -1,0 +1,146 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch14s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:03 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>14.3. Szerkezeti minták (Structural Patterns)</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch14.html" title="14. fejezet - Tervezési minták"><link rel="prev" href="ch14s02.html" title="14.2. Létrehozási minták(Creational patterns)"><link rel="next" href="ch14s04.html" title="14.4. Viselkedési minták (Behavioral Patterns)"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">14.3. Szerkezeti minták (Structural Patterns)</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch14s02.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">14. fejezet -  Tervezési minták </th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch14s04.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="14.3. Szerkezeti minták (Structural Patterns)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e5486"></a>14.3. Szerkezeti minták (Structural Patterns)</h2></div></div></div><p>
+      Objektumok közötti kapcsolatok kialakítására szolgálnak. Az objektumminták azt mondják meg hogyan ragasszuk össze objektumainkat, 
+      hogy új szolgáltatásokat nyújtsunk. Oly módon, hogy az objektum(ok) változása ne okozzon a kapcsolatokban is változást. 
+      Osztályminták örökléssel felületeket vagy megvalósításokat építenek fel. Egy felületet egy másikhoz illeszt.
+    </p><div class="sect2" title="14.3.1. Illeszt&#337; (Adapter)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5491"></a>14.3.1. Illeszt&#337; (Adapter)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Felület átalakítása egy másikra. Összeférhetetlen osztályok együttm&#369;ködésének biztosítása. Ebb&#337;l következ&#337;en a két osztálynak nem szükséges egymásról tudni. A kapcsolatot az illeszt&#337;(adapter) valósítja meg.</p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Néha el&#337;fordul olyan, hogy egy újrahasznosításra tervezett típust nem elég el&#337;relátóan írtak meg és kés&#337;bb mégsem használható fel az új kódba. Az is megtörténhet, hogy egy elemkészlet nem beilleszthet&#337;, s&#337;t küls&#337; készít&#337;t&#337;l származó könyvtárban található. Ilyenkor jön jól az illeszt&#337;, mely kompatibilis az új felülettel, így már beilleszthet&#337;vé válik az új kódba.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Egy meglév&#337; osztály felhasználásánál, aminek felülete nem megfelel&#337;.
+Újra felhasználható osztály létrehozásánál, ami képes el&#337;re nem ismert osztályokkal együtt m&#369;ködni.
+</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter"></a><img src="images/adapter.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Cél felület  (Target): Létrehoz egy tartomány specifikus felületet az Ügyfél osztály (Client) számára.</p></li><li class="listitem"><p>Ügyfél osztály (Client): A teljes folyamat haszonélvez&#337;je, felhasználja Cél felület  (Target) objektumait az interfész segítségével.</p></li><li class="listitem"><p>Illesztend&#337; felület (Adaptee): Meghatározza a létez&#337; interfészt, ami az illesztéshez kell.</p></li><li class="listitem"><p>Illeszt&#337; felület (Adapter): Összeilleszti a Cél felület  (Target) interfészét az Illesztend&#337; felület (Adaptee) &#8211; vel.</p></li></ol></div><p>
+
+                     
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>Az Ügyfél osztály (Client) - ok egy Illeszt&#337; felület (Adapter) típusú példánynak m&#369;veleteit hívják meg.
+Az Illeszt&#337; felület (Adapter) az Illesztend&#337; felület (Adaptee) m&#369;veleteit hívja meg.
+</p></dd><dt><span class="term">Következmények</span></dt><dd><p>Alkalmazásának el&#337;nyeit és hátrányait megkülönböztetjük az osztály- és objektumilleszt&#337;k szempontjából. 
+
+</p><p>Objektumilleszt&#337;k szempontja alapján:
+Egyetlen Illeszt&#337; felület (Adapter) több Illesztend&#337; felület (Adaptee) is m&#369;ködik, azaz egy &#337;sosztállyal és összes alosztályával. Lehet&#337;ség van arra is, hogy az összes illesztett osztályt egyszerre b&#337;vítsük ki további funkciókkal.
+Nehezebb felülírni az Illesztend&#337; felület (Adaptee) osztály folyamatait. Ezért származtatnunk kell azt, és az Illeszt&#337; felületnek (Adapter) egy leszármazott-osztályra kell majd hivatkoznia az eredeti helyett.
+
+</p><p>Osztályilleszt&#337;k szempontja alapján:
+Az illesztend&#337; osztály a célfelülethez pontosan egy illeszt&#337; (adapter) felület támogatásával kapcsolódik. Ennek eredményeként nem alkalmazható amennyiben egy osztályt és összes leszármazottját akarjuk illeszteni.
+Mód van az Illesztend&#337; felület (Adaptee) osztály némely funkcióinak sima felülírására, mivel az Illeszt&#337; felület (Adapter) az Illesztend&#337; felület (Adaptee) osztály leszármazottja.
+Csak egy objektumot alkalmazunk, és a kevesebb memória-hivatkozás vezet el a Illesztend&#337; felület (Adaptee) osztályig.
+</p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.3.2. Híd (Bridge)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5560"></a>14.3.2. Híd (Bridge)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Az elvont ábrázolást (&#8222;felület&#8221;) és a megvalósítás elválasztása, ezáltal azok egymástól függetlenül is módosíthatóak. Míg az illeszt&#337; (Adapter) mintát akkor használjuk mikor különböz&#337; felületeket szükséges összekapcsolni, addig a híd (Bridge) olyan minta, amit el&#337;re gondolva, tervezett módon kell használni.</p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Olyan esteknél mikor egy feladatot, alkalmazást más vagy több felületen, platformon szeretnénk megvalósítani, implementálni. Ez esetben az örökléssel történ&#337; megvalósítás nem mindig célszer&#369;, mert maradandó kötést hoz létre. Ezért ilyenkor célszer&#369; a Híd (Bridge) használata. Ha például egy ablakkezel&#337;t több felületen szeretnénk megvalósítani, akkor az ablaktípusokat nem szükséges megírni minden felületre. Elég a Híd (Bridge) minta használata, amivel megvalósítunk minden felületre egy alosztályt. Az ablaktípusok pedig a Híd (Bridge) felület-függvényeit használják.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>El szeretnénk kerülni az elvont fogalom és a megvalósítás közti szoros kapcsolatot.
+B&#337;víthet&#337;ség biztosítása a különböz&#337; felület és megvalósítás között.
+A felület változása nem lehet hatással az ügyfélre.</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_1"></a><img src="images/bridge.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>ElvontÁbrázolás felület (Abstraction)
+Felületet definiál az elvont fogalomhoz.
+Egy Megvalósító objektumra vonatkozik.
+Magasabb m&#369;veleteket biztosít.
+</p></li><li class="listitem"><p>FinomítottElvontÁbrázolás felület (RefinedAbstraction)
+Az abstraction kib&#337;vítésére szolgál.
+</p></li><li class="listitem"><p>Megvalósító felület (Implementator) 
+Felületet definiál a megvalósító osztályok számára. Általában csak alapm&#369;veleteket biztosít.
+</p></li><li class="listitem"><p>KonkrétMegvalósító osztály (ConcreteImplementor) 
+Implemetálja a Megvalósítófelületet.
+</p></li></ol></div><p>
+
+                     
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>Az ElvontÁbrázolás felület (Abstraction) továbbítja a kéréseket a hozzá tartozó Megvalósító felület (Implementator) -nek.</p></dd><dt><span class="term">Következmények</span></dt><dd><p>Alkalmazásának el&#337;nyei:
+Különválaszthatjuk használatával az absztrakciót és az implementációt. 
+Ezáltal az implementáció futásid&#337;ben, dinamikusan állítható be.
+Különválasztásból adódik, hogy az implementáció részleteit az ügyfelek el&#337;l elrejthetjük.
+Az implementációs hierarchiának köszönhet&#337;en könnyebben b&#337;víthetjük &#337;ket és gyorsítható a fordítás is.  A megvalósító objektum máshol is alkalmazhatjuk.
+</p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.3.3. Összetétel (Composite)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5625"></a>14.3.3. Összetétel (Composite)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Az objektumok faszerkezetbe való ábrázolásának megvalósítása. Egységesíteni a kezelését az objektumnak és az összetételnek.
+A faszerkezet részei:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>levél: egyszer&#369; objektum</p></li><li class="listitem"><p>kompozíció: levelek együttese</p></li></ul></div></dd><dt><span class="term">Motiváció</span></dt><dd><p>Olyan grafikus alkalmazás, amely lehet&#337;vé teszi egyszer&#369; alkotóelemekb&#337;l bonyolult grafikus objektumok létrehozását. Például szimpla szöveg &#8211; és vonalelemeket kategorizálhatunk, és azokat egy egységként kezelhetjük. Ilyen a flash szerkeszt&#337; azon része is ahol különböz&#337; objektumokat vonalakat alakzatokat rakhatunk a rajzfelületre. De a programnak meg kell különböztetni az egyszer&#369; alkotóelemeket és az összetett elemeket, mert csak az utóbbihoz lehet elemeket adni illetve elvenni. Ezeken túl vannak olyan operációk, melyek alkotó &#8211;és összetett elemekre is alkalmazhatóak.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Rész egész viszony alkalmazásánál.
+Felhasználó ne érezzen különbséget komplex és egyszer&#369; objektumok között.</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_2"></a><img src="images/composite.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Elem felület (Component)
+Összetétel objektumok felületének kialakítása. 
+Megfelel&#337; alapértelmezett viselkedést biztosít.
+</p></li><li class="listitem"><p>Levél osztály (Leaf)
+A fa szerkezet leveleit írja le (levél = nincs gyereke). 
+Az összetételt és az összetétel objektumainak viselkedését írja le.
+</p></li><li class="listitem"><p>Összetétel osztály (Composite)
+A gyermekkel rendelkez&#337; elemek viselkedését írja le. 
+Gyermekeket tárol. 
+Végrehajtja az Elem felület (Component) m&#369;veleteit.
+</p></li><li class="listitem"><p>Ügyfél osztály (Client)
+Különböz&#337; m&#369;veletet hajt végre az Összetétel osztály (Composite) objektumaival az Elem interfészen keresztül.
+</p></li></ol></div><p>
+
+                     
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>Az Ügyfél osztály (Client) az Elem (Component) osztály felületén keresztül kapcsolódik az objektumhoz.
+Ha a címzett egy Levél osztály (Leaf), akkor végrehajtódik.
+Amennyiben a címzett Összetétel osztály (Composite), akkor továbbítódik az összes Levél osztály (Leaf) -hoz.
+</p></dd><dt><span class="term">Következmények</span></dt><dd><p>Alkalmazásának el&#337;nyei és hátrányai:
+Olyan osztályhierarchiát valósit meg, ami az alap objektumokat rekurzívan építi fel egyre bonyolultabb objektumokká.
+Egyszer&#369;bbé válik az kliensprogram, mert nem szükséges megkülönböztetni az alap és az összetett objektumokat, azokat egységesen kezelik szokásos esetekben. 
+Könnyebb az új komponenseket hozzáadása és nem kell a klienst megváltoztatni.
+Az új komponensek könnyebb hozzáadásával viszont túl általánossá válhat az alkalmazás.
+objektumhoz.
+Ha a címzett egy Levél osztály (Leaf), akkor végrehajtódik.
+Amennyiben a címzett Összetétel osztály (Composite), akkor továbbítódik az összes Levél osztály (Leaf) -hoz.
+</p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.3.4. Díszít&#337;(Decorator)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5697"></a>14.3.4. Díszít&#337;(Decorator)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Az objektumokat lehet kib&#337;víteni további funkciókkal dinamikus módon. Rugalmas alternatívát nyújt az alosztályok létrehozásához.</p></dd><dt><span class="term">Motiváció</span></dt><dd><p>F&#337;leg grafikus felhasználói felületeknél (GUI) használjuk.  Tegyük fel, hogy egy GUI rendszer adott, például egy szövegszerkeszt&#337; és ezt szeretnénk felruházni díszít&#337; tulajdonságokkal vezérl&#337;elemeken keresztül. Ilyen tulajdonság a keret (border), görget&#337;sáv (scrollbar) vagy akár az árnyék is. Ezért ezeket egy díszít&#337; objektumba célszer&#369; ágyazni, mert így nem statikusan d&#337;l el az alkalmazásuk, hanem a dinamikusan. Ezáltal az ügyfelek döntenek arról, hogy mikor alkalmazzák &#337;ket. A példa egy megoldása lehet az, hogy létrehozunk egy általános keret (border) és görget&#337;sáv (scrollbar) osztályt és ebbe ágyazzuk bele az alap szövegnézet megfelel&#337; elemét képvisel&#337; objektumot.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Dinamikusan szeretnénk kib&#337;víteni az egyes objektumok funkcionalitását.
+Átlátszóan szeretnénk kib&#337;víteni az objektum felel&#337;ségi köreit, funkcionalitását.
+Amikor a származtatott osztályok használata nem el&#337;nyös.
+</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_3"></a><img src="images/decorator.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Elem (Component)
+Az objektumok számára meghatározza a felületet, ami dinamikusan b&#337;víthet&#337; eltér&#337; felel&#337;segekkel.
+</p></li><li class="listitem"><p>KonkrétElem (ConcreteComponent)
+Objektumot definiál, mely az el&#337;z&#337;höz köthet&#337; kiegészít&#337; felel&#337;ségekkel.
+</p></li><li class="listitem"><p>Díszít&#337; (Decorator)
+Hivatkozást tart fent az Elem (Component) - re, és meghatároz egy interfészt ami az Elem (Component) interfészéhez illeszkedik.
+</p></li><li class="listitem"><p>KonkrétDíszít&#337; (ConcreteDecorator)
+Az Elem (Component) - hez hozzáadja a felel&#337;ségeket.
+</p></li></ol></div><p>
+
+                     
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>A Díszít&#337; (Decorator) a fenntartott hivatkozáson keresztül kéréseket küld az Elem (Component) objektumának. 
+      A kérelem küldése el&#337;tt vagy után további operációkat hajt végre.</p></dd><dt><span class="term">Következmények</span></dt><dd><p>Alkalmazásának el&#337;nyei és hátrányai:
+Díszít&#337;k (Decorator) láncolásával több tulajdonságot tudunk adni, egyszer&#369;bb a többszöri felvételük.
+A kód rugalmasan újra felhasználható és objektumok felel&#337;sség köre is rugalmasan b&#337;víthet&#337;, vegyíthet&#337;. 
+Futásid&#337;ben határozható meg a Díszít&#337; (Decorator), ellentétben az örökl&#337;déssel.
+El lehet kerülni a hatalmas örökl&#337;dés fákat, de gondot okozhat a számtalan kisméret&#369; objektum.
+</p></dd></dl></div><p>
+            </p></div><div class="sect2" title="14.3.5. Homlokzat(Facade)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5762"></a>14.3.5. Homlokzat(Facade)</h3></div></div></div><p>
+               </p><div class="variablelist"><dl><dt><span class="term">Cél</span></dt><dd><p>Egységes (magasabb szint&#369;) interfész megvalósítása egy alrendszer interfészeinek könnyebb használatára.</p></dd><dt><span class="term">Motiváció</span></dt><dd><p>Adott egy rendszer, sok interfésszel és sok osztállyal. Hogyan csökkenthetjük annak bonyolultságát, hogyan engedjük a felhasználót hozzáférni a rendszerhez, anélkül, hogy ismerné az összes osztály felépítését, metódusait, attribútumait? Erre jelent megoldást a rendszer alrendszerekre való bontása, ennek egyik megvalósítását biztosítja a Homlokzat(Facade) programtervezési minta. A Homlokzat (Facade) objektum egy szimpla felületet ad az adott alrendszer széleskör&#369; szolgáltatásainak számára.</p></dd><dt><span class="term">Alkalmazhatóság</span></dt><dd><p>Egyszer&#369; interfészt szeretnénk szolgáltatni egy összetett alrendszerhez.
+Az Alrendszer (Subsystem classes) és Ügyfél (Client)  osztályai közti függ&#337;ség csökkentése oly módón, hogy kizárólag a Homlokzaton(Facade) keresztül engedjük meg a kommunikációt. Így hordozhatóbbá is válik az alrendszer. 
+A rendszerek közti kevesebb kapcsolat jobb újrafelhasználhatóságot idéz el&#337;, aminek biztosítása napjainkban elengedhetetlen feladat a szoftverfejlesztésben.
+Továbbá alkalmazható még az Alrendszeri osztályok (Subsystem classes) rétegezése (Layers) esetén.
+
+</p></dd><dt><span class="term">Felépítés</span></dt><dd><p>
+                           </p><div align="center"><a name="adapter_6"></a><img src="images/facade.png" align="middle"></div><p>
+                        </p></dd><dt><span class="term">Résztvev&#337;k</span></dt><dd><p>
+                           </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Ügyfél (Client)
+Meghívja Homlokzat(Facade) eljárásait rajta keresztül kapcsolódik az Alrendszeri osztályokhoz (Subsystem classes).
+</p></li><li class="listitem"><p>Homlokzat (Facade)
+Kezeli az Ügyfél (Client) kéréseit.
+Tudja, melyik kérését, melyik Alrendszeri osztályhoz (Subsystem classes) kell továbbítania.
+
+</p></li><li class="listitem"><p>Alrendszeri osztályok (Subsystem classes)
+Nem tudnak a Homlokzat (Facade) létezésér&#337;l, vagyis részükr&#337;l átlátszó.
+&#336;k valósítják meg a Homlokzat (Facade) objektumtól kapott megbízásokat, feladatokat.
+</p></li></ol></div><p>
+
+                     
+                        </p></dd><dt><span class="term">Együttm&#369;ködés</span></dt><dd><p>Az Ügyfelek (Client) a Homlokzaton (Facade) keresztül kérelmek formájában lépnek kapcsolatba az Alrendszeri osztályokkal (Subsystem classes). A Homlokzat (Facade) a megfelel&#337; kérelmet a megfelel&#337; Alrendszeri osztály (Subsystem classes) objektumhoz továbbítja. A Homlokzat (Facade) felületét az Alrendszeri osztályok (Subsystem classes) felületéhez illeszti. A valódi feladatot az Alrendszeri osztályok (Subsystem classes) objektumai végzik.
+Ha szükséges az egyes Ügyfelek (Client) közvetlenül is elérhetik az Alrendszeri osztályt (Subsystem classes).
+</p></dd><dt><span class="term">Következmények</span></dt><dd><p>Alkalmazásának el&#337;nyei és hátrányai:
+F&#337; el&#337;nye hogy kombinálni tudjuk a nagyon összetett metódushívásokat és kód blokkokat egy egyszer&#369; metódusba, ami elvégzi azokat. 
+A gyártási kódnál könnyebb a használata és megértése, csomagok és könyvtárak között csökkentik a kódfügg&#337;ségeket. Gyenge kapcsolatokat alakít ki a Ügyfél (Client)  kódok és más megengedett csomagok es könyvtárak között, ami nekünk lehet&#337;séget add arra, hogy úgy változtassuk meg a csomagokat vagy a könyvtárak bels&#337; komponenseit, hogy az Ügyfél (Client)  nem hivatkozik rájuk közvetlenül.
+Választást biztosít a könnyebb használat és a nagyobb általánosság között, mivel megengedi, hogy az alkalmazások használják az Alrendszeri osztályokat (Subsystem classes).
+Gondot okozhat a számtalan kisméret&#369; objektum.
+</p></dd></dl></div><p>
+            </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch14s02.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch14.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch14s04.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">14.2. Létrehozási minták(Creational patterns)&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;14.4. Viselkedési minták (Behavioral Patterns)</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch14s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:04 GMT -->
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="bevitel1">
+        <input type="text" id="bevitel2">
+        <input type="text" id="bevitel3">
+
+        <script>
+            const inputs = document.querySelectorAll('input');
+    
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    inputs.forEach(i => {
+                        i.style.color = 'black';
+                    });
+                    this.style.color = 'green';
+                });
+            });
+        </script>
+    </form>
+</body>
+</html>

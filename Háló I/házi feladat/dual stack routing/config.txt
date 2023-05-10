@@ -1,0 +1,59 @@
+en
+conf t
+int g0/0/1
+ip add 192.168.0.1 255.255.255.0
+no sh
+exit
+ipv6 dhcp pool STATELESS_POOL
+domain-name petrik.com
+dns-server 2000:3::2
+exit
+int g0/0/1
+ipv6 dhcp server STATELESS
+ipv6 nd managed-config-flag
+exit
+exit
+copy ru st
+
+ip dhcp pool G0/0/1
+network 192.168.0.0 255.255.255.0
+default-router 192.168.0.1
+dns-server 192.168.3.254
+exit
+exit
+copy ru st
+
+en
+conf t
+ipv6 unicast-routing
+int g0/0/1
+ipv6 address 2000::1/64
+no sh
+exit
+exit
+copy ru st
+
+en
+conf t
+int g0/0/1
+ip address 192.168.0.1 255.255.255.0
+no sh
+exit
+exit
+copy ru st
+
+en
+conf t
+ip route 192.168.1.0 255.255.255.0 192.168.1.2 
+ip route 192.168.2.0 255.255.255.0 192.168.1.2 
+ip route 192.168.3.0 255.255.255.0 192.168.1.2
+exit
+copy ru st
+
+en
+conf t
+ipv6 route 2000:1::/64 2000:1::2
+ipv6 route 2000:2::/64 2000:1::2
+ipv6 route 2000:3::/64 2000:1::2
+exit
+copy ru st

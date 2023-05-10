@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elagazasok", "Elagazasok\Elagazasok.csproj", "{A3153176-8EAC-4615-9597-E0363A8F0294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "f6", "f3\f6.csproj", "{DAA22BC4-B103-4D38-BFE3-EE4DA305941B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3153176-8EAC-4615-9597-E0363A8F0294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3153176-8EAC-4615-9597-E0363A8F0294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3153176-8EAC-4615-9597-E0363A8F0294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3153176-8EAC-4615-9597-E0363A8F0294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA22BC4-B103-4D38-BFE3-EE4DA305941B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA22BC4-B103-4D38-BFE3-EE4DA305941B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA22BC4-B103-4D38-BFE3-EE4DA305941B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA22BC4-B103-4D38-BFE3-EE4DA305941B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B00E835-E3BA-437A-A9DA-0BECD32BB46A}
+	EndGlobalSection
+EndGlobal

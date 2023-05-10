@@ -1,0 +1,76 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch11s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>11.2. Az analízis modell dinamikus nézete</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch11.html" title="11. fejezet - Az analízis modell"><link rel="prev" href="ch11.html" title="11. fejezet - Az analízis modell"><link rel="next" href="ch12.html" title="12. fejezet - A tervezési modell"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">11.2. 
+            
+            Az analízis modell dinamikus nézete</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch11.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">11. fejezet - Az analízis modell</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch12.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="11.2. Az analízis modell dinamikus nézete"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e4781"></a>11.2. 
+            
+            <a name="__RefHeading__121_120998265"></a>Az analízis modell dinamikus nézete</h2></div></div></div><p>A dinamikus nézet megalkotása során megvizsgáljuk és dokumentáljuk a rendszer &#8211; és
+            objektumai &#8211; id&#337;beli viselkedését. A rendszer viselkedésének vizsgálatához újra
+            elemezzük az elvárt funkciókat. Ennek segítségével felfedezhetjük az objektumok egymás
+            közti együttm&#369;ködési módjait, és a rendszer által végrehajtandó számítási lépéseket. A
+            dinamikus nézet felépítése során felhasználjuk az osztálydiagram elemeit, amelyeket
+            gyakran új elemekkel és a meglév&#337; elemek további tulajdonságaival egészítünk ki.</p><p>A továbbiakban olyan lépéseket sorolunk fel, amelyeket a munka során célszer&#369;
+            követni. Ezeket részben már az OMT módszertan is tartalmazta.</p><p></p><div class="sect2" title="11.2.1. Forgatókönyvek készítése"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4791"></a>11.2.1. Forgatókönyvek készítése</h3></div></div></div><p>A használati eseteket végig véve el kell készíteni az adott funkciók
+               forgatókönyveit. Egyszer&#369; esetekben ezeket elég szövegesen rögzíteni, egyébként jól
+               használhatjuk az UML a szekvencia vagy a kommunikációs diagramját.</p><p>Egy funkció menetének az elemzése során el&#337;ször keressük meg a tipikus
+               végrehajtási módot vagy módokat. Következ&#337; lépésként a ritkábban el&#337;forduló
+               (speciális) és a kivételes eseteket, és a hibát eredményez&#337; lehetséges lefutásokat
+               kell dokumentálni.</p><p>A fejezet elején leírt kisboltos példa esetén a blokkolás forgatókönyvének tipikus
+               lefutását szemlélteti a 10. fejezet 3. ábráján látható szekvencia diagram. A
+               blokkolás egy speciális esete a használati eset modellben is szerepel: ha a vonalkód
+               nem olvasható, az árut megnevezés szerint kell visszakeresni. További &#8211; és eddig nem
+               felfedezett &#8211; speciális eset az, ha a blokkolás során a pénztáros hibát követ el
+               (például rossz darabszámot üt be), és ezért a blokk valamelyik tételét törölni kell.
+               Végül kivételes esetként kell kezelni azt, amikor az egész blokkot sztornózni kell:
+               például a blokk lezárása után derül ki, hogy a vásárlónak nincs elég pénze, vagy
+               utólag reklamál, mert a pénztáros tévedett. </p><p>El&#337;ször mindig az aktoroktól induló eseményekkel kapcsolatos forgatókönyveket
+               nézzük végig. Ezen események feldolgozása során fedezhetjük fel a rendszeren belüli,
+               objektumok közötti üzenetváltásokat. </p><p>Az egyes üzenetek hatására a fogadó objektum által elvégzend&#337; tevékenység
+               aktivitás diagrammal írható le.</p></div><div class="sect2" title="11.2.2. A felhasználói felület els&#337;dleges terve"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4804"></a>11.2.2. A felhasználói felület els&#337;dleges terve</h3></div></div></div><p>A felhasználói felület tervének els&#337; verziója ebben a fázisban már általában
+               elkészíthet&#337;. A felhasználói felület vezérl&#337; elemei felhasználói interakciókat
+               jelképeznek, ezért segítenek a forgatókönyvek megtervezésében. A felületen
+               megjelenítend&#337; információk egy részét pedig a rendszernek kell el&#337;állítania, ami a
+               szükséges bels&#337; m&#369;ködésre ad információt.</p><p>A felhasználói felület terve a leend&#337; felhasználóval való kommunikációt is
+               el&#337;segíti, lehet&#337;vé téve a modell pontosítását és az esetleges félreértések
+               viszonylag korai felfedezését.</p></div><div class="sect2" title="11.2.3. Objektumok állapotainak vizsgálata"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4811"></a>11.2.3. Objektumok állapotainak vizsgálata</h3></div></div></div><p>Egy adott objektum üzenetváltásai az objektum állapotának a megváltozását okozzák.
+               A rendszer minden egyes (de legalább is a legfontosabb) objektumára megrajzolható
+               ezért az állapotgép diagram. Az diagramban az állapot átmeneteket kiváltó
+               eseményeknek valamelyik szekvencia diagramon szerepelniük kell üzenetként, ez
+               lehet&#337;vé teszi a modell teljességének, ellentmondás mentességének az ellen&#337;rzését
+               is.</p></div><div class="sect2" title="11.2.4. Input és output értékek vizsgálata"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4816"></a>11.2.4. Input és output értékek vizsgálata</h3></div></div></div><p>Az dinamikus nézet megalkotása során eddig els&#337;sorban interakciókkal,
+               eseményekkel, üzenetekkel, azok sorrendjével foglalkoztunk, és elhanyagoltuk az
+               ezeket kísér&#337; bels&#337; folyamatokat. A rendszert tehát els&#337;sorban vezérlési szempontból
+               vizsgáltuk.</p><p>Ebben a munkafázisban megvizsgáljuk, hogy milyen bemeneti adatokat kell fogadnia a
+               rendszernek, és azokból milyen kimeneti értékeket kell el&#337;állítania. A bemeneti
+               adatok a küls&#337; interakciók paramétereiként tekinthet&#337;k. A kimeneti értékek
+               lehetnek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>a felhasználói felületen megjelen&#337; információk,</p></li><li class="listitem"><p>perzisztens tárolásra kerül&#337; adatok,</p></li><li class="listitem"><p>más, együttm&#369;köd&#337; rendszerek számára továbbított adatok.</p></li></ol></div><p>Az be- és kimen&#337; adatok vizsgálata akár új funkciók, s&#337;t új osztályok megjelenését
+               is eredményezheti, módosítva ezzel a használati eset modellt és/vagy a statikus
+               nézetet.</p><p>Ha a kisbolti rendszer egyik alapvet&#337; kimen&#337; adatát, a blokkot specifikáljuk,
+               akkor felmerülhet, célszer&#369; lenne a blokkon a pénztárost is feltüntetni. Ez az eddigi
+               modellekben az alábbi változtatásokat jelenti:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A pénztáros adatait a rendszernek tárolnia kell, tehát nem csak aktorként,
+                     hanem a rendszer egy osztályaként is modellezni kell.</p></li><li class="listitem"><p>Egy új használati eset keletkezett azáltal, hogy a pénztárosnak az
+                     azonosítása érdekében be kell jelentkeznie a rendszerbe.</p></li><li class="listitem"><p>További új használati esetet jelent, hogy a pénztárosok adatait a
+                     rendszerben rögzíteni kell, és azokat karban kell tartani.</p></li></ol></div></div><div class="sect2" title="11.2.5. A számítási folyamatok specifikálása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4847"></a>11.2.5. A számítási folyamatok specifikálása</h3></div></div></div><p>Ha megvizsgáljuk a rendszer által fogadott és el&#337;állítandó adatokat, akkor a
+               rendszert magát úgy is kezelhetjük, mint amely egy transzformációt valósít meg ezek
+               között. Ennek a transzformációnak a módját kell tehát dokumentálni. Ez egyfajta
+               funkcionális szemléletmód, amely nem arra koncentrál, hogy az egyes események milyen
+               sorrendben következnek be, hanem hogy mivel mit kell csinálnia a rendszernek, a
+               vezérlési folyamatoktól elvonatkoztatva, tehát nem azt vizsgálva, hogy mikor kell
+               csinálnia.</p><p>A számítási folyamatok dokumentálására az UML aktivitás diagramja, vagy egyszer&#369;
+               esetben a szöveges leírás lehet alkalmas.</p></div><div class="sect2" title="11.2.6. Az osztályok operációinak azonosítása"><div class="titlepage"><div><div><h3 class="title"><a name="d0e4854"></a>11.2.6. Az osztályok operációinak azonosítása</h3></div></div></div><p>Az eddigi lépések végrehajtása során elemeztük a rendszer m&#369;ködése során keletkez&#337;
+               eseményeket és a végrehajtandó számítási, adat transzformációs tevékenységeket. Az
+               események fogadását, a végrehajtandó m&#369;veletek a rendszer objektumainak kell
+               végrehajtania. Ehhez meg kell határoznunk az egyes osztályokhoz telepítend&#337;
+               operációkat. Ezek lehetnek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Események a dinamikus modellb&#337;l: egy esemény fogadása és feldolgozása fogadó
+                     objektum osztályának operációja lehet. Ezzel szemben a kivételként kezelt
+                     eseményt legtöbbször maga a generáló objektum dolgozza fel.</p></li><li class="listitem"><p>Az állapotgép diagram tevékenységei és akciói: az állapotdiagram egy
+                     objektumhoz tartozik, így ezen m&#369;veletek egyértelm&#369;en az objektum osztályához
+                     telepítend&#337;k.</p></li><li class="listitem"><p>Összetett, több objektum együttm&#369;ködését igényl&#337; bels&#337; folyamatok: ebben az
+                     esetben a m&#369;velet nem egy osztály operációja lesz, ezért bonyolultabb a
+                     modellbe történ&#337; beépítés.</p></li><li class="listitem"><p>szabványos m&#369;veletek: az objektumhoz természeténél fogva hozzátartozó
+                     m&#369;veletek. Ilyenek lehetnek például az attribútumok elérése szolgáló, vagy a
+                     kapcsolatok kezelését lehet&#337;vé tev&#337; operációk.</p></li></ol></div><p></p><p></p><p></p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch11.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch11.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch12.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">11. fejezet - Az analízis modell&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;12. fejezet - A tervezési modell</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch11s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+</html>

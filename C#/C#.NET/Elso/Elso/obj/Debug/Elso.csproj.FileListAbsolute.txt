@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\C#\Elso\Elso\bin\Debug\Elso.exe.config
+E:\STUDY\Petrik\C#\Elso\Elso\bin\Debug\Elso.exe
+E:\STUDY\Petrik\C#\Elso\Elso\bin\Debug\Elso.pdb
+E:\STUDY\Petrik\C#\Elso\Elso\obj\Debug\Elso.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\C#\Elso\Elso\obj\Debug\Elso.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\C#\Elso\Elso\obj\Debug\Elso.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\C#\Elso\Elso\obj\Debug\Elso.exe
+E:\STUDY\Petrik\C#\Elso\Elso\obj\Debug\Elso.pdb

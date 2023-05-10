@@ -1,0 +1,4 @@
+https://en.wikipedia.org/wiki/Software_development_process
+	Jobb oldalon lévő navigáció miatt linkeltem az angol nyelvű cikket, a magyar nyelvű cikk legtöbb esetben jó minőségű fordítása ezeknek a cikkeknek, csak nem tartalmazza a navigációs részt.
+https://szit.hu/doku.php?id=oktatas:programozas:fejlesztesi_modellek_es_modszertanok
+https://gyires.inf.unideb.hu/KMITT/c12/ch02s03.html

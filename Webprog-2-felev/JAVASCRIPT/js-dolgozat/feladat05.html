@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feladat05</title>
+</head>
+<body>
+    <form name="urlap" method="get">
+        <p><h1>Pizzarendelési űrlap</h1></p>
+        <p><input type="text" id="nev" placeholder="Teljes név"></p>
+        <p><input type="text" id="tel" placeholder="Telefonszám"></p>
+        <p><input type="text" id="lakcim" placeholder="Lakcím(irszám, város, utca, házszám)"></p>
+        <br>
+
+        Pizza alapja: <select name="pizzaalap" id="pizzaalap">
+            <option value="Tejfölös alap" selected>Tejfölös alap</option>
+            <option value="Paradicsomos alap">Paradicsomos alap</option>
+        </select>
+        <br>
+
+        <p>Pizza feltétek:</p>
+        <input class="feltet" type="checkbox" id="sonka" name="sonka" value="Sonka">
+        <label for="sonka">Sonka</label><br>
+        <input class="feltet" type="checkbox" id="gomba" name="gomba" value="Gomba">
+        <label for="gomba">Gomba</label><br>
+        <input class="feltet" type="checkbox" id="kukorica" name="kukorica" value="Kukorica">
+        <label for="kukorica">Kukorica</label><br>
+
+        <p>Egyéb:</p>
+        <textarea name="megjegyzes" id="megjegyzes" cols="30" rows="10" placeholder="megjegyzes"></textarea>
+
+        <p><button type="button" id="regGomb" onclick="kitolt()">Felvétel</button></p>
+
+        <script>
+            const adatok = [];
+    
+            function kitolt() {
+                const urlap = document.forms["urlap"];
+                const nev = urlap["nev"].value;
+                const tel = urlap["tel"].value;
+                const lakcim = urlap["lakcim"].value;
+                const alapselect = document.getElementById("pizzaalap");
+                var alap = alapselect.options[alapselect.selectedIndex].value;
+                var feltet = document.querySelectorAll(".feltet");
+                var checkbox = [];
+                for (var i = 0; i < feltet.length; i++){
+                    if (feltet[i].checked){
+                        checkbox.push(feltet[i].value);
+                    }
+                }
+                const megjegyzes = urlap["megjegyzes"].value;
+                
+                const regAdat = {
+                    nev: nev,
+                    tel: tel,
+                    lakcim: lakcim,
+                    alap: alap,
+                    feltet: checkbox.join(),
+                    megjegyzes: megjegyzes
+                };
+                adatok.push(regAdat);
+                console.log(adatok);
+            }
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,253 @@
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.1. Feladat Listázza munkakörönként az átlagfizetéseket két tizedesre kerekítve. Rendezze átlagfizetések szerint csökkenően.
+
+SELECT emp.emp.JOB, ROUND(AVG(emp.SAL), 2) AS atlag
+FROM emp
+GROUP BY emp.JOB
+ORDER BY atlag DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.2. Feladat Listázza csökkenően rendezve a főnökök átlagfizetését egész értékre kerekítve. (Főnök az a dolgozó, akinek azonosítója
+szerepel az emp.MGR oszlopban.)
+
+SELECT ROUND(AVG(emp.SAL))
+FROM emp
+WHERE emp.EMPNO IN (SELECT emp.MGR FROM emp);
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.3. Feladat Listázza részlegenként a legnagyobb és legkisebb havi jövedelmeket.
+
+SELECT emp.DEPTNO, MIN(emp.SAL), MAX(emp.SAL)
+FROM emp
+GROUP BY emp.DEPTNO;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.4. Feladat Listázza a legalább egy dolgozójú részlegeket a dolgozószám szerint csökkenően rendezve.
+
+SELECT emp.DEPTNO, COUNT(emp.DEPTNO) AS szam
+FROM emp
+GROUP BY emp.DEPTNO
+ORDER BY szam DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.5. Feladat Listázza ki a főnökök azonosítóit, valamint azt, hogy hány beosztottjuk van. Rendezze a listát a beosztottak száma
+szerint csökkenően. Akinek nincs főnöke, oda írjon valamilyen megjegyzést ( tulajdonos vagy elnök stb.).
+
+SELECT
+CASE
+WHEN emp.MGR IS NULL THEN 'MGR'
+ELSE TO_CHAR(emp.MGR,'9999')
+END AS emp.MGR,
+COUNT(emp.MGR) AS beosztott
+FROM emp
+GROUP BY emp.MGR
+ORDER BY beosztott DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.6. Feladat Listázza az azonosítójuk hárommal való oszthatósága alapján a dolgozók átlagjövedelmét, dolgozók számát, és
+legkisebb fizetését.
+
+SELECT ROUND(AVG(emp.SAL),2),
+CASE
+WHEN MOD(emp.EMPNO,3)=0 THEN '0'
+WHEN MOD(emp.EMPNO,3)=1 THEN '1'
+WHEN MOD(emp.EMPNO,3)=2 THEN '2'
+END AS dolgSzam,
+MIN(emp.SAL)
+FROM emp
+GROUP BY MOD(emp.EMPNO,3);
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.7. Feladat Listázza a 2000 USD-nál nagyobb átlagjövedelmeket egész értékre kerekítve a foglalkozás szerint csoportosítva. A lista
+a foglalkozás szerint legyen rendezett.
+
+SELECT emp.JOB, ROUND(AVG(emp.SAL),0) AS atlag
+FROM emp
+GROUP BY emp.JOB HAVING ROUND(AVG(emp.SAL),0)>=2000
+ORDER BY emp.JOB;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.8. Feladat Listázza azokat a részlegeket, ahol a fizetésátlag nagyobb 1500 USD-nál. Rendezze fizetésátlag szerint csökkenően.
+
+SELECT emp.DEPTNO, ROUND(AVG(emp.SAL),0) AS atlag
+FROM emp
+GROUP BY emp.DEPTNO HAVING ROUND(AVG(emp.SAL),0)>=1500
+ORDER BY atlag DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.9. Feladat Listázza foglalkozásonként a legnagyobb jövedelmeket, jövedelem szerint rendezve.
+
+SELECT emp.JOB, MAX(emp.SAL) AS max
+FROM emp
+GROUP BY emp.JOB
+ORDER BY max;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.10. Feladat Listázza ki, hogy az egyes foglalkozási csoportokon belül hányan dolgoznak. A lista a létszám szerint legyen rendezett.
+
+SELECT emp.JOB, COUNT(emp.JOB) AS letszam
+FROM emp
+GROUP BY emp.JOB
+ORDER BY letszam;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.11. Feladat Listázza ki a főnökök azonosítóit és a főnökökhöz tartozó beosztottak számát, ez utóbbi adat szerint rendezve.
+
+SELECT emp.MGR, COUNT(emp.MGR) AS beosztott
+FROM emp
+GROUP BY emp.MGR
+ORDER BY beosztott;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.12. Feladat Listázza azon foglalkozások átlagjövedelmét, amelyek nevében a man alsztring megtalálható. A listát rendezze az
+átlagjövedelem szerint csökkenő sorrendben.
+
+SELECT emp.JOB, ROUND(AVG(emp.SAL),0) AS atlag
+FROM emp
+WHERE emp.JOB LIKE '%MAN%'
+GROUP BY emp.JOB
+ORDER BY atlag DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.13. Feladat Listázza rendezve azon foglalkozási csoportok átlagfizetését, ahol kettő, vagy ennél több alkalmazott dolgozik.
+
+SELECT emp.JOB, ROUND(AVG(emp.SAL),0) AS atlag
+FROM emp
+GROUP BY emp.JOB HAVING COUNT(emp.JOB)>=2;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.14. Feladat Írjon utasítást azon részlegek azonosítójának, dolgozói számának és azok legnagyobb és legkisebb jövedelmének
+lekérdezésére, ahol a részlegszám páros. A lista a részleg azonosító szerint legyen rendezve.
+
+SELECT emp.DEPTNO, COUNT(emp.EMPNO), MAX(emp.SAL), MIN(emp.SAL)
+FROM emp
+WHERE MOD(emp.DEPTNO,2)=0
+GROUP BY emp.DEPTNO
+ORDER BY emp.DEPTNO;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.15. Feladat Listázza ki az azonosító paritása szerint csoportosítva a dolgozókat. Hagyja ki azon dolgozókat, akik 1981 után léptek
+be a vállalathoz. Rendezze elsődlegesen paritás szerint, másodlagosan a dolgozó neve szerint.
+
+SELECT emp.ENAME,
+CASE
+WHEN MOD(emp.EMPNO,2)=0 THEN 'Páros'
+ELSE 'Páratlan'
+END AS parositas
+FROM emp
+WHERE emp.HIREDATE<'1982-01-01'
+ORDER BY parositas, emp.ENAME;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.16. Feladat Számítsa ki az átlagos jutalékot.
+
+SELECT AVG(NVL(emp.COMM,0)) AS jutalek FROM emp;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.17. Feladat Készítsen listát a páros és páratlan azonosítójú dolgozók számáról.
+
+SELECT
+SUM(CASE WHEN MOD(emp.EMPNO,2)=0 THEN 1 ELSE 0 END) AS páros,
+SUM(CASE WHEN MOD(emp.EMPNO,2)=1 THEN 1 ELSE 0 END) AS páratlan
+FROM emp;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.18. Feladat Listázza fizetési kategóriák szerint a dolgozók számát. (A fizetési kategóriákat vagy Ön definiálja, vagy vegye a
+emp.SALgrade táblából.)
+
+SELECT
+SUM(CASE WHEN emp.SAL<1000 THEN 1 ELSE 0 END) AS "1000 alatt",
+SUM(CASE WHEN emp.SAL BETWEEN 1000 AND 3000 THEN 1 ELSE 0 END) AS "1000 - 3000 között",
+SUM(CASE WHEN emp.SAL>3000 THEN 1 ELSE 0 END) AS "3000 felett"
+FROM emp;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.19. Feladat Listázza főnökönként (emp.MGR) a főnökhöz tartozó legkisebb dolgozói fizetéseket. Hagyja ki azon dolgozók fizetését,
+akiknek nincs főnökük, valamint azokat a csoportokat, ahol a legkisebb fizetés nagyobb 2000 USD-nál. Rendezze a
+listát a legkisebb fizetések szerint növekvően.
+
+SELECT emp.MGR, MIN(emp.SAL)
+FROM emp
+WHERE emp.MGR IS NOT NULL
+GROUP BY emp.MGR HAVING MIN(emp.SAL)<2000
+ORDER BY MIN(emp.SAL) ASC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.20. Feladat Listázza főnökönként (emp.MGR) a főnökhöz tartozó dolgozói átlagfizetéseket. Hagyja ki azon dolgozók fizetését, akiknek
+nincs főnökük, valamint azokat a csoportokat, ahol az átlagfizetés nagyobb 3000 USD-nál. Rendezze a listát az
+átlagfizetések szerint csökkenően.
+
+SELECT emp.MGR, AVG(emp.SAL)
+FROM emp
+WHERE emp.MGR IS NOT NULL
+GROUP BY emp.MGR HAVING AVG(emp.SAL)<3000
+ORDER BY AVG(emp.SAL) DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.21. Feladat Listázza főnökönként a főnökhöz tartozó dolgozók jövedelme közül a legnagyobbat. Hagyja ki a listakészítésből azon
+dolgozókat, akiknek nincs jutalékuk, valamint azokat a (legnagyobb) jövedelemeket, melyek nagyobbak 3500 USD-nál.
+Rendezze a listát a legnagyobb jövedelem szerint csökkenően.
+
+SELECT emp.MGR, MAX(emp.SAL)
+FROM emp
+WHERE comm IS NOT NULL
+GROUP BY emp.MGR HAVING MAX(emp.SAL)<3500
+ORDER BY MAX(emp.SAL) DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.22. Feladat Listázza részlegenként az egy tizedesre kerekített átlagfizetéseket. Hagyja ki az átlag meghatározásból az 1981. január.
+1-e előtt belépett dolgozókat, valamint azon részlegek átlagfizetését, melyekben a legkisebb fizetés kisebb 1000 USDnál. Rendezze a listát az átlagfizetések szerint növekvően.
+
+SELECT emp.DEPTNO, ROUND(AVG(emp.SAL),1)
+FROM emp
+WHERE emp.HIREDATE>'1981-01-01'
+GROUP BY emp.DEPTNO HAVING MIN(emp.SAL)>1000
+ORDER BY AVG(emp.SAL) ASC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.23. Feladat Listázza munkakörönként a dolgozók számát és az egész értékre kerekített átlagfizetésüket numerikusan és grafikusan
+is. Ez utóbbit csillag (*) karakterek sorozataként balra igazítva jelenítse meg olymódon, hogy e sorozatban 200 USDonként egy csillag karakter álljon. Rendezze a listát az átlagfizetések szerint csökkenően.
+
+SELECT emp.JOB, COUNT(emp.EMPNO), ROUND(AVG(emp.SAL)), LPAD('*',ROUND(AVG(emp.SAL))/200,'*')
+FROM emp
+GROUP BY emp.JOB
+ORDER BY ROUND(AVG(emp.SAL)) DESC;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2.24. Feladat Listázza főnökönként a legrégebb óta munkaviszonyban álló dolgozóknak a mai napig munkában töltött éveinek számát
+numerikusan és grafikusan is. Ez utóbbit kettőskereszt (#) karakterek sorozataként balra igazítva jelenítse meg
+olymódon, hogy e sorozatban 5 évenként egy kettőskereszt karakter álljon. Rendezze a listát az évek száma szerint
+növekvően.
+
+SELECT emp.MGR,
+EXTRACT(YEAR FROM CURRENT_TIMESTAMP)-EXTRACT(YEAR FROM MIN(emp.HIREDATE)) AS evekszama,
+LPAD('#',(EXTRACT(YEAR FROM CURRENT_TIMESTAMP)-EXTRACT(YEAR FROM MIN(emp.HIREDATE)))/5,'#') AS gráf
+FROM emp
+GROUP BY emp.MGR
+ORDER BY evekszama ASC;
+
+--------------------------------------------------------------------------------------------------------------------------------------

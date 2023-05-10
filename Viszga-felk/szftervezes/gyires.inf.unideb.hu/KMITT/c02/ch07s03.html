@@ -1,0 +1,42 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch07s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:47 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>7.3. UML diagram típusok</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch07.html" title="7. fejezet - A Unified Modeling Language (UML)"><link rel="prev" href="ch07s02.html" title="7.2. Az UML fogalma, tervezési alapelvei"><link rel="next" href="ch07s04.html" title="7.4. Kiterjesztési mechanizmusok"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7.3. 
+            
+            UML diagram típusok</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch07s02.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">7. fejezet - A Unified Modeling Language (UML)</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch07s04.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="7.3. UML diagram típusok"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2407"></a>7.3. 
+            
+            <a name="__RefHeading__77_120998265"></a>UML diagram típusok</h2></div></div></div><p>Az UML 13 különböz&#337; diagramtípusból épül fel. A 2.0 és magasabb verziók a diagramokat
+            két f&#337; csoportba sorolják.</p><p>Strukturális diagramok (structural modeling diagrams): a modell statikus
+            architektúrájának definiálására alkalmasak. Azokat az elemeket (és egymás közötti
+            kapcsolatait és függ&#337;ségeiket) modellezhetjük segítségükkel, amelyekb&#337;l a rendszer
+            felépül: osztályok, objektumok, interfészek, fizikai komponensek.</p><p>Viselkedés diagramok (behavioral modeling diagrams): a modell dinamikus aspektusainak
+            modellezésére használatosak. A modell statikus elemeinek együttm&#369;ködését, az egyes
+            elemek viselkedését írhatjuk le segítségükkel. Mindig van id&#337; dimenziójuk.</p><p>Strukturális diagramok:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>osztály diagram (class diagram)</p></li><li class="listitem"><p>objektum diagram (object diagram)</p></li><li class="listitem"><p>csomag diagram (package diagram)</p></li><li class="listitem"><p>összetett struktúra diagram (composit structure diagram) [&#8222;montázsdiagram&#8221;,
+                  &#8222;architektúra diagram&#8221;]</p></li><li class="listitem"><p>komponens diagram (component diagram)</p></li><li class="listitem"><p>telepítési diagram (deployment diagram) [&#8222;kihelyezési diagram&#8221;]</p></li></ol></div><p>Viselkedés diagramok:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>használati eset diagram (use case diagram)</p></li><li class="listitem"><p>aktivitás diagram (activity diagram)</p></li><li class="listitem"><p>állapotgép diagram (state machine diagram) [&#8222;állapot diagram&#8221; &#8222;állapot-átmenet
+                  diagram&#8221;, &#8222;állapotautomata&#8221;]</p></li><li class="listitem"><p>kölcsönhatás diagramok:</p></li></ol></div><p>A számos diagram típusa áttekintését segíti az alábbi ábra:</p><div class="figure"><a name="d0e2456"></a><p class="title"><b>7.2. ábra - Az UML digaram típusai</b></p><div class="figure-contents"><div align="center"><img src="images/image23.png" align="middle" alt="Az UML digaram típusai"></div></div></div><br class="figure-break"><p>Megjegyzés:</p><p>Bár ma már egyre több információ található magyarul is az UML-r&#337;l, tapasztalataink
+            szerint a magyar szaknyelv nem egységes számos ide kapcsolódó fogalom magyar
+            megfelel&#337;jében. Ezért az egyértelm&#369;ség kedvéért a legfontosabb fogalmak angol
+            megfelel&#337;jét az els&#337; el&#337;fordulásuk során zárójelben mindig megadjuk. (Ez egyben segíti a
+            jegyzet olvasóját abban is, hogy a b&#337;ségesen rendelkezésre álló angol nyelv&#369;
+            szakirodalmat könnyebben olvashassa.) Amennyiben ismereteink szerint az adott fogalomra
+            több magyar megfelel&#337; is használatos, ezeket szögletes zárójelben szintén felsoroljuk.
+            Ezt a módszert a jegyzet további részeiben is alkalmazzuk.</p><p>A jegyzet terjedelmi korlátai nem teszik lehet&#337;vé, célkit&#369;zése pedig nem teszi
+            szükségessé, hogy az UML valamennyi diagram típusát teljes részletességgel ismertessük.
+            Az összes részletet a már említett <a class="ulink" href="http://www.uml.org/" target="_top">www.uml.org</a>
+            címr&#337;l letöltheti az érdekl&#337;d&#337;: a nem éppen didaktikai szempontok alapján felépített
+            &#8222;OMG Unified Modeling Language (OMG UML), &nbsp;Superstructure&#8221; cím&#369; specifikáció (jelenleg)
+            758 oldalas. A jegyzet íróinak a fejlesztési munkák során szerzett tapasztalatai, és a
+            szakirodalom ajánlásai alapján határoztuk meg, mit érdemes ezen keretek között
+            bemutatni. &nbsp;</p><p>A jegyzetnek nem önmagában az UML ismertetése a feladata, ezért az egyes diagramok
+            ismertetése is több fejezetre oszlik szét, mert mindegyik diagramot a tipikus
+            felhasználási környezetébe igyekeztünk elhelyezni. Így a 8. fejezetben kap majd helyet a
+            viselkedés diagramok közül a használati eset diagram, a statikus nézettel foglalkozó 9.
+            fejezetben találkozunk majd a strukturális diagramokkal, a 10. fejezetben pedig a
+            dinamikus modellnézet leírására alkalmas további viselkedés diagramokkal. </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch07s02.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch07.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch07s04.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">7.2. 
+            
+            Az UML fogalma, tervezési alapelvei&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;7.4. 
+            
+            Kiterjesztési mechanizmusok</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch07s03.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:48 GMT -->
+</html>

@@ -1,0 +1,12 @@
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\bin\Debug\net6.0\DolgozatProject.deps.json
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\bin\Debug\net6.0\DolgozatProject.dll
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\bin\Debug\net6.0\DolgozatProject.pdb
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\DolgozatProject.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\DolgozatProject.GeneratedMSBuildEditorConfig.editorconfig
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\DolgozatProject.AssemblyInfoInputs.cache
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\DolgozatProject.AssemblyInfo.cs
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\DolgozatProject.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\DolgozatProject.dll
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\refint\DolgozatProject.dll
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\DolgozatProject.pdb
+E:\STUDY\Petrik\II-felev\C#\SZOFTVEREK\DolgozatProject\DolgozatProject\obj\Debug\net6.0\ref\DolgozatProject.dll

@@ -1,0 +1,70 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch03s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:44 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>3.2. A modell készítés folyamata</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch03.html" title="3. fejezet - A szoftver fejlesztés mint modellezési tevékenység"><link rel="prev" href="ch03.html" title="3. fejezet - A szoftver fejlesztés mint modellezési tevékenység"><link rel="next" href="ch04.html" title="4. fejezet - Fejlesztési módszertanok"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3.2. 
+            
+            A modell készítés folyamata</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">3. fejezet -  A szoftver fejlesztés mint modellezési tevékenység</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="3.2. A modell készítés folyamata"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e723"></a>3.2. 
+            
+            <a name="__RefHeading__37_120998265"></a>A modell készítés folyamata</h2></div></div></div><p>A szoftver rendszerek komplexitása szükségessé teszi a rendszermodellek készítési
+            folyamatának átgondolását. A modellalkotás során az alábbi alapvet&#337; problémákat kell
+            megoldani:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A fejlesztend&#337; rendszer komplex, tehát a modellje is az.</p></li><li class="listitem"><p>Biztosítani (és ellen&#337;rizni) kell, hogy a modell valóban a megoldandó feladatot
+                  reprezentálja.</p></li></ol></div><p>Az egyes módszertanok úgy is tekinthet&#337;k, mint amelyek a modellkészítés szabályaira
+            fogalmaznak meg el&#337;írásokat vagy ajánlásokat. A konkrét eljárásoktól függetlenül is
+            vannak azonban olyan általános alapelvek, amelyeket a modern fejlesztési folyamatokban
+            alkalmazunk:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Evolúciós fejlesztés,</p></li><li class="listitem"><p>különböz&#337; modellek az egyes fejlesztési fázisokban,</p></li><li class="listitem"><p>modell nézetek.</p></li></ol></div><div class="sect2" title="3.2.1. Az evolúciós fejlesztés"><div class="titlepage"><div><div><h3 class="title"><a name="d0e749"></a>3.2.1. Az evolúciós fejlesztés</h3></div></div></div><p>Az egy id&#337;ben kezelend&#337; komplexitás csökkentésének egyik módja az evolúciós
+               szoftver folyamat modell követése. Ilyenkor nem egyszerre építjük fel a teljes
+               modellt, hanem egy egyszer&#369; modellb&#337;l kiindulva, folyamatos finomításokkal
+               (inkrementumokkal) érjük el a célként kit&#369;zött rendszer megvalósítását. Ha szükséges,
+               még az inkrementumok felépítését is részekre (iterációkra) osztjuk.</p><p>Ennek a munkamódszernek az el&#337;nyei:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Egy lépésben viszonylag egyszer&#369; fejlesztési lépést kell végrehajtani, ami a
+                     fejleszt&#337;k számára könnyen átlátható.</p></li><li class="listitem"><p>A fejleszt&#337; csapat tagjai gyakran jutnak sikerélményhez, mert lezártak egy
+                     fejlesztési szakaszt, ezáltal motiváltabban lesznek.</p></li><li class="listitem"><p>Minden inkrementum eredménye egy m&#369;köd&#337; modell, amely ellen&#337;rizhet&#337;, és a
+                     megrendel&#337;nek is prezentálható, így a megrendel&#337; is követheti a munka
+                     el&#337;rehaladását. A megrendel&#337;vel való egyeztetés még idejében kisz&#369;rheti az
+                     esetleges félreértéseket.</p></li></ol></div></div><div class="sect2" title="3.2.2. Az egyes fejlesztési fázisok modelljei"><div class="titlepage"><div><div><h3 class="title"><a name="d0e766"></a>3.2.2. Az egyes fejlesztési fázisok modelljei</h3></div></div></div><p>Mint azt már az el&#337;z&#337; fejezetben is említettük, minden fejlesztési folyamatot
+               fázisokra, résztevékenységekre bonthatunk. Minden egyes résztevékenységhez
+               hozzátartozik az a modell, amelyet annak végrehajtása során kell megalkotnunk. Ennek
+               megfelel&#337;en egy fejlesztési folyamatban az alábbi modelleket tudjuk
+               megkülönböztetni:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Analízis modell (más néven szakterületi modell). Célja a rendszerrel szemben
+                     támasztott követelmények, a rendszer elemeinek és az alapvet&#337; folyamatainak a
+                     tisztázása. Ebben a fázisban a modellezend&#337; rendszer fogalmaival
+                     dolgozunk.</p></li><li class="listitem"><p>Tervezési modell. Az analízis modellben leírt rendszer elemek
+                     megvalósításához szükséges elemeket tartalmazza. Az analízis modell
+                     kiegészítése az implementációhoz szükséges elemekkel és részletekkel.</p></li><li class="listitem"><p>Implementációs modell. Tartalmazza a tényleges implementációhoz szükséges
+                     valamennyi információt.</p></li></ol></div><p>Amint a fenti felsorolásból is kit&#369;nik, az egyes munkafázisok felhasználják,
+               kiegészítik és pontosítják az el&#337;z&#337; fázisban létrehozott modelleket.</p></div><div class="sect2" title="3.2.3. Modell nézetek"><div class="titlepage"><div><div><h3 class="title"><a name="d0e783"></a>3.2.3. Modell nézetek</h3></div></div></div><p>Az evolúciós szemlélet és a fejlesztési munka résztevékenységekre bontása segít
+               abban, hogy uralni tudjuk a rendszer komplexitásából adódó nehézségeket, de az így
+               létrehozandó modellek még mindig túl bonyolultak lennének, mert az adott rendszer túl
+               sok aspektusát kellene reprezentálniuk.</p><p>Magyarország egy lehetséges modellje lehet egy térkép. Ha azonban minden olyan
+               információt, ami az országra jellemz&#337;, egy térképen szeretnénk megjeleníteni, az egy
+               áttekinthetetlen modellt eredményezne, hiszen egyszerre kellene például a hegy- és
+               vízrajzot, az utakat, a településeket, az ásványvagyon elhelyezkedését, a
+               közigazgatási, a népességi, a mez&#337;gazdasági m&#369;veléssel, a turizmussal és még nagyon
+               sok egyébbel kapcsolatos adatokat ábrázolnia.</p><p>Ehelyett nyilván célszer&#369;bb a különböz&#337; szempontokat tükröz&#337;, többféle térképet
+               készíteni. A közlekedéshez autós térképet használunk, a túrázáshoz a domborzati
+               viszonyokat pontosabban jelölni tudó turista térképet stb. Ezzel ugyanannak a
+               modellnek a különböz&#337; nézeteit jelenítjük meg.</p><p>A gépészmérnöki szakmában a bonyolult térbeli testek ábrázolásakor a legtöbbször
+               alkalmazott módszer (géprajz) szerint a testet egy derékszög&#369; koordinátarendszerbe
+               helyezik el, és a három síkra vetített vetületét rajzolják le.</p><p>A nézetek alkalmazása tehát valójában azt jelenti, hogy nem egy összetett modellt
+               készítünk el, hanem a rendszert különböz&#337; néz&#337;pontokból ábrázoljuk. A nézetek és az
+               összetett, eredeti modell szorosan összefüggenek. Ha a géprajz valamelyik vetületén
+               változtatunk, az a többi vetületen is változásokat okoz, és megváltoztatja a test
+               térbeli alakját is. Ez visszafelé is érvényes: ha a térbeli alakzaton (a modellen)
+               változtatunk, a változásoknak az egyes vetületekben is meg kell jelennie.</p><p>A nézetek alkalmazása egyszer&#369;síti a modellezési munkát, mert egyszerre csak egy
+               szempont szerint kell vizsgálni a modellt.</p><p>Mivel azonban a különböz&#337; néz&#337;pontok ugyanannak a modellnek a &#8222;vetületei&#8221;, az
+               egyes néz&#337;pontok összevethet&#337;k, és a modell készítési munka ellen&#337;rzésére
+               használhatók fel. Ha például az autós térképen egy útszakaszt er&#337;sen emelked&#337;nek
+               jelöltünk meg, akkor a domborzati térképen ott kell lennie az emelkedést okozó
+               hegynek.</p><p>A szoftver fejlesztési munka során általában az alábbi néz&#337;pontokat szoktuk
+               megkülönböztetni.</p><div class="sect3" title="3.2.3.1. Funkcionális nézet"><div class="titlepage"><div><div><h4 class="title"><a name="d0e802"></a>3.2.3.1. Funkcionális nézet</h4></div></div></div><p>A rendszer a felhasználó néz&#337;pontjából: milyen funkciókat biztosít számára. Ezt
+                  a nézetet a követelmény analízis során kezdjük el építeni, és általában a további
+                  fázisokban módosul.</p></div><div class="sect3" title="3.2.3.2. Strukturális, statikus nézet"><div class="titlepage"><div><div><h4 class="title"><a name="d0e807"></a>3.2.3.2. Strukturális, statikus nézet</h4></div></div></div><p>A rendszer elemeit (objektumait) és azok kapcsolatait ábrázolja. Kezdetben az
+                  analízis modell egy nézete, de a fejlesztési folyamat során a megoldási tér elemei
+                  is kiegészítik.</p></div><div class="sect3" title="3.2.3.3. Dinamikus nézet"><div class="titlepage"><div><div><h4 class="title"><a name="d0e812"></a>3.2.3.3. Dinamikus nézet</h4></div></div></div><p>A rendszer egyes részeinek (objektumainak) viselkedése a m&#369;ködés során.
+                  Tartalmazhatja: </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>a részek lehetséges állapotait,</p></li><li class="listitem"><p>azt, hogy milyen események következtében megy egyik állapotból a
+                        másikba,</p></li><li class="listitem"><p>az üzenetküldések sorozatait (id&#337;ben elhelyezve),</p></li><li class="listitem"><p>egy adott állapotban végrehajtandó tevékenységsort.</p></li></ol></div></div><div class="sect3" title="3.2.3.4. Implementációs nézet"><div class="titlepage"><div><div><h4 class="title"><a name="d0e830"></a>3.2.3.4. Implementációs nézet</h4></div></div></div><p>A rendszer m&#369;ködéséhez szükséges szoftver elemeket és azok kapcsolatait
+                  ábarázolja.</p></div><div class="sect3" title="3.2.3.5. Környezeti nézet"><div class="titlepage"><div><div><h4 class="title"><a name="d0e835"></a>3.2.3.5. Környezeti nézet</h4></div></div></div><p>Ábrázolja a rendszer m&#369;ködéséhez szükséges küls&#337; hardver és szoftver
+                  er&#337;forrásokat, ezek kapcsolatait, a rendszernek és a környezetének az
+                  együttm&#369;ködését.</p><p></p><p></p><p></p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch03.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch04.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">3. fejezet -  A szoftver fejlesztés mint modellezési tevékenység&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;4. fejezet - Fejlesztési módszertanok</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch03s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:44 GMT -->
+</html>

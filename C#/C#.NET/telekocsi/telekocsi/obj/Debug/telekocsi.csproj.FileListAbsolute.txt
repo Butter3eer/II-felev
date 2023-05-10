@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\telekocsi\telekocsi\bin\Debug\telekocsi.exe.config
+E:\STUDY\Petrik\II-felev\C#\telekocsi\telekocsi\bin\Debug\telekocsi.exe
+E:\STUDY\Petrik\II-felev\C#\telekocsi\telekocsi\bin\Debug\telekocsi.pdb
+E:\STUDY\Petrik\II-felev\C#\telekocsi\telekocsi\obj\Debug\telekocsi.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\telekocsi\telekocsi\obj\Debug\telekocsi.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\telekocsi\telekocsi\obj\Debug\telekocsi.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\telekocsi\telekocsi\obj\Debug\telekocsi.exe
+E:\STUDY\Petrik\II-felev\C#\telekocsi\telekocsi\obj\Debug\telekocsi.pdb

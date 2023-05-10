@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\C#\Elso\Gyakorlás\bin\Debug\Gyakorlás.exe.config
+E:\STUDY\Petrik\C#\Elso\Gyakorlás\bin\Debug\Gyakorlás.exe
+E:\STUDY\Petrik\C#\Elso\Gyakorlás\bin\Debug\Gyakorlás.pdb
+E:\STUDY\Petrik\C#\Elso\Gyakorlás\obj\Debug\Gyakorlás.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\C#\Elso\Gyakorlás\obj\Debug\Gyakorlás.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\C#\Elso\Gyakorlás\obj\Debug\Gyakorlás.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\C#\Elso\Gyakorlás\obj\Debug\Gyakorlás.exe
+E:\STUDY\Petrik\C#\Elso\Gyakorlás\obj\Debug\Gyakorlás.pdb

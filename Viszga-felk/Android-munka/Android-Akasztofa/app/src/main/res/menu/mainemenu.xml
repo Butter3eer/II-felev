@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/userProfile"
+    android:title="Profile"
+    android:icon="@drawable/baseline_account_circle_24"
+    app:showAsAction="ifRoom"/>
+    <item android:title="Language">
+        <menu>
+            <item android:id="@+id/language_ru"
+                android:title="Русский"/>
+            <item android:id="@+id/language_en"
+                android:title="English"/>
+            <item android:id="@+id/language_chn"
+                android:title="中國人"/>
+        </menu>
+    </item>
+
+    <item android:title="Difficulty">
+        <menu>
+            <item android:id="@+id/easy"
+                android:title="Easy"/>
+            <item android:id="@+id/hard"
+                android:title="Hard"/>
+        </menu>
+    </item>
+
+    <item android:title="Categories">
+        <menu>
+            <item android:id="@+id/biology"
+                android:title="Biology"/>
+            <item android:id="@+id/buildings"
+                android:title="Buildings"/>
+        </menu>
+    </item>
+</menu>

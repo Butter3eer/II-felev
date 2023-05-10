@@ -1,0 +1,31 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch12s07.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>12.7. Rendszer határfeltételeinek meghatározása.</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch12.html" title="12. fejezet - A tervezési modell"><link rel="prev" href="ch12s06.html" title="12.6. Vezérlés elvének kiválasztása"><link rel="next" href="ch12s08.html" title="12.8. Felhasználói felület tervezése"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">12.7. 
+            
+            Rendszer határfeltételeinek
+            meghatározása.</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch12s06.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">12. fejezet - A tervezési modell</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch12s08.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="12.7. Rendszer határfeltételeinek meghatározása."><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e5014"></a>12.7. 
+            
+            <a name="__RefHeading__137_120998265"></a>Rendszer határfeltételeinek
+            meghatározása.</h2></div></div></div><p>Egy alkalmazásnak az üzemszer&#369; m&#369;ködésén kívül speciális határállapotai is lehetnek.
+            A tervezés feladata ezeknek a határállapotoknak a kezelése.</p><div class="sect2" title="12.7.1. A rendszer telepítése"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5021"></a>12.7.1. A rendszer telepítése</h3></div></div></div><p>Egy összetett alkalmazás telepítése az egyes moduljainak az installálásán túl
+               számos egyéb tevékenységet is magában foglalhat. Ilyenek lehetnek például:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>az adatbázis kezdeti állapotának elállítása, esetleg már meglev&#337; adatbázisok
+                     konvertálásával</p></li><li class="listitem"><p>felhasználók felvétele, jogosultságok meghatározása</p></li></ol></div><p>Osztott alkalmazás esetén ez a munkafolyamat sok gépet érinthet.</p><p>Ezeket a tevékenységeket egy alkalmazás életében csak egyszer kell
+               elvégezni.</p></div><div class="sect2" title="12.7.2. A rendszer üzemszer&#369; indulása (inicializálás)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5037"></a>12.7.2. A rendszer üzemszer&#369; indulása (inicializálás)</h3></div></div></div><p>Meg kell határozni, hogy a rendszer indulásakor milyen tevékenységek elvégzése
+               szükséges az üzemszer&#369; m&#369;ködés el&#337;készítéséhez. Tipikusan ilyenek lehetnek például az
+               adatbázis kapcsolat, hálózati kapcsolat létrehozása, bejelentkezési ablak
+               megjelenítése stb.</p></div><div class="sect2" title="12.7.3. A rendszer üzemszer&#369; leállása (terminálás)"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5042"></a>12.7.3. A rendszer üzemszer&#369; leállása (terminálás)</h3></div></div></div><p>Az üzemszer&#369; leállásnál szükséges lehet tranziens adatok lementése, er&#337;források
+               felszabadítása stb.</p></div><div class="sect2" title="12.7.4. Hibás befejez&#337;dés"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5047"></a>12.7.4. Hibás befejez&#337;dés</h3></div></div></div><p>Már a tervezés során fel kell készülni arra, hogy rendszernek a hibaállapotok
+               kezelésére is fel kell készülnie. Ilyen lehet például egy adatbázis kapcsolat vagy
+               hálózati kapcsolat megsz&#369;nése. Ezek a hibaállapotok a m&#369;ködés során váratlanul
+               léphetnek fel, de a tervezés során el&#337;re számítani lehet rájuk. A felhasználónak a
+               hibaállapotról korrekt tájékoztatást kell kapnia, és az alkalmazásnak gondoskodnia
+               kell arról, hogy a lehet&#337;ségekhez képest a legkevesebb adatvesztéssel kezelje a
+               problémát.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch12s06.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch12.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch12s08.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">12.6. 
+            
+            Vezérlés elvének kiválasztása&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;12.8. 
+            
+            Felhasználói felület tervezése</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch12s07.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+</html>

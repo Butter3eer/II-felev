@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\akasztofa\akasztofa\bin\Debug\akasztofa.exe.config
+E:\STUDY\Petrik\II-felev\C#\akasztofa\akasztofa\bin\Debug\akasztofa.exe
+E:\STUDY\Petrik\II-felev\C#\akasztofa\akasztofa\bin\Debug\akasztofa.pdb
+E:\STUDY\Petrik\II-felev\C#\akasztofa\akasztofa\obj\Debug\akasztofa.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\akasztofa\akasztofa\obj\Debug\akasztofa.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\akasztofa\akasztofa\obj\Debug\akasztofa.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\akasztofa\akasztofa\obj\Debug\akasztofa.exe
+E:\STUDY\Petrik\II-felev\C#\akasztofa\akasztofa\obj\Debug\akasztofa.pdb

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feladat08</title>
+</head>
+<body>
+    <!-- 8. feladat -->
+    <p>String titkosítás</p>
+    <p><input type="text" id="input8"></p>
+    <p><button type="button" id="feladat8" onclick="F8();">8. Feladat</button></p>
+    <p id="output8"></p>
+    <br>
+
+    <script>
+        function F8(){
+            const szo = document.getElementById("input8").value;
+            let titkositott = "";
+            for (let index = 0; index < szo.length; index++) {
+                titkositott += `${szo.charCodeAt(index)}`
+            }
+            document.getElementById("output8").innerHTML = titkositott;
+        }
+    </script>
+</body>
+</html>

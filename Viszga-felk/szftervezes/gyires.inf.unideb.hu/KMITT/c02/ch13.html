@@ -1,0 +1,37 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch13.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>13. fejezet - Az implementációs modell</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch12s09.html" title="12.9. Küls&#337; interface tervezése"><link rel="next" href="ch13s02.html" title="13.2. Algoritmus tervezés"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">13. fejezet - Az implementációs modell</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch12s09.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch13s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="13. fejezet - Az implementációs modell"><div class="titlepage"><div><div><h2 class="title"><a name="d0e5075"></a>13. fejezet - Az implementációs modell</h2></div></div></div><p>Az implementációs modell az utolsó absztrakt modell a m&#369;köd&#337; változat el&#337;tt. Minden
+         információt tartalmaz, amik a megvalósításhoz kell. Úgy is fogalmazhatunk, hogy ha lenne
+         olyan virtuális gép, amely képes lenne végrehajtani az implementációs modellben
+         foglaltakat, az implementációs fázis elmaradhatna.</p><p>A tervezési és az implementációs modell a gyakorlatban gyakran összemosódik,
+         elválasztásuk szinte csak elméleti jelent&#337;ség&#369;. Egy egyszer&#369;bb alkalmazás fejlesztése
+         esetén nincs éles határvonal a kett&#337; között. Egy összetettebb alkalmazás fejlesztése során
+         pedig a munka ütemezését&#337;l függ&#337;en az egyes részrendszerek aktuális modellezési fázisa
+         egészen eltér&#337; lehet egy adott id&#337;pillanatban: bizonyos alrendszerek lehet, hogy már az
+         implementáció vagy tesztelés fázisában járnak, míg mások még az analízis vagy tervezés
+         szintjén.</p><p>Az implementációs modell el&#337;állítása és az implementációs fázis is összemosódhat. A
+         modellez&#337; eszközök re-engineering funkcióját kihasználva például sok fejlesztés során
+         alkalmazott &#8222;trükk&#8221; az, hogy implementáljuk az osztályok &#8222;vázát&#8221; a tervezési modell
+         alapján, majd ebb&#337;l dokumentációs célokra el&#337;állítjuk az implementációs
+         osztálydiagramot.</p><p>Az implementációs modell elkészítése az alábbi munkafázisokat foglalhatja
+         magában.</p><div class="sect1" title="13.1. A megvalósítási osztálydiagram"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e5086"></a>13.1. 
+            
+            <a name="__RefHeading__145_120998265"></a>A megvalósítási osztálydiagram</h2></div></div></div><p>A megvalósítási szint&#369; (implementációs) osztálydiagramok a programnyelvre fordításhoz
+            szükséges valamennyi információt tartalmazzák. Számos vizuális modellez&#337; eszköz képes
+            ezekb&#337;l a diagramokból a kiválasztott programozási nyelv szabályainak megfelel&#337; kód
+            generálására is. Ez a generált kód általában nem teljes (például tartalmazza a metódusok
+            vázát, de nem tartalmazza a törzsét.)</p><p>A modellez&#337; eszközök képesek a fordított irányú leképezésre is: egy program kódjából
+            el&#337; tudják állítani az implementációs osztálydiagramot (re-engineering). Ez a
+            szolgáltatás egy új alkalmazás fejlesztése során alkalmas lehet annak ellen&#337;rzésére,
+            hogy az implementáció során nem tértünk-e el az el&#337;zetes tervekt&#337;l. Különösen hasznos
+            lehet a kódból a statikus modell el&#337;állítása abban az esetben, ha egy már meglév&#337;
+            rendszer továbbfejlesztése a feladatunk, mivel a generált modell el&#337;segíti a rendszer
+            m&#369;ködésének a megértését.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch12s09.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch13s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">12.9. 
+            
+            Küls&#337; interface tervezése&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;13.2. 
+            
+            Algoritmus tervezés</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch13.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+</html>

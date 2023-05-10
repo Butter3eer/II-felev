@@ -1,0 +1,126 @@
+-- 1.Hogy hívják az egyes ügyfeleket? Jelenítse meg a nevüket ABC-sorrendben!
+SELECT ugyfel.nev 
+FROM ugyfel 
+ORDER BY ugyfel.nev;
+
+-- 2. Listázza ki a magyarországi ügyfeleket életkoruk szerint! Kezdje a legfiatalabbal!
+SELECT ugyfel.nev, ugyfel.szulev, YEAR(NOW())-szulev AS eletkor
+FROM ugyfel
+WHERE ugyfel.orsz = 'H'
+ORDER BY ugyfel.szulev DESC;
+
+-- 3. Adja meg a Pest megyei ügyfeleket! (Irányítószámuk 2-vel kezdődik.)
+SELECT ugyfel.nev, ugyfel.irszam
+FROM ugyfel
+WHERE ugyfel.irszam LIKE '2%';
+
+-- 4. Mennyi pénzt fizettek be összesen az ügyfelek személyenként?
+SELECT ugyfel.nev, SUM(befiz.osszeg) AS befizetes
+FROM ugyfel JOIN befiz using(azon)
+GROUP BY 1;
+
+-- 5. Mekkora összegű egy átlagos befizetés?
+SELECT round(AVG(befiz.osszeg), 0) AS atlag
+FROM befiz;
+
+-- 6. Mennyi volt az eddigi legkisebb illetve legnagyobb befizetett összeg?
+SELECT MIN(befiz.osszeg) AS legkisebb, MAX(befiz.osszeg) AS legnagyobb
+FROM befiz;
+
+-- 7. Hány darab befizetés szerepel a nyilvántartásban?
+SELECT COUNT(befiz.osszeg) AS befizetesSzam
+FROM befiz;
+
+-- 8. Milyen összegeket, és mikor fizetett Török Bálint?
+SELECT ugyfel.nev, befiz.datum, befiz.osszeg
+FROM befiz, ugyfel
+WHERE ugyfel.azon = befiz.azon AND ugyfel.nev = "Török Bálint";
+
+-- 9. Mennyit fizetett összesen Nagy Károly?
+SELECT ugyfel.nev, SUM(befiz.osszeg)
+FROM ugyfel, befiz
+WHERE ugyfel.nev = "Nagy Károly" AND ugyfel.azon = befiz.azon;
+
+-- 10. Mennyit fizettek összesen a nem magyarországi befizetők?
+SELECT SUM(befiz.osszeg)
+FROM befiz, ugyfel
+WHERE ugyfel.orsz != "H";
+
+-- 11. Mennyit fizettek az egyes ügyfelek?
+SELECT ugyfel.nev, SUM(befiz.osszeg)
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon
+GROUP BY ugyfel.nev;
+
+-- 12. Mi az első három legtöbbet befizető ügyfél sorrendje?
+SELECT ugyfel.nev, SUM(befiz.osszeg) AS osszes_befiz
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon
+GROUP BY ugyfel.nev
+ORDER BY SUM(befiz.osszeg) DESC
+LIMIT 3;
+
+-- 13. Mekkora összegű befizetések történtek az év egyes hónapjaiban?
+SELECT month(befiz.datum) AS ho, SUM(befiz.osszeg)
+FROM befiz
+GROUP BY month(befiz.datum)
+ORDER BY month(befiz.datum) ASC;
+
+-- 14. Melyek azok a napok, amikor több befizetés is történt?
+SELECT day(befiz.datum) AS nap
+FROM befiz
+GROUP BY day(befiz.datum)
+ORDER BY day(befiz.datum) ASC;
+
+-- 15. Mely befizetések régebbiek egy évnél?
+SELECT befiz.datum, ugyfel.nev, befiz.osszeg
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon AND DATEDIFF( NOW(), befiz.datum) > 365;
+
+-- 16. Mennyi pénzt fizettek be az elmúlt 365 napban?
+SELECT SUM(befiz.osszeg) AS osszes
+FROM befiz
+WHERE DATEDIFF( NOW(), befiz.datum) < 365;
+
+-- 17. Ki a legidősebb ügyfél?
+SELECT ugyfel.nev, ugyfel.szulev
+FROM ugyfel
+ORDER BY ugyfel.szulev ASC
+LIMIT 1;
+
+-- 18. Ki, és mikor követte el a legkisebb összegű befizetést?
+SELECT ugyfel.nev, befiz.datum
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon
+ORDER BY befiz.osszeg ASC
+LIMIT 1;
+
+-- 19. Kinek a legkevesebb az összes befizetése?
+SELECT ugyfel.nev, SUM(befiz.osszeg) AS osszBefizet
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon
+ORDER BY SUM(befiz.osszeg)
+LIMIT 1;
+
+-- 20. Van-e olyan ügyfél, aki még egyáltalán nem fizetett?
+SELECT ugyfel.nev
+FROM ugyfel
+WHERE ugyfel.azon NOT IN (SELECT azon FROM befiz);
+
+-- 21. Fejenként mennyit fizettek átlagosan az ügyfelek, ha az átlagba csak a fizető ügyfelek számítanak?
+SELECT SUM(befiz.osszeg) / COUNT(DISTINCT befiz.azon) AS atlag
+FROM ugyfel, befiz
+WHERE ugyfel.azon IN (SELECT azon FROM befiz) AND ugyfel.azon = befiz.azon;
+
+-- 22. Fejenként mennyit fizettek átlagosan az ügyfelek a nemfizető ügyfeleket is beszámítva?
+SELECT ROUND(SUM(befiz.osszeg)/(SELECT COUNT(*) FROM ugyfel), 4) AS atlag
+FROM befiz;
+
+-- 23. Kik azok az ügyfelek, akik az átlagosnál többet fizettek? 
+SELECT nev, SUM(osszeg) AS ossz
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon
+GROUP BY befiz.azon
+HAVING ossz > (SELECT SUM(osszeg) / COUNT(DISTINCT azon) FROM befiz)
+ORDER BY 2 DESC;
+

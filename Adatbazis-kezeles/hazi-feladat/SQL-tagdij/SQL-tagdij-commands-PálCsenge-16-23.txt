@@ -1,0 +1,46 @@
+-- 16. Mennyi pénzt fizettek be az elmúlt 365 napban?
+SELECT SUM(befiz.osszeg) AS osszes
+FROM befiz
+WHERE DATEDIFF( NOW(), befiz.datum) < 365;
+
+-- 17. Ki a legidősebb ügyfél?
+SELECT ugyfel.nev, ugyfel.szulev
+FROM ugyfel
+ORDER BY ugyfel.szulev ASC
+LIMIT 1;
+
+-- 18. Ki, és mikor követte el a legkisebb összegű befizetést?
+SELECT ugyfel.nev, befiz.datum
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon
+ORDER BY befiz.osszeg ASC
+LIMIT 1;
+
+-- 19. Kinek a legkevesebb az összes befizetése?
+SELECT ugyfel.nev, SUM(befiz.osszeg) AS osszBefizet
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon
+ORDER BY SUM(befiz.osszeg)
+LIMIT 1;
+
+-- 20. Van-e olyan ügyfél, aki még egyáltalán nem fizetett?
+SELECT ugyfel.nev
+FROM ugyfel
+WHERE ugyfel.azon NOT IN (SELECT azon FROM befiz);
+
+-- 21. Fejenként mennyit fizettek átlagosan az ügyfelek, ha az átlagba csak a fizető ügyfelek számítanak?
+SELECT SUM(befiz.osszeg) / COUNT(DISTINCT befiz.azon) AS atlag
+FROM ugyfel, befiz
+WHERE ugyfel.azon IN (SELECT azon FROM befiz) AND ugyfel.azon = befiz.azon;
+
+-- 22. Fejenként mennyit fizettek átlagosan az ügyfelek a nemfizető ügyfeleket is beszámítva?
+SELECT ROUND(SUM(befiz.osszeg)/(SELECT COUNT(*) FROM ugyfel), 4) AS atlag
+FROM befiz;
+
+-- 23. Kik azok az ügyfelek, akik az átlagosnál többet fizettek? 
+SELECT nev, SUM(osszeg) AS ossz
+FROM ugyfel, befiz
+WHERE ugyfel.azon = befiz.azon
+GROUP BY befiz.azon
+HAVING ossz > (SELECT SUM(osszeg) / COUNT(DISTINCT azon) FROM befiz)
+ORDER BY 2 DESC;

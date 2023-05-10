@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\filmek\filmek\bin\Debug\filmek.exe.config
+E:\STUDY\Petrik\II-felev\C#\filmek\filmek\bin\Debug\filmek.exe
+E:\STUDY\Petrik\II-felev\C#\filmek\filmek\bin\Debug\filmek.pdb
+E:\STUDY\Petrik\II-felev\C#\filmek\filmek\obj\Debug\filmek.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\filmek\filmek\obj\Debug\filmek.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\filmek\filmek\obj\Debug\filmek.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\filmek\filmek\obj\Debug\filmek.exe
+E:\STUDY\Petrik\II-felev\C#\filmek\filmek\obj\Debug\filmek.pdb

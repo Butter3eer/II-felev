@@ -1,0 +1,9 @@
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\bin\Debug\musor.txt
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\bin\Debug\zenei-adok.exe.config
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\bin\Debug\zenei-adok.exe
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\bin\Debug\zenei-adok.pdb
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\obj\Debug\zenei-adok.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\obj\Debug\zenei-adok.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\obj\Debug\zenei-adok.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\obj\Debug\zenei-adok.exe
+E:\STUDY\Petrik\II-felev\C#\zenei-adok\zenei-adok\obj\Debug\zenei-adok.pdb

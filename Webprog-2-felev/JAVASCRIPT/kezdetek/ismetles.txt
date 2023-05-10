@@ -1,0 +1,46 @@
+Kliens oldal - Frontend
+HTML - Szerkezet és tartalom leírása - leíró nyelv nem programozási nyelv
+CSS - Stílus. külalak
+JS - Felhasználói interakció
+
+
+Szerver oldal - backend 14.es témakör
+SQL
+C# / php / js / python / java... - szerver oldali programozás 14. év bakend tantárgy
+
+
+HTML felépítése
+doctype - dokumentum típus definíciója
+head - információk az oldalról - metadata, oldal címe, teljes oldalra vonatkozó stílus beállítás, stb.
+body - A böngészőben megjelenő tartalom
+
+tagek-ből áll:
+<> </>
+pl.:
+<head> </head>
+
+címsorok
+bekezdések
+linkek
+multimédia: képek, videók, zene, másik html dokumentum, stb.
+
+
+Css:
+[szelektor] {
+    /* beállítások */
+    [tulajdonság_neve]: tulajdonság_értéke;
+    [tulajdonság_neve]: tulajdonság_értéke;
+    [tulajdonság_neve]: tulajdonság_értéke;
+    [tulajdonság_neve]: tulajdonság_értéke;
+}
+
+szelektorok
+body -> body taget formázza
+p -> p taget formázza
+.sajat -> "sajat" osztállyal (class) ellátott tageket fogja formázni
+#kapcsolat -> "kapcsolat" azonosítóval (id) ellátott tageket fogja formázni
+thead tr -> thead tagben lévő tr tageket fogja formázni
+
+css elhelyezése egy 
+ugyan annak a tagnek különböző tulajdonságait formázzuk 
+css specifikusság

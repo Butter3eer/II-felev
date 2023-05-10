@@ -1,0 +1,72 @@
+-- 1. Hogy hívják az egyes pizzafutárokat?
+SELECT futar.fnev
+FROM futar;
+
+-- 2. Milyen pizzák közül lehet rendelni, és mennyibe kerülnek?
+SELECT pizza.pnev, pizza.par
+FROM pizza;
+
+-- 3. Mennyibe kerül átlagosan egy pizza?
+SELECT ROUND(AVG(pizza.par),0) AS atlag
+FROM pizza;
+
+-- 4. Mely pizzák olcsóbbak 1000 Ft-nál?
+ SELECT pizza.pnev, pizza.par
+ FROM pizza
+ WHERE pizza.par < 1000;
+
+-- 5. Ki szállította házhoz az első (egyes sorszámú) rendelést?
+SELECT futar.fnev
+FROM futar JOIN rendeles USING(Fazon)
+WHERE rendeles.razon = 1;
+
+-- 6. Kik rendeltek pizzát délelőtt?
+SELECT vevo.vnev
+FROM rendeles JOIN vevo USING(Vazon)
+WHERE HOUR(rendeles.idopont) < 12;
+
+-- 7. Milyen pizzákat evett Morgó?
+SELECT vevo.vnev, pizza.pnev
+FROM vevo NATURAL JOIN pizza NATURAL JOIN rendeles NATURAL JOIN tetel
+WHERE vevo.vnev LIKE "Morgó"
+GROUP BY pizza.pnev;
+
+-- 8. Ki szállított házhoz Tudornak?
+SELECT futar.fnev, vevo.vnev
+FROM vevo NATURAL JOIN futar NATURAL JOIN rendeles NATURAL JOIN tetel
+WHERE vevo.vnev LIKE "Tudor"
+GROUP BY futar.fnev;
+
+-- 9. Az egyes rendelések alkalmával ki kinek szállított házhoz?
+SELECT futar.fnev, vevo.vnev
+FROM futar NATURAL JOIN pizza NATURAL JOIN rendeles NATURAL JOIN tetel NATURAL JOIN vevo;
+
+-- 10. Mennyit költött pizzára Vidor?
+SELECT vevo.vnev, SUM(pizza.par)
+FROM futar NATURAL JOIN pizza NATURAL JOIN rendeles NATURAL JOIN tetel NATURAL JOIN vevo
+WHERE vevo.vnev LIKE "Vidor";
+
+-- 11. Hány alkalommal rendelt Sorrento pizzát Kuka?
+SELECT vevo.vnev, COUNT(tetel.pazon) AS darab
+FROM futar NATURAL JOIN pizza NATURAL JOIN rendeles NATURAL JOIN tetel NATURAL JOIN vevo
+WHERE pizza.pnev LIKE "Sorrento" AND vevo.vnev LIKE "Kuka";
+
+-- 12. Hány pizzát evett Szende?
+SELECT vevo.vnev, COUNT(rendeles.vazon) AS darab
+FROM futar NATURAL JOIN pizza NATURAL JOIN rendeles NATURAL JOIN tetel NATURAL JOIN vevo
+WHERE vevo.vnev LIKE "Szende";
+
+-- 13. Hányszor rendelt pizzát Hapci?
+SELECT vevo.vnev, COUNT(rendeles.vazon) AS darab
+FROM futar NATURAL JOIN pizza NATURAL JOIN rendeles NATURAL JOIN tetel NATURAL JOIN vevo
+WHERE vevo.vnev LIKE "Hapci";
+
+-- 14. Hány darab Hawaii pizza fogyott összesen?
+SELECT pizza.pnev, COUNT(tetel.pazon)
+FROM futar NATURAL JOIN pizza NATURAL JOIN rendeles NATURAL JOIN tetel NATURAL JOIN vevo
+WHERE pizza.pnev LIKE "Hawaii";
+
+-- 15. Mennyit költöttek pizzára az egyes vevők?
+SELECT vevo.vnev, SUM(pizza.par) AS ossz
+FROM futar NATURAL JOIN pizza NATURAL JOIN rendeles NATURAL JOIN tetel NATURAL JOIN vevo
+GROUP BY vevo.vnev;

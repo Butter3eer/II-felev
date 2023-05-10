@@ -1,0 +1,167 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch05s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:45 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>5.2. &nbsp;A szoftver követelmények</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch05.html" title="5. fejezet - Követelmény analízis"><link rel="prev" href="ch05.html" title="5. fejezet - Követelmény analízis"><link rel="next" href="ch05s03.html" title="5.3. &nbsp;Szoftverkövetelmények dokumentuma"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5.2. 
+            
+            &nbsp;A szoftver követelmények</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">5. fejezet - Követelmény analízis</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s03.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="5.2. &nbsp;A szoftver követelmények"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1235"></a>5.2. 
+            
+            <a name="__RefHeading__53_120998265"></a>&nbsp;A szoftver követelmények</h2></div></div></div><p>Egy-egy szoftver tervezése során sokszor nagyon nehéz pontosan leírni, hogy hogyan
+            kell m&#369;ködnie a rendszernek. Korábban említettük, hogy a rendszert szolgáltatások és
+            megszakítások összességével írjuk le, amely leírásokat pedig követelményeknek nevezzük.
+            Ez az elemzés és tervezés egyfajta alapegységeként értelmezhet&#337;, amelyb&#337;l a kész
+            rendszert építjük fel. A követelmények tervezése pedig az a folyamatot nevezzük, amely
+            során meghatározzuk és elemezzük a szolgáltatásokat és megszorításokat, majd
+            dokumentáljuk és ellen&#337;rizzük azokat.</p><p>A követelmény elnevezés nagyon tág fogalomként jelenik meg a szoftveriparban. Nem
+            használják következetes mó­don, így a továbbiakban szükséges, hogy els&#337; megközelítésben
+            két különböz&#337; szintre bontva folytassuk a tárgyalását.</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A felhasználói követelmények: magas szint&#369; absztrakt követelmények, melyek az
+                  ügyfelek és a fejleszt&#337;k képvisel&#337;i (menedzserek) számára készülnek els&#337;sorban,
+                  akik nem rendelkeznek részletes technikai ismerettel a rendszerr&#337;l. Technikai
+                  értelemben diagramokkal kiegészített természetes nyelv&#369; dokumentum, amely pontosan
+                  leírja mely szolgáltatásokat várunk el a rendszert&#337;l, és annak mely megszorítások
+                  mellett kell m&#369;ködnie.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A rendszerkövetelmények: ezek a követelmény-leírásoka rendszer funkcióit,
+                  szolgáltatásait és m&#369;ködési meg­szorításait jelölik ki részletesen. A
+                  rendszerkövetelmények dokumentumának pontosnak kell lennie. Pontosan meg kell
+                  határoznia, mit kell implementálni. Ez a rendszer vásárlója és a szoftverfejleszt&#337;
+                  közötti szerz&#337;dés része is lehet.</p></li></ol></div><p>A rendszer-specifikációt tipikusan ezen a két különböz&#337; szinten írják le. Nagyon
+            fontos, hogy a két szint leírása egyaránt megjelenjen a specifikációban, mert a
+            rendszer­r&#337;l különböz&#337; típusú olvasók számára közölnek információt. Míg a felhasználói
+            követelmények inkább absztrakt leírásai a rendszernek, addig a rendszerkövetel­mények
+            részletez&#337; leírások, megmagyarázva a fejlesztend&#337; rendszer által biztosítandó
+            szolgáltatásokat és funkciókat.</p><p>Az eddig bemutatott két típus leginkább a leírás részletezettsége alapján szeparálja
+            a követelményeket. Egy másik irányú megközelítés, a megvalósítandó funkciók alapján
+            további három csoportot jelölhetünk ki:</p><p>A funkcionális követelmények: a rendszerfunkciók (szolgáltatások) ismertetései, hogy
+            hogyan reagáljon a rendszernek bizonyos bemenetekre.</p><p>Nemfunkcionális követelmények: a funkciókra és szolgáltatásokra tett megszorítások.
+            Általában a rendszer ered&#337; tulajdonságaira vonatkoznak. Magukban foglalnak id&#337;beli
+            korlátozásokat, a fejlesztési folyamatra tett megszorításokat, szabványokat.</p><p>Szakterületi követelmények: a rendszer alkalmazási szak­területér&#337;l származnak és e
+            szakterület jellegzetességeit és megszorításait tükrözik.</p><p>A valóságban természetesen a különböz&#337; követelménytípusok közötti különbségek nem
+            értelmezhet&#337;k ilyen élesen, mint az alábbi tárgyalásban.</p><div class="sect2" title="5.2.1. &nbsp;Funkcionális követelmények"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1265"></a>5.2.1. &nbsp;Funkcionális követelmények</h3></div></div></div><p>Egy
+               rendszer funkcionális követelményei leírják, hogy a rendszernek milyen funkciókkal
+               kell rendelkezni, hogyan kellene m&#369;ködnie (Például aktualizálások, lekérdezések,
+               jelentések, kimenetek, adatok, más rendszerekkel való kapcsolat). Ezek a
+               követelmények a fejlesztett szoftver típusától, a szoftver leend&#337; felhasználóitól
+               függenek. Természetesen itt is megjelenik a követelmények másik megközelítése,
+               miszerint kifejthet&#337;k mind felhasználói követelményekként, melyek rendszerint egészen
+               absztrakt leírások, mind pedig rendszerkövetelményként, amelyek a rendszerfunkciókat
+               részletesen írják le.</p><p>Nagyon fontos, hogy a rendszer funkcionális követelményt leíró specifikációjának
+               tartalmaznia és definiálnia kell a megrendel&#337; által igényelt összes szolgáltatást, az
+               az teljesnek és ellentmondásmentesnek kellene lennie. Az ellentmondás-mentesség
+               szintén fontos, amely azt jelenti, hogy ne legyenek ellentmondó meghatározások a
+               leírásokban. A gyakorlatban azonban egy nagymé­ret&#369;, összetett rendszerek
+               fejlesztésénél gyakorlatilag lehetetlen a követelmények teljességét és
+               ellentmondás-mentességét elérni. Ennek egyik oka, hogy nagyméret&#369;, összetett
+               rendszerek specifikációinak írá­sakor könny&#369; kifelejteni dolgokat, illetve hibát
+               elkövetni. Másik ok, hogy a kü­lönböz&#337; kulcsfiguráknak eltér&#337; &#8211; és gyakran
+               ellentmondó &#8211; igényeik vannak.</p></div><div class="sect2" title="5.2.2. &nbsp;Nemfunkcionális követelmények"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1272"></a>5.2.2. &nbsp;Nemfunkcionális követelmények</h3></div></div></div><p>A nemfunkcionális követelmények a funkcionális követelményekkel ellentétben nem
+               közvetlenül a rendszer által biztosított specifikus funkciókkal foglalkoznak, hanem
+               inkább a rendszer egészére vonatkozó ered&#337; rendszertulajdonságokra koncentrálnak. Mit
+               is jelentenek ezek? Példaként néhányat említve: megbízhatóság, válaszid&#337;,
+               tárfoglalás, rugalmasság, robosztusság, hordozhatóság, stb..</p><p>A követelmények ezen csoportja gyakran kritikusabb, mint az egyedi funkcionális
+               követelmények csoportja. Ha nem teljesítjük ezeket, vagy kerültek megfogalmazásra
+               konkrét követelményként, gyakran a teljes rendszert használhatatlanná tehetik.
+               Példaként említhetünk egy banki rendszert, amely nem teljesíti a vele szemben
+               támasztott összes biztonsági kö­vetelményeket.</p><p>Néhány fontos tényez&#337;, amely felvetheti a nemfunkcionális követelményeket:
+               felhasználói igények, költ­ségvetési megszorítások, a szervezeti szabályzat, más
+               szoftver- vagy hardver­rendszerekkel való együttm&#369;ködés igénye vagy olyan küls&#337;
+               tényez&#337;k, mint a biztonsági szabályozások, adatvédelmi rendelkezések.</p><p>A nemfunkcionális követelményeket a következ&#337;képpen csoportosíthatjuk:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Termékre vonatkozó követelmények: olyan követelmények, amelyek alapvet&#337;en
+                     meghatározzák a ter­mék viselkedését. Néhány példa: </p></li></ol></div><p>Jól látszik, hogy nem teljesítésük alapvet&#337; használhatósági problémákat vetnek
+               fel. Példa: Egy információs weblap felülete frame-ek és applete-ek nélkül legyen
+               implementálva. &nbsp;</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Szervezeti követelmények: a követelmények ezen alcsoportja mindig a
+                     megrendel&#337; vagy/és a fejleszt&#337; cég szervezetének bels&#337; szabályzataiból és
+                     ügyrendjéb&#337;l fakadnak. Példa:</p></li></ol></div><p>A nemfunkcionális követelményekkel kritikus problémája a verifikálhatóság. Míg a
+               funkcionális követelmények esetében a verifikáció egyszer&#369; folyamat, hiszen az
+               ellen&#337;rzés mindig a kérdéses funkció meglétére és helyes m&#369;ködésére vonatkozik, addig
+               a nem funkcionális követelmények gyakran általános elvi megkötések, mint például &#8222;a
+               rendszernek könnyen használhatónak kell lennie&#8221;. A verifikálhatóság érdekében
+               általános elv az, hogy törekedjünk arra, hogy amikor csak lehetséges a kérdéses
+               nemfunkcionális követelményt valamilyen mennyi­ségileg, objektíven tesztelhet&#337;
+               metrika segítségével fejezzük ki. A gyakorlatban ez azonban sokszor szinte
+               megvalósíthatatlan, mert a rendszer megrendel&#337;i számára gyakorlatilag lehetetlen
+               céljaikat mennyiségi követelményekre váltani.</p><p>A következ&#337; ábra a nemfunkcionális követelmények típusait és azok kapcsolatát
+               mutatja be.</p><div class="figure"><a name="d0e1297"></a><p class="title"><b>5.2. ábra - Nem funkcionális követelmények alcsoportjai</b></p><div class="figure-contents"><div align="center"><img src="images/image13.png" align="middle" alt="Nem funkcionális követelmények alcsoportjai"></div></div></div><br class="figure-break"></div><div class="sect2" title="5.2.3. &nbsp;Szakterületi követelmények"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1301"></a>5.2.3. &nbsp;Szakterületi követelmények</h3></div></div></div><p>A követelmények e csoportja nem a rendszer felhasználójának egyéni igényeib&#337;l
+               származnak, hanem arról a szakterületr&#337;l, ahol a rendszer a jöv&#337;ben alkalmazásra
+               kerül. Általában nagyon speciálisak, és sok problémát okozhatnak a gyakorlatban.
+               Ennek oka, hogy a követelmények az alkalmazás szakterületén használt speciális
+               terminológiával kerülnek megfogalmazásra a megrendel&#337;i oldalról, amelyhez a
+               szoftvertervez&#337;k általában nem értenek. A megrendel&#337;i oldal szakért&#337;i kihagyhatnak
+               bizonyos információkat a követelményb&#337;l, mert az számukra teljesen nyilvánvaló, de a
+               szoftver fejleszt&#337;inek nem. Azonban ha ezek a követelmények nem teljesülnek, nem
+               lehetséges a rendszert kielégít&#337;en m&#369;ködtetni.</p><p>A probléma elkerülése érdekében a fejleszt&#337; cégnél szükség van legalább egy olyan
+               személyre, aki az igényeknek megfelel&#337;en kisebb vagy nagyobb mértékben megismeri az
+               adott szakterületet és segíti a megrendel&#337; és a fejleszt&#337; közötti kapcsolatot. Ezzel
+               minimálisra csökkenthet&#337; a meg nem valósított vagy félreértett követelménynek és az
+               újratervezés veszélye.</p></div><div class="sect2" title="5.2.4. &nbsp;Felhasználói- és rendszerkövetelmények"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1308"></a>5.2.4. &nbsp;Felhasználói- és rendszerkövetelmények</h3></div></div></div><p>Miután a követelmények csoportosításának második típusát
+               megvizsgáltuk, térjünk vissza az els&#337; csoportosításhoz. A rendszer felhasználói
+               szint&#369; követelményei tehát funkcionális, nemfunkcionális és szakterületi
+               követelmények összességéb&#337;l fog összeállni mégpedig olyan leírási formában, hogy a
+               rendszer azon felhasználói is megértsék azokat, akiknek nincsenek részletes technikai
+               ismereteik. Tipikus olvasói a menedzserek. Éppen ezért olyan magas szint&#369;
+               dokumentációk, melyek a rendszernek csak a küls&#337; viselkedését írják le. &nbsp;A
+               felhasználói követelményeket egyszer&#369; nyelven, egyszer&#369; táblázatok, &#369;rlapok és
+               könnyen érthet&#337; diagramok segítségével kell közreadni.</p><p>Tipikus probléma, ha a felhasználói követelmények túl sok információt
+               tartalmaznak. Ezzel nem csak korlá­tozza a rendszerfejleszt&#337; szabadságát abban, hogy
+               újító megoldással szolgáljon a felhasználói problémákra, hanem nehezen érthet&#337;vé
+               teszi a követelményeket is. A fel­használói követelményeknek egyszer&#369;en a
+               kulcsfontosságú igényekre kell össz­pontosítania.</p><p>A rendszerkövetelmények a felhasználói követelmények részletesebb leírásai. Tehát
+               szintén funkcionális, nemfunkcionális és szakterületi követelmények összessége.
+               Céljuk, hogy részletes magyarázatot adjanak a rendszer m&#369;ködésének egészér&#337;l, hogy a
+               rendszernek hogyan kell biztosítania a felhasználói követelményeket. Sokszor a
+               rendszerkövetelmények alapul szolgálnak a rendszer megvalósítási szerz&#337;déséhez, és
+               ezért az egész rendszer teljes és konzisztens meghatározását tartalmazniuk
+               kell.</p><p>A rendszerkövetelmények ideális esetben egyszer&#369;en a rendszer küls&#337; vi­selkedését
+               és m&#369;ködési megszorításait írják le, de nem szabad, hogy a tervezés és az
+               implementálás mikéntjével foglalkozzanak.</p><div class="sect3" title="5.2.4.1. &nbsp;Alapvet&#337; problémák a követelmények megfogalmazásakor"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1319"></a>5.2.4.1. &nbsp;Alapvet&#337; problémák a követelmények
+                  megfogalmazásakor</h4></div></div></div><p>A természetes nyelvet gyakran használják mind a
+                  felhasználói, mind rendszerkövetelmények specifi­kációjának megfogalmazásához és
+                  dokumentálásához. Ebben a formában írt követelményeknél változatos problé­mák
+                  merülhetnek föl. A természetes nyelv megértése azon alapszik, hogy az író és az
+                  olvasó ugyanazokat a szavakat használja ugyanazokhoz a fogalmakhoz. Ez viszont
+                  nincs feltétlenül így, f&#337;leg a természetes nyelv többértelm&#369;sége miatt. A
+                  következ&#337; néhány pontban összefoglaljuk, hogy melyek azok a problémák, amely miatt
+                  a természetes nyelven írt követelményspecifikációk félreérthet&#337;k lehetnek:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A természetes nyelv&#369; követelményspecifikáció túl rugalmas. Ugyanazt a
+                        dol­got teljesen különböz&#337;féleképpen elmondhatjuk.</p></li><li class="listitem"><p>Az egyértelm&#369;ség hiánya. Bizonyos esetekben nehéz a nyelvet pontos,
+                        egyértelm&#369; módon használni anélkül, hogy a dokumentumot terjeng&#337;ssé és
+                        nehezen olvashatóvá ne tennénk.</p></li><li class="listitem"><p>Követelmények keveredése. A funkcionális követelmények, nemfunkcionális
+                        kö­vetelmények, rendszercélok és tervezési információk nem különíthet&#337;k el
+                        tisztán.</p></li><li class="listitem"><p>Követelmények ötvöz&#337;dése. Több különböz&#337; követelmény egyetlen
+                        követel­ményként fogalmazódik meg.</p></li></ol></div><p></p><p>A természetes nyelv&#369; leírások tehát sok bonyodalmat okozhatnak. Megoldás lenne
+                  a problémára, ha modularizálni lehetne ezeket követelmények, azonban erre nincs
+                  könny&#369; mód­szer. Lehet, hogy bonyolult az összes kapcsolódó követelményt
+                  megtalálni. Ahhoz pedig, hogy felfedezzük egy változtatás következményét,
+                  el&#337;fordulhat, hogy minden már vázolt követelményt ellen&#337;riznünk kell.</p><p>A rendszerkövetelmények esetében kicsit könnyebb a probléma megoldása, mert itt
+                  a követelmények leírását speciális jelölésekkel is kifejezhetjük. Beszélhetünk
+                  strukturált természetes nyelvr&#337;l, tervleíró nyelvr&#337;l, grafikus jelölésekr&#337;l, és
+                  matematikai specifikációkról.</p><p></p><p>Strukturált természetes nyelv: a természetes nyelv egyfajta lesz&#369;kítését
+                  jelenti, melynek az az el&#337;nye, hogy egy egységet nyújt a rendszerkövetelmények
+                  kifejezésére, mindamellett pedig jórészt megtartja a nyelv kifejez&#337;képességét és
+                  érthet&#337;ségét. A követelmény-író szabadságát el&#337;re definiált követelmény-sablonok
+                  korlátozzák. Minden követelményt egy standard módon írunk meg, valamint a
+                  leírásban használható terminológia korlátozva lehet.</p><p>Példaként az &#369;rlap alapú megközelítést említhetnénk, ahol egy vagy több
+                  szabványos &#369;rlapot kell definiálnunk, és végig ezeket használjuk a követelmények
+                  kifejtéséhez. Egy általános &#369;rlap felépítése a következ&#337; lehet:</p><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A funkció vagy entitás definíciója. </p></li><li class="listitem"><p>A bementek leírása, és hogy honnak erednek. </p></li><li class="listitem"><p>A kimenetek leírása, és hogy hová tartanak. </p></li><li class="listitem"><p>Más felhasznált entitások felsorolása. </p></li><li class="listitem"><p>El&#337;- és utófeltételek (pre-, post-condition). </p></li><li class="listitem"><p>Mellékhatások leírása. </p></li></ol></div><p></p><p>A strukturált természetes nyelvi leírásokhoz tartozik a táblázatos specifikáció
+                  módszere is, amely során táblázatos formában készítjük a leírás. A módszer
+                  különösen hasznos akkor, amikor alternatív végrehajtási módokat
+                  definiálunk.</p><p></p><p></p><p>Tervleíró nyelv (PDL - Program Description Language): szintén a természetes
+                  nyelv&#369; specifikáció többértelm&#369;ségének kivédésére találták ki a programleíró
+                  nyelveket. A PDL egy programozási nyelvekhez hasonló, általános szintaktikát
+                  alkalmazó kiegészítés a természetes nyelv&#369; specifikációkhoz. Segítségével a
+                  természetes nyelven nehezen, vagy terjeng&#337;sen megfogalmazható tartalmakat
+                  könnyedén, és érthet&#337;en írhatjuk le. Például valamely ismétl&#337;d&#337; folyamatot egy
+                  általános programozási nyelvi ciklussal definiálhatunk. Nagy el&#337;nye, hogy a leírás
+                  nemcsak egyszer&#369;bb és egyértelm&#369;bb lesz, hanem szoftveres eszközökkel
+                  szintaktikailag és szemantikailag is ellen&#337;rizhet&#337;k. Két esetben javasolt a
+                  használatuk:</p><p>A PDL használatának hatékony módja lehet, ha összekapcsoljuk a strukturált
+                  természetes nyelvvel. Ilyenkor a teljes rendszer specifikálásához &#369;rlap alapú
+                  megközelítést használunk, a vezérlési sorozatok és az interfészek részletesebb
+                  leírásához pedig PDL-t.</p><p>Grafikus jelölések: a rendszer funkcionális követelményeit egy szöveges
+                  megjegyzésekkel b&#337;vített grafikus nyelv segítségével írja el. Korai példa: SADT.
+                  Manapság a használati eset (use-case) leírások és a sorrend (sequence) diagramok
+                  használatosak. </p><p></p><p>Matematikai specifikáció: matematikai elveken (pl. véges állapotú automaták,
+                  halmazok) alapuló leírási módok. Egy egyértelm&#369; leírása a rendszer
+                  funkcionalitásának, amely kizárja a kés&#337;bbi vitát a megrendel&#337; és a szállító
+                  között. A legtöbb megrendel&#337; azonban nem érti a formális leírásokat és nem
+                  hajlandó ilyet a szerz&#337;désbe foglalni.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch05.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s03.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">5. fejezet - Követelmény analízis&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;5.3. 
+            
+            &nbsp;Szoftverkövetelmények dokumentuma</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch05s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:45 GMT -->
+</html>

@@ -1,0 +1,18 @@
+1.Listázza ki az értékesítések adatait: eladó neve, vásárló neve, helysége, értékesítés dátuma, összege.
+SELECT eladok.nev, vasarlok.nev, vasarlok.helyseg, ertekesitesek.datum, ertekesitesek.ertek
+FROM ertekesitesek JOIN eladok USING(eladoID) JOIN vasarlok USING(vasarloID) JOIN megyek USING(megyeID)
+WHERE ertekesitesek.vasarloID = vasarlok.vasarloID AND ertekesitesek.eladoID = eladok.eladoID;
+
+2.Melyik eladó értékesített a legnagyobb összértékben?
+SELECT eladok.nev, SUM(ertekesitesek.ertek) AS kereset
+FROM ertekesitesek JOIN eladok USING(eladoID)
+WHERE ertekesitesek.eladoID = eladok.eladoID
+ORDER BY SUM(ertekesitesek.ertek) DESC
+LIMIT 0,1;
+
+3.Mely vásárlók nem vásároltak még soha?
+SELECT vasarlok.nev
+FROM ertekesitesek JOIN vasarlok USING(vasarloID)
+WHERE vasarlok.vasarloID NOT IN (ertekesitesek.vasarloID);
+
+4.Listázza ki a megyéket a vásárlók száma szerinti növekvő sorrendben

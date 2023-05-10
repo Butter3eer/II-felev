@@ -1,0 +1,19 @@
+Яблоко (Alma) - Красный плод, который растет на дереве. (Fán termő piros gyümölcs.)
+
+Корова (Tehén) - Фермерское животное, молоко которого можно пить. (Olyan tanyasi állat, amelyek tejét inni lehet.)
+
+Дельфин (Delfin) - Считается самым умным водным животным. (A legokosabbnak tartott vizi állat.)
+
+Жирафа (Zsiráf) - Это одно из самых высоких животных в Африке. (Afrikában található egyik legmagasabb állat.)
+
+кошачий лемур (gyűrűsfarkú maki) - Король Жюльен был таким лемуром. (Julien király ilyen maki volt.)
+
+Шиншилла (Csincsilla) - Редкий домашний грызун с очень шелковистой шерстью. (Ritka rágcsáló féle háziállat roppant selymes szőrrel.)
+
+Морская ласточка (Tengeri fecske) - Это улитка открытого моря с голыми жабрами, также известная своим внезапным синим цветом. (Nyílt tengeri csupaszkopoltyús csiga, hirtelen kék színéről is híres.)
+
+Ежик (Süni) - Маленькое колючее существо. (Kistermetű tüskés élőlény.)
+
+Ящерица-броненосец (Armadilló-gyík) - Небольшое бронированное животное, предпочитающее сухой пустынный климат. (Sivatagi száraz éghajlatot kedvelő páncélos kis állat.)
+
+Стеклянная лягушка (Üvegbéka) - Они известны своими крошечными прозрачными телами, в основном на листьях. (Pici átlátszó testükről híresek, leginkább leveleken fordulnak elő.)

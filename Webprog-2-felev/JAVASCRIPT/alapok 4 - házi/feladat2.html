@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=ú, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="regLap" method="GET">
+        <div>
+            <label for="felNev">Felhasználónév:</label>
+            <input type="text" id="felNev" name="felNev" placeholder="Felhasználónév">
+        </div>
+        <div>
+            <label for="jelszo">Jelszó:</label>
+            <input type="textarea" id="jelszo" name="jelszo" placeholder="Jelszó">
+        </div>
+        <div>
+            <label for="jelszo2">Jelszó mégegyszer:</label>
+            <input type="textarea" id="jelszo2" name="jelszo2" placeholder="Jelszó mégegyszer">
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="E-mail">
+        </div>
+        <div>
+            <label for="szulDatum">Születési dátum:</label>
+            <input type="date" id="szulDatum" name="szulDatum">
+        </div>
+        <button type="button" id="regGomb" onclick="reg()">Regisztráció</button>
+    </form>
+
+    <script>
+        const adatok = [];
+
+        function reg() {
+            const regLap = document.forms["regLap"];
+            const felNev = regLap["felNev"].value;
+            const jelszo = regLap["jelszo"].value;
+            const jelszo2 = regLap["jelszo2"].value;
+            const email = regLap["email"].value;
+            const szulDatum = regLap["szulDatum"].value;
+
+            let oke = true;
+            if (felNev.length < 5 || felNev.length > 16) {
+                window.alert("A felhasználónév minimum 5 és max 16 karakternek kell lennie.");
+                oke = false;
+            }
+
+            if (jelszo.length == 0) {
+                window.alert("A nem kiválasztása kötelező");
+                mindent_megadott = false;
+            }
+            
+            if (email.length == 0) {
+                window.alert("A nem kiválasztása kötelező");
+                oke = false;
+            }
+            
+            if (szulDatum.length == 0) {
+                window.alert("Az iskolai végzettség kiválasztása kötelező");
+                oke = false;
+            }
+            
+            const jelszoHelyes = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-])/;
+            const emailHelyes = /^\S+@\S+\.\S+$/;
+            
+            if (!jelszoHelyes.test(jelszo)) {
+                window.alert('A jelszónak tartalmaznia kell kisbetűt, nagybetűt, számot és speciális karaktereket.');
+                oke = false;
+            }
+            
+            if (jelszo.length < 5 || jelszo2.length < 5) {
+                window.alert("A jelszónak minimum 5 betűsnek kell lennie.");
+                oke = false;
+            }
+            
+            if (jelszo !== jelszo2) {
+                window.alert("A 2 jelszó nem egyezik.");
+                oke = false;
+            }
+
+            if (!emailHelyes.test(email)) {
+                alert('Az e-mail cím nem megfelelő.');
+                oke = false;
+            }
+            
+            if (oke) {
+                const regAdat = {
+                    Felhasz: felNev,
+                    Jelsz: jelszo,
+                    Jelsz2: jelszo2,
+                    Imel: email,
+                    Szulido: szulDatum
+                };
+                adatok.push(regAdat);
+                console.log(adatok);
+            }
+        }
+        </script>
+</body>
+</html>

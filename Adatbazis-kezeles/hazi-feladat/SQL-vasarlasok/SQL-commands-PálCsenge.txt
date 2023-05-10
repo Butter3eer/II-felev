@@ -1,0 +1,63 @@
+1. Az Imola nevű eladó melyik évben NEM értékesített
+SELECT YEAR(minden.datum)
+FROM minden
+WHERE YEAR(minden.datum) NOT LIKE(SELECT YEAR(minden.datum) FROM minden WHERE minden.eladónév LIKE "%Imola" LIMIT 0, 1)
+GROUP BY YEAR(minden.datum);
+
+2. Az Imola nevű eladó milyen összértékben értékesített?
+SELECT SUM(ertekesitesek.ertek)
+FROM ertekesitesek NATURAL JOIN eladok USING(eladoID)
+WHERE eladok.eladoID = ertekesitesek.eladoID AND eladok.nev LIKE "%Imola";
+
+3. Minden vásárlónál számoljuk össze, hogy hány különböző eladónál vásárolt!
+SELECT minden.vásárlómév, Count(DISTINCT(minden.eladónév)) AS db
+FROM minden
+GROUP BY minden.vásárlómév;
+
+4. Listázzuk ki az eladókat a legutolsó értékesítésük szerinti sorrendben!
+SELECT eladok.nev, ertekesitesek.datum
+FROM eladok NATURAL JOIN ertekesitesek
+WHERE eladok.eladoID = ertekesitesek.eladoID
+GROUP BY ertekesitesek.eladoID
+ORDER BY ertekesitesek.datum DESC;
+
+5. Listázza ki az eladókat az értékesítéseik összege szerint csökkenő sorrendben.
+SELECT eladok.nev, SUM(ertekesitesek.ertek) AS kereset
+FROM eladok NATURAL JOIN ertekesitesek
+WHERE eladok.eladoID = ertekesitesek.eladoID
+GROUP BY ertekesitesek.eladoID
+ORDER BY SUM(ertekesitesek.ertek) DESC;
+
+6. Mely eladók nem értékesítettek még soha "Békés megye"-be?
+SELECT eladok.nev 
+FROM eladok 
+WHERE eladok.eladoID NOT IN ( SELECT eladok.eladoID FROM eladok JOIN ertekesitesek USING(eladoID) JOIN vasarlok USING(vasarloID) JOIN megyek USING(megyeID) WHERE megyek.megyeNev LIKE "%Békés%");
+
+7. Melyik évben mennyi volt az értékesítés összege?
+SELECT YEAR(ertekesitesek.datum), SUM(ertekesitesek.ertek) AS kereset
+FROM ertekesitesek
+GROUP BY YEAR(ertekesitesek.datum);
+
+8. Kovács György vásárló hányszor vásárolt?
+SELECT vasarlok.nev, COUNT(DISTINCT eladok.eladoID) AS vasarlas_darab
+FROM eladok JOIN ertekesitesek USING(eladoID) 
+			JOIN vasarlok USING(vasarloID) 
+            JOIN megyek USING(megyeID) 
+WHERE vasarlok.nev LIKE "Kovács György" 
+GROUP BY vasarlok.nev;
+
+9. Listázza ki a vásárlókat a vásárlásaik értéke szerint csökkenő sorrendben.
+SELECT vasarlok.nev, SUM(ertekesitesek.ertek) AS total 
+FROM eladok JOIN ertekesitesek USING(eladoID) 
+JOIN vasarlok USING(vasarloID) 
+JOIN megyek USING(megyeID) 
+GROUP BY vasarlok.nev ORDER BY total DESC;
+
+10. Mely megyékbe nem értékesítettek még egyik évben sem?
+SELECT megyek.megyeNev
+FROM megyek
+WHERE megyek.megyeID NOT IN(
+    SELECT DISTINCT megyek.megyeID
+    FROM eladok JOIN ertekesitesek USING(eladoID)
+    			JOIN vasarlok USING(vasarloID)
+    			JOIN megyek USING(megyeID));

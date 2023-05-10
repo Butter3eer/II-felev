@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\C#\03het\03het\bin\Debug\03het.exe.config
+E:\STUDY\Petrik\C#\03het\03het\bin\Debug\03het.exe
+E:\STUDY\Petrik\C#\03het\03het\bin\Debug\03het.pdb
+E:\STUDY\Petrik\C#\03het\03het\obj\Debug\03het.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\C#\03het\03het\obj\Debug\03het.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\C#\03het\03het\obj\Debug\03het.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\C#\03het\03het\obj\Debug\03het.exe
+E:\STUDY\Petrik\C#\03het\03het\obj\Debug\03het.pdb

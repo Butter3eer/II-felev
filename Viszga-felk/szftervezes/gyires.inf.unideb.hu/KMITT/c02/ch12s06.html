@@ -1,0 +1,34 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch12s06.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>12.6. Vezérlés elvének kiválasztása</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch12.html" title="12. fejezet - A tervezési modell"><link rel="prev" href="ch12s05.html" title="12.5. Konkurencia kezelése"><link rel="next" href="ch12s07.html" title="12.7. Rendszer határfeltételeinek meghatározása."></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">12.6. 
+            
+            Vezérlés elvének kiválasztása</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch12s05.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">12. fejezet - A tervezési modell</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch12s07.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="12.6. Vezérlés elvének kiválasztása"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e4990"></a>12.6. 
+            
+            <a name="__RefHeading__135_120998265"></a>Vezérlés elvének kiválasztása</h2></div></div></div><p>A programok legegyszer&#369;bb (és legkönnyebben implementálható) vezérlési elve az
+            eljárás orientált vezérlés. Általában ilyen programokat írunk a programozás alapjainak
+            tanulása során. Ilyenkor a program futása egy kitüntetett metódus meghívásával indul, és
+            metódus hívások sorozataként tekinthet&#337;. A feltételes utasítások alternatív hívási
+            láncok kialakítását teszik lehet&#337;vé.</p><p>Ez a vezérlési mód az interaktivitásnak csak elég korlátozott formáját teszi
+            lehet&#337;vé: ha egy programnak adatbevitelre van szüksége, kéri azt, és addig várakozik,
+            amíg megkapja a kért adatot, majd folytatja a munkát.</p><p>A mai programok ablakos felhasználói felületei számára ez a vezérlési mód nem
+            elegend&#337;, ezért kidolgozták az esemény vezérelt vezérlési módot. Ebben az esetben minden
+            inputot egy központi elosztó objektum kap meg, amely azokat különböz&#337; típusú eseményként
+            kezeli, és adatokat is kapcsol hozzá. (Például egy egérkattintás egy esemény, és adata,
+            hogy melyik pozícióban történt.) Az esemény jellege és adatai alapján aztán az eseményt
+            átadja egy megfelel&#337; objektum esemény kezel&#337; metódusának, amely lefut. (Például az
+            egérkattintás a koordináták alapján egy OK gomb fölött történt &#8211; ekkor ennek a gombnak
+            az eseménykezel&#337;jére kerül a vezérlés).</p><p>A lényegi konkurenciát tartalmazó programok esetén minden egyes aktív objektum egy
+            külön vezérlési szálba kerül. Ennek lehetséges megvalósításai:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Több szálú program. Az egyes szálak közötti kommunikáció osztottat elérhet&#337;
+                  memória területeken keresztül történhet.</p></li></ol></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Több taszkból álló alkalmazás. Az egyes aktív objektumok m&#369;ködtetését egy-egy
+                  processz végzi. A kommunikáció interprocessz kommunikációs mechanizmusokkal
+                  oldható meg.</p></li><li class="listitem"><p>Osztott alkalmazás. Az egyes aktív objektumok m&#369;ködtetését külön gépeken futó
+                  processzek végzik. A kommunikáció hálózati együttm&#369;ködést igényel.</p></li></ol></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch12s05.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch12.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch12s07.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">12.5. 
+            
+            Konkurencia kezelése&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;12.7. 
+            
+            Rendszer határfeltételeinek
+            meghatározása.</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch12s06.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:02 GMT -->
+</html>

@@ -1,0 +1,15 @@
+Berlet;2022/11/10;30
+Vonaljegy;false
+Vonaljegy;true
+Diakberlet;2023/03/03;30;76752544
+Berlet;2023/03/20;15
+Vonaljegy;true
+Vonaljegy;true
+Diakberlet;2023/03/30;15;56804349
+Diakberlet;2023/03/15;60;66424275
+Berlet;2023/02/20;30
+Vonaljegy;true
+Diakberlet;2023/02/28;30;38469245
+Berlet;2023/03/30;1
+Vonaljegy;false
+

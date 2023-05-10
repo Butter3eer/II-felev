@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</head>
+<body class="m-5">
+    <form action="get" id="etel_urlap">
+        <div class="mb-3">
+            <label for="nev">Étel neve:</label>
+            <input type="text" id="nev">
+        </div>
+
+        <div class="mb-3">
+            <label for="ar">Étel ára:</label>
+            <input type="number" id="ar">
+        </div>
+
+        <div>
+            <label for="kategoria">Kategória:</label>
+            <select name="kategoria" id="kategoria">
+                <option value="Előétel">Előétel</option>
+                <option value="Főétel">Főétel</option>
+                <option value="Desszert">Desszert</option>
+            </select>
+        </div>
+            
+        <div id="osszetevok">
+            Összetevők: <br>
+            <input type="checkbox" id="liszt" value="liszt">
+            <label for="liszt">Liszt</label><br>
+            <input type="checkbox" id="tojás" value="tojás">
+            <label for="tojás">Tojás</label><br>
+            <input type="checkbox" id="vaj" value="vaj">
+            <label for="vaj">Vaj</label><br>
+            <input type="checkbox" id="cukor" value="cukor">
+            <label for="cukor">Cukor</label><br>
+            <input type="checkbox" id="víz" value="víz">
+            <label for="víz">Víz</label><br>
+        </div>
+
+        <button type="button" id="hozzaad" onclick="Hozzaad()">Hozzáad</button>
+        <br><br>
+
+        <table class="table table-light">
+            <thead>
+                <tr>
+                    <th>Előételek</th>
+                    <th>Név</th>
+                    <th>Ár</th>
+                    <th>Összetevők</th>
+                    <th>Törlés</th>
+                </tr>
+            </thead>
+            <tbody id="eloetelekBody">
+            </tbody>
+        </table><br><br>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Főételek</th>
+                    <th>Név</th>
+                    <th>Ár</th>
+                    <th>Összetevők</th>
+                    <th>Törlés</th>
+                </tr>
+            </thead>
+            <tbody id="foetelekBody">
+            </tbody>
+        </table><br><br>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Desszertek</th>
+                    <th>Név</th>
+                    <th>Ár</th>
+                    <th>Összetevők</th>
+                    <th>Törlés</th>
+                </tr>
+            </thead>
+            <tbody id="desszertekBody">
+            </tbody>
+        </table>
+    </form>
+<!----------------------------------------------------------------------------------------------------->
+    <script>
+        class Etel {
+            constructor (nev, ar){
+                this.nev = nev;
+                this.ar = ar;
+                this.kategoria = "";
+                this.osszetevok = [];
+            }
+
+            setKategoria (kateg) {
+                this.kategoria = kateg;
+                return this;
+            }
+
+            setOsszetevok (lista) {
+                this.osszetevok = lista;
+                return this;
+            }
+        }
+
+        const etelek = [];
+        const eloetel = [];
+        const foetel = [];
+        const desszert = [];
+
+        function Hozzaad() {
+            const nev = document.getElementById("nev").value;
+            const ar = parseInt(document.getElementById("ar").value);
+            let kateg = document.getElementById('kategoria').value;
+            const dobozok = document.querySelectorAll('input[type="checkbox"]');
+            let kijeloltek = [];
+            
+            document.getElementById('kategoria').addEventListener("change", (event) => {
+                kateg = event.target.value;
+            })
+
+            console.log(kateg);
+
+            dobozok.forEach((item) => {
+                if (item.checked) {
+                    kijeloltek.push(item.value);
+                }
+                else{
+                    kijeloltek = kijeloltek.filter((value) => value !== item.value)
+                }  
+            })
+
+            var Ujetel = new Etel(nev, ar);
+            var UjNev = Ujetel.nev;
+            etelek.push(Ujetel);
+
+            if (Object.is(kateg, "Előétel")) {
+                if (!Tartalmazza(eloetel, UjNev)){
+                    eloetel.push(Ujetel);
+                    addRow(nev, ar, kijeloltek, "eloetelekBody");
+                    Ujetel.kategoria = "Előétel";
+                }
+                else{
+                    const body = doument.getElementById("eloetelekBody")
+                    const row = body.getElementsByTagName("tr");
+    
+                    for (let index = 0; index < row.length; index++) {
+                        const etelnev = row[index].getElementsByTagName("td")[1].textContent;
+                        if (etelnev === UjNev) {
+                            body.deleteRow(index);
+                            index--;
+                        }
+                    }
+                }
+            }
+            else if (Object.is(kateg, "Főétel")) {
+                if (!Tartalmazza(foetel, UjNev)){
+                    foetel.push(Ujetel);
+                    addRow(nev, ar, kijeloltek, "foetelekBody");
+                    Ujetel.kategoria = "Főétel";
+                }else {
+
+                }
+            }
+            else if (Object.is(kateg, "Desszert")) {
+                if (!Tartalmazza(desszert, UjNev)){
+                    desszert.push(Ujetel);
+                    addRow(nev, ar, kijeloltek, "desszertekBody");
+                    Ujetel.kategoria = "Desszert";
+                }else {
+                }
+            }
+            document.getElementById("nev").value = "";
+            document.getElementById("ar").value = "";
+            document.getElementById("kategoria").value = "";
+            document.querySelectorAll('input[type="checkbox"]').forEach(item => item.checked = false);
+        }
+
+        function Tartalmazza(lista, nev){
+            let index = 0;
+            while (index < lista.length && lista[index].nev !== nev){
+                index++;
+            }
+            return index < lista.length;
+        }
+
+        function addRow(nev, ar, osszetevok, id){
+            let body = document.getElementById(id);
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td></td>
+                <td>${nev}</td>
+                <td>${ar}</td>
+                <td>${osszetevok}</td>
+                <td><input type="button" value="Delete" onclick="deleteRow(this, '${id}')"></td>
+                `;
+                body.appendChild(row);
+        }
+
+        function deleteRow(r, id) {
+            var i = r.parentNode.parentNode.rowIndex - 1;
+            console.log(i);
+            document.getElementById(id).deleteRow(i);
+        }
+    </script>
+</body>
+</html>

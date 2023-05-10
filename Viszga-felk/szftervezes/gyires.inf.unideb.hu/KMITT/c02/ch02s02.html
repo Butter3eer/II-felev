@@ -1,0 +1,42 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:42 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>2.2. &nbsp;Evolúciós fejlesztés</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch02.html" title="2. fejezet - A szoftverfejlesztés életciklus modelljei"><link rel="prev" href="ch02.html" title="2. fejezet - A szoftverfejlesztés életciklus modelljei"><link rel="next" href="ch02s03.html" title="2.3. Komponens alapú fejlesztés"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2.2. 
+            
+            &nbsp;Evolúciós fejlesztés</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">2. fejezet - A szoftverfejlesztés életciklus modelljei</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch02s03.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="2.2. &nbsp;Evolúciós fejlesztés"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e348"></a>2.2. 
+            
+            <a name="__RefHeading__21_120998265"></a>&nbsp;Evolúciós fejlesztés</h2></div></div></div><p></p><p>Az evolúciós fejlesztés a vízesésmodellt&#337;l eltér&#337; alapgondolaton alapul. Az
+            alapötlete az, hogy a fejleszt&#337;csapat kifejleszt egy kezdeti implementációt, majd azt a
+            felhasználókkal véleményezteti, majd sok-sok verzión keresztül addig finomítják, amíg a
+            megfelel&#337; rendszert el nem érik. A szétválasztott specifikációs, fejlesztési és
+            validációs tevékenységekhez képest ez a megközelítési mód sokkal inkább érvényesíti a
+            tevékenységek közötti párhuzamosságot és a gyors visszacsatolásokat.</p><div class="figure"><a name="d0e356"></a><p class="title"><b>2.2. ábra - Evolúciós fejlesztési modell</b></p><div class="figure-contents"><div align="center"><img src="images/image2.png" align="middle" alt="Evolúciós fejlesztési modell"></div></div></div><br class="figure-break"><p>Az evolúciós fejlesztésnek két különböz&#337; típusát szokás a gyakorlatban
+            megkülönböztetni:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Feltáró fejlesztés: célja egy m&#369;köd&#337;képes rendszer átadása a
+                  végfelhasználóknak. Ezért els&#337;sorban a legjobban megértett és el&#337;térbe helyezett
+                  követelményekkel kezdik a fejlesztés menetét. Ennek érdekében a megrendel&#337;vel
+                  együtt tárjuk fel a követelményeket, és alakítják ki a végleges rendszert, amely
+                  úgy alakul ki, hogy egyre több, az ügyfél által kért tulajdonságot társítunk a már
+                  meglév&#337;khöz. A kevésbé fontos és körvonalazatlanabb követelmények akkor kerülnek
+                  megvalósításra, amikor a felhasználók kérik.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Eldobható prototípus készítés: a fejlesztés célja ekkor az, hogy a lehet&#337;
+                  legjobban megértsük az ügyfél követelményeit, amelyekre alapozva pontosan
+                  definiáljuk azokat. A prototípusnak pedig azon részekre kell koncentrálni, amelyek
+                  kevésbé érthet&#337;k.</p></li></ol></div><p>Próbáljuk meg összevetni az evolúciós megközelítést a vízesésmodellel. A fentiek
+            alapján láttuk, hogy a vízesésmodell kevésbé rugalmas a menetközben szükséges
+            változásokra, így érvelhetünk azzal, hogy az evolúciós megközelítés hatékonyabb a
+            vízesésmodellnél, ha olyan rendszert kell fejleszteni, amely közvetlenül megfelel az
+            ügyfél kívánságainak. További el&#337;nye, hogy a rendszerspecifikáció inkrementálisan
+            fejleszthet&#337;. Mindezek ellenére a vezet&#337;ség szemszögéb&#337;l két probléma merülhet
+            fel:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>A folyamat nem látható: a menedzsereknek rendszeresen szükségük van
+                  leszállítható részeredményekre, hogy mérhessék a fejl&#337;dést.</p></li><li class="listitem"><p>A rendszerek gyakran szegényesen strukturáltak: a folyamatos változtatások
+                  lerontják a rendszer struktúráját, így kevésbé érthet&#337;vé válik. A szoftver
+                  változásainak összevonása pedig egyre nehezebbé és költségesebbé válhat.</p></li></ol></div><p>Felmerülhet akkor a kérdés, hogy mikor és kinek érdemes használni az evolúciós
+            fejlesztési modellt? Nos a válasz természetesen nem lehet egyértelm&#369;, de a gyakorlati
+            tapasztalatok alapján a várhatóan rövid élettartalmú kis vagy közepes rendszerek esetén
+            célszer&#369; az alkalmazása. Körülbelül 500.000 programsorig terjed&#337;en. Ugyanis nagy, hosszú
+            élettartalmú rendszerek esetén az evolúciós fejlesztés válságossá válhat pontosan az
+            evolúciós jellege miatt.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch02.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch02s03.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">2. fejezet - A szoftverfejlesztés életciklus modelljei&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;2.3. 
+            
+            Komponens alapú fejlesztés</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch02s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:42 GMT -->
+</html>

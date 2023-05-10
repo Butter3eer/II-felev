@@ -1,0 +1,31 @@
+﻿<Window x:Class="Keresztrejtveny.HardQuestions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Keresztrejtveny"
+        mc:Ignorable="d"
+        Title="HardQuestions" Height="450" Width="300">
+    <Grid>
+        <Grid.Background>
+            <VisualBrush Viewbox="0,0,950,1740" ViewboxUnits="Absolute">
+                <VisualBrush.Visual>
+                    <Image Source="/kerdesek_hatter.jpg">
+                        <Image.BitmapEffect>
+                            <BlurBitmapEffect Radius="30"/>
+                        </Image.BitmapEffect>
+                    </Image>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+        <TextBlock x:Name="kerdes1" Text="1. Milyen tárgy segítségével került Harry a Kviddics Világkupára?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes2" Text="2. Mit evett meg Harry, hogy a víz alatt tudjon lélegezni?" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,65,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes3" Text="3. Mumusok elleni varázslat (könyvben írt helyesírással)." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes4" Text="4. Varázslat, ami által az ember akarata ellenére kezd el táncolni." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,145,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes5" Text="5. Kaszaboló átok, mély vágásokhoz vezet az ember testén." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,200,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes6" Text="6. Kötöző rontás." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,255,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes7" Text="7. Ártalmatlan varázslény, mely a varázslók padlásain szokott előfordulni." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,275,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes8" Text="8. Ki mondta? 'Ég veletek, Hagrid barátai!'" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,325,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+        <TextBlock x:Name="kerdes9" Text="9. Egészítsd ki az idézetet: ____. Varangydudva. Mindkettő az én készletemből tűnt el, és tudom, hogy kilopta el őket." VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,360,0,0" TextWrapping="Wrap" FontSize="15" FontFamily="Courier New" FontWeight="Bold"/>
+    </Grid>
+</Window>

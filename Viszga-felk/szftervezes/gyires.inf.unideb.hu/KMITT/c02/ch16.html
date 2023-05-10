@@ -1,0 +1,33 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch16.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:06 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>16. fejezet - Esettanulmány</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch15s04.html" title="15.4. 15.4 Ellen&#337;rz&#337; kérdések"><link rel="next" href="ch16s02.html" title="16.2. Követelmények felderítése"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">16. fejezet - Esettanulmány</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch15s04.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch16s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="16. fejezet - Esettanulmány"><div class="titlepage"><div><div><h2 class="title"><a name="d0e6486"></a>16. fejezet - Esettanulmány</h2></div></div></div><div class="sect1" title="16.1. Bevezetés"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e6489"></a>16.1. Bevezetés</h2></div></div></div><p>Az alkalmazás fejlesztésére nincs tökéletes megoldás, csak javaslatok és
+                    ajánlások vannak. A fejlesztés valójában a programozói, rendszerfejlesztési
+                    tapasztalatunk használata a szükséges ismeretek birtokában. Ebben a fejezetben
+                    egy valós fejlesztés mentét mutatjuk be. Az MTA SZTAKI Kognitív informatika
+                    laborja t&#369;zte ki magának a feladatot, hogy egy virtuális együttm&#369;ködési
+                    rendszert hozzon létre, melynek neve VIRCA (VIRtual Collaboration Arena). Az
+                    alkalmazás egy 3 dimenziós térben valós és virtuális objektumokat jelenít meg,
+                    és kezel. A rendszerben tetsz&#337;leges számú és típusú komponenseket lehet
+                    elhelyezni (virtuális vagy valóságos), amelyek mindegyike egy önálló alkalmazás.
+                    Az els&#337; verzió után újabb igények merültek fel. Az elkészült rendszer egy
+                    osztott alkalmazás lett, ami CORBA és ICE technológiákat használ. A rendszer egy
+                    közös adatstruktúrát használ az elérhet&#337; komponensek nyilvántartására, a CORBA
+                    naming service-t (név szolgáltatást), ami fa struktúrában tárolja a
+                    komponenseket. A 3 dimenziós megjelenít&#337; ablak OGRE (nyílt forráskódú grafikai
+                    motor) rendszer segítségével implementálták c++-ban. A mi rendszerünk a hálózati
+                    kommunikáció lebonyolítására egy Openrtm-aist robot middleware-t használ. Írtunk
+                    ehhez pár kiterjesztést (ICE port, 1 fogyasztó több szolgáltató lehet&#337;ség), és a
+                    projekt kezdetekor a gyári rendszer szerkeszt&#337;t használtuk. A gyári szerkeszt&#337;
+                    egy Eclipse plugin, amely használatához egy több 10 megabájtos alkalmazás
+                    szükséges (Eclipse), és mi rendszerünk használatakor kényelmetlen egy küls&#337; szerkeszt&#337;t
+                    használni (váltogatva az aktív alkalmazást). </p><p>A fejlesztés a klasszikus vízesés modell lépéseib&#337;l áll, a módszerek is azt
+                    javasolják, csak a legtöbb több iterációt ír el&#337;, és így a rendszer finomodik.
+                    Érdemes már az elején definiálni egy szótárt, amit a felmerül&#337; újabb és újabb
+                    fogalmakkal b&#337;vítünk. Általános elv minden fázisnál, hogy el&#337;ször egy durva
+                    megközelítés után egyre részletesebb leírást, modellt készítünk.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch15s04.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch16s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">15.4. 
+      
+            15.4 Ellen&#337;rz&#337; kérdések&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;16.2. Követelmények felderítése</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch16.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:34:06 GMT -->
+</html>

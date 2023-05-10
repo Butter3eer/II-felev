@@ -1,0 +1,56 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:44 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>4. fejezet - Fejlesztési módszertanok</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="index.html" title="Szoftverfejlesztés"><link rel="prev" href="ch03s02.html" title="3.2. A modell készítés folyamata"><link rel="next" href="ch04s02.html" title="4.2. A módszertanok fejl&#337;dése"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. fejezet - Fejlesztési módszertanok</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03s02.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04s02.html">Következ&#337;</a></td></tr></table><hr></div><div class="chapter" title="4. fejezet - Fejlesztési módszertanok"><div class="titlepage"><div><div><h2 class="title"><a name="d0e843"></a>4. fejezet - Fejlesztési módszertanok</h2></div></div></div><p>A fejlesztési módszertanok a szoftver fejlesztési munka technológiai leírásai. Angol
+         megfelel&#337;je: methodology. Az els&#337; módszertanok a szoftver krízis jelenségének felismerése
+         után, az 1970-es évek elején keletkeztek, azóta számos módszertant fejlesztettek ki és
+         próbáltak ki a gyakorlatban. A módszertanok fejl&#337;dése máig sem fejez&#337;dött be, és
+         folytatódni fog még jó ideig, mert a megoldandó problémák jellege és a megoldásokhoz
+         használható technológiák folyamatosan fejl&#337;dnek, és ezeket a változásokat a
+         szoftverfejlesztési folyamatnak is követnie kell.</p><div class="sect1" title="4.1. A módszertan fogalma"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e848"></a>4.1. 
+            
+            <a name="__RefHeading__41_120998265"></a>A módszertan fogalma</h2></div></div></div><p>Egy szoftvertervezési módszertan a fejlesztési tevékenység strukturált megközelítése,
+            azon szabályok, ajánlások, a gyakorlatban bevált tapasztalatok összegzése, amelyek
+            el&#337;segítik, hogy a szoftver határid&#337;re, adott költségkereten belül és megfelel&#337;
+            min&#337;ségben elkészülhessen.</p><p>A módszertan egy klasszikus definíciója (Orr, 1989)</p><p>&#8222;A módszertan különböz&#337;, közös filozófiára épül&#337; módszerek összessége, amelyek
+            egységes keretbe illesztve egyértelm&#369;en meghatározzák a rendszerfejlesztés
+            életciklusát.&#8221;</p><p>Röviden összefoglalva minden módszertan arra fogalmaz meg szabályokat, hogy a
+            szoftverfejlesztési folyamat (egy szoftver projekt) során ki &#8211; mikor &#8211;mit &#8211; hogyan
+            csináljon a végeredmény elérése érdekében. Vizsgájuk meg az ebben a rövid definícióban
+            szerepl&#337; négy összetev&#337;t.</p><p>Ki. A fejlesztésben résztvev&#337; szerepl&#337;ket határozza meg. A munka szempontjából nem a
+            személyek, hanem azok szerepe (szerepköre) a lényeges, azaz hogy milyen munkafolyamatot
+            kell elvégeznie. A fejlesztéshez szükséges tipikus szerepkörök lehetnek például</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>elemz&#337;,</p></li><li class="listitem"><p>vezet&#337; tervez&#337; (elterjedt angol kifejezéssel &#8222;architect&#8221;),</p></li><li class="listitem"><p>vezet&#337; és beosztott programozó,</p></li><li class="listitem"><p>teszt tervez&#337;, teszt mérnök,</p></li><li class="listitem"><p>szakterületi szakért&#337;,</p></li><li class="listitem"><p>dokumentátor,</p></li><li class="listitem"><p>a fejlesztési projekt lebonyolításáért felel&#337;s projekt menedzser és további
+                  munkatársak.</p></li></ol></div><p>Ezeket a szerepköröket természetesen egy adott projekt esetén valódi munkatársakhoz
+            kell rendelni. A hozzárendelés általában a projekt egy id&#337;szakára vonatkozik, és egy
+            munkatárs több szerepkört is elláthat. (Azaz a szerepkör &#8211; személy összerendelés
+            több-több jelleg&#369;, és nem állandó). Egy gyakorlott munkatárs például gyakran betölti az
+            elemz&#337;, vezet&#337; tervez&#337;, vezet&#337; programozó szerepköröket, de egy kis létszámú projekt
+            esetén akár még több szerepkört is el kell látnia.</p><p>Mikor. Az egyes módszertanok definiálják a projekt során követend&#337; munkafolyamatot
+            (work flow-t). Ehhez a 2. fejezetben ismertetett valamelyik szoftverfolyamat modellt,
+            vagy azok kombinációját veszik alapul. A munkafolyamat definíciója el&#337;írja a
+            fejleszt&#337;knek, hogy az egyes résztevékenységeket (amelyet a mit kérdésre válaszolva
+            határoz meg a módszertan) milyen sorrendben végezzék. A projekt menedzser számára
+            megadja, mikor, milyen tevékenységek végrehajtását kell ellen&#337;riznie, esetleg ezek közül
+            melyek párhuzamosíthatók, hogy a fejlesztés átfutási ideje csökkenthet&#337; legyen.</p><p>Mit. A módszertanok a fejlesztési folyamatot elemi lépések sorozatára bontják.
+            Meghatározzák, hogy egy elemi lépés a korábbi lépések eredményeib&#337;l mit vagy miket
+            használjon fel, és mi legyen ennek a lépésnek a végeredménye (terméke). </p><p>Hogyan. Az elemi lépések végrehajtásának módját definiálja (szokás módszernek is
+            nevezni). A módszertanok eljárásokat definiálnak a fejlesztési lépések végrehajtására.
+            El&#337;írják, hogy egy elemi lépés végeredményét milyen módon kell dokumentálni. A
+            dokumentáció elkészítését valamilyen technikával (jelölésrendszerrel) támogatják. A
+            technika a fejlesztési munkát, a fejleszt&#337;k közötti, valamint a felhasználó-fejleszt&#337;
+            közötti kommunikációt segít&#337; szimbólumrendszer, diagramok, ábrázolási és dokumentálási
+            eszközök összessége</p><p>A különböz&#337; módszertanok tartalmazhatnak azonos lépéseket, és azonos technikákat.
+            Korábban minden módszertanhoz saját jelölésrendszert dolgoztak ki. Az UML megjelenése a
+            jelölésrendszert szabványosította, így a mai módszertanok kivétel nélkül azt
+            használják.</p><p>Fel kell hívnunk a figyelmet arra, hogy a magyar szakirodalom szóhasználata nem
+            teljesen következetes. Szigorúan véve a módszer (angolul method) egy elemi fejlesztési
+            lépés, a módszertan a teljes fejlesztési folyamat végrehajtásának módját jelenti. A
+            módszer szó azonban néha a módszertan szinonímájaként jelenik meg, így a
+            szövegkörnyezetb&#337;l kell megállapítami, hogy melyik jelentésben használják.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03s02.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch04s02.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">3.2. 
+            
+            A modell készítés folyamata&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;4.2. 
+            
+            A módszertanok fejl&#337;dése</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch04.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:44 GMT -->
+</html>

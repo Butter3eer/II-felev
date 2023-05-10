@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feladat04</title>
+</head>
+<body>
+    <p><input type="number" id="input"></p>
+    <p id="print"></p>
+    <p id="hiba"></p>
+
+    <script>
+        document.addEventListener("input", start);
+
+        function start(){
+            const a = parseInt(document.getElementById("input").value);
+
+            if (a > 7 || a < 1){
+                document.getElementById("hiba").innerHTML = "Nem megfelelő számot adott meg";
+            }
+            else
+            {
+                document.getElementById("hiba").innerHTML = "";
+            }
+
+            var day;
+            switch (a) {
+                case 1:
+                    day = "Hétfő";
+                break;
+                case 2:
+                    day = "Kedd";
+                break;
+                case 3:
+                    day = "Szerda";
+                break;
+                case 4:
+                    day = "Csütörtök";
+                break;
+                case 5:
+                    day = "Péntek";
+                break;
+                case 6:
+                    day = "SZombat";
+                break;
+                case 7:
+                    day = "Vasárnap";
+                break;
+            }
+            document.getElementById("print").innerHTML = day;   
+        }
+    </script>
+</body>
+</html>

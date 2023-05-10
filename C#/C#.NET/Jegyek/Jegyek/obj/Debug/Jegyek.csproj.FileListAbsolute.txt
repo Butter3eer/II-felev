@@ -1,0 +1,8 @@
+D:\celescsenge\Jegyek\Jegyek\bin\Debug\Jegyek.exe.config
+D:\celescsenge\Jegyek\Jegyek\bin\Debug\Jegyek.exe
+D:\celescsenge\Jegyek\Jegyek\bin\Debug\Jegyek.pdb
+D:\celescsenge\Jegyek\Jegyek\obj\Debug\Jegyek.csproj.AssemblyReference.cache
+D:\celescsenge\Jegyek\Jegyek\obj\Debug\Jegyek.csproj.SuggestedBindingRedirects.cache
+D:\celescsenge\Jegyek\Jegyek\obj\Debug\Jegyek.csproj.CoreCompileInputs.cache
+D:\celescsenge\Jegyek\Jegyek\obj\Debug\Jegyek.exe
+D:\celescsenge\Jegyek\Jegyek\obj\Debug\Jegyek.pdb

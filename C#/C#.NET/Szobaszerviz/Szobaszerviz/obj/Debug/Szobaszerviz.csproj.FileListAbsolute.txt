@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Szobaszerviz\Szobaszerviz\bin\Debug\Szobaszerviz.exe.config
+E:\STUDY\Petrik\II-felev\C#\Szobaszerviz\Szobaszerviz\bin\Debug\Szobaszerviz.exe
+E:\STUDY\Petrik\II-felev\C#\Szobaszerviz\Szobaszerviz\bin\Debug\Szobaszerviz.pdb
+E:\STUDY\Petrik\II-felev\C#\Szobaszerviz\Szobaszerviz\obj\Debug\Szobaszerviz.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Szobaszerviz\Szobaszerviz\obj\Debug\Szobaszerviz.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Szobaszerviz\Szobaszerviz\obj\Debug\Szobaszerviz.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Szobaszerviz\Szobaszerviz\obj\Debug\Szobaszerviz.exe
+E:\STUDY\Petrik\II-felev\C#\Szobaszerviz\Szobaszerviz\obj\Debug\Szobaszerviz.pdb

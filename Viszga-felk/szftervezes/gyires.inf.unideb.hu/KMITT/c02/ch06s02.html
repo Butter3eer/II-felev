@@ -1,0 +1,83 @@
+<html>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch06s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:47 GMT -->
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>6.2. Objektumorientált tervezés</title><link rel="stylesheet" href="style.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Szoftverfejlesztés"><link rel="up" href="ch06.html" title="6. fejezet - A szoftvertervezés folyamata"><link rel="prev" href="ch06.html" title="6. fejezet - A szoftvertervezés folyamata"><link rel="next" href="ch06s03.html" title="6.3. Felhasználói felületek tervezése"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6.2. 
+            
+            Objektumorientált
+         tervezés</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06.html">El&#337;z&#337;</a>&nbsp;</td><th width="60%" align="center">6. fejezet - A szoftvertervezés folyamata</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch06s03.html">Következ&#337;</a></td></tr></table><hr></div><div class="sect1" title="6.2. Objektumorientált tervezés"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1968"></a>6.2. 
+            
+            <a name="__RefHeading__65_120998265"></a>Objektumorientált
+         tervezés</h2></div></div></div><p>Egy objektumorientált rendszer egymással
+            együttm&#369;köd&#337; objektumokból áll, amely az objektum saját állapotát karbantartja és err&#337;l
+            az állapot­ról információs m&#369;veleteket biztosít. Az állapot reprezentációja privát, az
+            objektumon kívülr&#337;l közvet­lenül nem hozzáférhet&#337;. Egy objektumorientált tervezési
+            folyamat az objektum­osztályoknak és az azok közötti kapcsolatoknak a megtervezéséb&#337;l
+            áll.</p><p>Az objektumorientált tervezés az objektumorientált fejlesztés része, amelyben a
+            fejlesztési folyamat során objektumorientált stratégiát használunk:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Objektumorientált elemzés:a szoftver objektumorientált mo­delljének
+                  kialakításával foglalkozik.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Objektumorientált tervezés: a meghatározott követelményeknek megfelel&#337;
+                  szoftverrendszer objektumorientált modelljének kialakítása. Az objektumori­entált
+                  tervezés objektumai a probléma megoldásával kapcsolatosak.</p></li></ol></div><p></p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Objektumorientált programozás: a szoftverterv objektumorientált programo­zási
+                  nyelven történ&#337; megvalósítása. Pl.: C++, D, Java, C#, stb.</p></li></ol></div><p>A különböz&#337; lépések közötti átmenetnek észrevehetetlennek kell lennie, és mindegyik
+            lépésben kompatibilis jelölésrendszert kell használni. Az objektumorientált rendszereket
+            a más elven fejlesztett rendszerekkel szemben könnyebb megváltoztatni, mert az
+            objektumok egymástól függetlenek. Egy objektum implemen­tációjának megváltozása vagy új
+            szolgáltatásokkal történ&#337; b&#337;vülése nem befolyá­solhatja a rendszer többi objektumát.
+            Ezért azt mondhatjuk, hogy az objektumok potenciálisan újrafelhasználható komponensek,
+            mivel az ál­lapotnak és a m&#369;veleteknek független egységbe zárásai. Ez növeli az
+            érthet&#337;séget és így a terv karbantarthatóságát is.</p><p></p><p></p><div class="sect2" title="6.2.1. Objektumok és objektumosztályok"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1995"></a>6.2.1. Objektumok és objektumosztályok</h3></div></div></div><p>Általáno­san elfogadott, hogy az objektum az információt
+               elrejti. Ian Sommerville a következ&#337; definíciót adja [1]:</p><p>&#8222;Egy objektum egy állapottal és az ezen az állapoton ható, meghatározott
+               m&#369;veletekkel rendelkez&#337; entitás. Az állapotot objektum-attribútumok halmazaként adjuk
+               meg. Az objektum m&#369;veletei szolgáltatásokat biztosítanak a többi objektum
+               szá­mára.&#8221;</p><p>&#8222;Az objektumok egy objektumosztály-definíció alapján jönnek létre. Egy
+               objektumosz­tály definíciója egyszerre típusspecifikáció és egy objektumok
+               létrehozására szolgáló sablon. Az adott osztályba tartozó objektummal kapcsolatos
+               összes attribútum és m&#369;­velet deklarációját tartalmazza.&#8221;</p><p>A következ&#337; ábra [1] egy UML-ben megadott osztálydefiníciót mutat be:</p><div class="figure"><a name="d0e2006"></a><p class="title"><b>6.5. ábra - Az Alkalmazott objektumosztály</b></p><div class="figure-contents"><div align="center"><img src="images/image21.png" align="middle" alt="Az Alkalmazott objektumosztály"></div></div></div><br class="figure-break"><p>Az objektumok úgy kommunikálnak, hogy szolgáltatásokat kérnek más ob­jektumoktól
+               (meghívják azok módszereit). A szolgáltatás végrehajtásához szükséges információ és a
+               szolgáltatás végrehajtásának eredmé­nyei paraméterként adódnak át. Pl.: </p><p>// Egy puffer objektum módszerének hívása, amely visszaadja a pufferben található
+               következ&#337;értéket</p><p>v = Buffer.GetNextElement();</p><p>// Puffer elemszámának a beállítása</p><p>v = Buffer.SetElements(20);</p><p></p><p>Egy objektum &#8222;szolgáltatáskérés&#8221; üzenetet küldhet egy másiknak, akit&#337;l a
+               szolgáltatást kéri. A fogadóobjektum elemzi az üzenetet, azono­sítja a szolgáltatást
+               és az ahhoz kapcsolódó adatokat, majd végrehajtja a kívánt szolgáltatást. Ha a
+               szolgáltatáskérelmek ily módon vannak implementálva, az objektumok közötti
+               kommunikáció szinkron, azaz a hívóobjektum megvárja a szolgáltatás befejez&#337;dését
+               (soros végrehajtás). A gyakorlatban a legtöbb objektum-orientált nyelvben ez a modell
+               az alapértelmezett.</p><p>Az újabb OOP nyelvekben azonban, mint pl. a JAVA-ban vagy a C#-ban, léteznek a
+               szálak, amelyek megengedik a konkurens módon végrehajtódó objektumok létrehozását és
+               az aszinkron kommunikációt (a hívóobjektum folytatja a m&#369;ködését az általa igényelt
+               szolgáltatás futása alatt is). Ezek a konkurens objektumok kétféleképpen
+               implementálhatók:</p><p>1. Aktív objektumok: önmaguk képesek bels&#337;állapotukat megváltoztatni és üzenetet
+               küldeni, anélkül, hogy más objektumtól vezérl&#337;üzenetet kaptak volna. (Ellentétük a
+               passzív objektum.) Az aktív objektumot reprezentáló folyamat ezeket a m&#369;veleteket
+               folyamatosan végrehajtja, így soha nem függeszt&#337;dik fel.</p><p>2. Szerverek: az objektum a megadott m&#369;veleteknek megfelel&#337; eljárásokkal
+               rendelkez&#337; párhuzamos folyamat. Az eljárások egy küls&#337; üzenetre válaszolva indulnak
+               el és más objektumok eljárásaival párhuzamosan futhatnak. Mikor befejezték a
+               tevékenységüket, az objektum várakozó állapotba kerül és további kéréseket
+               vár.</p><p>A szervereket leginkább osztott környezetben érdemes használni, ahol a hívó és a
+               hívott objektum különböz&#337; számítógépeken hajtódik végre. Az igényelt szolgáltatásra
+               adott válaszid&#337; megjósolhatatlan, ezért úgy kell megtervezni a rendszert, hogy a
+               szolgáltatást igényl&#337; objektumnak ne kelljen megvárni a szolgáltatás befejez&#337;dését. A
+               szerverek persze egyedi gépen is használhatók, ahol a szolgáltatás befejez&#337;déséhez
+               némi id&#337;re van szükség, pl. nyomtatás és a szolgáltatást több különböz&#337; objektum is
+               igényelheti.</p><p>Aktív objektumokat akkor célszer&#369; használni, ha egy objektumnak saját állapotát
+               megadott id&#337;közönként frissíteni kell. Ez valós idej&#369; rendszerekben gyakori, ahol az
+               objektumok a rendszer környezetér&#337;l információt gy&#369;jt&#337; hardvereszközökkel állnak
+               kapcsolatban.</p><p>Az objektumosztályok egy generalizációs vagy örökl&#337;dési hierarchiába szervezhet&#337;k,
+               amely az általános és a specifikus objektum­osztályok közötti kapcsolatot jeleníti
+               meg. Egy objektumhierarchiában a lejjebb található osztályok rendelkeznek
+               ugyanazokkal az attribútumokkal és m&#369;veletekkel, mint szül&#337;osztályaik, de új
+               attribútumokkal és m&#369;veletekkel egészítheti ki azokat, valamint meg is
+               változ­tathatják szül&#337;osztályaik attribútumainak és m&#369;veleteinek némelyikét.</p><p></p><p></p></div><div class="sect2" title="6.2.2. Objektumok élettartalma"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2037"></a>6.2.2. Objektumok élettartalma</h3></div></div></div><p>A megvalósítandó objektum bels&#337; állapotát az attribútumainak
+               pillanatnyi értéke határozza meg. Ezeket az adatokat az objektum élete során tárolni
+               kell. A háttértárolón azon objektumok adatait kell tárolni, amelyek élettartama
+               hosszabb, mint a program futási ideje. Ezeket perzisztens objektumoknak nevezzük.
+               (Azokat az objektumokat pedig, amelyek élettartama a program futási idejénél nem
+               hosszabb, tranziens-nek nevezzük.) Ha a program nagyszámú perzisztens objektummal
+               dolgozik, érdemes egy adatbázis-kezel&#337; rendszerrel kiegészíteni. A relációs
+               adatbázisokat nagyszámú, de viszonylag kevés osztályhoz tartozó objektum tárolására
+               érdemes igénybe venni, egyébként érdemesebb objektum-orientált adatbázis-kezel&#337;t
+               használni.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06.html">El&#337;z&#337;</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch06.html">Fel</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch06s03.html">Következ&#337;</a></td></tr><tr><td width="40%" align="left" valign="top">6. fejezet - A szoftvertervezés folyamata&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Tartalom</a></td><td width="40%" align="right" valign="top">&nbsp;6.3. 
+            
+            Felhasználói felületek
+         tervezése</td></tr></table></div></body>
+<!-- Mirrored from gyires.inf.unideb.hu/KMITT/c02/ch06s02.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Jan 2023 20:33:47 GMT -->
+</html>

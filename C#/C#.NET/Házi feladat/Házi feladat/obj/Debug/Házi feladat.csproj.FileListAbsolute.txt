@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II félév\C#\Házi feladat\Házi feladat\bin\Debug\Házi feladat.exe.config
+E:\STUDY\Petrik\II félév\C#\Házi feladat\Házi feladat\bin\Debug\Házi feladat.exe
+E:\STUDY\Petrik\II félév\C#\Házi feladat\Házi feladat\bin\Debug\Házi feladat.pdb
+E:\STUDY\Petrik\II félév\C#\Házi feladat\Házi feladat\obj\Debug\Házi feladat.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II félév\C#\Házi feladat\Házi feladat\obj\Debug\Házi feladat.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II félév\C#\Házi feladat\Házi feladat\obj\Debug\Házi feladat.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II félév\C#\Házi feladat\Házi feladat\obj\Debug\Házi feladat.exe
+E:\STUDY\Petrik\II félév\C#\Házi feladat\Házi feladat\obj\Debug\Házi feladat.pdb

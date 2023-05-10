@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="textarea" id="bevitel" />
+
+    <p>Átalakító:</p>
+    <input type="radio" id="kisbetu" name="atalakito" />
+    <label for="kisbetu">Kisbetű</label><br />
+
+    <input type="radio" id="nagybetu" name="atalakito" />
+    <label for="nagybetu">Nagybetű</label><br />
+
+    <button type="button" id="start" onclick="bevitel()">Start</button>
+
+    <p id="eredmeny"></p>
+
+    <script>
+      function bevitel() {
+        var input = document.getElementById("bevitel").value;
+        start();
+
+        function start() {
+          let oke = true;
+
+          if (!input) {
+            window.alert("A kitöltendő input rész üres.");
+            oke = false;
+            return;
+          }
+
+          var ures = document.querySelector('input[name="atalakito"]:checked');
+          if (ures == null) {
+            window.alert("Kérlek válassz egy opciót.");
+            oke = false;
+          }
+
+          if (oke) {
+            if (document.getElementById("kisbetu").checked) {
+              kisbetu();
+            } else if (document.getElementById("nagybetu").checked) {
+              nagybetu();
+            }
+          }
+        }
+
+        function kisbetu() {
+          text = input.toLowerCase();
+          document.getElementById("eredmeny").innerHTML = text;
+        }
+
+        function nagybetu(){
+            text = input.toUpperCase();
+          document.getElementById("eredmeny").innerHTML = text;
+        }
+      }
+    </script>
+  </body>
+</html>

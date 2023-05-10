@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II félév\C#\ciklusok\Ciklusok\Ciklusok\bin\Debug\Ciklusok.exe.config
+E:\STUDY\Petrik\II félév\C#\ciklusok\Ciklusok\Ciklusok\bin\Debug\Ciklusok.exe
+E:\STUDY\Petrik\II félév\C#\ciklusok\Ciklusok\Ciklusok\bin\Debug\Ciklusok.pdb
+E:\STUDY\Petrik\II félév\C#\ciklusok\Ciklusok\Ciklusok\obj\Debug\Ciklusok.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II félév\C#\ciklusok\Ciklusok\Ciklusok\obj\Debug\Ciklusok.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II félév\C#\ciklusok\Ciklusok\Ciklusok\obj\Debug\Ciklusok.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II félév\C#\ciklusok\Ciklusok\Ciklusok\obj\Debug\Ciklusok.exe
+E:\STUDY\Petrik\II félév\C#\ciklusok\Ciklusok\Ciklusok\obj\Debug\Ciklusok.pdb

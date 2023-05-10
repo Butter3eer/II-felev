@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="textarea" id="a">
+    <input type="textarea" id="b">
+    <input type="textarea" id="c">
+
+    <button onclick = "terulet()" id="teruletGomb">Terület</button>
+    <button onclick = "kerulet()" id="keruletGomb">Kerület</button>
+
+    <p id="terulet"></p>
+    <p id="kerulet"></p>
+
+    <script>
+
+        function terulet() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+
+            var s = (a + b + c) / 2.0;
+            var sqrt = s * (s - a) * (s - b) * (s - c);
+            var terulet = Math.sqrt(sqrt);
+
+            var teruletFel = document.getElementById("terulet").innerHTML = "A háromszög Területe: " + terulet;
+        }
+
+        function kerulet() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+
+            var kerulet = a + b + c;
+
+            var keruletFel = document.getElementById("kerulet").innerHTML = "A háromszög Kerülete: " + kerulet;
+        }
+        
+    </script>
+</body>
+</html>

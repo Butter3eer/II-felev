@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\Utca(Kerites)\Utca\bin\Debug\Utca.exe.config
+E:\STUDY\Petrik\II-felev\C#\Utca(Kerites)\Utca\bin\Debug\Utca.exe
+E:\STUDY\Petrik\II-felev\C#\Utca(Kerites)\Utca\bin\Debug\Utca.pdb
+E:\STUDY\Petrik\II-felev\C#\Utca(Kerites)\Utca\obj\Debug\Utca.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\Utca(Kerites)\Utca\obj\Debug\Utca.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\Utca(Kerites)\Utca\obj\Debug\Utca.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\Utca(Kerites)\Utca\obj\Debug\Utca.exe
+E:\STUDY\Petrik\II-felev\C#\Utca(Kerites)\Utca\obj\Debug\Utca.pdb
