@@ -22,10 +22,9 @@ namespace Amoba_jatek
     public partial class MainWindow : Window
     {
         List<Button> ideiglenes = new List<Button>();
-        int[,] gombok;
         bool elso = true;
         Button kattTag;
-        string jel = "";
+        int db;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,43 +32,38 @@ namespace Amoba_jatek
 
         private void kicsi_click(object sender, RoutedEventArgs e)
         {
-            Gombok(3, 3);
+            Gombok(3);
         }
         private void kozepes_click(object sender, RoutedEventArgs e)
         {
-            Gombok(4, 4);
+            Gombok(4);
         }
 
         private void nagy_click(object sender, RoutedEventArgs e)
         {
-            Gombok(5, 5);
+            Gombok(5);
         }
 
-        private void Gombok(int oszlop, int sor)
+        private void Gombok(int oldalak)
         {
             halo.Children.Clear();
             halo.ColumnDefinitions.Clear();
             halo.RowDefinitions.Clear();
-            gombok = new int[sor, oszlop];
+            db = oldalak;
             int meret = 35;
-            for (int i = 0; i < sor; i++)
+            for (int i = 0; i < oldalak; i++)
             {
                 halo.RowDefinitions.Add(new RowDefinition());
-            }
-
-            for (int i = 0; i < oszlop; i++)
-            {
                 halo.ColumnDefinitions.Add(new ColumnDefinition());
             }
 
-            for (int i = 0; i < sor; i++)
+            for (int i = 0; i < oldalak; i++)
             {
-                for (int j = 0; j < oszlop; j++)
-                { 
+                for (int j = 0; j < oldalak; j++)
+                {
                     Button b = new Button();
                     b.Width = meret;
                     b.Height = meret;
-                    b.Tag = gombok[i, j];
                     b.Background = Brushes.PapayaWhip;
                     b.Margin = new Thickness(meret * j, meret * i, meret * -j, meret * -i);
                     b.VerticalAlignment = VerticalAlignment.Center;
@@ -84,48 +78,34 @@ namespace Amoba_jatek
         {
             if (elso)
             {
-                jel = "X";
                 kattTag = (sender as Button);
-                (sender as Button).Content = jel;
-                Ellenorzes(kattTag);
+                (sender as Button).Content = "X";
                 kattTag.IsEnabled = false;
             }
             else
             {
-                jel = "O";
                 kattTag = (sender as Button);
-                kattTag.Content = jel;
-                Ellenorzes(kattTag);
+                kattTag.Content = "O";
                 kattTag.IsEnabled = false;
             }
+            Ellenorzes();
             elso = !elso;
         }
 
-        private void Ellenorzes(Button kattTag)
+        private void Ellenorzes()
         {
-            if (Oszlop(kattTag))
+            if (Oszlop())
             {
                 MessageBox.Show("Nyertél!");
             }
             TeleVanE();
         }
 
-        private bool Oszlop(Button gomb)
+        private bool Oszlop()
         {
             int sorok = halo.RowDefinitions.Count;
             int oszlopok = halo.ColumnDefinitions.Count;
             bool helyes = false;
-            
-            for (int i = 0; i < sorok; i++)
-            {
-                for (int j = 0; j < oszlopok; j++)
-                {
-                    if (gomb.Tag.ToString() == $"{i}{j}" && gomb.Content.ToString() == "X")
-                    {
-                        ideiglenes.Add(gomb);
-                    }                        
-                }
-            }
 
             if (ideiglenes.Count() == 3)
             {
@@ -158,6 +138,48 @@ namespace Amoba_jatek
             {
                 MessageBox.Show("Nincs győztes, válassz új nehézséget!");
             }
+        }
+
+        private bool Diagonal()
+        {
+            bool siker = true;
+            string diagElso = (halo.Children[0] as Button).Content.ToString();
+            string diagMasik = (halo.Children[db - 1] as Button).Content.ToString();
+            if (diagElso != "")
+            {
+                for (int i = 1; i < db; i++)
+                {
+                    string currentElement = (halo.Children[i * db + i] as Button).Content.ToString();
+                    if (currentElement != diagElso)
+                    {
+                        siker = false;
+                        break;
+                    }
+                }
+                if (siker)
+                {
+                    return true;
+                }
+            }
+
+            
+            if (diagMasik != "")
+            {
+                for (int i = 1; i < x; i++)
+                {
+                    string currentElement = (halo.Children[(db - i) * db + i] as Button).Content.ToString();
+                    if (currentElement != diagMasik)
+                    {
+                        siker = false;
+                        break;
+                    }
+                }
+                if (siker)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
