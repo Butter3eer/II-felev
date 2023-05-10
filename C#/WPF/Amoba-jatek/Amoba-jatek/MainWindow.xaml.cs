@@ -21,9 +21,8 @@ namespace Amoba_jatek
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Button> ideiglenes = new List<Button>();
         bool elso = true;
-        Button kattTag;
+        
         int db;
         public MainWindow()
         {
@@ -76,15 +75,14 @@ namespace Amoba_jatek
 
         private void GombClick(object sender, RoutedEventArgs e)
         {
+            Button kattTag = (Button)sender;
             if (elso)
             {
-                kattTag = (sender as Button);
-                (sender as Button).Content = "X";
+                kattTag.Content = "X";
                 kattTag.IsEnabled = false;
             }
             else
             {
-                kattTag = (sender as Button);
                 kattTag.Content = "O";
                 kattTag.IsEnabled = false;
             }
@@ -94,7 +92,7 @@ namespace Amoba_jatek
 
         private void Ellenorzes()
         {
-            if (Oszlop())
+            if (Oszlop() || Diagonal())
             {
                 MessageBox.Show("Nyertél!");
             }
@@ -103,16 +101,28 @@ namespace Amoba_jatek
 
         private bool Oszlop()
         {
-            int sorok = halo.RowDefinitions.Count;
-            int oszlopok = halo.ColumnDefinitions.Count;
-            bool helyes = false;
-
-            if (ideiglenes.Count() == 3)
+            for (int i = 0; i < db; i++)
             {
-                helyes = true;
+                bool siker = true;
+                string elsoElemSzoveg = (halo.Children[i] as Button).Content.ToString();
+                if (elsoElemSzoveg != "")
+                {
+                    for (int j = 1; j < db; j++)
+                    {
+                        string AktivSzoveg = (halo.Children[j * db + i] as Button).Content.ToString();
+                        if (AktivSzoveg != elsoElemSzoveg)
+                        {
+                            siker = false;
+                            break;
+                        }
+                    }
+                    if (siker)
+                    {
+                        return true;
+                    }
+                }
             }
-
-            return helyes;
+            return false;
         }
 
         private void TeleVanE()
@@ -143,14 +153,14 @@ namespace Amoba_jatek
         private bool Diagonal()
         {
             bool siker = true;
-            string diagElso = (halo.Children[0] as Button).Content.ToString();
+            string diagElsoSzoveg = (halo.Children[0] as Button).Content.ToString();
             string diagMasik = (halo.Children[db - 1] as Button).Content.ToString();
-            if (diagElso != "")
+            if (diagElsoSzoveg != "")
             {
                 for (int i = 1; i < db; i++)
                 {
-                    string currentElement = (halo.Children[i * db + i] as Button).Content.ToString();
-                    if (currentElement != diagElso)
+                    string AktivSzoveg = (halo.Children[i * db + i] as Button).Content.ToString();
+                    if (AktivSzoveg != diagElsoSzoveg)
                     {
                         siker = false;
                         break;
@@ -165,7 +175,7 @@ namespace Amoba_jatek
             
             if (diagMasik != "")
             {
-                for (int i = 1; i < x; i++)
+                for (int i = 1; i < db; i++)
                 {
                     string currentElement = (halo.Children[(db - i) * db + i] as Button).Content.ToString();
                     if (currentElement != diagMasik)

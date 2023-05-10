@@ -11,8 +11,11 @@
             <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
-        <Menu Grid.Row="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Grid.Column="0">
             <MenuItem Header="Nehézség">
                 <MenuItem Header="3x3" Click="kicsi_click"/>
                 <MenuItem Header="4x4" Click="kozepes_click"/>
@@ -20,6 +23,6 @@
             </MenuItem>
         </Menu>
 
-        <Grid x:Name="halo" Grid.Row="1"/>
+        <Grid x:Name="halo" Grid.Row="1" Grid.Column="0"/>
     </Grid>
 </Window>
