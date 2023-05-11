@@ -22,7 +22,20 @@
                 <MenuItem Header="5x5" Click="nagy_click"/>
             </MenuItem>
         </Menu>
-
+        
         <Grid x:Name="halo" Grid.Row="1" Grid.Column="0"/>
+
+        <Grid.Background>
+            <VisualBrush Viewbox="10,10,3150,2120" ViewboxUnits="Absolute">
+                <VisualBrush.Visual>
+                    <Image Source="/hatter.jpg">
+                        <Image.BitmapEffect>
+                            <BlurBitmapEffect Radius="80"/>
+                        </Image.BitmapEffect>
+                    </Image>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+
     </Grid>
 </Window>

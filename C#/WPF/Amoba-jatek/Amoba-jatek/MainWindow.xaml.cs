@@ -49,7 +49,7 @@ namespace Amoba_jatek
             halo.ColumnDefinitions.Clear();
             halo.RowDefinitions.Clear();
             db = oldalak;
-            int meret = 35;
+            int meret = 40;
             for (int i = 0; i < oldalak; i++)
             {
                 RowDefinition row = new RowDefinition();

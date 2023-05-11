@@ -8,4 +8,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="aditya-vyas-wmXVABZ7JBk-unsplash.jpg" />
+    <None Remove="hatter.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="aditya-vyas-wmXVABZ7JBk-unsplash.jpg" />
+    <Resource Include="hatter.jpg" />
+  </ItemGroup>
+
 </Project>
