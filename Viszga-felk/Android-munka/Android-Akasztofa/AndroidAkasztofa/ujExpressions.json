@@ -1,0 +1,42 @@
+[
+    {
+        "language":"orosz",
+        "category":"épület",
+        "level":"easy",
+        "expressionInHungarian":"Eurázsia torony",
+        "expression":"Башня Евразия",
+        "descriptionInHungarian":"Acélcsúcsként is ismert.",
+        "descriptionInTargetLlanguage":"Также известен как Стальной Пик.",
+        "picture":"Eurazsia.jpg"
+    },
+    {
+        "language":"orosz",
+        "category":"biológia",
+        "level":"easy",
+        "expressionInHungarian":"Delfin",
+        "expression":"Дельфин",
+        "descriptionInHungarian":"A legokosabbnak tartott vizi állat.",
+        "descriptionInTargetLlanguage":"Считается самым умным водным животным.",
+        "picture":"Delfin.jpg"
+    },
+    {
+        "language":"angol",
+        "category":"épület",
+        "level":"easy",
+        "expressionInHungarian":"Big Ben",
+        "expression":"Big Ben",
+        "descriptionInHungarian":"A Westminsteri Nagy Óra Nagy Harangjának beceneve.",
+        "descriptionInTargetLlanguage":"The nickname for the Great Bell of the Great Clock of Westminster.",
+        "picture":"BigBen.jpg"
+    },
+    {
+        "language":"angol",
+        "category":"biológia",
+        "level":"easy",
+        "expressionInHungarian":"Süni",
+        "expression":"Hedgehog",
+        "descriptionInHungarian":"Kistermetű tüskés élőlény.",
+        "descriptionInTargetLlanguage":"A small spiny creature.",
+        "picture":"Suni.jpg"
+    }
+]

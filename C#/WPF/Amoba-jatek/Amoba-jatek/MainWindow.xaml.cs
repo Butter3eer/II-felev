@@ -52,8 +52,10 @@ namespace Amoba_jatek
             int meret = 35;
             for (int i = 0; i < oldalak; i++)
             {
-                halo.RowDefinitions.Add(new RowDefinition());
-                halo.ColumnDefinitions.Add(new ColumnDefinition());
+                RowDefinition row = new RowDefinition();
+                ColumnDefinition column = new ColumnDefinition();
+                halo.RowDefinitions.Add(row);
+                halo.ColumnDefinitions.Add(column);
             }
 
             for (int i = 0; i < oldalak; i++)
@@ -63,6 +65,7 @@ namespace Amoba_jatek
                     Button b = new Button();
                     b.Width = meret;
                     b.Height = meret;
+                    b.Content = "";
                     b.Background = Brushes.PapayaWhip;
                     b.Margin = new Thickness(meret * j, meret * i, meret * -j, meret * -i);
                     b.VerticalAlignment = VerticalAlignment.Center;
@@ -92,7 +95,7 @@ namespace Amoba_jatek
 
         private void Ellenorzes()
         {
-            if (Oszlop() || Diagonal())
+            if (Oszlop() || Diagonal() || Sor())
             {
                 MessageBox.Show("Nyertél!");
             }
@@ -133,7 +136,7 @@ namespace Amoba_jatek
             {
                 if (item is Button)
                 {
-                    if ((item as Button).Content != null)
+                    if ((item as Button).Content != "")
                     {
                         teli++;
                         db++;
@@ -154,7 +157,7 @@ namespace Amoba_jatek
         {
             bool siker = true;
             string diagElsoSzoveg = (halo.Children[0] as Button).Content.ToString();
-            string diagMasik = (halo.Children[db - 1] as Button).Content.ToString();
+            string diagMasikSzoveg = (halo.Children[db - 1] as Button).Content.ToString();
             if (diagElsoSzoveg != "")
             {
                 for (int i = 1; i < db; i++)
@@ -173,12 +176,12 @@ namespace Amoba_jatek
             }
 
             
-            if (diagMasik != "")
+            if (diagMasikSzoveg != "")
             {
                 for (int i = 1; i < db; i++)
                 {
-                    string currentElement = (halo.Children[(db - i) * db + i] as Button).Content.ToString();
-                    if (currentElement != diagMasik)
+                    string AktivSzoveg = (halo.Children[(db - 1) * i] as Button).Content.ToString();
+                    if (AktivSzoveg != diagMasikSzoveg)
                     {
                         siker = false;
                         break;
@@ -187,6 +190,32 @@ namespace Amoba_jatek
                 if (siker)
                 {
                     return true;
+                }
+            }
+            return false;
+        }
+
+        private bool Sor()
+        {
+            for (int i = 0; i < db; i++)
+            {
+                bool win = true;
+                string sorElsoSzoveg = (halo.Children[i * db] as Button).Content.ToString();
+                if (sorElsoSzoveg != "")
+                {
+                    for (int j = 1; j < db; j++)
+                    {
+                        string AktivSzoveg = (halo.Children[i * db + j] as Button).Content.ToString();
+                        if (AktivSzoveg != sorElsoSzoveg)
+                        {
+                            win = false;
+                            break;
+                        }
+                    }
+                    if (win)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;

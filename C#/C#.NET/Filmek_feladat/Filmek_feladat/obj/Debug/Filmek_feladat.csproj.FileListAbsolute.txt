@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Filmek_feladat\Filmek_feladat\bin\Debug\Filmek_feladat.exe.config
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Filmek_feladat\Filmek_feladat\bin\Debug\Filmek_feladat.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Filmek_feladat\Filmek_feladat\bin\Debug\Filmek_feladat.pdb
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Filmek_feladat\Filmek_feladat\obj\Debug\Filmek_feladat.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Filmek_feladat\Filmek_feladat\obj\Debug\Filmek_feladat.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Filmek_feladat\Filmek_feladat\obj\Debug\Filmek_feladat.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Filmek_feladat\Filmek_feladat\obj\Debug\Filmek_feladat.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Filmek_feladat\Filmek_feladat\obj\Debug\Filmek_feladat.pdb
