@@ -99,7 +99,10 @@ namespace Amoba_jatek
             {
                 MessageBox.Show("Nyertél!");
             }
-            TeleVanE();
+            else
+            {
+                TeleVanE();
+            }   
         }
 
         private bool Oszlop()
