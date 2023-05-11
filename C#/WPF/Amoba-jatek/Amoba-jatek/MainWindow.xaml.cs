@@ -181,9 +181,9 @@ namespace Amoba_jatek
             
             if (diagMasikSzoveg != "")
             {
-                for (int i = 1; i < db; i++)
+                for (int i = db; i > 1; i--)
                 {
-                    string AktivSzoveg = (halo.Children[(db - 1) * i] as Button).Content.ToString();
+                    string AktivSzoveg = (halo.Children[i * db - i] as Button).Content.ToString();
                     if (AktivSzoveg != diagMasikSzoveg)
                     {
                         siker = false;
