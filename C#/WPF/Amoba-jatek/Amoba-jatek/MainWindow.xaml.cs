@@ -45,6 +45,7 @@ namespace Amoba_jatek
 
         private void Gombok(int oldalak)
         {
+            TB.Text = "Jelenlegi játékos: X";
             halo.Children.Clear();
             halo.ColumnDefinitions.Clear();
             halo.RowDefinitions.Clear();
@@ -81,11 +82,13 @@ namespace Amoba_jatek
             Button kattTag = (Button)sender;
             if (elso)
             {
+                TB.Text = "Jelenlegi játékos: O";
                 kattTag.Content = "X";
                 kattTag.IsEnabled = false;
             }
             else
             {
+                TB.Text = "Jelenlegi játékos: X";
                 kattTag.Content = "O";
                 kattTag.IsEnabled = false;
             }
@@ -97,7 +100,7 @@ namespace Amoba_jatek
         {
             if (Oszlop() || Diagonal() || Sor())
             {
-                MessageBox.Show("Nyertél!");
+                MessageBox.Show("Nyertél! :D");
             }
             else
             {

@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<item android:id="@+id/userProfile"
-    android:title="Profile"
-    android:icon="@drawable/baseline_account_circle_24"
-    app:showAsAction="ifRoom"/>
-    <item android:title="Language">
+    <item
+        android:id="@+id/menuItemSetup"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Setup"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menuItemLevel"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Level"
+        app:showAsAction="never">
         <menu>
-            <item android:id="@+id/language_ru"
-                android:title="Русский"/>
-            <item android:id="@+id/language_en"
-                android:title="English"/>
-            <item android:id="@+id/language_chn"
-                android:title="中國人"/>
+            <item
+                android:id="@+id/menuItemHard"
+                android:title="Hard" />
+            <item
+                android:id="@+id/menuItemEasy"
+                android:title="Easy" />
         </menu>
     </item>
 
-    <item android:title="Difficulty">
+    <item
+        android:id="@+id/menuItemCategory"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Category"
+        app:showAsAction="never">
         <menu>
-            <item android:id="@+id/easy"
-                android:title="Easy"/>
-            <item android:id="@+id/hard"
-                android:title="Hard"/>
-        </menu>
-    </item>
+            <item
+                android:id="@+id/menuItemBiology"
+                android:title="Biology" />
+            <item
+                android:id="@+id/menuItemMathematics"
+                android:title="Mathematics" />
+            <item
+                android:id="@+id/menuItemIt"
+                android:title="It" />
+            <item
+                android:id="@+id/menuItemBuildings"
+                android:title="Buildings" />
 
-    <item android:title="Categories">
-        <menu>
-            <item android:id="@+id/biology"
-                android:title="Biology"/>
-            <item android:id="@+id/buildings"
-                android:title="Buildings"/>
         </menu>
     </item>
+    <item android:id="@+id/menuExit"
+        android:icon="@drawable/ic_exit_to_app"
+        android:title="Kilépés"
+        app:showAsAction="withText"/>
+
 </menu>
