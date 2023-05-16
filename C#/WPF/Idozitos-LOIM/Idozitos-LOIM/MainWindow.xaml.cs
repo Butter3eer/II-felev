@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,21 @@ namespace Idozitos_LOIM
         public MainWindow()
         {
             InitializeComponent();
+            Beolvas();
+        }
+
+        List<string> kerdesek = new List<string>();
+
+        private void Beolvas()
+        {
+            kerdesek.Clear();
+            StreamReader file = new StreamReader("kerdes.txt");
+            while (!file.EndOfStream)
+            {
+                kerdesek.Add(file.ReadLine());
+            }
+
+            file.Close();
         }
     }
 }
