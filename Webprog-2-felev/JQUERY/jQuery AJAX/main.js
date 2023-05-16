@@ -1,7 +1,10 @@
-const base_url = "https://retoolapi.dev/2bEWtP/people";
+const base_url = "https://retoolapi.dev/NQ78jB/people";
 
 $(function () {
     listPeople();
+    $("#save").click(function (e) { 
+        e.preventDefault();
+    });
 
     $("#personForm").submit(function (e) { 
         e.preventDefault();
@@ -38,7 +41,8 @@ function listPeople(){
                     <td>${person.name}</td>
                     <td>${person.email}</td>
                     <td>${person.job}</td>
-                    <td><i onclick="deletePerson(${person.id})" class="fa-solid fa-delete-left" style="color:red"></i></td>
+                    <td><i onclick="deletePerson(${person.id})" class="fa-solid fa-delete-left"></i></td>
+                    <td><i onclick="readPerson(${person.id})" class="fa-solid fa-arrows-rotate"></i></td>
                 </tr>`;
             })
             $("#peopleTable").html(html);
@@ -59,3 +63,31 @@ function deletePerson(personId){
         }
     });
 }
+
+function modifyPerson(personId){
+    $.ajax({
+        type: "PATCH",
+        url: `${base_url}/${personId}`,
+        dataType: "json",
+        success: function (data, textStatus, jqXHR) {
+            if (textStatus === "success"){
+                listPeople();
+            };
+        }
+    });
+}
+
+function readPerson(personId){
+    $.get(`${base_url}/${personId}`,
+        function (data, textStatus) {
+            if (textStatus === "success") {
+                $("#name_input").val(data.name);
+                $("#email_input").val(data.email);
+                $("#job_input").val(data.job);
+                $("#personId").val(data.id);
+            }
+        },
+        "json"
+    );
+}
+

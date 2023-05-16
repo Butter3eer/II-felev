@@ -1,4 +1,9 @@
 .fa-delete-left {
-    color: red;
+    color: salmon;
+    cursor: pointer;
+}
+
+.fa-arrows-rotate {
+    color: olivedrab;
     cursor: pointer;
 }

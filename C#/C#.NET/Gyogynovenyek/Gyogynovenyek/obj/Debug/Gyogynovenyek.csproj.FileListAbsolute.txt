@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Gyogynovenyek\Gyogynovenyek\obj\Debug\Gyogynovenyek.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Gyogynovenyek\Gyogynovenyek\obj\Debug\Gyogynovenyek.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Gyogynovenyek\Gyogynovenyek\obj\Debug\Gyogynovenyek.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Gyogynovenyek\Gyogynovenyek\bin\Debug\Gyogynovenyek.exe.config
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Gyogynovenyek\Gyogynovenyek\bin\Debug\Gyogynovenyek.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Gyogynovenyek\Gyogynovenyek\bin\Debug\Gyogynovenyek.pdb
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Gyogynovenyek\Gyogynovenyek\obj\Debug\Gyogynovenyek.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Gyogynovenyek\Gyogynovenyek\obj\Debug\Gyogynovenyek.pdb
