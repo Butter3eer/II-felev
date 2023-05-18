@@ -27,8 +27,13 @@ namespace Gyogynovenyek
             //F8();
             //F9();
             //F10();
-            F11();
-            F12();
+            //F11();
+            //F12();
+            //F13();
+            //F14();
+            //F15();
+            //F16();
+            //F17();
         }
 
         private static void Beolvas()
@@ -165,16 +170,139 @@ namespace Gyogynovenyek
         private static void F12()
         {
             Console.WriteLine("\n\n12. feladat:");
-            var items = new List<int>();
+            var honapok = new List<int>();
+            var db = new List<int>();
             foreach (var item in lista)
             {
+                if (int.Parse(item.VegsoHonap) < int.Parse(item.KezdoHonap))
+                {
+                    for (int i = int.Parse(item.KezdoHonap); i < 13; i++)
+                    {
+                        honapok.Add(i);
+                    }
 
+                    for (int i = 1; i < int.Parse(item.VegsoHonap) + 1; i++)
+                    {
+                        honapok.Add(i);
+                    }
+                }
+                else
+                {
+                    for (int i = int.Parse(item.KezdoHonap); i < int.Parse(item.VegsoHonap) + 1; i++)
+                    {
+                        honapok.Add(i);
+                    }
+                }                
             }
 
-            if (items.Count == 0)
+            for (int i = 1; i < 13; i++)
             {
-                Console.WriteLine("Nincs olyan hónap ahol ne szednének ");
+                int szamok = honapok.FindAll(x => x == i).Count();
+                db.Add(szamok);
             }
+
+            if (db.Contains(0))
+            {
+                foreach (var item in db)
+                {
+                    if (item == 0)
+                    {
+                        int honap = db.IndexOf(item) + 1;
+                        Console.Write($"{honap}, ");
+                    }
+                }
+                Console.WriteLine(" hónap(ok)ban nem szedtek semmit. ");
+            }
+            else
+            {
+                Console.WriteLine("Nincs olyan hónap amikor nem szednének semmit. ");
+            }
+        }
+
+        private static void F13()
+        {
+            Console.WriteLine("\n\n13. feladat:");
+            var honapok = new List<int>();
+            var db = new List<int>();
+            foreach (var item in lista)
+            {
+                if (int.Parse(item.VegsoHonap) < int.Parse(item.KezdoHonap))
+                {
+                    for (int i = int.Parse(item.KezdoHonap); i < 13; i++)
+                    {
+                        honapok.Add(i);
+                    }
+
+                    for (int i = 1; i < int.Parse(item.VegsoHonap) + 1; i++)
+                    {
+                        honapok.Add(i);
+                    }
+                }
+                else
+                {
+                    for (int i = int.Parse(item.KezdoHonap); i < int.Parse(item.VegsoHonap) + 1; i++)
+                    {
+                        honapok.Add(i);
+                    }
+                }                
+            }
+
+            for (int i = 1; i < 13; i++)
+            {
+                int szamok = honapok.FindAll(x => x == i).Count();
+                db.Add(szamok);
+            }
+
+            var itemek = db.FindAll(x => x == db.Max());
+            foreach (var item in itemek)
+            {
+                int honap = db.IndexOf(item) + 1;
+                Console.Write($"{honap}, ");
+            }
+            Console.WriteLine(" hónap(ok)ban szedték a legtöbb fajta virágot. ");
+        }
+
+        private static void F14()
+        {
+            Console.WriteLine("\n\n14.feladat: Növények kezdőhónapjaik alapján rendezve:");
+            var sortLista = lista.OrderBy(x => int.Parse(x.KezdoHonap));
+            foreach (var item in sortLista)
+            {
+                Console.Write($"{item.Nev} / {item.KezdoHonap} :: ");
+            }
+        }
+
+        private static void F15()
+        {
+            Console.WriteLine("\n\n15. feladat: Növények a szedési idejükkel párban:");
+            foreach (var item in lista)
+            {
+                Console.Write($"{item.Nev} / {item.ElteltIdo} :: ");
+            }
+        }
+
+        private static void F16()
+        {
+            Console.WriteLine("\n\n16. feladat:\n\tA fájlba írás megtörtént.");
+            StreamWriter file = new StreamWriter("gyujtendok.txt");
+            var sortLista = lista.OrderBy(x => x.Resz);
+            foreach (var item in sortLista)
+            {
+                file.WriteLine($"{item.Nev} / {item.Resz} - {item.KezdoHonap} - {item.VegsoHonap}");
+            }
+            file.Close();
+        }
+
+        private static void F17()
+        {
+            Console.WriteLine("\n\n17. feladat:\n\tA fájlba írás megtörtént.");
+            StreamWriter file = new StreamWriter("gyogynovenyidoszak.txt");
+            var sortLista = lista.OrderBy(x => x.Nev).OrderBy(x => x.ElteltIdo);
+            foreach (var item in sortLista)
+            {
+                file.WriteLine($"{item.ElteltIdo}:{item.Nev} / {item.Resz} - {item.KezdoHonap} - {item.VegsoHonap}");
+            }
+            file.Close();
         }
     }
 }

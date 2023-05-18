@@ -24,17 +24,52 @@ namespace Idozitos_LOIM
     {
         List<Kerdesek> kerdesek = new List<Kerdesek>();
         DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer timerSzin = new DispatcherTimer();
+        int index = 0;
         public MainWindow()
         {
             InitializeComponent();
             Beolvas();
-            timer.Interval = TimeSpan.FromSeconds(5);
+            
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Game;
+            timerSzin.Interval = TimeSpan.FromSeconds(2);
+            timerSzin.Tick += Szinek;
+        }
+
+        private void Szinek(object? sender, EventArgs e)
+        {
+            A.Background = Brushes.Salmon;
+            B.Background = Brushes.Salmon;
+            C.Background = Brushes.Salmon;
+            D.Background = Brushes.Salmon;
+            Hatter();
+            timerSzin.Stop();
+        }
+
+        private void Hatter()
+        {
+            A.Background = Brushes.White;
+            B.Background = Brushes.White;
+            C.Background = Brushes.White;
+            D.Background = Brushes.White;
         }
 
         private void Game(object? sender, EventArgs e)
         {
-
+            Idomegy.Text = "11";
+            Idomegy.Text = (Convert.ToInt16(Idomegy.Text) - 1).ToString();
+            Szovegek(index);
+            if (Idomegy.Text == "3")
+            {
+                timerSzin.Start();
+            }
+            if (Idomegy.Text == "0")
+            {
+                timerSzin.Stop();
+                index++;
+                Szovegek(index);
+            }
         }
 
         private void Beolvas()
@@ -50,13 +85,19 @@ namespace Idozitos_LOIM
             timer.Start();
         }
 
-        private void Szovegek(Kerdesek item)
+        private void Szovegek(int index)
         {
-            Kerdes.Text = item.Kerdes;
-            A.Text = item.ValaszA;
-            B.Text = item.ValaszB;
-            C.Text = item.ValaszC;
-            D.Text = item.ValaszD;
+            if (index < kerdesek.Count)
+            {
+                Kerdesek item = kerdesek[index];
+
+                Kerdes.Text = item.Kerdes;
+                A.Text = item.ValaszA;
+                B.Text = item.ValaszB;
+                C.Text = item.ValaszC;
+                D.Text = item.ValaszD;
+            }
+            else { timer.Stop(); }
         }
     }
 }

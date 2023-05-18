@@ -30,11 +30,17 @@ namespace Gyogynovenyek
         {
             get
             {
+                int vegsoInt;
+                int ido;
                 if (int.Parse(vegsoHonap) < int.Parse(kezdoHonap))
                 {
-                    vegsoHonap += 12;
+                    vegsoInt = int.Parse(vegsoHonap) + 12;
+                    ido = vegsoInt - int.Parse(kezdoHonap);
                 }
-                int ido = int.Parse(vegsoHonap) - int.Parse(kezdoHonap);
+                else
+                {
+                    ido = int.Parse(vegsoHonap) - int.Parse(kezdoHonap);
+                }
                 return ido;
             }
         }

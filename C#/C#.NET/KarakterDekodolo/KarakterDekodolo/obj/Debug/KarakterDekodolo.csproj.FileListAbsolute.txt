@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\C#.NET\KarakterDekodolo\KarakterDekodolo\bin\Debug\KarakterDekodolo.exe.config
+E:\STUDY\Petrik\II-felev\C#\C#.NET\KarakterDekodolo\KarakterDekodolo\bin\Debug\KarakterDekodolo.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\KarakterDekodolo\KarakterDekodolo\bin\Debug\KarakterDekodolo.pdb
+E:\STUDY\Petrik\II-felev\C#\C#.NET\KarakterDekodolo\KarakterDekodolo\obj\Debug\KarakterDekodolo.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\KarakterDekodolo\KarakterDekodolo\obj\Debug\KarakterDekodolo.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\KarakterDekodolo\KarakterDekodolo\obj\Debug\KarakterDekodolo.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\KarakterDekodolo\KarakterDekodolo\obj\Debug\KarakterDekodolo.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\KarakterDekodolo\KarakterDekodolo\obj\Debug\KarakterDekodolo.pdb

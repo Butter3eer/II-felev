@@ -2,11 +2,36 @@ const base_url = "https://retoolapi.dev/NQ78jB/people";
 
 $(function () {
     listPeople();
-    $("#save").click(function (e) { 
+    $("#save").click(function (e) {
         e.preventDefault();
+        const name = $("#name_input").val();
+        const email = $("#email_input").val();
+        const job = $("#job_input").val();
+        const id = $("#personId").val();
+
+        const person = {
+            id: id,
+            name: name,
+            email: email,
+            job: job,
+        };
+        $.ajax({
+            type: "PUT",
+            url: `${base_url}/${id}`,
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(person),
+            success: function (data, textStatus, jqXHR) {
+                if (textStatus === "success") {
+                    listPeople();
+                    $('button[type="button"]').prop("enabled", true);
+                    console.log(textStatus);
+                }
+            },
+        });
     });
 
-    $("#personForm").submit(function (e) { 
+    $("#personForm").submit(function (e) {
         e.preventDefault();
         const name = $("#name_input").val();
         const email = $("#email_input").val();
@@ -30,7 +55,7 @@ $(function () {
     });
 });
 
-function listPeople(){
+function listPeople() {
     $.get(base_url,
         function (data) {
             console.log(data);
@@ -51,33 +76,20 @@ function listPeople(){
     );
 }
 
-function deletePerson(personId){
+function deletePerson(personId) {
     $.ajax({
         type: "DELETE",
         url: `${base_url}/${personId}`,
         dataType: "json",
         success: function (data, textStatus, jqXHR) {
-            if (textStatus === "success"){
+            if (textStatus === "success") {
                 listPeople();
             };
         }
     });
 }
 
-function modifyPerson(personId){
-    $.ajax({
-        type: "PATCH",
-        url: `${base_url}/${personId}`,
-        dataType: "json",
-        success: function (data, textStatus, jqXHR) {
-            if (textStatus === "success"){
-                listPeople();
-            };
-        }
-    });
-}
-
-function readPerson(personId){
+function readPerson(personId) {
     $.get(`${base_url}/${personId}`,
         function (data, textStatus) {
             if (textStatus === "success") {

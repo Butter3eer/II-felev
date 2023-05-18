@@ -1,0 +1,99 @@
+-- 3.1 Listázza azon dolgozók nevét és részlegük nevét, akiknek nevében az Abetű szerepel.
+SELECT ename, dname 
+FROM emp INNER JOIN dept USING(deptno)
+WHERE ename LIKE '%A%';
+
+-- 3.2 Listázza  ki  a Dallas-i  telephely  minden  dolgozójának  nevét,  munkakörét, fizetését  és részlegének azonosítóját. 
+SELECT ename, job, sal, deptno 
+FROM emp INNER JOIN dept USING(deptno)
+WHERE loc='DALLAS';
+
+-- 3.3 Listázza  ki  a clerk  munkakörű  dolgozókat  foglalkoztató  részlegek  azonosítóját,  nevét  és telephelyét. A lista legyen rendezve a részlegnév szerint. 
+SELECT deptno, dname, loc 
+FROM emp INNER JOIN dept USING(deptno) 
+WHERE job='CLERK' ORDER BY dname;
+
+-- 3.4 Listázza  ki  a Dallas-ban  és  a Chicago-ban  dolgozók  nevét,  munkakörét  és  telephelyét. A lista telephely szerint legyen rendezett. 
+SELECT ename, job, loc 
+FROM emp INNER JOIN dept USING(deptno) 
+WHERE loc='DALLAS' OR loc='CHICAGO' 
+ORDER BY loc;
+
+-- 3.5 Listázza   ki   az   egyes   részlegek   nevét,   telephelyük   címét,   dolgozóik   átlagfizetését   a részlegnevek szerint rendezve.
+SELECT dname, loc, AVG(sal) as Atlag_fizu
+FROM emp INNER JOIN dept USING(deptno) 
+GROUP BY dname
+ORDER BY dname;
+
+-- 3.6 Listázza ki a 20-as és a 30-as részleg legnagyobb fizetésű dolgozóinak azonosítóját, nevét, foglalkozását, jutalékát és belépési dátumát.
+SELECT empno, ename, job, IFNULL(comm, 0), hiredate 
+FROM dept INNER JOIN emp USING(deptno)
+JOIN (
+    SELECT deptno, MAX(sal) AS msal 
+    FROM dept INNER JOIN emp USING(deptno) 
+    GROUP BY dname
+) AS max_sal ON emp.deptno = max_sal.deptno AND emp.sal = max_sal.msal
+WHERE dept.deptno IN (20, 30);
+
+-- 3.7 Listázza   ki   minden   részleg   legkisebb   jövedelmű   dolgozójának   azonosítóját,   nevét, foglalkozását, jutalékát és belépési dátumát.
+SELECT empno, ename, job, IFNULL(comm, 0), hiredate
+FROM dept
+INNER JOIN emp USING(deptno)
+JOIN (
+    SELECT deptno, MIN(sal) AS msal
+    FROM emp
+    INNER JOIN dept USING(deptno)
+    GROUP BY deptno
+) AS min_sal ON emp.deptno = min_sal.deptno AND emp.sal = min_sal.msal;
+
+-- 3.8 Listázza ki azon részlegek nevét és telephelyét, ahol a dolgozók átlagjövedelme kisebb, mint 2200 USD.
+SELECT dname, loc 
+FROM dept INNER JOIN emp USING(deptno) 
+GROUP BY deptno
+HAVING AVG(sal)<2200;
+
+-- 3.9 Írjon  olyan  lekérdezést,  ami  megadja  az  összes  jutalékkal  rendelkező  alkalmazott  nevét, részlegének nevét és helyét. 
+SELECT ename, dname, loc 
+FROM emp INNER JOIN dept USING(deptno) 
+WHERE comm IS NOT NULL;
+
+-- 3.10 Listázza a dolgozók nevét és azonosítóját a főnökük (mgr) nevével és azonosítójával együtt úgy,    hogy    akinek    nincs    főnöke,    annak    a NULL    érték    helyére    a    ”Legfőbb” karaktersorozatot írja. 
+SELECT x.ename, x.empno,
+    CASE
+        WHEN y.ename IS NULL THEN 'Legfőbb'
+        ELSE y.ename
+    END AS mgrname, y.empno AS mgrno
+FROM emp x LEFT JOIN emp y ON x.mgr = y.empno;
+
+-- 3.11 Listázza  ki  a NEWYORK  telephely  minden  dolgozójának  nevét,  azonosítóját,  jövedelmét  és főnökének nevét, telephelyét. 
+SELECT x.ename, x.empno, x.sal, y.ename, y.loc
+FROM 
+    (SELECT * FROM emp INNER JOIN dept USING(deptno)) x
+LEFT JOIN 
+    (SELECT * FROM emp INNER JOIN dept USING(deptno)) y 
+ON x.mgr = y.empno
+WHERE x.loc='NEW YORK';
+
+-- 3.12 Listázza  mindazon  alkalmazott  nevét,  részlegének  nevét  és  fizetését,  akiknek  fizetése megegyezik  valamelyik Dallas-ban  dolgozó  alkalmazottéval.  Legyen  a  lista  fejléce  név, részlegnév, fizetés, és a lista legyen a fizetés és a részlegnév szerint rendezett.
+SELECT DISTINCT ename AS nev, dname AS reszlegnev, sal AS fizetes
+FROM emp INNER JOIN dept USING(deptno)
+INNER JOIN
+    (SELECT sal AS dsal FROM emp INNER JOIN dept USING(deptno) WHERE loc='DALLAS') AS dallasFizu
+WHERE sal = dallasFizu.dsal
+ORDER BY fizetes, reszlegnev;
+
+-- 3.13 Listázza azon dolgozókat, akiknek neve hasonlít egy munkakör nevéhez. 
+SELECT DISTINCT x.ename 
+FROM emp x, emp y 
+WHERE SOUNDEX(x.ename) IN (SOUNDEX(y.job));
+
+-- 3.14 Listázza  azon  főnökök  azonosítóját,  akik  nem  menedzser  foglalkozásúak.  A  lista  legyen  a főnök azonosító (mgr) szerint rendezett. 
+SELECT x.empno, x.ename
+FROM emp x, emp y
+WHERE x.empno In (y.mgr) AND x.job <> 'MANAGER'
+GROUP BY x.empno, x.ename
+ORDER BY x.empno;
+
+-- 3.15 Hány olyan főnök van, aki nem menedzser foglalkozású? 
+SELECT COUNT(z.empno)
+FROM (SELECT x.empno FROM emp x, emp y WHERE x.empno IN (y.mgr) AND x.job<>'MANAGER' GROUP BY x.empno) z;

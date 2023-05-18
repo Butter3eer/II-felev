@@ -7,8 +7,20 @@
         android:title="Setup"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/setLanguage"
+        android:title="Language">
+        <menu>
+            <item
+                android:title="English"
+                android:id="@+id/setEnglish"/>
+            <item
+                android:id="@+id/setOrosz"
+                android:title="Русский"/>
+        </menu>
+    </item>
+    <item
         android:id="@+id/menuItemLevel"
-        android:icon="@drawable/baseline_account_circle_24"
+        android:icon="@drawable/ic_settings_24"
         android:title="Level"
         app:showAsAction="never">
         <menu>
@@ -23,7 +35,7 @@
 
     <item
         android:id="@+id/menuItemCategory"
-        android:icon="@drawable/baseline_account_circle_24"
+        android:icon="@drawable/ic_settings_24"
         android:title="Category"
         app:showAsAction="never">
         <menu>
@@ -44,7 +56,7 @@
     </item>
     <item android:id="@+id/menuExit"
         android:icon="@drawable/ic_exit_to_app"
-        android:title="Kilépés"
+        android:title="Exit"
         app:showAsAction="withText"/>
 
 </menu>
