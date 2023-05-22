@@ -1,0 +1,10 @@
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\bin\Debug\Labirintus.exe.config
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\bin\Debug\Labirintus.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\bin\Debug\Labirintus.pdb
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\obj\Debug\Labirintus.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\obj\Debug\Labirintus.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\obj\Debug\Labirintus.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\obj\Debug\Labirintus.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\obj\Debug\Labirintus.pdb
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\bin\Debug\Lab1.txt
+E:\STUDY\Petrik\II-felev\C#\C#.NET\Labirintus\Labirintus\bin\Debug\Lab2.txt
