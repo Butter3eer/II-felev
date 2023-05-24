@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "RGB_keprajzol/1.0.0": {
+        "runtime": {
+          "RGB_keprajzol.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RGB_keprajzol/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

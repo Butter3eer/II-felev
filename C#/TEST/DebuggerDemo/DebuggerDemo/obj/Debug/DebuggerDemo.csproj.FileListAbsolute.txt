@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\TEST\DebuggerDemo\DebuggerDemo\bin\Debug\DebuggerDemo.exe.config
+E:\STUDY\Petrik\II-felev\C#\TEST\DebuggerDemo\DebuggerDemo\bin\Debug\DebuggerDemo.exe
+E:\STUDY\Petrik\II-felev\C#\TEST\DebuggerDemo\DebuggerDemo\bin\Debug\DebuggerDemo.pdb
+E:\STUDY\Petrik\II-felev\C#\TEST\DebuggerDemo\DebuggerDemo\obj\Debug\DebuggerDemo.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\TEST\DebuggerDemo\DebuggerDemo\obj\Debug\DebuggerDemo.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\TEST\DebuggerDemo\DebuggerDemo\obj\Debug\DebuggerDemo.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\TEST\DebuggerDemo\DebuggerDemo\obj\Debug\DebuggerDemo.exe
+E:\STUDY\Petrik\II-felev\C#\TEST\DebuggerDemo\DebuggerDemo\obj\Debug\DebuggerDemo.pdb

@@ -1,0 +1,68 @@
+﻿<Window x:Class="MachKalkulatorGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MachKalkulatorGUI"
+        mc:Ignorable="d"
+        Title="Mach-szám kalkulátor" Height="450" Width="450">
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="RoundTextBoxStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="RoundedButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="RoundedListBox" TargetType="ListBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBox">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="10">
+                            <ScrollViewer>
+                                <ItemsPresenter />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
+    <Grid Name="grid">
+        <Label Content="Torlónyomás:" HorizontalAlignment="Left" Margin="20,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Statikus nyomás:" HorizontalAlignment="Left" Margin="20,70,0,0" VerticalAlignment="Top"/>
+        <TextBox Style="{StaticResource RoundTextBoxStyle}" x:Name="QcInput" HorizontalAlignment="Left" Margin="128,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
+        <TextBox Style="{StaticResource RoundTextBoxStyle}" x:Name="PoInput" HorizontalAlignment="Left" Margin="128,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Height="25"/>
+        <Button Style="{StaticResource RoundedButton}" Click="Szamol" Content="Számol" HorizontalAlignment="Left" Margin="296,44,0,0" VerticalAlignment="Top" Width="80" Height="55"/>
+        <Label Content="Eredmények:" HorizontalAlignment="Left" Margin="22,119,0,0" VerticalAlignment="Top"/>
+        <ListBox Style="{StaticResource RoundedListBox}" Name="listaBox" Height="250" Width="390" Margin="20,134,20,0"/>
+    </Grid>
+</Window>

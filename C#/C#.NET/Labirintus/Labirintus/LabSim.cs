@@ -117,7 +117,7 @@ namespace Labirintus
         {
             get
             {
-                return Lab.GetLength(1) - 2;
+                return Lab.GetLength(1) - 1;
             }
         }
 
