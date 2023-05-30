@@ -1,0 +1,8 @@
+E:\STUDY\Petrik\II-felev\C#\C#.NET\RGB-szinek\RGB-szinek\bin\Debug\RGB-szinek.exe.config
+E:\STUDY\Petrik\II-felev\C#\C#.NET\RGB-szinek\RGB-szinek\bin\Debug\RGB-szinek.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\RGB-szinek\RGB-szinek\bin\Debug\RGB-szinek.pdb
+E:\STUDY\Petrik\II-felev\C#\C#.NET\RGB-szinek\RGB-szinek\obj\Debug\RGB-szinek.csproj.AssemblyReference.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\RGB-szinek\RGB-szinek\obj\Debug\RGB-szinek.csproj.SuggestedBindingRedirects.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\RGB-szinek\RGB-szinek\obj\Debug\RGB-szinek.csproj.CoreCompileInputs.cache
+E:\STUDY\Petrik\II-felev\C#\C#.NET\RGB-szinek\RGB-szinek\obj\Debug\RGB-szinek.exe
+E:\STUDY\Petrik\II-felev\C#\C#.NET\RGB-szinek\RGB-szinek\obj\Debug\RGB-szinek.pdb
