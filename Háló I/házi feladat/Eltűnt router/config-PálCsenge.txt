@@ -1,0 +1,54 @@
+Router
+
+en
+conf t
+int s0/0/0
+ip add 10.0.0.14 255.255.255.252
+no sh
+int s0/0/1
+ip add 10.0.0.1 255.255.255.252
+no sh
+exit
+router rip
+version 2
+network 10.0.0.0
+network 172.32.0.0
+network 192.168.1.0
+network 192.168.2.0
+ip dhcp pool vlan1
+network 192.168.1.0 255.255.255.0
+def 192.168.1.1
+dns-server 172.32.79.223
+exit
+ip dhcp pool vlan2
+network 192.168.2.0 255.255.255.0
+def 192.168.2.1
+dns-server 172.32.79.223
+exit
+int g0/0.1
+ip add 192.168.1.1 255.255.255.0
+encapsulation dot1Q 1
+exit
+int g0/0.2
+ip add 192.168.2.1 255.255.255.0
+encapsulation dot1Q 2
+end
+copy ru st
+
+switch
+
+en
+conf t
+int vlan 1
+ip add 192.168.1.2 255.255.255.0
+no sh
+ip helper address 192.168.1.1
+exit
+int vlan 2
+ip add 192.168.2.2 255.255.255.0
+no sh
+ip helper address 192.168.2.1
+exit
+ip def 192.168.1.1
+end
+copy ru st
