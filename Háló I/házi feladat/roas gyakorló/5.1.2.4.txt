@@ -1,34 +1,32 @@
+R1
+
 en
 conf t
-no ip domain-lookup
 hostname R1
-enable secret class
-line vty 0
-password cisco
-login
-exit
-line con 0
-password cisco
-login
-exit
 int g0/0
 ip add 192.168.20.1 255.255.255.0
 no sh
+exit
 int g0/1
 ip add 192.168.10.1 255.255.255.0
 no sh
+exit
+no ip domain-lookup
+enable secret class
+line con 0
+password cisco
+login
 end
 copy ru st
+
+S1
 
 en
 conf t
 hostname S1
+ip def 192.168.10.1
 no ip domain-lookup
 enable secret class
-line vty 0
-password cisco
-login
-exit
 line con 0
 password cisco
 login
@@ -43,47 +41,42 @@ int vlan 10
 ip add 192.168.10.11 255.255.255.0
 no sh
 exit
+vlan 20
+name Faculty-Admin
+exit
 int f0/1
 switchport mode trunk
 switchport trunk allowed vlan 10,20
-no sh
-exit
-ip default-gateway 192.168.10.1
-vlan 20
-name Faculty-Admin
 end
 copy ru st
+
+S2
 
 en
 conf t
 hostname S2
+ip def 192.168.10.1
 no ip domain-lookup
 enable secret class
-line vty 0
-password cisco
-login
-exit
 line con 0
 password cisco
 login
 exit
+vlan 10
+name Student
+exit
 vlan 20
 name Faculty-Admin
-int range f0/11, f0/18
+int range f0/11,f0/18
 switchport mode access
 switchport access vlan 20
 exit
 int vlan 10
-ip add 192.168.10.11 255.255.255.0
+ip add 192.168.10.12 255.255.255.0
 no sh
 exit
 int f0/1
 switchport mode trunk
 switchport trunk allowed vlan 10,20
-no sh
-exit
-ip default-gateway 192.168.10.1
-vlan 10
-name Student
 end
 copy ru st

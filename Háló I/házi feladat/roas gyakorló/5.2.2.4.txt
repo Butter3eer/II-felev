@@ -1,0 +1,41 @@
+R1
+
+en
+conf t
+hostname R1
+int g0/1
+no sh
+exit
+int g0/1.10
+encapsu dot1Q 10
+ip add 172.17.10.1 255.255.255.0
+switchport mode access
+switchport access vlan 10
+no sh
+exit
+int g0/1.30
+encapsu dot1Q 30
+ip add 172.17.30.1 255.255.255.0
+switchport mode access
+switchport access vlan 30
+no sh
+end
+copy ru st
+
+S1
+
+en
+conf t
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,30
+exit
+int vlan 10
+ip add 172.17.10.2 255.255.255.0
+no sh
+exit
+int vlan 30
+ip add 172.17.30.2 255.255.255.0
+no sh
+end
+copy ru st

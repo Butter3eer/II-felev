@@ -1,0 +1,160 @@
+R1
+
+en
+conf t
+hostname R1
+int g0/0
+ip add 10.0.0.1 255.255.255.252
+ip helper 192.168.0.3
+no sh
+exit
+int g0/1
+ip add 192.168.3.1 255.255.255.0
+ip helper 192.168.0.3
+no sh
+exit
+router rip
+network 10.0.0.0
+network 192.168.3.0
+end
+copy ru st
+
+R2
+
+en
+conf t
+hostname R2
+int g0/0
+ip add 10.0.0.5 255.255.255.252
+ip helper 192.168.0.3
+no sh
+exit
+int g0/1
+ip add 10.0.0.2 255.255.255.252
+ip helper 192.168.0.3
+no sh
+exit
+int g0/2
+ip add 192.168.2.1 255.255.255.0
+ip helper 192.168.0.3
+no sh
+exit
+router rip
+network 10.0.0.0
+network 192.168.2.0
+end
+copy ru st
+
+R3
+
+en
+conf t
+hostname R3
+int g0/0
+ip add 10.0.0.9 255.255.255.252
+ip helper 192.168.0.3
+no sh
+exit
+int g0/1
+ip add 10.0.0.6 255.255.255.252
+ip helper 192.168.0.3
+no sh
+exit
+int g0/2
+ip add 192.168.1.1 255.255.255.0
+ip helper 192.168.0.3
+no sh
+exit
+router rip
+network 10.0.0.0
+network 192.168.1.0
+end
+copy ru st
+
+R4
+
+en
+conf t
+hostname R4
+int g0/0
+no sh
+exit
+int g0/0.10
+encapsulation dot1Q 10
+ip add 192.168.4.1 255.255.255.128
+ip helper 192.168.0.3
+no sh
+exit
+int g0/0.20
+encapsulation dot1Q 20
+ip add 192.168.4.129 255.255.255.128
+ip helper 192.168.0.3
+no sh
+exit
+int g0/1
+ip add 192.168.0.1 255.255.255.0
+ip helper 192.168.0.3
+no sh
+exit
+int g0/2
+ip add 10.0.0.10 255.255.255.252
+ip helper 192.168.0.3
+no sh
+exit
+router rip
+network 10.0.0.0
+network 192.168.0.0
+network 192.168.4.0
+end
+copy ru st
+
+S1
+
+en
+conf t
+hostname S1
+ip def 192.168.4.1
+vlan 10
+int range f0/1-12
+switchport mode access
+switchport access vlan 10
+exit
+vlan 20
+int range f0/13-24
+switchport mode access
+switchport access vlan 20
+exit
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20
+exit
+int vlan 10
+ip add 192.168.4.2 255.255.255.128
+ip helper 192.168.0.3
+no sh
+exit
+int vlan 20
+ip add 192.168.4.130 255.255.255.128
+ip helper 192.168.0.3
+no sh
+exit
+end
+copy ru st
+
+S2
+
+en
+conf t
+hostname S2
+ip def 192.168.0.1
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 1,10,20
+exit
+int vlan 1
+ip add 192.168.0.2 255.255.255.0
+no sh
+exit
+end
+copy ru st
+

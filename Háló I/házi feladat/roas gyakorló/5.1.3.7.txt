@@ -1,0 +1,104 @@
+R1
+
+en
+conf t
+hostname R1
+int g0/1
+no sh
+exit
+int g0/1.1
+encapsu dot1Q 1
+ip add 192.168.1.1 255.255.255.0
+no sh
+exit
+int g0/1.10
+encapsu dot1Q 10
+ip add 192.168.10.1 255.255.255.0
+no sh
+exit
+int g0/1.20
+encapsu dot1Q 20
+ip add 192.168.20.1 255.255.255.0
+no sh
+exit
+int Lo0
+ip add 209.165.200.225 255.255.255.224
+no sh
+exit
+no ip domain-lookup
+line con 0
+logging synchronous
+password cisco
+login
+exit
+line vty 0
+password cisco
+login
+exit
+enable secret class
+end
+copy ru st
+
+S1
+
+en
+conf t
+hostname S1
+int vlan 1
+ip add 192.168.1.11 255.255.255.0
+no sh
+exit
+ip def 192.168.1.1
+no ip domain-lookup
+line con 0
+logging synchronous
+password cisco
+login
+exit
+line vty 0
+password cisco
+login
+exit
+enable secret class
+int range f0/2-4
+sh
+exit
+int range f0/7-24
+sh
+exit
+int range g0/1-2
+sh
+end
+copy ru st
+
+S2
+
+en
+conf t
+hostname S2
+int vlan 1
+ip add 192.168.1.12 255.255.255.0
+no sh
+exit
+ip def 192.168.1.1
+no ip domain-lookup
+line con 0
+logging synchronous
+password cisco
+login
+exit
+line vty 0
+password cisco
+login
+exit
+enable secret class
+int range f0/2-17
+sh
+exit
+int range f0/19-24
+sh
+exit
+int range g0/1-2
+sh
+end
+copy ru st

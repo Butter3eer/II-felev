@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>Téglalapok</title>
+</head>
+<body>
+    <main class="container">
+        <section>
+            <form id="rectangle_form">
+                <h1>Téglalap felvétele</h1>
+                <div class="mb-3">
+                    <label class="form-label" for="a_input" ><strong>A:</strong></label>
+                    <input class="form-control w-50" type="text" id="a_input" placeholder="A" min="1" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="b_input"><strong>B:</strong></label>
+                    <input class="form-control w-50" type="text" id="b_input" placeholder="B" min="1" required>
+                </div>
+                <button class="btn btn-warning" type="submit">Felvétel</button>
+            </form>
+        </section>
+        <section>
+            <br>
+            <h2>Téglalapok</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>K</th>
+                        <th>T</th>
+                    </tr>
+                </thead>
+                <tbody id="rectangle_table">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
