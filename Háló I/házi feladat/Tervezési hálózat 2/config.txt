@@ -1,0 +1,79 @@
+R1
+
+en
+conf t
+hostname R1
+router rip
+network 192.168.0.0
+network 192.168.1.0
+network 192.168.2.0
+network 192.168.3.0
+exit
+int g0/0
+ip add 192.168.0.1 255.255.255.224
+no sh
+int g1/0
+ip add 192.168.4.1 255.255.255.0
+ip helper-address 192.168.0.4
+no sh
+int g2/0
+ip add 192.168.3.1 255.255.255.0
+ip helper-address 192.168.0.4
+no sh
+int g3/0.1
+encapsulation dot1q 1
+ip add 192.168.1.1 255.255.255.128
+ip helper-address 192.168.0.4
+no sh
+int g3/0.2
+encapsulation dot1q 2
+ip add 192.168.2.1 255.255.255.128
+ip helper-address 192.168.0.4
+no sh
+int g3/0
+no ip add 192.168.0.97 255.255.255.224
+end
+copy ru st
+
+S1
+
+en
+conf t
+hostname S1
+vlan 1
+int range f0/1-12
+switchport mode access
+switchport access vlan 1
+exit
+vlan 2
+name vlan2
+int range f0/13-24
+switchport mode access
+switchport access vlan 2
+exit
+int vlan 1
+ip add 192.168.1.1 255.255.255.128
+no sh
+exit
+int vlan 2
+ip add 192.168.2.1 255.255.255.128
+no sh
+exit
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 1,2
+no sh
+end
+copy ru st
+
+S2
+
+en
+conf t
+hostname S2
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 1,2
+no sh
+end
+copy ru st

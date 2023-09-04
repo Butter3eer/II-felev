@@ -66,7 +66,7 @@ exit
 
 SSH setup
 
-ip domain-name 
+ip domain-name
 crypto key gen rsa
 ip ssh ver 2
 username admin priv 15 pass jelszo

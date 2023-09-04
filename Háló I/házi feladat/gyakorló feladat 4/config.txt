@@ -1,0 +1,136 @@
+R_FORNAX
+
+en
+conf t
+hostname R_FORNAX
+int s0/0/0
+ip add 172.20.0.2 255.255.0.0
+no sh
+int s0/0/1
+ip add 172.30.0.2 255.255.0.0
+no sh
+int g0/0
+ip add 192.168.47.1 255.255.255.252
+no sh
+int g0/1
+ip add 192.168.48.1 255.255.255.0
+no sh
+exit
+ip route 0.0.0.0 0.0.0.0 172.20.10.1
+router ospf 1
+network 172.30.0.0 255.255.0.0 area 0
+network 192.168.47.0 255.255.255.252  area 0
+network 192.168.48.0 255.255.255.0  area 0
+exit
+enable secret FOR789
+ip domain-name fornax.com
+crypto key generate rsa
+yes
+2048
+ip ssh version 2
+username foradmin password forpass
+line vty 0 5
+login local
+transport input ssh
+end
+copy ru st
+
+R_CRUX
+
+en
+conf t
+hostname R_CRUX
+int s0/0/0
+ip add 172.30.0.1 255.255.0.0
+no sh
+int g0/0
+no sh
+int g0/0.42
+encapsulation dot1q 42
+ip add 192.168.45.129 255.255.255.248
+no sh
+int g0/0.27
+encapsulation dot1q 27
+ip add 192.168.45.1 255.255.255.128
+no sh
+exit
+ip dhcp exclude 192.168.45.1 192.168.45.36
+ip dhcp pool cetusDHCP
+network 192.168.45.0 255.255.255.128
+def 192.168.45.1
+dns-server 192.168.45.134
+router ospf 1
+passive-int g0/0.27
+passive-int g0/0.42
+network 172.30.0.0 255.255.0.0  area 0
+network 192.168.45.0 255.255.255.128  area 0
+network 192.168.45.128 255.255.255.248  area 0
+end
+copy ru st
+
+
+S1_CRUX
+
+en
+conf t
+hostname S1_CRUX
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 27,42
+exit
+int g0/2
+switchport mode trunk
+switchport trunk allowed vlan 27,42
+exit
+vlan 27
+name CETUS
+int range f0/1-12
+switchport mode access
+switchport access vlan 27
+exit
+int vlan 27
+ip add 192.168.45.2 255.255.255.128
+no sh
+exit
+vlan 42
+name HYDRA
+int range f0/13-24
+switchport mode access
+switchport access vlan 42
+exit
+int vlan 42
+ip add 192.168.45.130 255.255.255.248
+no sh
+end
+copy ru st
+
+S2_CRUX
+
+en
+conf t
+hostname S2_CRUX
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 27,42
+exit
+vlan 27
+name CETUS
+int range f0/1-12
+switchport mode access
+switchport access vlan 27
+exit
+int vlan 27
+ip add 192.168.45.2 255.255.255.128
+no sh
+exit
+vlan 42
+name HYDRA
+int range f0/13-24
+switchport mode access
+switchport access vlan 42
+exit
+int vlan 42
+ip add 192.168.45.130 255.255.255.248
+no sh
+end
+copy ru st

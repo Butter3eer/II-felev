@@ -1,0 +1,130 @@
+RTR_GRUS
+
+en
+conf t
+router rip
+network 192.168.50.0
+network 192.168.80.0
+network 192.168.0.0
+network 172.20.0.0
+network 10.0.0.0
+exit
+int s0/0/0
+ip add 10.0.0.1 255.255.255.252
+no sh
+exit
+int g0/0
+ip add 192.168.80.1 255.255.255.252
+no sh
+int g0/1
+no sh
+int g0/1.33
+encapsulation dot1q 33
+ip add 192.168.50.1 255.255.255.192
+no sh
+int g0/1.55
+encapsulation dot1q 55
+ip add 192.168.50.65 255.255.255.240
+no sh
+exit
+ip dhcp exclude 192.168.50.1 192.168.50.14
+ip dhcp pool vlan33
+network 192.168.50.0 255.255.255.192
+def 192.168.50.1
+dns-server 172.20.5.15
+exit
+router ospf 10
+network 192.168.50.0 255.255.255.192 area 0
+network 192.168.50.64 255.255.255.240 area 0
+network 192.168.80.0 255.255.255.252 area 0
+end
+copy ru st
+
+WIFI_GRUS
+
+internet: 192.168.80.2 255.255.255.252
+alap átjáró: 192.168.80.1
+SSID: GRUSWLAN
+WPA2: GRUS12345
+DHCP: DNS: 172.20.5.15
+
+SW_1_GRUS
+
+en
+conf t
+hostname SW_1_GRUS
+vlan 33
+name LYNX
+int vlan 33
+ip add 192.168.50.2 255.255.255.192
+no sh
+int range fa0/2-24
+switchport mode access
+switchport access vlan 33
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 33,55
+exit
+int f0/1
+switchport mode trunk
+switchport trunk allowed vlan 33,55
+no sh
+end
+copy ru st
+
+SW_2_GRUS
+
+en
+conf t
+hostname SW_2_GRUS
+vlan 33
+name LYNX
+int vlan 33
+ip add 192.168.50.2 255.255.255.192
+no sh
+int range fa0/1-12
+switchport mode access
+switchport access vlan 33
+no sh
+vlan 55
+name VELA
+int vlan 55
+ip add 192.168.50.66 255.255.255.240
+no sh
+int range fa0/13-24
+switchport mode access
+switchport access vlan 55
+no sh
+int g0/1
+switchport mode trunk
+switchport trunk allowed vlan 33,55
+no sh
+end
+copy ru st
+
+RTR_LEPUS
+
+en
+conf t
+router rip
+network 192.168.50.0
+network 192.168.80.0
+network 192.168.0.0
+network 172.20.0.0
+network 10.0.0.0
+exit
+ipv6 unicast-routing
+int g0/1
+ipv6 enable
+ipv6 add 3232:30:20::1/64 eui-64
+ipv6 add FE80::1 link-local
+ip add 172.20.5.1 255.255.255.0
+no sh
+exit
+int s0/0/1
+ipv6 enable
+ipv6 add 2020:20::1/64
+ip add 10.0.0.2 255.255.255.252
+no sh
+end
+copy ru st
